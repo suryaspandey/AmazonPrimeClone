@@ -4,18 +4,22 @@ import viteLogo from "/vite.svg";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "./App.css";
 import { Router } from "@material-ui/icons";
-import Home from "./Components/Home";
+import Home from "./Pages/Home";
+import Navigator from "./Components/Navigator";
 
 function App() {
     const [count, setCount] = useState(0);
 
     return (
-        <BrowserRouter>
-            <Routes>
-                <Route path="/" element={<Home />}></Route>
-            </Routes>
-            <div className="main">Amazon Prime Video</div>
-        </BrowserRouter>
+        <>
+            <Navigator />
+            <BrowserRouter>
+                <Routes>
+                    <Route path="/" element={<Home />}></Route>
+                </Routes>
+                <div className="main">Amazon Prime Video</div>
+            </BrowserRouter>
+        </>
     );
 }
 
