@@ -21,12 +21,13 @@ export default function Home_Corousel() {
         <>
             <div className="corousel-container">
                 <Carousel
-                    // autoplay
+                    autoplay
+                    autoPlaySpeed={550000}
                     arrows
                     nextArrow={<RightOutlined />}
                     prevArrow={<LeftOutlined />}
                 >
-                    <div>
+                    <div className="corousel-container-left-right">
                         <div className="left-content">
                             <span className="home-main-text">
                                 New Episode Friday
@@ -96,7 +97,12 @@ export default function Home_Corousel() {
                         </div>
                         <div className="right-content">
                             <a href="">
-                                <video src="https://s3.ll.videorolls.row.aiv-cdn.net/ww_iad/43c2/951b/7f5d/4eb4-94f1-fefd891c2801/cca79408-987a-4781-a636-e9d5fb527763_video_720p_2500kbps_audio_aaclc_128kbps.mp4"></video>
+                                <video autoPlay muted>
+                                    <source
+                                        src="https://s3.ll.videorolls.row.aiv-cdn.net/ww_iad/43c2/951b/7f5d/4eb4-94f1-fefd891c2801/cca79408-987a-4781-a636-e9d5fb527763_video_720p_2500kbps_audio_aaclc_128kbps.mp4"
+                                        type="video/mp4"
+                                    />
+                                </video>
                             </a>
                         </div>
                         {/* <h3 style={contentStyle}>1</h3> */}
