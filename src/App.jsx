@@ -15,7 +15,7 @@ function App() {
             <Navigator />
             <BrowserRouter>
                 <Routes>
-                    {/* <Route path="/" element={<Home />}></Route> */}
+                    <Route path="/" element={<Home />}></Route>
                 </Routes>
                 {/* <div className="main">Amazon Prime Video</div> */}
             </BrowserRouter>

@@ -119,6 +119,10 @@ body{
 
   }
 
+  .left-content{
+    z-index: 2;
+  }
+
   .ant-carousel .slick-prev,
 .ant-carousel .slick-next {
   color: unset;
@@ -186,6 +190,8 @@ body{
 .play-btn-text{
     display: flex;
     gap: 5px;
+    justify-content: center;
+    align-items: center;
 }
 .play-text{
     color: white;
@@ -198,7 +204,9 @@ body{
 }
 
 .watchlist-details-container{
+    display: flex;
     gap: 5px;
+    align-items: center;
 }
 .watchlist-btn{
     /* color: #2e2a2a; */
@@ -251,4 +259,84 @@ body{
     /* height: 158px; */
     flex-direction: row;
     gap: 3px;
+}
+
+
+/* continue watching */
+
+.slider-continue-watching-pic{
+    width: 204.5px;
+    height: 128.64px;
+}
+
+.slider-continue-watching-pic:hover{
+    height: 422px;
+    transform: scale(1.02);
+}
+
+.progress-bar{
+    height: 5px;
+    width: 100%;
+    background-color: #5d6df2;
+    color: white;
+    border-radius: 10px
+}
+
+.continue-watching-ul{
+    align-items: flex-start;
+    display: flex;
+    flex-direction: row;
+    -webkit-scroll-snap-type: x proximity;
+    -ms-scroll-snap-type: x proximity;
+    scroll-snap-type: x proximity;
+}
+
+.continue-watching-container{
+    display: grid;
+    grid-template-areas: "left right";
+    grid-template-columns: repeat(2,calc(var(--dv-carousel-column-margin) - var(--dv-carousel-column-gap)));
+    grid-template-rows: 1fr;
+    justify-content: space-between;
+    overflow: hidden;
+}
+
+.continue-wtching-li{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.home-play-btn-new{
+    width: 50px;height: 50px;
+}
+
+.continue-watching-btn{
+  height: 42px;
+  width: 42px;
+    border-radius: 50%;
+}
+
+.continue-watching-title, h3{
+    padding: 0;
+    margin: 0;
+    color: white;
+    align-items: center;
+}
+
+.continue-watching-year-UA{
+    color: white;
+}
+.continue-watching-year-UA, .UA-num{
+    display: flex;
+    gap:20px;
+    flex-direction: row;
+}
+
+.UA-num{
+    background-color: #aaa;
+    padding: 0.2em;
+    border-radius: 5px;
+}
+.continue-watching-description h3{
+    color: #878383;
 }
