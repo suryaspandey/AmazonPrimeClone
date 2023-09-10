@@ -11,6 +11,7 @@ import {
     // ArrowRightOutlined,
 } from "@ant-design/icons";
 import ContinueWatching from "./ContinueWatching";
+import ContinueWatchingSlider from "./ContinueWatchingSlider";
 
 const contentStyle = {
     height: "160px",
@@ -214,6 +215,7 @@ export default function Home_Corousel() {
                 </Carousel>
             </div>
             <ContinueWatching />
+            <ContinueWatchingSlider />
         </>
     );
 }

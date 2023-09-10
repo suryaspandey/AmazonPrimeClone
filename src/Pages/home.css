@@ -269,10 +269,27 @@ body{
     height: 128.64px;
 }
 
-.slider-continue-watching-pic:hover{
+/* .slider-continue-watching-pic:hover{
     height: 422px;
-    transform: scale(1.02);
+    transform: scaleY(1);
+    opacity: 1;
+} */
+
+.continue-watching-text-description{
+    opacity: 1;
+    /* transform: scaleY(0); */
+    /* max-height: 0; */
+    /* overflow: hidden; */
+    /* height: 100px; */
 }
+
+/* .continue-watching-text-description:hover{
+    opacity: 1;
+    transform: scaleY(1);
+    max-height: 500px;
+    overflow: visible;
+    height: 300px;
+} */
 
 .progress-bar{
     height: 5px;

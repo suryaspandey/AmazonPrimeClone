@@ -1,5 +1,6 @@
 import React from "react";
 import { PlusOutlined, MoreOutlined } from "@ant-design/icons";
+import ContinueWatchingSlider from "./ContinueWatchingSlider";
 
 export default function ContinueWatching() {
     return (
@@ -90,6 +91,8 @@ export default function ContinueWatching() {
                     </li>
                 </ul>
             </div>
+
+            <ContinueWatchingSlider />
         </>
     );
 }
