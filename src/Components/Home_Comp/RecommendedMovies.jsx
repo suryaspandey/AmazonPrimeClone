@@ -57,7 +57,10 @@ const RecommendedMovies = () => {
         <>
             <div className="cards-heaading">
                 <h2>
-                    <span className="prime-text" style={{ marginRight: "8px" }}>
+                    <span
+                        className="prime-text-heading"
+                        style={{ marginRight: "8px" }}
+                    >
                         Prime
                     </span>
                     <span className="card-indv-heading">

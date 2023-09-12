@@ -5,7 +5,7 @@ import ContinueWatchingSlider from "./ContinueWatchingSlider";
 export default function ContinueWatching() {
     return (
         <>
-            <h3 style={{ color: "white" }}>continue watching</h3>
+            <h3 style={{ color: "white" }}>Continue watching</h3>
 
             <div className="continue-watching-container">
                 <ul className="continue-watching-ul">

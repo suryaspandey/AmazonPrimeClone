@@ -189,7 +189,6 @@ export default function Home_Corousel() {
                                             // }
                                             ref={videoRef}
                                             onEnded={handleVideoEnded}
-                                            // style={{ width: "100%" }}
                                         >
                                             <source
                                                 src={source}
@@ -197,8 +196,7 @@ export default function Home_Corousel() {
                                             />
                                         </video>
                                     </div>
-                                    ;{/* })} */}
-                                    {/* </a> */}
+                                    ;
                                 </div>
                             </div>
                         </>

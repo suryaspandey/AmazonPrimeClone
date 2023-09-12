@@ -31,7 +31,7 @@ const WatchCards = ({ actualData }) => {
                                     src="./prime-blue-tick.png"
                                     alt=""
                                 />
-                                <h5 style={{ color: "white" }}>
+                                <h5 style={{ color: "white", margin: "8px" }}>
                                     Included with prime
                                 </h5>
                             </div>

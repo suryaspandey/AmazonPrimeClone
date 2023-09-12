@@ -23,7 +23,7 @@ const ContinueWatchingSlider = () => {
             );
 
             const data = await result.json();
-            console.log(data);
+            // console.log(data);
             setMyData(data.titles); // coming from api
             // console.log(data.titles);
         } catch (err) {
