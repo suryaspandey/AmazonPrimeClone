@@ -12,7 +12,7 @@ const WatchCards = ({ actualData }) => {
                                 <img
                                     className="banner-img"
                                     style={{
-                                        width: "204.5px",
+                                        width: "267.4px",
                                     }}
                                     src={jawSummary.backgroundImage.url}
                                     // alt={jawSummary.title}

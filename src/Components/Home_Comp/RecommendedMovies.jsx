@@ -1,6 +1,9 @@
 import React, { useEffect, useState } from "react";
 import WatchCards from "./WatchCards";
 import "./recommendedMovies.css";
+import Carousel from "react-multi-carousel";
+import "react-multi-carousel/lib/styles.css";
+// import { Carousel } from "react-responsive-carousel";
 
 const RecommendedMovies = () => {
     const [myData, setMyData] = useState([]);
@@ -9,7 +12,7 @@ const RecommendedMovies = () => {
         method: "GET",
         headers: {
             "X-RapidAPI-Key":
-                "2cb17705eamshda6af13de6197b3p1ef79djsnd06313107b1b",
+                "797696e645msh30cdd41c816aa0cp1a5632jsn85e75846747e",
             "X-RapidAPI-Host": "netflix54.p.rapidapi.com",
         },
     };
@@ -70,7 +73,6 @@ const RecommendedMovies = () => {
             </div>
             <div className="carousel-main" style={{ display: "flex" }}>
                 {/* <Carousel responsive={responsive} swipeable={true} draggable> */}
-
                 {myData.map((dat) => {
                     return <WatchCards key={dat.summary.id} actualData={dat} />;
                 })}

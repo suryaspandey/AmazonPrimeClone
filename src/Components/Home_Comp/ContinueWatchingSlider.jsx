@@ -2,15 +2,33 @@ import { useEffect, useState } from "react";
 import WatchCards from "./WatchCards";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
+import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 const ContinueWatchingSlider = () => {
     const [myData, setMyData] = useState([]);
+    const [currentIndex, setCurrentIndex] = useState(0);
+    const slidesPerPage = 5;
+
+    const handleNextSlide = () => {
+        if (currentIndex + slidesPerPage < myData.length) {
+            setCurrentIndex(currentIndex + slidesPerPage);
+        }
+    };
+
+    const handlePrevSlide = () => {
+        if (currentIndex - slidesPerPage >= 0) {
+            setCurrentIndex(currentIndex - slidesPerPage);
+        }
+    };
 
     const options = {
         method: "GET",
         headers: {
             "X-RapidAPI-Key":
-                "2cb17705eamshda6af13de6197b3p1ef79djsnd06313107b1b",
+                "797696e645msh30cdd41c816aa0cp1a5632jsn85e75846747e",
             "X-RapidAPI-Host": "netflix54.p.rapidapi.com",
         },
     };
@@ -55,16 +73,68 @@ const ContinueWatchingSlider = () => {
         },
     };
 
+    const CustomLeftArrow = ({ onClick }) => {
+        return (
+            <div onClick={onClick}>
+                <FaArrowLeft style={{ color: "white" }} />
+            </div>
+        );
+    };
+
+    const CustomRightArrow = ({ onClick }) => {
+        return (
+            <div onClick={onClick}>
+                <FaArrowRight style={{ color: "white" }} />
+            </div>
+        );
+    };
+
+    const settings = {
+        dots: true,
+        infinite: false,
+        speed: 500,
+        slidesToShow: 5,
+        slidesToScroll: 5,
+    };
+
     return (
         <>
-            <h3 style={{ color: "white" }}>Continue Watching</h3>
-            <div className="carousel-main" style={{ display: "flex" }}>
-                {/* <Carousel responsive={responsive} swipeable={true} draggable> */}
+            <h3 style={{ color: "white" }}>Continue watching</h3>
+            <div
+                className="carousel-main"
+                style={{ display: "flex", margin: "60px" }}
+            >
+                {/* <button
+                    className="carousel-button prev"
+                    onClick={handlePrevSlide}
+                    disabled={currentIndex === 0}
+                >
+                    <FaArrowLeft />
+                </button> */}
+                {/* <Carousel
+                    renderArrowPrev={CustomLeftArrow}
+                    renderArrowNext={CustomRightArrow}
+                    responsive={responsive}
+                    swipeable={true}
+                    draggable
+                    arrows
+                > */}
                 {/* <h1 style={{ color: "white" }}>Slider Component</h1> */}
-                {myData.map((dat) => {
-                    return <WatchCards key={dat.summary.id} actualData={dat} />;
-                })}
+                <Slider {...settings}>
+                    {myData.map((dat) => {
+                        return (
+                            <WatchCards key={dat.summary.id} actualData={dat} />
+                        );
+                    })}
+                </Slider>
                 {/* </Carousel> */}
+                {/* <button
+                    className="carousel-button prev"
+                    onClick={handleNextSlide}
+                    disabled={currentIndex + slidesPerPage >= myData.length}
+                >
+                    <FaArrowRight />
+                </button> */}
             </div>
         </>
     );

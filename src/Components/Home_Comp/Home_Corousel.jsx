@@ -13,6 +13,7 @@ import {
 import ContinueWatching from "./ContinueWatching";
 import ContinueWatchingSlider from "./ContinueWatchingSlider";
 import RecommendedMovies from "./RecommendedMovies";
+import { ContinueWatchingSlider1 } from "./ContinueWatchingSlider1";
 
 const contentStyle = {
     height: "160px",
@@ -214,8 +215,9 @@ export default function Home_Corousel() {
                 </Carousel>
             </div>
             {/* <ContinueWatching /> */}
-            <ContinueWatchingSlider />
-            <RecommendedMovies />
+            {/* <ContinueWatchingSlider /> */}
+            <ContinueWatchingSlider1 />
+            {/* <RecommendedMovies /> */}
         </>
     );
 }
