@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import WatchCards from "./WatchCards";
+import "./recommendedMovies.css";
 
 const RecommendedMovies = () => {
     const [myData, setMyData] = useState([]);
@@ -53,14 +54,26 @@ const RecommendedMovies = () => {
         },
     };
     return (
-        <div className="carousel-main" style={{ display: "flex" }}>
-            {/* <Carousel responsive={responsive} swipeable={true} draggable> */}
+        <>
+            <div className="cards-heaading">
+                <h2>
+                    <span className="prime-text" style={{ marginRight: "8px" }}>
+                        Prime
+                    </span>
+                    <span className="card-indv-heading">
+                        Recommended movies
+                    </span>
+                </h2>
+            </div>
+            <div className="carousel-main" style={{ display: "flex" }}>
+                {/* <Carousel responsive={responsive} swipeable={true} draggable> */}
 
-            {myData.map((dat) => {
-                return <WatchCards key={dat.summary.id} actualData={dat} />;
-            })}
-            {/* </Carousel> */}
-        </div>
+                {myData.map((dat) => {
+                    return <WatchCards key={dat.summary.id} actualData={dat} />;
+                })}
+                {/* </Carousel> */}
+            </div>
+        </>
     );
 };
 
