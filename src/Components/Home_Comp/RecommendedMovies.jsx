@@ -1,9 +1,7 @@
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import WatchCards from "./WatchCards";
-import Carousel from "react-multi-carousel";
-import "react-multi-carousel/lib/styles.css";
 
-const ContinueWatchingSlider = () => {
+const RecommendedMovies = () => {
     const [myData, setMyData] = useState([]);
 
     const options = {
@@ -54,20 +52,16 @@ const ContinueWatchingSlider = () => {
             items: 1,
         },
     };
-
     return (
-        <>
-            <h3 style={{ color: "white" }}>Continue Watching</h3>
-            <div className="carousel-main" style={{ display: "flex" }}>
-                {/* <Carousel responsive={responsive} swipeable={true} draggable> */}
-                {/* <h1 style={{ color: "white" }}>Slider Component</h1> */}
-                {myData.map((dat) => {
-                    return <WatchCards key={dat.summary.id} actualData={dat} />;
-                })}
-                {/* </Carousel> */}
-            </div>
-        </>
+        <div className="carousel-main" style={{ display: "flex" }}>
+            {/* <Carousel responsive={responsive} swipeable={true} draggable> */}
+
+            {myData.map((dat) => {
+                return <WatchCards key={dat.summary.id} actualData={dat} />;
+            })}
+            {/* </Carousel> */}
+        </div>
     );
 };
 
-export default ContinueWatchingSlider;
+export default RecommendedMovies;

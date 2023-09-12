@@ -12,6 +12,7 @@ import {
 } from "@ant-design/icons";
 import ContinueWatching from "./ContinueWatching";
 import ContinueWatchingSlider from "./ContinueWatchingSlider";
+import RecommendedMovies from "./RecommendedMovies";
 
 const contentStyle = {
     height: "160px",
@@ -214,8 +215,9 @@ export default function Home_Corousel() {
                     </div>
                 </Carousel>
             </div>
-            <ContinueWatching />
+            {/* <ContinueWatching /> */}
             <ContinueWatchingSlider />
+            <RecommendedMovies />
         </>
     );
 }

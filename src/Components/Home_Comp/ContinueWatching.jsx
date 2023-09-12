@@ -92,7 +92,7 @@ export default function ContinueWatching() {
                 </ul>
             </div>
 
-            <ContinueWatchingSlider />
+            {/* <ContinueWatchingSlider /> */}
         </>
     );
 }

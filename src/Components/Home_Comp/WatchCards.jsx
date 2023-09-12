@@ -3,21 +3,22 @@ import { PlusOutlined, MoreOutlined } from "@ant-design/icons";
 const WatchCards = ({ actualData }) => {
     const { jawSummary } = actualData;
     return (
-        // <Wrapper>
         <div className="continue-watching-container">
-            {/* <div className="wrapper"> */}
             <ul className="continue-watching-ul">
                 <li className="continue-wtching-li">
                     <div className="slider-continue-watching-pic">
-                        {/* <figure className=""> */}
-                        <a href="">
-                            <img
-                                style={{ width: "204.5px" }}
-                                src={jawSummary.backgroundImage.url}
-                                // alt={jawSummary.title}
-                            />
-                        </a>
-                        {/* </figure> */}
+                        <div className="banner-imgs">
+                            <a href="">
+                                <img
+                                    className="banner-img"
+                                    style={{
+                                        width: "204.5px",
+                                    }}
+                                    src={jawSummary.backgroundImage.url}
+                                    // alt={jawSummary.title}
+                                />
+                            </a>
+                        </div>
 
                         <div className="continue-watching-text-description">
                             <div className="continue-watching-slider">
@@ -37,7 +38,7 @@ const WatchCards = ({ actualData }) => {
                         </div>
                         <div className="play-btn-text">
                             <a href="#" className="play-btn-link">
-                                <span className="home-play-btn-container">
+                                <span className="home-play-btn-container-new ">
                                     <img
                                         className="home-play-btn home-play-btn-new"
                                         src="play-btn.PNG"
@@ -45,7 +46,12 @@ const WatchCards = ({ actualData }) => {
                                         width={265}
                                     />
                                 </span>
-                                <span className="play-text">Resume</span>
+                                <span
+                                    className="play-text"
+                                    style={{ color: "white" }}
+                                >
+                                    Resume
+                                </span>
                             </a>
                             <div className="watchlist-details-container">
                                 <button
@@ -56,26 +62,47 @@ const WatchCards = ({ actualData }) => {
                                 </button>
                                 <button
                                     className="watchlist-btn continue-watching-btn"
-                                    title="Details"
+                                    title="More"
                                 >
                                     <MoreOutlined className="home-plus-watchlist-btn" />
                                 </button>
                             </div>
                         </div>
-                        <h3 className="continue-watching-title">
+                        <h4 className="continue-watching-title">
                             {jawSummary.title}
-                        </h3>
-                        <div className="continue-watching-description">
-                            <h3 style={{ textAlign: "left" }}>
-                                {jawSummary.synopsis}
-                            </h3>
+                        </h4>
+                        <div className="continue-watching-year-UA">
+                            <h4
+                                className="continue-watching-title"
+                                style={{ color: "grey" }}
+                            >
+                                2023
+                            </h4>
+                            <h4 className="continue-watching-title">2h 6min</h4>
+                            <div className="UA-num">
+                                <h3 style={{ fontSize: "14px" }}>U/A 16+</h3>
+                            </div>
                         </div>
-                        {/* <p style={{ color: "white" }}>{jawSummary.synopsis}</p> */}
+                        <div
+                            className="continue-watching-description"
+                            style={{ textOverflow: "ellipsis" }}
+                        >
+                            <h4
+                                style={{
+                                    textAlign: "left",
+                                    fontSize: "14px",
+                                    paddingLeft: "2px",
+                                    // background: "yellow",
+                                    margin: "3px",
+                                }}
+                            >
+                                {jawSummary.synopsis}
+                            </h4>
+                        </div>
                     </div>
                 </li>
             </ul>
         </div>
-        // </Wrapper>
     );
 };
 
