@@ -14,6 +14,7 @@ import ContinueWatching from "./ContinueWatching";
 import ContinueWatchingSlider from "./ContinueWatchingSlider";
 import RecommendedMovies from "./RecommendedMovies";
 import { ContinueWatchingSlider1 } from "./ContinueWatchingSlider1";
+import { WatchingList } from "./WatchingList";
 
 const contentStyle = {
     height: "160px",
@@ -70,7 +71,7 @@ export default function Home_Corousel() {
     };
 
     return (
-        <>
+        <div className="home">
             <div className="corousel-container">
                 <Carousel
                     showThumbs={false}
@@ -218,6 +219,9 @@ export default function Home_Corousel() {
             {/* <ContinueWatchingSlider /> */}
             <ContinueWatchingSlider1 />
             {/* <RecommendedMovies /> */}
-        </>
+            <WatchingList />
+            <WatchingList />
+            <WatchingList />
+        </div>
     );
 }

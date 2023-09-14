@@ -5,9 +5,36 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { CustomPrevBtn } from "./CustomPrevBtn";
 import { CustomNextBtn } from "./CustomNextBtn";
+import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
+
+// import Carousel from "react-slick-carousel";
+import { ScrollingCarousel } from "@trendyol-js/react-carousel";
 
 export const ContinueWatchingSlider1 = () => {
     const [myData, setMyData] = useState([]);
+    const [currentIndex, setCurrentIndex] = useState(0);
+    const slidesPerPage = 5;
+
+    const handleNextSlide = () => {
+        if (currentIndex + slidesPerPage < myData.length) {
+            setCurrentIndex(currentIndex + slidesPerPage);
+        }
+    };
+
+    const handlePrevSlide = () => {
+        if (currentIndex - slidesPerPage >= 0) {
+            setCurrentIndex(currentIndex - slidesPerPage);
+        }
+    };
+
+    const handleSwipe = (event) => {
+        if (event.deltaX > 0) {
+            handlePrevSlide();
+        } else {
+            handleNextSlide();
+        }
+    };
+
     const options = {
         method: "GET",
         headers: {
@@ -38,32 +65,98 @@ export const ContinueWatchingSlider1 = () => {
     }, []);
 
     const settings = {
-        dots: true,
+        // dots: true,
         infinite: false,
         speed: 500,
         slidesToShow: 5,
         slidesToScroll: 5,
+        swipeToSlide: true,
+        // prevArrow: <CustomPrevBtn />,
+        // nextArrow: <CustomNextBtn />,
+        // draggable: true,
+        responsive: [
+            {
+                breakpoint: 1024,
+                settings: {
+                    slidesToShow: 3,
+                    slidesToScroll: 3,
+                },
+            },
+            {
+                breakpoint: 600,
+                settings: {
+                    slidesToShow: 2,
+                    slidesToScroll: 2,
+                    initialSlide: 2,
+                },
+            },
+            {
+                breakpoint: 480,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
+                },
+            },
+        ],
     };
     return (
         <>
+            <h3 style={{ color: "white" }}>Continue watching</h3>
             <div
-                // className="carousel-main"
+                className="carousel-main"
                 style={{
-                    // display: "flex",
-                    margin: "60px",
+                    display: "flex",
+                    // margin: "60px",
+                    // position: "relative",
                 }}
+                onWheel={handleSwipe}
             >
-                <Slider
-                    prevArrow={<CustomPrevBtn />}
-                    nextArrow={<CustomNextBtn />}
-                    {...settings}
+                {/* <button
+                    className="carousel-button prev"
+                    onClick={handlePrevSlide}
+                    disabled={currentIndex === 0}
+                    style={{
+                        position: "absolute",
+                        left: 0,
+                        // top: "50%",
+                        // transform: "translateY(-50%)",
+                    }}
                 >
-                    {myData.map((dat) => {
+                    <FaArrowLeft />
+                </button> */}
+
+                {/* <Slider
+                    // <ScrollingCarousel 
+                    // responsive
+                    // dynamic
+                    // leftArrow
+                    // rightArrow
+                    // useArrowKeys
+                    // prevArrow={<CustomPrevBtn />}
+                    // nextArrow={<CustomNextBtn />}
+                    {...settings}
+                > */}
+                {/* <Slider {...settings}> */}
+                {myData
+                    // .slice(currentIndex, currentIndex + slidesPerPage)
+                    .map((dat) => {
                         return (
                             <WatchCards key={dat.summary.id} actualData={dat} />
                         );
                     })}
-                </Slider>
+                {/* </Slider> */}
+                {/* <button
+                    className="carousel-button prev"
+                    onClick={handleNextSlide}
+                    disabled={currentIndex + slidesPerPage >= myData.length}
+                    style={{
+                        position: "absolute",
+                        right: 0,
+                        
+                    }}
+                >
+                    <FaArrowRight />
+                </button> */}
             </div>
         </>
     );

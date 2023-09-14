@@ -10,6 +10,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@trendyol-js/react-carousel": "^3.0.2",
     "antd": "^5.8.5",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
@@ -18,6 +19,7 @@
     "react-responsive-carousel": "^3.2.23",
     "react-router": "^6.15.0",
     "react-slick": "^0.29.0",
+    "react-slick-carousel": "^0.14.9",
     "slick-carousel": "^1.8.1",
     "styled-components": "^4.4.1"
   },

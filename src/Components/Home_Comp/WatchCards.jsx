@@ -85,7 +85,10 @@ const WatchCards = ({ actualData }) => {
                         </div>
                         <div
                             className="continue-watching-description"
-                            style={{ textOverflow: "ellipsis" }}
+                            style={{
+                                overflow: "hidden",
+                                textOverflow: "ellipsis",
+                            }}
                         >
                             <h4
                                 style={{

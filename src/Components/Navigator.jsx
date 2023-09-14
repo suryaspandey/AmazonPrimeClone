@@ -80,19 +80,39 @@ const Navigator = () => {
                         </div>
                         {/* <div className="user-name">Soumitra</div> */}
                         <div className="user-avatar">
-                            <li style={{ listStyle: "none" }}>
+                            <li
+                                style={{
+                                    listStyle: "none",
+                                    objectFit: "cover",
+                                    cursor: "pointer",
+                                }}
+                            >
                                 <img
                                     src="./avatar.png"
                                     alt="avatar"
                                     height={30}
                                     width={30}
                                 />
+                                <div className="options">
+                                    <div className="options-left">
+                                        <span>Your Account</span>
+                                        <span>Help</span>
+                                        <span>HeWatch Anywherelp</span>
+                                        <span>HelAccounts and Settings</span>
+                                    </div>
+                                    <div className="options-right">
+                                        <span>Kids</span>
+                                        <span>Add New</span>
+                                        <span>Manage Profiles</span>
+                                        <span>Learn More</span>
+                                    </div>
+                                </div>
                             </li>
                         </div>
                     </div>
                 </div>
             </div>
-            <Home_Corousel />
+            {/* <Home_Corousel /> */}
         </>
     );
 };
