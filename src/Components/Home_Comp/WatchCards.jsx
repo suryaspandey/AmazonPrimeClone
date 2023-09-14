@@ -1,9 +1,32 @@
 import { PlusOutlined, MoreOutlined } from "@ant-design/icons";
+import { useState } from "react";
 
 const WatchCards = ({ actualData }) => {
+    // const [isHovered, setIsHovered] = useState(false);
     const { jawSummary } = actualData;
+
+    const bearerToken =
+        "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1MDM0NTc0MjhiYWJjMTExMDE5MmNmYiIsImlhdCI6MTY5NDcxMzIwNCwiZXhwIjoxNzI2MjQ5MjA0fQ.DKJz5ZvO667Ht9irDWLfynH2rhqPxGMxSrncaSPeU5w";
+    const projectId = "zxke0qiu2960";
+    useEffect(() => {
+        const url = "https://academics.newtonschool.co/api/v1/ott/show";
+        const webSeriesurl = `https://academics.newtonschool.co/api/v1/ott/show?filter={"type" : "web series"}`;
+
+        const headers = {
+            projectId: projectId,
+            Authorization: `Bearer ${bearerToken}`,
+        };
+        fetch(url, { method: "GET", headers: headers })
+            .then((response) => response.json())
+            .then((data) => console.log(data));
+    }, []);
+
     return (
-        <div className="continue-watching-container">
+        <div
+            className="continue-watching-container"
+            // onMouseEnter={() => setIsHovered(true)}
+            // onMouseLeave={() => setIsHovered(false)}
+        >
             <ul className="continue-watching-ul">
                 <li className="continue-wtching-li">
                     <div className="slider-continue-watching-pic">
@@ -14,9 +37,10 @@ const WatchCards = ({ actualData }) => {
                                     style={{
                                         width: "267.4px",
                                     }}
-                                    src={jawSummary.backgroundImage.url}
+                                    src={data.keywords.thumbnail}
                                     // alt={jawSummary.title}
                                 />
+                                {console.log(data.keywords.thumbnail)}
                             </a>
                         </div>
 
@@ -100,6 +124,7 @@ const WatchCards = ({ actualData }) => {
                                 }}
                             >
                                 {jawSummary.synopsis}
+                                {data.description}
                             </h4>
                         </div>
                     </div>

@@ -11,6 +11,7 @@ import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
 import { ScrollingCarousel } from "@trendyol-js/react-carousel";
 
 export const ContinueWatchingSlider1 = () => {
+    // --------------------------------
     const [myData, setMyData] = useState([]);
     const [currentIndex, setCurrentIndex] = useState(0);
     const slidesPerPage = 5;
@@ -109,7 +110,7 @@ export const ContinueWatchingSlider1 = () => {
                     // margin: "60px",
                     // position: "relative",
                 }}
-                onWheel={handleSwipe}
+                // onWheel={handleSwipe}
             >
                 {/* <button
                     className="carousel-button prev"
@@ -136,15 +137,18 @@ export const ContinueWatchingSlider1 = () => {
                     // nextArrow={<CustomNextBtn />}
                     {...settings}
                 > */}
-                {/* <Slider {...settings}> */}
-                {myData
-                    // .slice(currentIndex, currentIndex + slidesPerPage)
-                    .map((dat) => {
-                        return (
-                            <WatchCards key={dat.summary.id} actualData={dat} />
-                        );
-                    })}
-                {/* </Slider> */}
+                <Slider {...settings}>
+                    {myData
+                        // .slice(currentIndex, currentIndex + slidesPerPage)
+                        .map((dat) => {
+                            return (
+                                <WatchCards
+                                    key={dat.summary.id}
+                                    actualData={dat}
+                                />
+                            );
+                        })}
+                </Slider>
                 {/* <button
                     className="carousel-button prev"
                     onClick={handleNextSlide}
