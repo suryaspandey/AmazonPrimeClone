@@ -3,7 +3,7 @@ import { useState } from "react";
 
 const WatchCards = ({ actualData }) => {
     // const [isHovered, setIsHovered] = useState(false);
-    const { jawSummary } = actualData;
+    // const { jawSummary } = actualData;
 
     const bearerToken =
         "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1MDM0NTc0MjhiYWJjMTExMDE5MmNmYiIsImlhdCI6MTY5NDcxMzIwNCwiZXhwIjoxNzI2MjQ5MjA0fQ.DKJz5ZvO667Ht9irDWLfynH2rhqPxGMxSrncaSPeU5w";
@@ -93,14 +93,16 @@ const WatchCards = ({ actualData }) => {
                             </div>
                         </div>
                         <h4 className="continue-watching-title">
-                            {jawSummary.title}
+                            {/* {jawSummary.title} */}
+                            {title}
                         </h4>
                         <div className="continue-watching-year-UA">
                             <h4
                                 className="continue-watching-title"
                                 style={{ color: "grey" }}
                             >
-                                2023
+                                {createdAt}
+                                {/* 2023-08-06T20:13:27.503Z extract year from this */}
                             </h4>
                             <h4 className="continue-watching-title">2h 6min</h4>
                             <div className="UA-num">
@@ -123,7 +125,7 @@ const WatchCards = ({ actualData }) => {
                                     margin: "3px",
                                 }}
                             >
-                                {jawSummary.synopsis}
+                                {/* {jawSummary.synopsis} */}
                                 {data.description}
                             </h4>
                         </div>

@@ -1,4 +1,8 @@
 import React, { useEffect, useState } from "react";
+import WatchCards1 from "./WatchCards1";
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 export const WatchInYourLanguage = () => {
     const [mydata, setMyData] = useState([]);
@@ -14,6 +18,7 @@ export const WatchInYourLanguage = () => {
             projectId: projectId,
             Authorization: `Bearer ${bearerToken}`,
         };
+
         fetch(url, { method: "GET", headers: headers })
             .then((response) => response.json())
             .then((exdata) => {
@@ -24,8 +29,15 @@ export const WatchInYourLanguage = () => {
     }, [projectId, bearerToken]);
 
     return (
-        <div>
+        <div className="cards-main" style={{ display: "flex" }}>
             {mydata.map((item) => (
+                <WatchCards1
+                    key={item._id}
+                    actualData={mydata}
+                    projectId={projectId}
+                />
+            ))}
+            {/* {mydata.map((item) => (
                 <div key={item._id}>
                     <h2>{item.title}</h2>
                     <p>Description: {item.description}</p>
@@ -38,7 +50,7 @@ export const WatchInYourLanguage = () => {
                         Thumbnail: <img src={item.thumbnail} alt={item.title} />
                     </p>
                 </div>
-            ))}
+            ))} */}
         </div>
     );
 };

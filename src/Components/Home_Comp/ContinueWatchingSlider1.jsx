@@ -100,6 +100,7 @@ export const ContinueWatchingSlider1 = () => {
             },
         ],
     };
+
     return (
         <>
             <h3 style={{ color: "white" }}>Continue watching</h3>
