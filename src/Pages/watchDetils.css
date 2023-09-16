@@ -29,6 +29,84 @@ object-fit: contain;
 .imdb-details{
     color: grey;
     font-size: 25px;
-    gap: 8px;
+    gap: 30px;
     display: flex;
+    justify-content: flex-start;
+    padding-top: 20px;
+}
+
+.genre ul{
+    gap: 50px;
+    display: flex;
+    color: white;
+    font-size: 25px;
+}
+
+
+.included-with-prime-img-txt{
+    display: flex;
+    align-items: center;
+    font-size: 29px;
+}
+
+.home-play-btn-container-new img:hover{
+    transform: scale(1.05);
+}
+
+
+.details-play-btn {
+    width: 85px ;
+    height: 85px;
+    border-radius: 50%;
+}
+
+.details-btns-container{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.more-purchase-options{
+    width: 200px;
+}
+
+.more-purchase-options-btn{
+    /* color: white;
+    font-size: 20px;
+    border-radius: 10px;
+    background-color: grey;
+    border: none;
+    padding: 10px; */
+
+    background: hsla(0,0%,100%,.2);
+    border-radius: 8px;
+    color: #fff;
+    min-height: 60px;
+    padding: 8px 18px;
+    border: none;
+    cursor: pointer;
+    font-size: 20px;
+}
+
+.more-purchase-options-btn:hover{
+    background-color: white;
+    color: black;
+    transform: scale(1.05);
+    z-index: 1;
+}
+
+.trailer-img{
+    
+    width: 49px;
+    height: 49px;
+    border-radius: 50%;
+    background: #585656;
+    padding: 10px;
+}
+
+.trailer-img:hover{
+    color: black;
+    background-color: white;
+    transform: scale(1.05);
+    cursor: pointer;
 }

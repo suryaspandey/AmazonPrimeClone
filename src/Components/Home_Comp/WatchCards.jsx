@@ -40,7 +40,6 @@ const WatchCards = ({ actualData }) => {
                                     src={data.keywords.thumbnail}
                                     // alt={jawSummary.title}
                                 />
-                                {console.log(data.keywords.thumbnail)}
                             </a>
                         </div>
 

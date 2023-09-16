@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import "./watchdetils.css";
+import { BiMoviePlay } from "react-icons/bi";
 
 const WatchDetails = () => {
     let { id } = useParams();
@@ -20,6 +21,7 @@ const WatchDetails = () => {
                 );
                 if (response.ok) {
                     const data = await response.json();
+                    console.log(data);
                     setDetails(data);
                 } else {
                     console.log("Failed to fetch data:", response.statusText);
@@ -60,9 +62,7 @@ const WatchDetails = () => {
                             <h3 className="show-description">
                                 {details.data.description}
                             </h3>
-                            {/* IMDb 7.7
-1 h 30 min
-2020 */}
+
                             <div className="imdb-details">
                                 <span className="imdb-rating">IMDb 8.5</span>
                                 <span className="show-duration">
@@ -70,9 +70,77 @@ const WatchDetails = () => {
                                 </span>
                                 <span className="imdb-year">2020</span>
                             </div>
-                            <div className="genre"></div>
+                            <div className="genre">
+                                <ul style={{ color: "white" }}>
+                                    {details.data.keywords.map(
+                                        (item, index) => {
+                                            return (
+                                                <li key={index}>
+                                                    <span>
+                                                        <a
+                                                            href=""
+                                                            style={{
+                                                                color: "white",
+                                                            }}
+                                                        >
+                                                            {item
+                                                                .charAt(0)
+                                                                .toUpperCase() +
+                                                                item.slice(1)}
+                                                        </a>
+                                                    </span>
+                                                </li>
+                                            );
+                                        }
+                                    )}
+                                </ul>
+                            </div>
+                            <div
+                                className="included-with-prime-img-txt"
+                                // className="included-with-prime-header blue-tick-text"
+                            >
+                                <img
+                                    className="blue-tick-img"
+                                    src="/prime-blue-tick.png"
+                                    alt=""
+                                />
+                                <h5
+                                    style={{
+                                        color: "white",
+                                        margin: "8px",
+                                    }}
+                                >
+                                    Included with prime
+                                </h5>
+                            </div>
                         </div>
-                        <div className="details-btn"></div>
+                        <div className="details-btns-container">
+                            <span className="home-play-btn-container-new ">
+                                <img
+                                    className="details-play-btn"
+                                    src="/play-btn.PNG"
+                                    alt="play button"
+                                    width={275}
+                                />
+                            </span>
+                            <span style={{ color: "white" }}>Play</span>
+                            <span>
+                                <div className="more-purchase-options">
+                                    <button className="more-purchase-options-btn">
+                                        More Purchase Options
+                                    </button>
+                                </div>
+                            </span>
+                            <span className="home-play-btn-container-new trailer-span">
+                                {/* <img
+                                    className="trailer-img"
+                                    src="/trailer1.png"
+                                    alt="play button"
+                                    width={275}
+                                /> */}
+                                <BiMoviePlay className="trailer-img" />
+                            </span>
+                        </div>
                     </div>
                 </>
             ) : (

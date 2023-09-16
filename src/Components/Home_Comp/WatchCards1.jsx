@@ -11,7 +11,6 @@ const WatchCards1 = ({ actualData, projectId }) => {
 
     return (
         <>
-            console.log(actualData);
             {actualData.map((item, index) => (
                 <div
                     key={index}
@@ -27,12 +26,6 @@ const WatchCards1 = ({ actualData, projectId }) => {
                                         to={`/watchDetails/${item._id}`}
                                         state={{ projectId: projectId }} // Pass projectId as state
                                     >
-                                        {console.log(
-                                            "proj id from WatchCards1",
-                                            projectId
-                                        )}
-                                        {console.log("item_id", item._id)}
-
                                         <img
                                             className="banner-img"
                                             style={{
