@@ -17,3 +17,18 @@ object-fit: contain;
     top: 400px;
     left: 80px;
 }
+
+.show-title{
+    font-size: 50px;
+}
+
+.show-description{
+    font-size: 30px;
+}
+
+.imdb-details{
+    color: grey;
+    font-size: 25px;
+    gap: 8px;
+    display: flex;
+}

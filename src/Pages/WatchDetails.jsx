@@ -51,10 +51,26 @@ const WatchDetails = () => {
 
                     <div className="watchdetails-text-btn-content">
                         <div className="details-title-description">
-                            <h1 className="show-title">{details.data.title}</h1>
-                            <h5 className="show-description">
+                            <h1
+                                className="show-title"
+                                style={{ fontSize: "50px" }}
+                            >
+                                {details.data.title}
+                            </h1>
+                            <h3 className="show-description">
                                 {details.data.description}
-                            </h5>
+                            </h3>
+                            {/* IMDb 7.7
+1 h 30 min
+2020 */}
+                            <div className="imdb-details">
+                                <span className="imdb-rating">IMDb 8.5</span>
+                                <span className="show-duration">
+                                    1 hr 30 min
+                                </span>
+                                <span className="imdb-year">2020</span>
+                            </div>
+                            <div className="genre"></div>
                         </div>
                         <div className="details-btn"></div>
                     </div>
