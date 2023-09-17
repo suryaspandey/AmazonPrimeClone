@@ -20,7 +20,7 @@ const Navigator = () => {
             <div className="navigator-container">
                 <div className="navbar-navs">
                     <div className="prime-img">
-                        <img src="./primeVideo.PNG" alt="prime video" />
+                        <img src="/primeVideo.PNG" alt="prime video" />
                     </div>
                     <div className="main-links">
                         <ol className="home-navs">

@@ -41,6 +41,7 @@ const WatchCards1 = ({ actualData, projectId }) => {
                                     <>
                                         <div className="video-btns-container">
                                             <video
+                                                className="watch-details-video"
                                                 src={item.video_url}
                                                 autoPlay={true}
                                                 loop

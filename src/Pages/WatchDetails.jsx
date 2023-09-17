@@ -2,6 +2,10 @@ import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import "./watchdetils.css";
 import { BiMoviePlay } from "react-icons/bi";
+import { AiOutlinePlus } from "react-icons/ai";
+import { GoDownload } from "react-icons/go";
+import { GiPartyPopper } from "react-icons/gi";
+import { HiOutlineShare } from "react-icons/hi";
 
 const WatchDetails = () => {
     let { id } = useParams();
@@ -132,13 +136,19 @@ const WatchDetails = () => {
                                 </div>
                             </span>
                             <span className="home-play-btn-container-new trailer-span">
-                                {/* <img
-                                    className="trailer-img"
-                                    src="/trailer1.png"
-                                    alt="play button"
-                                    width={275}
-                                /> */}
                                 <BiMoviePlay className="trailer-img" />
+                            </span>
+                            <span className="home-play-btn-container-new trailer-span">
+                                <AiOutlinePlus className="trailer-img" />
+                            </span>
+                            <span className="home-play-btn-container-new trailer-span">
+                                <GoDownload className="trailer-img" />
+                            </span>
+                            <span className="home-play-btn-container-new trailer-span">
+                                <GiPartyPopper className="trailer-img" />
+                            </span>
+                            <span className="home-play-btn-container-new trailer-span">
+                                <HiOutlineShare className="trailer-img" />
                             </span>
                         </div>
                     </div>

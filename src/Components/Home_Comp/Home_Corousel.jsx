@@ -184,6 +184,7 @@ export default function Home_Corousel() {
                                             }}
                                         />
                                         <video
+                                            className="home-banner-video"
                                             autoPlay
                                             muted
                                             // ref={(video) =>
@@ -220,9 +221,10 @@ export default function Home_Corousel() {
             {/* <ContinueWatchingSlider /> */}
             {/* <ContinueWatchingSlider1 /> */}
             {/* <RecommendedMovies /> */}
-            <WatchingList />
+            {/* <WatchingList /> */}
             {/* <WatchingList />
             <WatchingList /> */}
+            <WatchInYourLanguage />
             <WatchInYourLanguage />
         </div>
     );

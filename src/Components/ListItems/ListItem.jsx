@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import "./listItem.css";
 import { FaPlay } from "react-icons/fa";
 import { PlusOutlined, MoreOutlined } from "@ant-design/icons";
-// import "../../Pages/home.css";
 
 export const ListItem = ({ index }) => {
     // const { jawSummary } = actualData;

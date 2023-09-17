@@ -95,12 +95,13 @@ object-fit: contain;
     z-index: 1;
 }
 
-.trailer-img{
+.trailer-img{   
     
     width: 49px;
     height: 49px;
     border-radius: 50%;
     background: #585656;
+    /* background: hsla(0,0%,100%,.2); */
     padding: 10px;
 }
 
