@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { BiVolumeMute } from "react-icons/bi";
 import { GoUnmute } from "react-icons/go";
 import { Link } from "react-router-dom";
+
 const WatchCards1 = ({ actualData, projectId }) => {
     const [isHovered, setIsHovered] = useState(null);
     const [isMuted, setIsMuted] = useState(true);
@@ -40,13 +41,18 @@ const WatchCards1 = ({ actualData, projectId }) => {
                                 {isHovered === item && (
                                     <>
                                         <div className="video-btns-container">
-                                            <video
-                                                className="watch-details-video"
-                                                src={item.video_url}
-                                                autoPlay={true}
-                                                loop
-                                                muted={isMuted}
-                                            />
+                                            <Link
+                                                to={`/watchDetails/${item._id}`}
+                                                state={{ projectId: projectId }} // Pass projectId as state
+                                            >
+                                                <video
+                                                    className="watch-details-video"
+                                                    src={item.video_url}
+                                                    autoPlay={true}
+                                                    loop
+                                                    muted={isMuted}
+                                                />
+                                            </Link>
                                             {isMuted ? (
                                                 <BiVolumeMute
                                                     className="volume-btn mute"

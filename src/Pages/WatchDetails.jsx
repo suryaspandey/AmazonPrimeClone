@@ -6,6 +6,8 @@ import { AiOutlinePlus } from "react-icons/ai";
 import { GoDownload } from "react-icons/go";
 import { GiPartyPopper } from "react-icons/gi";
 import { HiOutlineShare } from "react-icons/hi";
+import { Tooltip } from "antd";
+import { Tabs } from "antd";
 
 const WatchDetails = () => {
     let { id } = useParams();
@@ -38,6 +40,26 @@ const WatchDetails = () => {
         };
         fetchData();
     }, [id]);
+    const onChange = (key) => {
+        console.log(key);
+    };
+    const items = [
+        {
+            key: "1",
+            label: "Tab 1",
+            children: "Content of Tab Pane 1",
+        },
+        {
+            key: "2",
+            label: "Tab 2",
+            children: "Content of Tab Pane 2",
+        },
+        {
+            key: "3",
+            label: "Tab 3",
+            children: "Content of Tab Pane 3",
+        },
+    ];
 
     // if (!details) {
     //     return <div>Loading...</div>; // Show a loading message while data is being fetched
@@ -136,21 +158,69 @@ const WatchDetails = () => {
                                 </div>
                             </span>
                             <span className="home-play-btn-container-new trailer-span">
-                                <BiMoviePlay className="trailer-img" />
+                                <Tooltip
+                                    title="Trailer"
+                                    placement="bottom"
+                                    arrow={false}
+                                >
+                                    <span>
+                                        <BiMoviePlay className="trailer-img" />
+                                    </span>
+                                </Tooltip>
                             </span>
                             <span className="home-play-btn-container-new trailer-span">
-                                <AiOutlinePlus className="trailer-img" />
+                                <Tooltip
+                                    title="Watchlist"
+                                    placement="bottom"
+                                    arrow={false}
+                                >
+                                    <span>
+                                        <AiOutlinePlus className="trailer-img" />
+                                    </span>
+                                </Tooltip>
                             </span>
                             <span className="home-play-btn-container-new trailer-span">
-                                <GoDownload className="trailer-img" />
+                                <Tooltip
+                                    title="Download"
+                                    placement="bottom"
+                                    arrow={false}
+                                >
+                                    <span>
+                                        <GoDownload className="trailer-img" />
+                                    </span>
+                                </Tooltip>
                             </span>
                             <span className="home-play-btn-container-new trailer-span">
-                                <GiPartyPopper className="trailer-img" />
+                                <Tooltip
+                                    title="Watch Party"
+                                    placement="bottom"
+                                    arrow={false}
+                                >
+                                    <span>
+                                        <GiPartyPopper className="trailer-img" />
+                                    </span>
+                                </Tooltip>
                             </span>
                             <span className="home-play-btn-container-new trailer-span">
-                                <HiOutlineShare className="trailer-img" />
+                                <Tooltip
+                                    title="Share"
+                                    placement="bottom"
+                                    arrow={false}
+                                >
+                                    <span>
+                                        <HiOutlineShare className="trailer-img" />
+                                    </span>
+                                </Tooltip>
                             </span>
                         </div>
+                    </div>
+                    <div className="episodes-details-container">
+                        <Tabs
+                            defaultActiveKey="1"
+                            items={items}
+                            style={{ color: "white" }}
+                            // onChange={onChange}
+                        />
                     </div>
                 </>
             ) : (

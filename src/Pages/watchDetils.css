@@ -33,6 +33,7 @@ object-fit: contain;
     display: flex;
     justify-content: flex-start;
     padding-top: 20px;
+    font-weight: 900;
 }
 
 .genre ul{
@@ -110,4 +111,42 @@ object-fit: contain;
     background-color: white;
     transform: scale(1.05);
     cursor: pointer;
+}
+
+/* .ant-tooltip-inner::before {
+    color: yellow;
+    background-color: green;
+} */
+.ant-tooltip .ant-tooltip-inner {
+    min-width: 2px;
+    min-height: 32px;
+    padding: 6px 8px;
+    /* color: #fff; */
+    text-align: start;
+    text-decoration: none;
+    word-wrap: break-word;
+    background-color: rgb(253 245 245 / 95%);
+    border-radius: 10px;
+    box-shadow: 0 6px 16px 0 rgba(0, 0, 0, 0.08), 0 3px 6px -4px rgba(0, 0, 0, 0.12), 0 9px 28px 8px rgba(0, 0, 0, 0.05);
+    box-sizing: border-box;
+    font-size: 20px;
+    font-weight: 500;
+}
+
+/* tabs */
+/* .ant-tabs-nav::before{
+    position: absolute;
+    right: 0;
+    left: 0;
+    border-bottom: 1px solid black;
+    content: '';
+    border: none;
+} */
+
+.ant-tabs-top >.ant-tabs-nav::before{
+    position: absolute;
+    right: 0;
+    left: 0;
+    border-bottom: 1px solid black !important;
+    content: '';
 }
