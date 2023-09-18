@@ -121,7 +121,7 @@ object-fit: contain;
     min-width: 2px;
     min-height: 32px;
     padding: 6px 8px;
-    /* color: #fff; */
+    color:black;
     text-align: start;
     text-decoration: none;
     word-wrap: break-word;
@@ -150,3 +150,104 @@ object-fit: contain;
     border-bottom: 1px solid black !important;
     content: '';
 }
+
+.ant-tabs .ant-tabs-tab.ant-tabs-tab-active .ant-tabs-tab-btn {
+    color: white;
+    text-shadow: 0 0 0.25px currentcolor;
+}
+
+.ant-tabs .ant-tabs-tab-btn:active{
+color: red;
+}
+.ant-tabs .ant-tabs-tab {
+    display: inline-flex;
+    align-items: center;
+    padding: 12px 40px;
+    font-size: 24px;
+    background: transparent;
+    border: 0;
+    outline: none;
+    cursor: pointer;
+    border-radius: 10px;
+}
+
+.ant-tabs .ant-tabs-tab-btn:hover {
+    color: gray;
+}
+
+.episodes-details-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+    margin: 0 auto;
+    max-width: 1430px;
+}
+.episodes-container{
+    display: grid;
+    grid-template-columns: minmax(auto,360px) 3fr;
+    align-items: center;
+    grid-column-gap: 60px;
+    grid-template-rows: auto auto auto 1fr auto;
+    padding: 0 20px;
+
+}
+.episodes-download-btn-container{
+    display: flex;
+    
+}
+.episode-img img{
+    width: 100%;
+    height: 27vh;
+    border-radius: 20px
+}
+
+.episode-date-duration{
+    color: white;
+    font-size: 25px;
+    display: flex;
+    gap: 20px;
+}
+.episode-download{
+    color: white;
+    background-color: transparent;
+    font-size: 42px;
+}
+
+.episodes-container:hover{
+    /* background-color: #33373d; */
+    background-color:#343434;
+    border-radius: 20px;
+}
+
+.episode-playbtn{
+    font-size: 60px;
+    color:black;
+    background-color: white;
+    border-radius: 50%;
+    position: absolute;
+    left: 40%;
+    top: 40%;
+    padding: 10px;
+}
+
+.cast-list{
+       display: flex;
+        gap: 37px;
+        font-size: 20px;
+    }
+.mini-details{
+    margin: 20px;
+}
+
+.showDetails-headings, .dummy-txt{
+    font-size: 22px;
+    padding: 5px;
+}
+
+.dummy-txt{
+    color: #aaa;
+    font-family: 'Nunito Sans';
+}
+            

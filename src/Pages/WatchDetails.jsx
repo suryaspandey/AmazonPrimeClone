@@ -7,12 +7,16 @@ import { GoDownload } from "react-icons/go";
 import { GiPartyPopper } from "react-icons/gi";
 import { HiOutlineShare } from "react-icons/hi";
 import { Tooltip } from "antd";
-import { Tabs } from "antd";
+import { Tabs, ConfigProvider } from "antd";
+import { Series_Episodes } from "../Components/Episodes/Series_Episodes";
+import { ShowDetails } from "../Components/ShowDetails/ShowDetails";
 
 const WatchDetails = () => {
     let { id } = useParams();
     const [details, setDetails] = useState(null);
     const [loading, setLoading] = useState(true);
+    const TabPane = Tabs.TabPane;
+    const [activeTab, setActiveTab] = useState("1");
 
     useEffect(() => {
         const fetchData = async () => {
@@ -41,25 +45,36 @@ const WatchDetails = () => {
         fetchData();
     }, [id]);
     const onChange = (key) => {
-        console.log(key);
+        setActiveTab(key);
     };
     const items = [
         {
             key: "1",
-            label: "Tab 1",
-            children: "Content of Tab Pane 1",
+            label: "Episodes",
+            // children: "Content of Tab Pane 1",
         },
         {
             key: "2",
-            label: "Tab 2",
-            children: "Content of Tab Pane 2",
-        },
-        {
-            key: "3",
-            label: "Tab 3",
-            children: "Content of Tab Pane 3",
+            label: "Details",
+            // children: "Content of Tab Pane 2",
         },
     ];
+
+    const renderTabContent = () => {
+        switch (activeTab) {
+            case "1":
+                return <Series_Episodes imgdata={details.data.thumbnail} />;
+            case "2":
+                return (
+                    <ShowDetails
+                        director={details.data.director}
+                        cast={details.data.cast}
+                    />
+                );
+            default:
+                return null;
+        }
+    };
 
     // if (!details) {
     //     return <div>Loading...</div>; // Show a loading message while data is being fetched
@@ -75,6 +90,7 @@ const WatchDetails = () => {
                 <>
                     <div className="watchDetails-img">
                         <img src={details.data.thumbnail} alt={details.title} />
+                        {/* {console.log(details.data.cast)} */}
                     </div>
 
                     <div className="watchdetails-text-btn-content">
@@ -215,12 +231,26 @@ const WatchDetails = () => {
                         </div>
                     </div>
                     <div className="episodes-details-container">
-                        <Tabs
-                            defaultActiveKey="1"
-                            items={items}
-                            style={{ color: "white" }}
-                            // onChange={onChange}
-                        />
+                        <ConfigProvider
+                            theme={{
+                                components: {
+                                    Tabs: {
+                                        colorPrimary: "white",
+                                        itemHoverColor: "white",
+                                        itemActiveColor: "white",
+                                    },
+                                },
+                            }}
+                        >
+                            <Tabs
+                                defaultActiveKey="1"
+                                items={items}
+                                style={{ color: "white" }}
+                                onChange={onChange}
+                                activeKey={activeTab}
+                            />
+                        </ConfigProvider>
+                        {renderTabContent()}
                     </div>
                 </>
             ) : (
