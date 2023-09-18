@@ -147,13 +147,19 @@ object-fit: contain;
     position: absolute;
     right: 0;
     left: 0;
-    border-bottom: 1px solid black !important;
+    border-bottom: 0px solid #252424 !important;
     content: '';
+    /*  */
 }
 
 .ant-tabs .ant-tabs-tab.ant-tabs-tab-active .ant-tabs-tab-btn {
     color: white;
     text-shadow: 0 0 0.25px currentcolor;
+}
+
+.ant-tabs .ant-tabs-tab{
+    padding: 0px 40px;
+
 }
 
 .ant-tabs .ant-tabs-tab-btn:active{
@@ -190,7 +196,7 @@ color: red;
     align-items: center;
     grid-column-gap: 60px;
     grid-template-rows: auto auto auto 1fr auto;
-    padding: 0 20px;
+    padding: 20px;
 
 }
 .episodes-download-btn-container{
@@ -249,5 +255,12 @@ color: red;
 .dummy-txt{
     color: #aaa;
     font-family: 'Nunito Sans';
+}
+
+.tabs-container{
+    border-radius: 10px;
+    background: #252424;
+    margin: 10px;
+    padding: 2px 50px;
 }
             

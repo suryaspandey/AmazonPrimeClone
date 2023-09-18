@@ -242,13 +242,15 @@ const WatchDetails = () => {
                                 },
                             }}
                         >
-                            <Tabs
-                                defaultActiveKey="1"
-                                items={items}
-                                style={{ color: "white" }}
-                                onChange={onChange}
-                                activeKey={activeTab}
-                            />
+                            <div className="tabs-container">
+                                <Tabs
+                                    defaultActiveKey="1"
+                                    items={items}
+                                    style={{ color: "white" }}
+                                    onChange={onChange}
+                                    activeKey={activeTab}
+                                />
+                            </div>
                         </ConfigProvider>
                         {renderTabContent()}
                     </div>
