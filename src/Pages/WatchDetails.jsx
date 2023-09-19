@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import "./watchdetils.css";
 import { BiMoviePlay } from "react-icons/bi";
 import { AiOutlinePlus } from "react-icons/ai";
@@ -15,8 +15,10 @@ const WatchDetails = () => {
     let { id } = useParams();
     const [details, setDetails] = useState(null);
     const [loading, setLoading] = useState(true);
+    const [isPlayBtnClicked, SetIsPlayBtnClicked] = useState(false);
     // const TabPane = Tabs.TabPane;
     const [activeTab, setActiveTab] = useState("1");
+    const navigate = useNavigate();
 
     useEffect(() => {
         const fetchData = async () => {
@@ -85,6 +87,13 @@ const WatchDetails = () => {
     //     return <div>Loading...</div>; // Show a loading message while data is being fetched
     // }
 
+    const handlePlayBtnClick = () => {
+        SetIsPlayBtnClicked(true);
+    };
+
+    const handleShowDetials = () => {
+        navigate(`/TVShow/${id}`);
+    };
     return (
         <div className="banner-watchDetails-container">
             {loading ? (
@@ -164,11 +173,13 @@ const WatchDetails = () => {
                         <div className="details-btns-container">
                             <span className="home-play-btn-container-new ">
                                 <img
+                                    onClick={() => SetIsPlayBtnClicked(true)}
                                     className="details-play-btn"
                                     src="/play-btn.PNG"
                                     alt="play button"
                                     width={275}
                                 />
+                                {isPlayBtnClicked && handleShowDetials()}
                             </span>
                             <span style={{ color: "white" }}>Play</span>
                             <span>
