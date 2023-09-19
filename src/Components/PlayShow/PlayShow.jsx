@@ -1,10 +1,17 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-
+import "./playShow.css";
+import ReactPlayer from "react-player";
+import { Player, ControlBar, BigPlayButton } from "video-react";
+import { RiForward10Fill, RiReplay10Fill } from "react-icons/ri";
+import { FaPlay } from "react-icons/fa";
+import { BsPauseFill } from "react-icons/bs";
+// GrForwardTen
+import "./playShow.css";
 export const PlayShow = () => {
     let { id } = useParams();
     const [details, setDetails] = useState(null);
-    console.log("PlyShow id:", id);
+    const [isHovered, setIsHovered] = useState(false);
 
     useEffect(() => {
         const fetchData = async () => {
@@ -40,9 +47,38 @@ export const PlayShow = () => {
 
     return (
         <div style={{ color: "white" }}>
-            <h1>{id}</h1>
-            <h1>{details.data.title}</h1>
-            {/* <video className="playShowVideoURL" src="{video_url}"></video> */}
+            {/* <h1>{details.data.title}</h1>
+            <h2>{details.data.video_url}</h2> */}
+            <div className="video-container">
+                {/* <h2>{details.data.video_url}</h2> */}
+
+                <video
+                    controls
+                    className="playShowVideoURL"
+                    src={details.data.video_url}
+                    height={750}
+                    width={500}
+                    onMouseEnter={() => setIsHovered(true)}
+                    onMouseLeave={() => setIsHovered(false)}
+                ></video>
+                {isHovered && (
+                    <>
+                        <RiForward10Fill className="play-control-btns forward" />
+                        <FaPlay className="play-control-btns play" />
+                        <BsPauseFill className="play-control-btns pause" />
+                        <RiReplay10Fill className="play-control-btns backward" />
+                    </>
+                )}
+            </div>
         </div>
     );
+
+    <div className="video-container">
+        <ReactPlayer
+            url={details.data.video_url} // Replace with your video URL
+            controls={true}
+            width="100%"
+            height="100%"
+        />
+    </div>;
 };
