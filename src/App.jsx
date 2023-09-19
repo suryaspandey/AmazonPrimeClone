@@ -8,9 +8,12 @@ import { Router } from "@material-ui/icons";
 import WatchDetails from "./Pages/WatchDetails";
 import Navigator from "./Components/Navigator";
 import Home_Corousel from "./Components/Home_Comp/Home_Corousel";
+import { PlayShow } from "./Components/PlayShow/PlayShow";
+// import { EpisodeNoContent } from "./EpisodeNoContent";
 
 function App() {
     return (
+        // <EpisodeNoContent>
         <>
             <Navigator />
             <BrowserRouter>
@@ -20,9 +23,11 @@ function App() {
                         path="/watchDetails/:id"
                         element={<WatchDetails />}
                     />
+                    <Route path="/TVShow/:id" element={<PlayShow />} />
                 </Routes>
             </BrowserRouter>
         </>
+        // </EpisodeNoContent>
     );
 }
 

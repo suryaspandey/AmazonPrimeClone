@@ -37,20 +37,6 @@ export const WatchInYourLanguage = () => {
                     projectId={projectId}
                 />
             ))}
-            {/* {mydata.map((item) => (
-                <div key={item._id}>
-                    <h2>{item.title}</h2>
-                    <p>Description: {item.description}</p>
-                    <p>Director: {item.director}</p>
-                    <p>Type: {item.type}</p>
-                    <p>Cast: {item.cast.join(", ")}</p>
-                    <p>Keywords: {item.keywords.join(", ")}</p>
-                    <p>Video URL: {item.video_url}</p>
-                    <p>
-                        Thumbnail: <img src={item.thumbnail} alt={item.title} />
-                    </p>
-                </div>
-            ))} */}
         </div>
     );
 };

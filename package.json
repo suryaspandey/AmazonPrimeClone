@@ -19,7 +19,6 @@
     "react-responsive-carousel": "^3.2.23",
     "react-router": "^6.15.0",
     "react-slick": "^0.29.0",
-    "react-slick-carousel": "^0.14.9",
     "slick-carousel": "^1.8.1",
     "styled-components": "^4.4.1"
   },
@@ -31,7 +30,7 @@
     "eslint-plugin-react": "^7.32.2",
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-react-refresh": "^0.4.3",
-    "react-router-dom": "^6.15.0",
+    "react-router-dom": "^6.16.0",
     "vite": "^4.4.5"
   }
 }

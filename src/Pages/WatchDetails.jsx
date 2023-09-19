@@ -15,7 +15,7 @@ const WatchDetails = () => {
     let { id } = useParams();
     const [details, setDetails] = useState(null);
     const [loading, setLoading] = useState(true);
-    const TabPane = Tabs.TabPane;
+    // const TabPane = Tabs.TabPane;
     const [activeTab, setActiveTab] = useState("1");
 
     useEffect(() => {
@@ -25,7 +25,7 @@ const WatchDetails = () => {
                     `https://academics.newtonschool.co/api/v1/ott/show/${id}`,
                     {
                         headers: {
-                            projectId: "zxke0qiu2960", // Replace with your actual projectId
+                            projectId: "zxke0qiu2960",
                         },
                     }
                 );
@@ -63,7 +63,12 @@ const WatchDetails = () => {
     const renderTabContent = () => {
         switch (activeTab) {
             case "1":
-                return <Series_Episodes imgdata={details.data.thumbnail} />;
+                return (
+                    <Series_Episodes
+                        imgdata={details.data.thumbnail}
+                        id={details.data._id}
+                    />
+                );
             case "2":
                 return (
                     <ShowDetails
@@ -257,7 +262,7 @@ const WatchDetails = () => {
                 </>
             ) : (
                 <div style={{ color: "white", fontSize: "100px" }}>
-                    Failed to load details.
+                    Details not available at the moment!
                 </div>
             )}
         </div>
