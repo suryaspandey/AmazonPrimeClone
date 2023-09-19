@@ -9,6 +9,8 @@ import WatchDetails from "./Pages/WatchDetails";
 import Navigator from "./Components/Navigator";
 import Home_Corousel from "./Components/Home_Comp/Home_Corousel";
 import { PlayShow } from "./Components/PlayShow/PlayShow";
+
+import { PlayShow1 } from "./Components/PlayShow/PlayShow1";
 // import { EpisodeNoContent } from "./EpisodeNoContent";
 
 function App() {

@@ -10,6 +10,11 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@emotion/react": "^11.11.1",
+    "@emotion/styled": "^11.11.0",
+    "@fontsource/roboto": "^5.0.8",
+    "@mui/icons-material": "^5.14.9",
+    "@mui/material": "^5.14.10",
     "@trendyol-js/react-carousel": "^3.0.2",
     "antd": "^5.8.5",
     "react": "^18.2.0",
@@ -20,6 +25,7 @@
     "react-responsive-carousel": "^3.2.23",
     "react-router": "^6.15.0",
     "react-slick": "^0.29.0",
+    "screenfull": "^6.0.2",
     "slick-carousel": "^1.8.1",
     "styled-components": "^4.4.1",
     "video-react": "^0.16.0"

@@ -6,12 +6,46 @@ import { Player, ControlBar, BigPlayButton } from "video-react";
 import { RiForward10Fill, RiReplay10Fill } from "react-icons/ri";
 import { FaPlay } from "react-icons/fa";
 import { BsPauseFill } from "react-icons/bs";
+import { Slider } from "antd";
+
 // GrForwardTen
 import "./playShow.css";
+
 export const PlayShow = () => {
     let { id } = useParams();
     const [details, setDetails] = useState(null);
+
     const [isHovered, setIsHovered] = useState(false);
+    const [isPlaying, setIsPlaying] = useState(false);
+    const [currentTime, setCurrentTime] = useState(0);
+
+    // const [videoState, setVideoState] = useState({
+    //     playing: true,
+    //     muted: false,
+    //     volume: 0.5,
+    //     played: 0,
+    //     seeking: false,
+    //     Buffer: true,
+    // });
+
+    // const { playing, muted, volume, playbackRate, played, seeking, buffer } =
+    //     videoState;
+    // const playPauseHandler = () => {
+    //     setVideoState({ ...videoState, playing: !videoState.playing });
+    // };
+
+    const handlePlayPause = () => {
+        setIsPlaying(!isPlaying);
+    };
+
+    const handleSliderChange = (value) => {
+        const video = document.querySelector(".playShowVideoURL");
+        if (video) {
+            const newTime = (value / 100) * video.duration;
+            video.currentTime = newTime;
+            setCurrentTime(newTime);
+        }
+    };
 
     useEffect(() => {
         const fetchData = async () => {
@@ -41,19 +75,29 @@ export const PlayShow = () => {
         fetchData();
     }, [id]);
 
+    const handleforward10 = () => {
+        const video = document.querySelector(".playShowVideoURL");
+        if (video) {
+            video.currentTime += 10; // Skip forward by 10 seconds
+        }
+    };
+
+    const handlerewind10 = () => {
+        const video = document.querySelector(".playShowVideoURL");
+        if (video) {
+            video.currentTime -= 10; // Skip forward by 10 seconds
+        }
+    };
+
     if (!details) {
         return <div>Loading...</div>; // Show a loading message while data is being fetched
     }
 
     return (
         <div style={{ color: "white" }}>
-            {/* <h1>{details.data.title}</h1>
-            <h2>{details.data.video_url}</h2> */}
             <div className="video-container">
-                {/* <h2>{details.data.video_url}</h2> */}
-
                 <video
-                    controls
+                    // controls
                     className="playShowVideoURL"
                     src={details.data.video_url}
                     height={750}
@@ -63,22 +107,35 @@ export const PlayShow = () => {
                 ></video>
                 {isHovered && (
                     <>
-                        <RiForward10Fill className="play-control-btns forward" />
-                        <FaPlay className="play-control-btns play" />
-                        <BsPauseFill className="play-control-btns pause" />
-                        <RiReplay10Fill className="play-control-btns backward" />
+                        <RiForward10Fill
+                            className="play-control-btns forward"
+                            onClick={handleforward10}
+                        />
+                        <div
+                            className="play_pause_container"
+                            // onClick={playPauseHandler}
+                        >
+                            {isPlaying ? (
+                                <BsPauseFill className="play-control-btns pause" />
+                            ) : (
+                                <FaPlay className="play-control-btns play" />
+                            )}
+                        </div>
+
+                        <RiReplay10Fill
+                            className="play-control-btns backward"
+                            onClick={handlerewind10}
+                        />
                     </>
                 )}
+                <Slider
+                    value={(currentTime / details.data.duration) * 100}
+                    onChange={handleSliderChange}
+                    tooltip={{
+                        formatter: null,
+                    }}
+                />
             </div>
         </div>
     );
-
-    <div className="video-container">
-        <ReactPlayer
-            url={details.data.video_url} // Replace with your video URL
-            controls={true}
-            width="100%"
-            height="100%"
-        />
-    </div>;
 };

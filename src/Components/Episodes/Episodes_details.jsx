@@ -5,6 +5,7 @@ import { GoDownload } from "react-icons/go";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import { PlayShow } from "../PlayShow/PlayShow";
+
 // import { useEpisodeId } from "../../EpisodeNoContent";
 
 export const Episodes_details = ({ imgdata, episodeNo, id }) => {
