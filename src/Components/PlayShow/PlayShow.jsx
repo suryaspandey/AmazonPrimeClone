@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { useParams } from "react-router-dom";
 import "./playShow.css";
 import ReactPlayer from "react-player";
@@ -7,6 +7,11 @@ import { RiForward10Fill, RiReplay10Fill } from "react-icons/ri";
 import { FaPlay } from "react-icons/fa";
 import { BsPauseFill } from "react-icons/bs";
 import { Slider } from "antd";
+
+import videojs from "video.js";
+import "video.js/dist/video-js.css";
+// import Slider from "antd/lib/slider";
+// import "antd/dist/antd.css";
 
 // GrForwardTen
 import "./playShow.css";
@@ -35,7 +40,15 @@ export const PlayShow = () => {
     // };
 
     const handlePlayPause = () => {
-        setIsPlaying(!isPlaying);
+        const video = document.querySelector(".playShowVideoURL");
+        if (video) {
+            if (isPlaying) {
+                video.pause();
+            } else {
+                video.play();
+            }
+            setIsPlaying(!isPlaying);
+        }
     };
 
     const handleSliderChange = (value) => {
@@ -75,6 +88,18 @@ export const PlayShow = () => {
         fetchData();
     }, [id]);
 
+    const [duration, setDuration] = useState(0);
+    const videoRef = useRef(null);
+
+    useEffect(() => {
+        const video = videoRef.current;
+        if (video) {
+            video.addEventListener("loadedmetadata", () => {
+                setDuration(video.duration);
+            });
+        }
+    }, []);
+
     const handleforward10 = () => {
         const video = document.querySelector(".playShowVideoURL");
         if (video) {
@@ -98,6 +123,7 @@ export const PlayShow = () => {
             <div className="video-container">
                 <video
                     // controls
+                    ref={videoRef}
                     className="playShowVideoURL"
                     src={details.data.video_url}
                     height={750}
@@ -116,9 +142,15 @@ export const PlayShow = () => {
                             // onClick={playPauseHandler}
                         >
                             {isPlaying ? (
-                                <BsPauseFill className="play-control-btns pause" />
+                                <BsPauseFill
+                                    className="play-control-btns pause"
+                                    onClick={handlePlayPause}
+                                />
                             ) : (
-                                <FaPlay className="play-control-btns play" />
+                                <FaPlay
+                                    className="play-control-btns play"
+                                    onClick={handlePlayPause}
+                                />
                             )}
                         </div>
 
@@ -129,12 +161,15 @@ export const PlayShow = () => {
                     </>
                 )}
                 <Slider
-                    value={(currentTime / details.data.duration) * 100}
+                    value={(currentTime / duration) * 100}
                     onChange={handleSliderChange}
                     tooltip={{
                         formatter: null,
                     }}
                 />
+                <div>
+                    <h1 style={{ color: "white" }}>Hello</h1>
+                </div>
             </div>
         </div>
     );
