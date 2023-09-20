@@ -10,7 +10,7 @@
     bottom: 10px;
     left: 50%;
     transform: translateX(-50%);
-    background-color: rgba(207, 199, 199, 0.5);
+    /* background-color: rgba(207, 199, 199, 0.5); */
     padding: 5px;
     display: flex;
     justify-content: center;
@@ -39,7 +39,14 @@
     background-color: transparent;
     display: flex;
     justify-content: space-around;
-    width: 100%;
+    /* width: 100%; */
+  }
+  .top-video-btns{
+    position: absolute;
+    top: 12%;
+    right: 0px;
+    width: 30%;
+    /* background-color: antiquewhite; */
   }
 
   .middle-class-btns{
@@ -51,9 +58,19 @@
 
   .middle-class-btns:hover{
     color: rgb(246, 242, 242);
+    cursor: pointer;
   }
 
   .video-seek-bar{
-    width: 90%;
+    width: 95%;
   }
+/* .volume-btn-control:hover + .volume-container input{
+display: flex;
+z-index: 2;
+}
+
+.volume-container{
+    display: none;
+} */
+
   

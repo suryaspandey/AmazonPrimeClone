@@ -10,18 +10,20 @@ import {
     FaExpand,
 } from "react-icons/fa";
 import { RiForward10Fill, RiReplay10Fill } from "react-icons/ri";
+import { AiOutlineExpandAlt, AiOutlineClose } from "react-icons/ai";
 
 import "./VideoPlayer.css";
-import { useParams } from "react-router";
+import { useNavigate, useParams } from "react-router";
 
 export const VideoPlayer = () => {
-    const [isPlaying, setIsPlaying] = useState(false);
+    const [isPlaying, setIsPlaying] = useState(true);
     const [muted, setMuted] = useState(false);
     const [volume, setVolume] = useState(0.5);
     const [played, setPlayed] = useState(0);
     const playerRef = useRef(null);
     let { id } = useParams();
     const [details, setDetails] = useState(null);
+    const navigate = useNavigate();
 
     useEffect(() => {
         const fetchData = async () => {
@@ -85,6 +87,10 @@ export const VideoPlayer = () => {
         }
     };
 
+    const handleClose = () => {
+        navigate(-1);
+    };
+
     const handleFastForward = () => {
         const currentTime = playerRef.current.getCurrentTime();
         playerRef.current.seekTo(currentTime + 10);
@@ -101,8 +107,6 @@ export const VideoPlayer = () => {
             <ReactPlayer
                 ref={playerRef}
                 url={details.data.video_url}
-                // url="https://www.youtube.com/watch?v=uMQnn8xU7qs"
-                // url="https://newton-project-resume-backend.s3.amazonaws.com/video/64cffee700bad552e8dcd507.mp4"
                 controls={false}
                 playing={isPlaying}
                 muted={muted}
@@ -111,6 +115,43 @@ export const VideoPlayer = () => {
                 width="100%"
                 height="100%"
             />
+
+            <div className="top-video-btns">
+                <div className="top-three-btns-container">
+                    <button
+                        onClick={handleMute}
+                        className="middle-class-btns volume-btn-control"
+                    >
+                        {muted ? <FaVolumeMute /> : <FaVolumeUp />}
+                    </button>
+
+                    <button
+                        onClick={handleFullscreen}
+                        className="middle-class-btns"
+                    >
+                        <AiOutlineExpandAlt />
+                    </button>
+                    <button className="middle-class-btns" onClick={handleClose}>
+                        <AiOutlineClose />
+                    </button>
+                </div>
+
+                <div className="volume-container" style={{ marginTop: "44px" }}>
+                    <input
+                        type="range"
+                        min={0}
+                        max={1}
+                        step="any"
+                        value={volume}
+                        onChange={handleVolumeChange}
+                        style={{
+                            transform: "rotate(270deg)",
+                            marginLeft: "-50px",
+                            background: "grey",
+                        }}
+                    />
+                </div>
+            </div>
 
             <div className="middle-video-btns">
                 <button
@@ -148,32 +189,7 @@ export const VideoPlayer = () => {
                     value={played}
                     onChange={handleSeekChange}
                 />
-
-                <button onClick={handleMute}>
-                    {muted ? <FaVolumeMute /> : <FaVolumeUp />}
-                </button>
-                <input
-                    type="range"
-                    min={0}
-                    max={1}
-                    step="any"
-                    value={volume}
-                    onChange={handleVolumeChange}
-                />
-
-                <button onClick={handleFullscreen}>
-                    <FaExpand />
-                </button>
-
-                {/* <button onClick={handleRewind}>
-                    <FaBackward />
-                </button>
-                <button onClick={handleFastForward}>
-                    <FaForward />
-                </button> */}
             </div>
         </div>
     );
 };
-
-// export default VideoPlayer;
