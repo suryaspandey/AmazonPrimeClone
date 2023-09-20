@@ -220,10 +220,10 @@ export default function Home_Corousel() {
             {/* <ContinueWatching /> */}
             {/* <ContinueWatchingSlider /> */}
             {/* <ContinueWatchingSlider1 /> */}
-            {/* <RecommendedMovies /> */}
+            <RecommendedMovies />
             {/* <WatchingList /> */}
-            {/* <WatchingList />
-            <WatchingList /> */}
+            {/* <WatchingList />*/}
+            <WatchingList />
             <WatchInYourLanguage />
             <WatchInYourLanguage />
         </div>

@@ -1,22 +1,18 @@
 import React, { useState, useRef, useEffect } from "react";
 import ReactPlayer from "react-player";
-import {
-    FaPlay,
-    FaPause,
-    FaForward,
-    FaBackward,
-    FaVolumeUp,
-    FaVolumeMute,
-    FaExpand,
-} from "react-icons/fa";
+import { FaPlay, FaPause, FaVolumeUp, FaVolumeMute } from "react-icons/fa";
 import { RiForward10Fill, RiReplay10Fill } from "react-icons/ri";
-import { AiOutlineExpandAlt, AiOutlineClose } from "react-icons/ai";
+import {
+    AiOutlineExpandAlt,
+    AiOutlineClose,
+    AiOutlineShrink,
+} from "react-icons/ai";
 
 import "./VideoPlayer.css";
 import { useNavigate, useParams } from "react-router";
 
 export const VideoPlayer = () => {
-    const [isPlaying, setIsPlaying] = useState(true);
+    const [isPlaying, setIsPlaying] = useState(false);
     const [muted, setMuted] = useState(false);
     const [volume, setVolume] = useState(0.5);
     const [played, setPlayed] = useState(0);
@@ -24,6 +20,11 @@ export const VideoPlayer = () => {
     let { id } = useParams();
     const [details, setDetails] = useState(null);
     const navigate = useNavigate();
+    const [currentTime, setCurrentTime] = useState(0);
+    const [totalDuration, setTotalDuration] = useState(0);
+    const [showControls, setShowControls] = useState(true);
+    const [fullScreen, setFullScreen] = useState(false);
+    const [volumeMouseHover, setvolumeMouseHover] = useState(false);
 
     useEffect(() => {
         const fetchData = async () => {
@@ -54,7 +55,7 @@ export const VideoPlayer = () => {
     }, [id]);
 
     if (!details) {
-        return <div>Loading...</div>; // Show a loading message while data is being fetched
+        return <div>Loading...</div>;
     }
 
     const handlePlayPause = () => {
@@ -77,13 +78,18 @@ export const VideoPlayer = () => {
     const handleProgress = (state) => {
         if (!isPlaying) return;
         setPlayed(state.played);
+        setCurrentTime(state.playedSeconds);
     };
     const handleFullscreen = () => {
         const playerContainer = document.querySelector(
             ".video-player-container"
         );
-        if (playerContainer.requestFullscreen) {
+        if (document.fullscreenElement) {
+            document.exitFullscreen();
+            setFullScreen(false);
+        } else {
             playerContainer.requestFullscreen();
+            setFullScreen(true);
         }
     };
 
@@ -91,20 +97,44 @@ export const VideoPlayer = () => {
         navigate(-1);
     };
 
-    const handleFastForward = () => {
-        const currentTime = playerRef.current.getCurrentTime();
-        playerRef.current.seekTo(currentTime + 10);
+    const formatTime = (seconds) => {
+        const minutes = Math.floor(seconds / 60);
+        const remainingSeconds = Math.floor(seconds % 60);
+
+        const formattedMinutes = String(minutes).padStart(2, "0");
+        const formattedSeconds = String(remainingSeconds).padStart(2, "0");
+
+        return `${formattedMinutes}:${formattedSeconds}`;
     };
 
-    const handleRewind = () => {
-        const currentTime = playerRef.current.getCurrentTime();
-        playerRef.current.seekTo(currentTime - 10);
+    const handleDuration = (duration) => {
+        setTotalDuration(duration);
+    };
+
+    const handleEnded = () => {
+        setIsPlaying(false);
+    };
+
+    let timer;
+    const handleMouseMove = () => {
+        // Show controls and reset the timeout
+        setShowControls(true);
+
+        // Clear the previous timeout
+        if (timer) {
+            clearTimeout(timer);
+        }
+
+        // Set a new timeout to hide controls after 5 seconds of inactivity
+        timer = setTimeout(() => {
+            setShowControls(false);
+        }, 8000);
     };
 
     return (
-        <div className="video-player-container">
-            {/* {console.log(details.data.video_url)} */}
+        <div className="video-player-container" onMouseMove={handleMouseMove}>
             <ReactPlayer
+                className="video-player"
                 ref={playerRef}
                 url={details.data.video_url}
                 controls={false}
@@ -114,81 +144,126 @@ export const VideoPlayer = () => {
                 onProgress={handleProgress}
                 width="100%"
                 height="100%"
+                onDuration={handleDuration}
+                onEnded={handleEnded}
             />
+            <div className="controls-container">
+                {showControls && (
+                    <>
+                        <div className="show-title-on-video">
+                            <h2 style={{ color: "white" }}>
+                                {details.data.title}
+                            </h2>
+                        </div>
+                        <div className="top-video-btns">
+                            <div className="top-three-btns-container">
+                                <button
+                                    onClick={handleMute}
+                                    className="middle-class-btns volume-btn-control"
+                                    onMouseEnter={() =>
+                                        setvolumeMouseHover(true)
+                                    }
+                                    onMouseLeave={() =>
+                                        setvolumeMouseHover(false)
+                                    }
+                                >
+                                    {muted ? <FaVolumeMute /> : <FaVolumeUp />}
+                                    {volumeMouseHover && (
+                                        <div
+                                            className="volume-container"
+                                            style={{ marginTop: "44px" }}
+                                        >
+                                            <input
+                                                type="range"
+                                                min={0}
+                                                max={1}
+                                                step="any"
+                                                value={volume}
+                                                onChange={handleVolumeChange}
+                                                style={{
+                                                    transform: "rotate(270deg)",
+                                                    marginLeft: "-50px",
+                                                    background: "grey",
+                                                }}
+                                            />
+                                        </div>
+                                    )}
+                                </button>
 
-            <div className="top-video-btns">
-                <div className="top-three-btns-container">
-                    <button
-                        onClick={handleMute}
-                        className="middle-class-btns volume-btn-control"
-                    >
-                        {muted ? <FaVolumeMute /> : <FaVolumeUp />}
-                    </button>
+                                <button
+                                    onClick={handleFullscreen}
+                                    className="middle-class-btns volume-btn-control"
+                                >
+                                    {fullScreen ? (
+                                        <AiOutlineShrink />
+                                    ) : (
+                                        <AiOutlineExpandAlt />
+                                    )}
+                                </button>
+                                <button
+                                    className="middle-class-btns volume-btn-control"
+                                    onClick={handleClose}
+                                >
+                                    <AiOutlineClose />
+                                </button>
+                            </div>
+                        </div>
 
-                    <button
-                        onClick={handleFullscreen}
-                        className="middle-class-btns"
-                    >
-                        <AiOutlineExpandAlt />
-                    </button>
-                    <button className="middle-class-btns" onClick={handleClose}>
-                        <AiOutlineClose />
-                    </button>
-                </div>
-
-                <div className="volume-container" style={{ marginTop: "44px" }}>
-                    <input
-                        type="range"
-                        min={0}
-                        max={1}
-                        step="any"
-                        value={volume}
-                        onChange={handleVolumeChange}
-                        style={{
-                            transform: "rotate(270deg)",
-                            marginLeft: "-50px",
-                            background: "grey",
-                        }}
-                    />
-                </div>
-            </div>
-
-            <div className="middle-video-btns">
-                <button
-                    className="middle-class-btns"
-                    onClick={() =>
-                        playerRef.current.seekTo(
-                            playerRef.current.getCurrentTime() - 10
-                        )
-                    }
-                >
-                    <RiReplay10Fill />
-                </button>
-                <button className="middle-class-btns" onClick={handlePlayPause}>
-                    {isPlaying ? <FaPause /> : <FaPlay />}
-                </button>
-                <button
-                    className="middle-class-btns"
-                    onClick={() =>
-                        playerRef.current.seekTo(
-                            playerRef.current.getCurrentTime() + 10
-                        )
-                    }
-                >
-                    <RiForward10Fill />
-                </button>
-            </div>
-            <div className="video-controls">
-                {/* seek bar */}
-                <input
-                    className="video-seek-bar"
-                    type="range"
-                    min={0}
-                    max={1}
-                    step="any"
-                    value={played}
-                    onChange={handleSeekChange}
-                />
+                        <div className="middle-video-btns">
+                            <button
+                                className="middle-class-btns"
+                                onClick={() =>
+                                    playerRef.current.seekTo(
+                                        playerRef.current.getCurrentTime() - 10
+                                    )
+                                }
+                            >
+                                <RiReplay10Fill />
+                            </button>
+                            <button
+                                className="middle-class-btns"
+                                onClick={handlePlayPause}
+                            >
+                                {isPlaying ? <FaPause /> : <FaPlay />}
+                            </button>
+                            <button
+                                className="middle-class-btns"
+                                onClick={() =>
+                                    playerRef.current.seekTo(
+                                        playerRef.current.getCurrentTime() + 10
+                                    )
+                                }
+                            >
+                                <RiForward10Fill />
+                            </button>
+                        </div>
+                        <div className="video-controls">
+                            {/* seek bar */}
+                            <input
+                                className="video-seek-bar"
+                                type="range"
+                                min={0}
+                                max={1}
+                                step="any"
+                                value={played}
+                                onChange={handleSeekChange}
+                            />
+                            <div
+                                className="video-duration"
+                                style={{
+                                    color: "#aaa",
+                                    paddingLeft: "10px",
+                                    fontSize: "24px",
+                                }}
+                            >
+                                <span style={{ color: "white" }}>
+                                    {formatTime(currentTime)}{" "}
+                                </span>
+                                / {formatTime(totalDuration)}
+                            </div>
+                        </div>
+                    </>
+                )}
             </div>
         </div>
     );
