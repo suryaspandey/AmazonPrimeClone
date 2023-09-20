@@ -8,7 +8,6 @@ import { Link } from "react-router-dom";
 const WatchCards1 = ({ actualData, projectId }) => {
     const [isHovered, setIsHovered] = useState(null);
     const [isMuted, setIsMuted] = useState(true);
-    // const history = useHistory();
 
     return (
         <>

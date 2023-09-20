@@ -8,34 +8,56 @@ import "react-multi-carousel/lib/styles.css";
 const RecommendedMovies = () => {
     const [myData, setMyData] = useState([]);
 
-    const options = {
-        method: "GET",
-        headers: {
-            "X-RapidAPI-Key":
-                "797696e645msh30cdd41c816aa0cp1a5632jsn85e75846747e",
-            "X-RapidAPI-Host": "netflix54.p.rapidapi.com",
-        },
-    };
-
-    const fetchData = async () => {
-        try {
-            const result = await fetch(
-                "https://netflix54.p.rapidapi.com/search/?query=stranger&offset=0&limit_titles=50&limit_suggestions=20&lang=en",
-                options
-            );
-
-            const data = await result.json();
-            console.log(data);
-            setMyData(data.titles); // coming from api
-            // console.log(data.titles);
-        } catch (err) {
-            console.log(err);
-        }
-    };
+    const bearerToken =
+        "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1MDM0NTc0MjhiYWJjMTExMDE5MmNmYiIsImlhdCI6MTY5NDcxMzIwNCwiZXhwIjoxNzI2MjQ5MjA0fQ.DKJz5ZvO667Ht9irDWLfynH2rhqPxGMxSrncaSPeU5w";
+    const projectId = "zxke0qiu2960";
 
     useEffect(() => {
-        fetchData();
-    }, []);
+        const url = "https://academics.newtonschool.co/api/v1/ott/show";
+        const webSeriesurl = `https://academics.newtonschool.co/api/v1/ott/show?filter={"type" : "web series"}`;
+
+        const headers = {
+            projectId: projectId,
+            Authorization: `Bearer ${bearerToken}`,
+        };
+
+        fetch(url, { method: "GET", headers: headers })
+            .then((response) => response.json())
+            .then((exdata) => {
+                const allData = exdata;
+                console.log(allData);
+                setMyData(exdata.data);
+            });
+    }, [projectId, bearerToken]);
+
+    // const options = {
+    //     method: "GET",
+    //     headers: {
+    //         "X-RapidAPI-Key":
+    //             "797696e645msh30cdd41c816aa0cp1a5632jsn85e75846747e",
+    //         "X-RapidAPI-Host": "netflix54.p.rapidapi.com",
+    //     },
+    // };
+
+    // const fetchData = async () => {
+    //     try {
+    //         const result = await fetch(
+    //             "https://netflix54.p.rapidapi.com/search/?query=stranger&offset=0&limit_titles=50&limit_suggestions=20&lang=en",
+    //             options
+    //         );
+
+    //         const data = await result.json();
+    //         console.log(data);
+    //         setMyData(data.titles); // coming from api
+    //         // console.log(data.titles);
+    //     } catch (err) {
+    //         console.log(err);
+    //     }
+    // };
+
+    // useEffect(() => {
+    //     fetchData();
+    // }, []);
 
     const responsive = {
         superLargeDesktop: {
@@ -73,8 +95,14 @@ const RecommendedMovies = () => {
             </div>
             <div className="carousel-main" style={{ display: "flex" }}>
                 {/* <Carousel responsive={responsive} swipeable={true} draggable> */}
-                {myData.map((dat) => {
-                    return <WatchCards key={dat.summary.id} actualData={dat} />;
+                {myData.map((item) => {
+                    return (
+                        <WatchCards
+                            key={item._id}
+                            actualData={myData}
+                            projectId={projectId}
+                        />
+                    );
                 })}
                 {/* </Carousel> */}
             </div>
