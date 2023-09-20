@@ -14,6 +14,7 @@
     padding: 5px;
     display: flex;
     justify-content: center;
+    width: 100%;
   }
   
   .video-controls button {
@@ -27,5 +28,32 @@
   
   .video-controls button:focus {
     outline: none;
+  }
+
+  .middle-video-btns{
+    position: absolute;
+    /* z-index: 2; */
+    top: 50%;
+    left: 50%;
+    color: white;
+    background-color: transparent;
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+  }
+
+  .middle-class-btns{
+    font-size: 50px;
+    border: none;
+    background: transparent;
+    color: rgb(167, 161, 161);
+}
+
+  .middle-class-btns:hover{
+    color: rgb(246, 242, 242);
+  }
+
+  .video-seek-bar{
+    width: 90%;
   }
   

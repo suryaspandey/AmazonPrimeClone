@@ -111,9 +111,46 @@ export const VideoPlayer = () => {
                 width="100%"
                 height="100%"
             />
-            <div className="video-controls">
-                <button onClick={handlePlayPause}>
+
+            <div className="middle-video-btns">
+                <button
+                    className="middle-class-btns"
+                    onClick={() =>
+                        playerRef.current.seekTo(
+                            playerRef.current.getCurrentTime() - 10
+                        )
+                    }
+                >
+                    <RiReplay10Fill />
+                </button>
+                <button className="middle-class-btns" onClick={handlePlayPause}>
                     {isPlaying ? <FaPause /> : <FaPlay />}
+                </button>
+                <button
+                    className="middle-class-btns"
+                    onClick={() =>
+                        playerRef.current.seekTo(
+                            playerRef.current.getCurrentTime() + 10
+                        )
+                    }
+                >
+                    <RiForward10Fill />
+                </button>
+            </div>
+            <div className="video-controls">
+                {/* seek bar */}
+                <input
+                    className="video-seek-bar"
+                    type="range"
+                    min={0}
+                    max={1}
+                    step="any"
+                    value={played}
+                    onChange={handleSeekChange}
+                />
+
+                <button onClick={handleMute}>
+                    {muted ? <FaVolumeMute /> : <FaVolumeUp />}
                 </button>
                 <input
                     type="range"
@@ -123,35 +160,7 @@ export const VideoPlayer = () => {
                     value={volume}
                     onChange={handleVolumeChange}
                 />
-                <button onClick={handleMute}>
-                    {muted ? <FaVolumeMute /> : <FaVolumeUp />}
-                </button>
-                <input
-                    type="range"
-                    min={0}
-                    max={1}
-                    step="any"
-                    value={played}
-                    onChange={handleSeekChange}
-                />
-                <button
-                    onClick={() =>
-                        playerRef.current.seekTo(
-                            playerRef.current.getCurrentTime() - 10
-                        )
-                    }
-                >
-                    <RiReplay10Fill />
-                </button>
-                <button
-                    onClick={() =>
-                        playerRef.current.seekTo(
-                            playerRef.current.getCurrentTime() + 10
-                        )
-                    }
-                >
-                    <RiForward10Fill />
-                </button>
+
                 <button onClick={handleFullscreen}>
                     <FaExpand />
                 </button>
