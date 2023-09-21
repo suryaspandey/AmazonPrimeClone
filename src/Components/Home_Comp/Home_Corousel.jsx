@@ -225,7 +225,7 @@ export default function Home_Corousel() {
             {/* <WatchingList /> */}
             {/* <WatchingList />*/}
             {/* <WatchingList /> */}
-            <WatchInYourLanguage />
+            {/* <WatchInYourLanguage /> */}
             {/* <WatchInYourLanguage /> */}
         </div>
     );
