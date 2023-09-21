@@ -3,9 +3,11 @@ import WatchCards from "./WatchCards";
 import "./recommendedMovies.css";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
+import { MdKeyboardArrowRight } from "react-icons/md";
+import { Link } from "react-router-dom";
 // import { Carousel } from "react-responsive-carousel";
 
-const RecommendedMovies = () => {
+const ComedyMovies = () => {
     const [myData, setMyData] = useState([]);
 
     const bearerToken =
@@ -13,15 +15,16 @@ const RecommendedMovies = () => {
     const projectId = "zxke0qiu2960";
 
     useEffect(() => {
-        const url = "https://academics.newtonschool.co/api/v1/ott/show";
-        const webSeriesurl = `https://academics.newtonschool.co/api/v1/ott/show?filter={"type" : "web series"}`;
+        // const url = "https://academics.newtonschool.co/api/v1/ott/show";
+        // const webSeriesurl = `https://academics.newtonschool.co/api/v1/ott/show?filter={"type" : "web series"}`;
+        const comedyMoviesURL = `https://academics.newtonschool.co/api/v1/ott/show?filter={"$and": [{"keywords": "comedy"},{"type":"movie"}]}`;
 
         const headers = {
             projectId: projectId,
             Authorization: `Bearer ${bearerToken}`,
         };
 
-        fetch(webSeriesurl, { method: "GET", headers: headers })
+        fetch(comedyMoviesURL, { method: "GET", headers: headers })
             .then((response) => response.json())
             .then((exdata) => {
                 const allData = exdata;
@@ -52,16 +55,38 @@ const RecommendedMovies = () => {
     return (
         <>
             <div className="cards-heaading">
-                <h2>
+                <h2
+                    style={{
+                        display: "flex",
+                        alignItems: "center",
+                    }}
+                >
                     <span
                         className="prime-text-heading"
                         style={{ marginRight: "8px" }}
                     >
                         Prime
                     </span>
-                    <span className="card-indv-heading">
-                        Recommended movies
-                    </span>
+
+                    <span className="card-indv-heading">Comedy Movies</span>
+                    <Link to={"/MoviesAll"}>
+                        <span
+                            className="seeMore"
+                            style={{
+                                color: "white",
+                                display: "flex",
+                                alignItems: "center",
+                                gap: "10px",
+                                paddingLeft: "20px",
+                                fontSize: "20px",
+                            }}
+                        >
+                            See More
+                            <MdKeyboardArrowRight
+                                style={{ fontSize: "40px" }}
+                            />
+                        </span>
+                    </Link>
                 </h2>
             </div>
             <div className="carousel-main" style={{ display: "flex" }}>
@@ -79,4 +104,4 @@ const RecommendedMovies = () => {
     );
 };
 
-export default RecommendedMovies;
+export default ComedyMovies;

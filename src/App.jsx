@@ -12,6 +12,7 @@ import { PlayShow } from "./Components/PlayShow/PlayShow";
 import { VideoPlayer } from "./Components/PlayShow/VideoPlayer";
 
 import { PlayShow1 } from "./Components/PlayShow/PlayShow1";
+import { CompleteShowList } from "./Pages/CompleteShowList";
 // import { EpisodeNoContent } from "./EpisodeNoContent";
 
 function App() {
@@ -27,6 +28,7 @@ function App() {
                         element={<WatchDetails />}
                     />
                     <Route path="/TVShow/:id" element={<VideoPlayer />} />
+                    <Route path="/MoviesAll" element={<CompleteShowList />} />
                 </Routes>
             </BrowserRouter>
         </>

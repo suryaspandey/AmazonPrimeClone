@@ -16,6 +16,9 @@ import RecommendedMovies from "./RecommendedMovies";
 import { ContinueWatchingSlider1 } from "./ContinueWatchingSlider1";
 import { WatchingList } from "./WatchingList";
 import { WatchInYourLanguage } from "./WatchInYourLanguage";
+import MysteryAndThriller from "./MysteryAndThriller";
+import SciFi from "./SciFi";
+import ComedyMovies from "./ComedyMovies";
 
 const contentStyle = {
     height: "160px",
@@ -221,11 +224,14 @@ export default function Home_Corousel() {
             {/* <ContinueWatchingSlider /> */}
             {/* <ContinueWatchingSlider1 /> */}
             <RecommendedMovies />
+            <MysteryAndThriller />
+            <SciFi />
+            <ComedyMovies />
             {/* <WatchingList /> */}
             {/* <WatchingList />*/}
-            <WatchingList />
+            {/* <WatchingList /> */}
             <WatchInYourLanguage />
-            <WatchInYourLanguage />
+            {/* <WatchInYourLanguage /> */}
         </div>
     );
 }

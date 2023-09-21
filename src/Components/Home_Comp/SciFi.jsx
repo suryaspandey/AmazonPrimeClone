@@ -5,7 +5,7 @@ import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 // import { Carousel } from "react-responsive-carousel";
 
-const RecommendedMovies = () => {
+const SciFi = () => {
     const [myData, setMyData] = useState([]);
 
     const bearerToken =
@@ -13,15 +13,14 @@ const RecommendedMovies = () => {
     const projectId = "zxke0qiu2960";
 
     useEffect(() => {
-        const url = "https://academics.newtonschool.co/api/v1/ott/show";
-        const webSeriesurl = `https://academics.newtonschool.co/api/v1/ott/show?filter={"type" : "web series"}`;
+        const scifiURL = `https://academics.newtonschool.co/api/v1/ott/show?filter={"keywords" : "sci-fi"}`;
 
         const headers = {
             projectId: projectId,
             Authorization: `Bearer ${bearerToken}`,
         };
 
-        fetch(webSeriesurl, { method: "GET", headers: headers })
+        fetch(scifiURL, { method: "GET", headers: headers })
             .then((response) => response.json())
             .then((exdata) => {
                 const allData = exdata;
@@ -60,7 +59,7 @@ const RecommendedMovies = () => {
                         Prime
                     </span>
                     <span className="card-indv-heading">
-                        Recommended movies
+                        Science and Fiction
                     </span>
                 </h2>
             </div>
@@ -79,4 +78,4 @@ const RecommendedMovies = () => {
     );
 };
 
-export default RecommendedMovies;
+export default SciFi;

@@ -69,11 +69,11 @@ const WatchCards = ({ actualData, projectId }) => {
                                             )}
                                         </div>
                                         <div className="continue-watching-text-description">
-                                            <div className="continue-watching-slider">
+                                            {/* <div className="continue-watching-slider">
                                                 <div className="progress-bar">
                                                      
                                                 </div>
-                                            </div>
+                                            </div> */}
 
                                             <div className="included-with-prime-header blue-tick-text">
                                                 <img
