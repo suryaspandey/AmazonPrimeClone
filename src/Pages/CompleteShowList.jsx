@@ -8,12 +8,16 @@ import { IoIosArrowDown, IoIosArrowUp } from "react-icons/io";
 import "./completeShowList.css";
 import { Flag } from "@material-ui/icons";
 import { checkboxClasses } from "@mui/material";
-import { Catalog } from "../Components/Catalog/Catalog";
 import WatchCards from "../Components/Home_Comp/WatchCards";
+import { Link, useNavigate } from "react-router-dom";
+// import { useApi } from "../APIContext";#
+import { useApi } from "../APIContext";
 
 export const CompleteShowList = () => {
     const [isArrowclicked, setIsArrowClicked] = useState(false);
     const [checkCount, setIsCheckCount] = useState(0);
+    const { api } = useApi();
+    // console.log("api", api);
 
     const [myData, setMyData] = useState([]);
 
@@ -22,15 +26,14 @@ export const CompleteShowList = () => {
     const projectId = "zxke0qiu2960";
 
     useEffect(() => {
-        const url = "https://academics.newtonschool.co/api/v1/ott/show";
-        const webSeriesurl = `https://academics.newtonschool.co/api/v1/ott/show?filter={"type" : "web series"}`;
-
+        const recievedAPI = api;
+        // console.log(recievedAPI);
         const headers = {
             projectId: projectId,
             Authorization: `Bearer ${bearerToken}`,
         };
 
-        fetch(webSeriesurl, { method: "GET", headers: headers })
+        fetch(recievedAPI, { method: "GET", headers: headers })
             .then((response) => response.json())
             .then((exdata) => {
                 const allData = exdata;
@@ -89,7 +92,6 @@ export const CompleteShowList = () => {
                 )}
             </div>
 
-            <Catalog />
             <div
                 className="showList-container"
 

@@ -28,7 +28,10 @@ function App() {
                         element={<WatchDetails />}
                     />
                     <Route path="/TVShow/:id" element={<VideoPlayer />} />
-                    <Route path="/MoviesAll" element={<CompleteShowList />} />
+                    <Route
+                        path="/CompleteShowList/:id"
+                        element={<CompleteShowList />}
+                    />
                 </Routes>
             </BrowserRouter>
         </>

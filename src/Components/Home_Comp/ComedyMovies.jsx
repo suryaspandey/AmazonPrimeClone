@@ -4,27 +4,29 @@ import "./recommendedMovies.css";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import { MdKeyboardArrowRight } from "react-icons/md";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 // import { Carousel } from "react-responsive-carousel";
+// import { useApi } from "../APIContext";
+
+import { useApi } from "../../APIContext";
 
 const ComedyMovies = () => {
+    const navigate = useNavigate();
     const [myData, setMyData] = useState([]);
+    const { setApi } = useApi();
 
     const bearerToken =
         "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1MDM0NTc0MjhiYWJjMTExMDE5MmNmYiIsImlhdCI6MTY5NDcxMzIwNCwiZXhwIjoxNzI2MjQ5MjA0fQ.DKJz5ZvO667Ht9irDWLfynH2rhqPxGMxSrncaSPeU5w";
     const projectId = "zxke0qiu2960";
-
+    const comedyMoviesURL = `https://academics.newtonschool.co/api/v1/ott/show?filter={"$and": [{"keywords": "comedy"},{"type":"movie"}]}`;
+    const comedyThrillerMOvieAPI = `https://academics.newtonschool.co/api/v1/ott/show?filter={"$and": [{"keywords": "comedy"},{"type":"movie"},{"keywords":"thriller"}]}`;
     useEffect(() => {
-        // const url = "https://academics.newtonschool.co/api/v1/ott/show";
-        // const webSeriesurl = `https://academics.newtonschool.co/api/v1/ott/show?filter={"type" : "web series"}`;
-        const comedyMoviesURL = `https://academics.newtonschool.co/api/v1/ott/show?filter={"$and": [{"keywords": "comedy"},{"type":"movie"}]}`;
-
         const headers = {
             projectId: projectId,
             Authorization: `Bearer ${bearerToken}`,
         };
 
-        fetch(comedyMoviesURL, { method: "GET", headers: headers })
+        fetch(comedyThrillerMOvieAPI, { method: "GET", headers: headers })
             .then((response) => response.json())
             .then((exdata) => {
                 const allData = exdata;
@@ -32,6 +34,14 @@ const ComedyMovies = () => {
                 setMyData(exdata.data);
             });
     }, [projectId, bearerToken]);
+
+    const handleSeeMoreClick = () => {
+        // Navigate to CompleteShowList with the API as a parameter
+        // const { setApi } = useApi();
+        setApi(comedyThrillerMOvieAPI);
+        navigate("/CompleteShowList/ComedyMovies");
+        console.log("comedyThrillerMOvieAPI", comedyThrillerMOvieAPI);
+    };
 
     const responsive = {
         superLargeDesktop: {
@@ -69,24 +79,23 @@ const ComedyMovies = () => {
                     </span>
 
                     <span className="card-indv-heading">Comedy Movies</span>
-                    <Link to={"/MoviesAll"}>
-                        <span
-                            className="seeMore"
-                            style={{
-                                color: "white",
-                                display: "flex",
-                                alignItems: "center",
-                                gap: "10px",
-                                paddingLeft: "20px",
-                                fontSize: "20px",
-                            }}
-                        >
-                            See More
-                            <MdKeyboardArrowRight
-                                style={{ fontSize: "40px" }}
-                            />
-                        </span>
-                    </Link>
+                    {/* <Link to={"/CompleteShowList"}> */}
+                    <span
+                        className="seeMore"
+                        style={{
+                            color: "white",
+                            display: "flex",
+                            alignItems: "center",
+                            gap: "10px",
+                            paddingLeft: "20px",
+                            fontSize: "20px",
+                        }}
+                        onClick={handleSeeMoreClick}
+                    >
+                        See More
+                        <MdKeyboardArrowRight style={{ fontSize: "40px" }} />
+                    </span>
+                    {/* </Link> */}
                 </h2>
             </div>
             <div className="carousel-main" style={{ display: "flex" }}>
