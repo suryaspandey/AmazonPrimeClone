@@ -1,5 +1,4 @@
 import React, { useEffect, useRef, useState } from "react";
-// import { Carousel } from "antd";
 import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import {
@@ -7,28 +6,10 @@ import {
     RightOutlined,
     PlusOutlined,
     InfoCircleOutlined,
-    // ArrowLeftOutlined,
-    // ArrowRightOutlined,
 } from "@ant-design/icons";
-import ContinueWatching from "./ContinueWatching";
-import ContinueWatchingSlider from "./ContinueWatchingSlider";
-import RecommendedMovies from "./RecommendedMovies";
-import { ContinueWatchingSlider1 } from "./ContinueWatchingSlider1";
-import { WatchingList } from "./WatchingList";
-import { WatchInYourLanguage } from "./WatchInYourLanguage";
-import MysteryAndThriller from "./MysteryAndThriller";
-import SciFi from "./SciFi";
-import ComedyMovies from "./ComedyMovies";
-import { Top10 } from "./Top10/Top10";
+import { Top10Cards } from "./Top10Cards";
 
-const contentStyle = {
-    height: "160px",
-    color: "#fff",
-    lineHeight: "160px",
-    textAlign: "center",
-    background: "#364d79",
-};
-export default function Home_Corousel() {
+const Top10Video = () => {
     const videoRef = useRef([]);
     const carouselRef = useRef(null);
     const [currentIndex, setCurrentIndex] = useState(0);
@@ -74,9 +55,14 @@ export default function Home_Corousel() {
 
         setCurrentIndex(index);
     };
-
     return (
-        <div className="home">
+        <>
+            <div
+                className="top10-text"
+                style={{ color: "white", fontSize: "50px" }}
+            >
+                TOP 10
+            </div>
             <div className="corousel-container">
                 <Carousel
                     showThumbs={false}
@@ -87,14 +73,29 @@ export default function Home_Corousel() {
                     // onChange={handleSlideChange}
                     // autoPlaySpeed={autoplaySpeed}
                     ref={carouselRef}
+                    dot={false}
                     // arrows
                     // nextArrow={<RightOutlined />}
                     // prevArrow={<LeftOutlined />}
                 >
                     {videoSources.map((source, index) => (
                         <>
-                            <div className="corousel-container-left-right">
-                                <div className="left-content">
+                            <div
+                                className="corousel-container-left-right"
+                                style={{ height: "550px" }}
+                            >
+                                <div
+                                    // className="left-content"
+                                    style={{
+                                        position: "absolute",
+                                        top: "50%",
+                                        // left: "10%",
+                                        width: "30%",
+                                        height: "100%",
+                                        backgroundColor: "transparent",
+                                        zIndex: "1",
+                                    }}
+                                >
                                     <span className="home-main-text">
                                         New Episode Friday
                                     </span>
@@ -111,7 +112,10 @@ export default function Home_Corousel() {
                                             src="https://m.media-amazon.com/images/S/sonata-images-prod/PV_IN_WheelOfTime_S2/8bc35ebc-7543-4156-b218-f20a535d9f91._AC_SX1500_FMwebp_.png"
                                             alt=""
                                         />
-                                        <div className="included-with-prime">
+                                        <div
+                                            className="included-with-prime"
+                                            // style={{ zIndex: "2" }}
+                                        >
                                             <div className="blue-tick-text">
                                                 <span className="blue-tick">
                                                     <img
@@ -164,9 +168,18 @@ export default function Home_Corousel() {
                                         </div>
                                     </picture>
                                 </div>
-                                <div className="right-content">
+                                <div
+                                    // className="right-content"
+                                    style={{
+                                        position: "relative",
+                                        width: "100%",
+                                        height: "100%",
+                                        backgroundColor: "#ffffff",
+                                        zIndex: "0",
+                                    }}
+                                >
                                     <div key={index}>
-                                        <img
+                                        {/* <img
                                             src={thumbnailImages[index]}
                                             alt={`Thumbnail ${index}`}
                                             style={{
@@ -178,7 +191,7 @@ export default function Home_Corousel() {
                                                 maxWidth: "100%",
                                                 maxHeight: "100%",
                                             }}
-                                        />
+                                        /> */}
                                         <video
                                             className="home-banner-video"
                                             autoPlay
@@ -201,32 +214,11 @@ export default function Home_Corousel() {
                             </div>
                         </>
                     ))}
-
-                    {/* <div>
-                        <h3 style={contentStyle}>2</h3>
-                    </div>
-                    <div>
-                        <h3 style={contentStyle}>3</h3>
-                    </div>
-                    <div>
-                        <h3 style={contentStyle}>4</h3>
-                    </div> */}
                 </Carousel>
             </div>
-            {/* <ContinueWatching /> */}
-            {/* <ContinueWatchingSlider /> */}
-            {/* <ContinueWatchingSlider1 /> */}
-            <RecommendedMovies />
-            <MysteryAndThriller />
-            <SciFi />
-            <Top10 />
-            <ComedyMovies />
-
-            {/* <WatchingList /> */}
-            {/* <WatchingList />*/}
-            {/* <WatchingList /> */}
-            <WatchInYourLanguage />
-            {/* <WatchInYourLanguage /> */}
-        </div>
+            <Top10Cards />
+        </>
     );
-}
+};
+
+export default Top10Video;
