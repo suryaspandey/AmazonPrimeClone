@@ -19,14 +19,14 @@ const ComedyMovies = () => {
         "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1MDM0NTc0MjhiYWJjMTExMDE5MmNmYiIsImlhdCI6MTY5NDcxMzIwNCwiZXhwIjoxNzI2MjQ5MjA0fQ.DKJz5ZvO667Ht9irDWLfynH2rhqPxGMxSrncaSPeU5w";
     const projectId = "zxke0qiu2960";
     const comedyMoviesURL = `https://academics.newtonschool.co/api/v1/ott/show?filter={"$and": [{"keywords": "comedy"},{"type":"movie"}]}`;
-    const comedyThrillerMOvieAPI = `https://academics.newtonschool.co/api/v1/ott/show?filter={"$and": [{"keywords": "comedy"},{"type":"movie"},{"keywords":"thriller"}]}`;
+    // const comedyThrillerMOvieAPI = `https://academics.newtonschool.co/api/v1/ott/show?filter={"$and": [{"keywords": "comedy"},{"type":"movie"},{"keywords":"thriller"}]}`;
     useEffect(() => {
         const headers = {
             projectId: projectId,
             Authorization: `Bearer ${bearerToken}`,
         };
 
-        fetch(comedyThrillerMOvieAPI, { method: "GET", headers: headers })
+        fetch(comedyMoviesURL, { method: "GET", headers: headers })
             .then((response) => response.json())
             .then((exdata) => {
                 const allData = exdata;
@@ -36,11 +36,9 @@ const ComedyMovies = () => {
     }, [projectId, bearerToken]);
 
     const handleSeeMoreClick = () => {
-        // Navigate to CompleteShowList with the API as a parameter
-        // const { setApi } = useApi();
-        setApi(comedyThrillerMOvieAPI);
+        setApi(comedyMoviesURL);
         navigate("/CompleteShowList/ComedyMovies");
-        console.log("comedyThrillerMOvieAPI", comedyThrillerMOvieAPI);
+        console.log("comedyThrillerMOvieAPI", comedyMoviesURL);
     };
 
     const responsive = {
@@ -80,18 +78,7 @@ const ComedyMovies = () => {
 
                     <span className="card-indv-heading">Comedy Movies</span>
                     {/* <Link to={"/CompleteShowList"}> */}
-                    <span
-                        className="seeMore"
-                        style={{
-                            color: "white",
-                            display: "flex",
-                            alignItems: "center",
-                            gap: "10px",
-                            paddingLeft: "20px",
-                            fontSize: "20px",
-                        }}
-                        onClick={handleSeeMoreClick}
-                    >
+                    <span className="seeMore" onClick={handleSeeMoreClick}>
                         See More
                         <MdKeyboardArrowRight style={{ fontSize: "40px" }} />
                     </span>

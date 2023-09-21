@@ -4,18 +4,24 @@ import "./recommendedMovies.css";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 // import { Carousel } from "react-responsive-carousel";
+import { useApi } from "../../APIContext";
+import { useNavigate } from "react-router";
+import { MdKeyboardArrowRight } from "react-icons/md";
 
 const MysteryAndThriller = () => {
     const [myData, setMyData] = useState([]);
+    const navigate = useNavigate();
+    const { setApi } = useApi();
 
     const bearerToken =
         "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1MDM0NTc0MjhiYWJjMTExMDE5MmNmYiIsImlhdCI6MTY5NDcxMzIwNCwiZXhwIjoxNzI2MjQ5MjA0fQ.DKJz5ZvO667Ht9irDWLfynH2rhqPxGMxSrncaSPeU5w";
     const projectId = "zxke0qiu2960";
+    const mysteryURL = `https://academics.newtonschool.co/api/v1/ott/show?filter={"$and": [{"keywords": "mystery"}, {"keywords": "thriller"}]}`;
 
     useEffect(() => {
         // const url = "https://academics.newtonschool.co/api/v1/ott/show";
         // const webSeriesurl = `https://academics.newtonschool.co/api/v1/ott/show?filter={"type" : "web series"}`;
-        const mysteryURL = `https://academics.newtonschool.co/api/v1/ott/show?filter={"$and": [{"keywords": "mystery"}, {"keywords": "thriller"}]}`;
+        // const mysteryURL = `https://academics.newtonschool.co/api/v1/ott/show?filter={"$and": [{"keywords": "mystery"}, {"keywords": "thriller"}]}`;
 
         const headers = {
             projectId: projectId,
@@ -30,6 +36,11 @@ const MysteryAndThriller = () => {
                 setMyData(exdata.data);
             });
     }, [projectId, bearerToken]);
+
+    const handleSeeMoreClick = () => {
+        setApi(mysteryURL);
+        navigate("/CompleteShowList/MysteryAndThriller");
+    };
 
     const responsive = {
         superLargeDesktop: {
@@ -53,15 +64,25 @@ const MysteryAndThriller = () => {
     return (
         <>
             <div className="cards-heaading">
-                <h2>
+                <h2
+                    style={{
+                        display: "flex",
+                        alignItems: "center",
+                    }}
+                >
                     <span
                         className="prime-text-heading"
                         style={{ marginRight: "8px" }}
                     >
                         Prime
                     </span>
+
                     <span className="card-indv-heading">
                         Mystery and Thriller
+                    </span>
+                    <span className="seeMore" onClick={handleSeeMoreClick}>
+                        See More
+                        <MdKeyboardArrowRight style={{ fontSize: "40px" }} />
                     </span>
                 </h2>
             </div>

@@ -29,7 +29,7 @@ function App() {
                     />
                     <Route path="/TVShow/:id" element={<VideoPlayer />} />
                     <Route
-                        path="/CompleteShowList/:id"
+                        path="/CompleteShowList/:category"
                         element={<CompleteShowList />}
                     />
                 </Routes>
