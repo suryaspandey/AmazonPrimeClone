@@ -183,10 +183,10 @@ color: red;
 
 .episodes-details-container{
     display: flex;
-    align-items: center;
+    /* align-items: center; */
     justify-content: center;
     flex-direction: column;
-
+    justify-content: space-between;
     margin: 0 auto;
     max-width: 1430px;
 }
@@ -266,5 +266,9 @@ color: red;
 
 .episode-playbtn{
     cursor: pointer;
+}
+
+.ant-tabs {
+    align-items: center;
 }
             

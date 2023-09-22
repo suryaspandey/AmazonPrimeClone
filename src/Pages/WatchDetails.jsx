@@ -10,6 +10,7 @@ import { Tooltip } from "antd";
 import { Tabs, ConfigProvider } from "antd";
 import { Series_Episodes } from "../Components/Episodes/Series_Episodes";
 import { ShowDetails } from "../Components/ShowDetails/ShowDetails";
+import RelatedMovies from "../Components/Episodes/RelatedMovies";
 
 const WatchDetails = () => {
     let { id } = useParams();
@@ -19,6 +20,7 @@ const WatchDetails = () => {
     // const TabPane = Tabs.TabPane;
     const [activeTab, setActiveTab] = useState("1");
     const navigate = useNavigate();
+    const [TVShowType, setTVShowType] = useState(false);
 
     useEffect(() => {
         const fetchData = async () => {
@@ -35,6 +37,15 @@ const WatchDetails = () => {
                     const data = await response.json();
                     console.log(data);
                     setDetails(data);
+
+                    const showtype = data.data.type;
+                    if (showtype === "web series" || showtype === "tv show") {
+                        setTVShowType(true);
+                    }
+
+                    const keywords = data.data.keywords;
+                    if (keywords) {
+                    }
                 } else {
                     console.log("Failed to fetch data:", response.statusText);
                 }
@@ -46,19 +57,19 @@ const WatchDetails = () => {
         };
         fetchData();
     }, [id]);
+
     const onChange = (key) => {
         setActiveTab(key);
     };
+
     const items = [
         {
             key: "1",
-            label: "Episodes",
-            // children: "Content of Tab Pane 1",
+            label: TVShowType ? "Episodes" : "Related Movies",
         },
         {
             key: "2",
             label: "Details",
-            // children: "Content of Tab Pane 2",
         },
     ];
 
@@ -66,10 +77,16 @@ const WatchDetails = () => {
         switch (activeTab) {
             case "1":
                 return (
-                    <Series_Episodes
-                        imgdata={details.data.thumbnail}
-                        id={details.data._id}
-                    />
+                    <>
+                        {TVShowType ? (
+                            <Series_Episodes
+                                imgdata={details.data.thumbnail}
+                                id={details.data._id}
+                            />
+                        ) : (
+                            <RelatedMovies />
+                        )}
+                    </>
                 );
             case "2":
                 return (
@@ -254,6 +271,7 @@ const WatchDetails = () => {
                                         colorPrimary: "white",
                                         itemHoverColor: "white",
                                         itemActiveColor: "white",
+                                        itemColor: "#aaa",
                                     },
                                 },
                             }}
