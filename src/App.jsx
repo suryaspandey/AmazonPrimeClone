@@ -13,6 +13,7 @@ import { VideoPlayer } from "./Components/PlayShow/VideoPlayer";
 
 import { PlayShow1 } from "./Components/PlayShow/PlayShow1";
 import { CompleteShowList } from "./Pages/CompleteShowList";
+import LanguageMoviesAndShows from "./Components/Language/LanguageMoviesAndShows";
 // import { EpisodeNoContent } from "./EpisodeNoContent";
 
 function App() {
@@ -31,6 +32,10 @@ function App() {
                     <Route
                         path="/CompleteShowList/:category"
                         element={<CompleteShowList />}
+                    />
+                    <Route
+                        path="/WatchInYourLanguage/:language"
+                        element={<LanguageMoviesAndShows />}
                     />
                 </Routes>
             </BrowserRouter>

@@ -77,12 +77,10 @@ const ComedyMovies = () => {
                     </span>
 
                     <span className="card-indv-heading">Comedy Movies</span>
-                    {/* <Link to={"/CompleteShowList"}> */}
                     <span className="seeMore" onClick={handleSeeMoreClick}>
                         See More
                         <MdKeyboardArrowRight style={{ fontSize: "40px" }} />
                     </span>
-                    {/* </Link> */}
                 </h2>
             </div>
             <div className="carousel-main" style={{ display: "flex" }}>

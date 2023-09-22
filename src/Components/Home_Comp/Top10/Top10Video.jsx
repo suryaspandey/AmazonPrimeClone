@@ -12,6 +12,7 @@ import {
 import { Top10Cards } from "./Top10Cards";
 import { VideoPlayer } from "../../PlayShow/VideoPlayer";
 import { useNavigate } from "react-router";
+import { MdOutlineTrendingUp } from "react-icons/md";
 
 const Top10Video = () => {
     const videoRef = useRef([]);
@@ -124,11 +125,31 @@ const Top10Video = () => {
     };
     return (
         <>
-            <div
-                className="top10-text"
-                style={{ color: "white", fontSize: "50px" }}
-            >
-                TOP 10
+            <div className="cards-heaading">
+                <h2
+                    style={{
+                        display: "flex",
+                        alignItems: "center",
+                    }}
+                >
+                    <span
+                        className="prime-text-heading"
+                        style={{ marginRight: "8px" }}
+                    >
+                        Prime
+                    </span>
+
+                    <span className="card-indv-heading">Top 10 in India</span>
+                    <span className="seeMore">
+                        <MdOutlineTrendingUp
+                            style={{
+                                fontSize: "30px",
+                                border: "3px solid white",
+                                borderRadius: "50%",
+                            }}
+                        />
+                    </span>
+                </h2>
             </div>
             <div className="corousel-container">
                 <Carousel

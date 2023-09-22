@@ -48,10 +48,6 @@ export const CompleteShowList = () => {
 
     return (
         <>
-            <div style={{ color: "white", padding: "24px 0px 24px 72px" }}>
-                CompleteShowList
-            </div>
-
             <div className="content-dropdown">
                 <button className="showlistBtn">
                     <span className="contnt-type-text">Content Type</span>

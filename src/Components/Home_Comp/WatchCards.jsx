@@ -134,22 +134,24 @@ const WatchCards = ({ actualData, projectId }) => {
                                                 </button>
                                             </div>
                                         </div>
-                                        <h4
-                                            className="continue-watching-title"
-                                            // style={{ color: "white" }}
-                                        >
+                                        <h4 className="continue-watching-title">
                                             {/* {jawSummary.title} */}
                                             {item.title}
-                                            {/* My title */}
                                         </h4>
                                         <div className="continue-watching-year-UA">
                                             <h4
                                                 className="continue-watching-title"
                                                 style={{ color: "grey" }}
                                             >
-                                                2011
-                                                {/* {createdAt} */}
-                                                {/* 2023-08-06T20:13:27.503Z extract year from this */}
+                                                {parseInt(
+                                                    item.createdAt.split("-")[0]
+                                                ) -
+                                                    Math.floor(
+                                                        Math.random() * 10
+                                                    ) +
+                                                    1}
+
+                                                {/* 2023-08-06T20:13:27.503Z */}
                                             </h4>
                                             <h4 className="continue-watching-title">
                                                 2h 6min
