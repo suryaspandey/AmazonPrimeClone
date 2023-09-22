@@ -8,6 +8,7 @@ const WatchCards = ({ actualData, projectId }) => {
     const [isHovered, setIsHovered] = useState(false);
     const [isMuted, setIsMuted] = useState(true);
     // const { jawSummary } = actualData;
+    console.log("watchcards", actualData);
 
     return (
         <>
@@ -78,7 +79,7 @@ const WatchCards = ({ actualData, projectId }) => {
                                             <div className="included-with-prime-header blue-tick-text">
                                                 <img
                                                     className="blue-tick-img"
-                                                    src="./prime-blue-tick.png"
+                                                    src="/prime-blue-tick.png"
                                                     alt=""
                                                 />
                                                 <h5

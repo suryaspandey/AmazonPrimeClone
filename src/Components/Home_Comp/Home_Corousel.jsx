@@ -22,6 +22,7 @@ import ComedyMovies from "./ComedyMovies";
 import { Top10 } from "./Top10/Top10";
 import WatchInLanguage from "./Top10/WatchInLanguage";
 import Documentries from "./Documentries";
+import ActionAdventureMovies from "./ActionAdventure/ActionAdventureMovies";
 
 const contentStyle = {
     height: "160px",
@@ -76,6 +77,7 @@ export default function Home_Corousel() {
 
         setCurrentIndex(index);
     };
+    // console.log("home comp");
 
     return (
         <div className="home">
@@ -203,35 +205,22 @@ export default function Home_Corousel() {
                             </div>
                         </>
                     ))}
-
-                    {/* <div>
-                        <h3 style={contentStyle}>2</h3>
-                    </div>
-                    <div>
-                        <h3 style={contentStyle}>3</h3>
-                    </div>
-                    <div>
-                        <h3 style={contentStyle}>4</h3>
-                    </div> */}
                 </Carousel>
             </div>
             {/* <ContinueWatching /> */}
             {/* <ContinueWatchingSlider /> */}
             {/* <ContinueWatchingSlider1 /> */}
+            {console.log("home comp")}
             <RecommendedMovies />
             <MysteryAndThriller />
             <SciFi />
             <Top10 />
             <ComedyMovies />
             <WatchInLanguage />
-
+            <ActionAdventureMovies />
             <Documentries />
-
             {/* <WatchingList /> */}
-            {/* <WatchingList />*/}
-            {/* <WatchingList /> */}
-            {/* <WatchInYourLanguage /> */}
-            {/* <WatchInYourLanguage /> */}
+            {/* <WatchInYourLanguage /> */}\
         </div>
     );
 }

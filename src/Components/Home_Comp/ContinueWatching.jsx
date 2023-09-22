@@ -32,7 +32,7 @@ export default function ContinueWatching() {
                                         <div className="included-with-prime-header blue-tick-text">
                                             <img
                                                 className="blue-tick-img"
-                                                src="./prime-blue-tick.png"
+                                                src="/prime-blue-tick.png"
                                                 alt=""
                                             />
                                             <h5 style={{ color: "white" }}>

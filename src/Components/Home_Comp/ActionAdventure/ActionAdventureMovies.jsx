@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from "react";
-import WatchCards from "./WatchCards";
-import "./recommendedMovies.css";
+import WatchCards from "../WatchCards";
+import "../recommendedMovies.css";
 import "react-multi-carousel/lib/styles.css";
-import { useApi } from "../../APIContext";
+import { useApi } from "../../../APIContext";
 import { useNavigate } from "react-router";
 import { MdKeyboardArrowRight } from "react-icons/md";
 
-// const Documentries = ({ heading }) => {
-const Documentries = () => {
+// const ActionAdventureMovies = ({ heading }) => {
+const ActionAdventureMovies = () => {
     const [myData, setMyData] = useState([]);
     const navigate = useNavigate();
     const { setApi } = useApi();
@@ -17,7 +17,7 @@ const Documentries = () => {
     const bearerToken =
         "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1MDM0NTc0MjhiYWJjMTExMDE5MmNmYiIsImlhdCI6MTY5NDcxMzIwNCwiZXhwIjoxNzI2MjQ5MjA0fQ.DKJz5ZvO667Ht9irDWLfynH2rhqPxGMxSrncaSPeU5w";
     const projectId = "zxke0qiu2960";
-    const documentaryURL = `https://academics.newtonschool.co/api/v1/ott/show?filter={"type":"documentary"}`;
+    const actionAdventureMovieURL = `https://academics.newtonschool.co/api/v1/ott/show?filter={"$and":[{"keywords":"action"},{"type":"movie"},{"keywords":"adventure"}]}`;
 
     useEffect(() => {
         const headers = {
@@ -25,7 +25,7 @@ const Documentries = () => {
             Authorization: `Bearer ${bearerToken}`,
         };
 
-        fetch(documentaryURL, { method: "GET", headers: headers })
+        fetch(actionAdventureMovieURL, { method: "GET", headers: headers })
             .then((response) => response.json())
             .then((exdata) => {
                 const allData = exdata;
@@ -35,8 +35,8 @@ const Documentries = () => {
     }, [projectId, bearerToken]);
 
     const handleSeeMoreClick = () => {
-        setApi(documentaryURL);
-        navigate("/CompleteShowList/Documentaries");
+        setApi(actionAdventureMovieURL);
+        navigate("/CompleteShowList/ActionAdventureMovies");
     };
 
     // const responsive = {
@@ -74,7 +74,9 @@ const Documentries = () => {
                         Prime
                     </span>
 
-                    <span className="card-indv-heading">Documentaries</span>
+                    <span className="card-indv-heading">
+                        Action and adventure movies
+                    </span>
                     <span className="seeMore" onClick={handleSeeMoreClick}>
                         See More
                         <MdKeyboardArrowRight style={{ fontSize: "40px" }} />
@@ -98,4 +100,4 @@ const Documentries = () => {
     );
 };
 
-export default Documentries;
+export default ActionAdventureMovies;

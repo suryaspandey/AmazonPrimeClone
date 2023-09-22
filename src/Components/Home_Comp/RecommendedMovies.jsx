@@ -49,8 +49,11 @@ const RecommendedMovies = () => {
             items: 1,
         },
     };
+    // console.log("recommended movies comp");
+
     return (
         <>
+            {console.log("recommended movies comp")}
             <div className="cards-heaading">
                 <h2>
                     <span

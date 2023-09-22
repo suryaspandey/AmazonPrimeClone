@@ -35,7 +35,7 @@ const WatchInLanguage = () => {
                             // className="slider-continue-watching-pic"
                             >
                                 <div
-                                    style={{ height: "250px", width: "400px" }}
+                                    style={{ height: "250px", width: "265px" }}
                                     // className="banner-imgs"
                                 >
                                     <Link to={`/WatchInYourLanguage/English`}>
