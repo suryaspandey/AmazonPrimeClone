@@ -9,7 +9,6 @@ import {
     PlusOutlined,
     InfoCircleOutlined,
 } from "@ant-design/icons";
-import { Top10Cards } from "./Top10Cards";
 import { VideoPlayer } from "../../PlayShow/VideoPlayer";
 import { useNavigate } from "react-router";
 import { MdOutlineTrendingUp } from "react-icons/md";
@@ -372,7 +371,6 @@ const Top10Video = () => {
                     ))}
                 </Carousel>
             </div>
-            {/* <Top10Cards /> */}
             <div className="carousel-main top10-carousel">
                 <span className="card-no-img">
                     {myData.map((item, index) => {

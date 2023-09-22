@@ -88,7 +88,7 @@ const Navigator = () => {
                                 }}
                             >
                                 <img
-                                    src="./avatar.png"
+                                    src="/avatar.png"
                                     alt="avatar"
                                     height={30}
                                     width={30}

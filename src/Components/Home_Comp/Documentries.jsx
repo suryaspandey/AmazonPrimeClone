@@ -6,7 +6,7 @@ import { useApi } from "../../APIContext";
 import { useNavigate } from "react-router";
 import { MdKeyboardArrowRight } from "react-icons/md";
 
-const MysteryAndThriller = ({ heading }) => {
+const Documentries = ({ heading }) => {
     const [myData, setMyData] = useState([]);
     const navigate = useNavigate();
     const { setApi } = useApi();
@@ -16,7 +16,7 @@ const MysteryAndThriller = ({ heading }) => {
     const bearerToken =
         "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1MDM0NTc0MjhiYWJjMTExMDE5MmNmYiIsImlhdCI6MTY5NDcxMzIwNCwiZXhwIjoxNzI2MjQ5MjA0fQ.DKJz5ZvO667Ht9irDWLfynH2rhqPxGMxSrncaSPeU5w";
     const projectId = "zxke0qiu2960";
-    const mysteryURL = `https://academics.newtonschool.co/api/v1/ott/show?filter={"$and": [{"keywords": "mystery"}, {"keywords": "thriller"}]}`;
+    const documentaryURL = `https://academics.newtonschool.co/api/v1/ott/show?filter={"type":"documentary"}`;
 
     useEffect(() => {
         const headers = {
@@ -24,7 +24,7 @@ const MysteryAndThriller = ({ heading }) => {
             Authorization: `Bearer ${bearerToken}`,
         };
 
-        fetch(mysteryURL, { method: "GET", headers: headers })
+        fetch(documentaryURL, { method: "GET", headers: headers })
             .then((response) => response.json())
             .then((exdata) => {
                 const allData = exdata;
@@ -34,28 +34,28 @@ const MysteryAndThriller = ({ heading }) => {
     }, [projectId, bearerToken]);
 
     const handleSeeMoreClick = () => {
-        setApi(mysteryURL);
-        navigate("/CompleteShowList/MysteryAndThriller");
+        setApi(documentaryURL);
+        navigate("/CompleteShowList/Documentaries");
     };
 
-    const responsive = {
-        superLargeDesktop: {
-            breakpoint: { max: 4000, min: 3000 },
-            items: 5,
-        },
-        desktop: {
-            breakpoint: { max: 3000, min: 1024 },
-            items: 5,
-        },
-        tablet: {
-            breakpoint: { max: 1024, min: 464 },
-            items: 2,
-        },
-        mobile: {
-            breakpoint: { max: 464, min: 0 },
-            items: 1,
-        },
-    };
+    // const responsive = {
+    //     superLargeDesktop: {
+    //         breakpoint: { max: 4000, min: 3000 },
+    //         items: 5,
+    //     },
+    //     desktop: {
+    //         breakpoint: { max: 3000, min: 1024 },
+    //         items: 5,
+    //     },
+    //     tablet: {
+    //         breakpoint: { max: 1024, min: 464 },
+    //         items: 2,
+    //     },
+    //     mobile: {
+    //         breakpoint: { max: 464, min: 0 },
+    //         items: 1,
+    //     },
+    // };
     return (
         <>
             {!heading && ( //not to render heading in recommended section
@@ -73,9 +73,7 @@ const MysteryAndThriller = ({ heading }) => {
                             Prime
                         </span>
 
-                        <span className="card-indv-heading">
-                            Mystery and Thriller
-                        </span>
+                        <span className="card-indv-heading">Documentaries</span>
                         <span className="seeMore" onClick={handleSeeMoreClick}>
                             See More
                             <MdKeyboardArrowRight
@@ -101,4 +99,4 @@ const MysteryAndThriller = ({ heading }) => {
     );
 };
 
-export default MysteryAndThriller;
+export default Documentries;

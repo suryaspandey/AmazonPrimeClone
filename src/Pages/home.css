@@ -8,7 +8,11 @@ body{
 }
 
 /* background: linear-gradient(0deg,rgba(0,5,13,.75),rgba(0,5,13,.639) 13.33%,rgba(0,5,13,.174) 33.33%,rgba(0,5,13,.027) 43.33%,rgba(0,5,13,0) 50%); */
-
+.navigator-container{
+    display: flex;
+    justify-content: center;
+    /* flex-direction: row; */
+}
 .navbar-navs{
     display: flex;
     flex-direction: row;
@@ -32,7 +36,7 @@ body{
 }
 
 .home-navs >li{
-    font-size: 16px;
+    font-size: 20px;
     padding: 0 12px;
     display: flex;
     justify-content: center;

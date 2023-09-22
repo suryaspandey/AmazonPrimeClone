@@ -21,6 +21,7 @@ import SciFi from "./SciFi";
 import ComedyMovies from "./ComedyMovies";
 import { Top10 } from "./Top10/Top10";
 import WatchInLanguage from "./Top10/WatchInLanguage";
+import Documentries from "./Documentries";
 
 const contentStyle = {
     height: "160px",
@@ -224,7 +225,7 @@ export default function Home_Corousel() {
             <ComedyMovies />
             <WatchInLanguage />
 
-            <ComedyMovies />
+            <Documentries />
 
             {/* <WatchingList /> */}
             {/* <WatchingList />*/}
