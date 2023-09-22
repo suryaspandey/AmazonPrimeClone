@@ -30,9 +30,6 @@
     background-color: linear-gradient(90deg,#fff 50.52%,hsla(0,0%,100%,0));
 }
 
-
-
-
 .top10-card-img{
     width: 267.4px;
     height: 150.41px;
@@ -57,8 +54,12 @@
     transition: transform 0.5s ease;
     z-index: 10px; */
     top: -83px;
+    /* background: linear-gradient(90deg,#fff 50.52%,hsla(0,0%,100%,0)); */
 }
 
-/* .carousel .control-dots{
-    display: none;
-} */
+.carousel .slider-wrapper{
+    height: 800px;
+}
+
+
+

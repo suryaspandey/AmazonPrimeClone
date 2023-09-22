@@ -1,5 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import { Carousel } from "react-responsive-carousel";
+import { BiVolumeMute } from "react-icons/bi";
+import { GoUnmute } from "react-icons/go";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import {
     LeftOutlined,
@@ -8,6 +10,8 @@ import {
     InfoCircleOutlined,
 } from "@ant-design/icons";
 import { Top10Cards } from "./Top10Cards";
+import { VideoPlayer } from "../../PlayShow/VideoPlayer";
+import { useNavigate } from "react-router";
 
 const Top10Video = () => {
     const videoRef = useRef([]);
@@ -15,6 +19,9 @@ const Top10Video = () => {
     const [currentIndex, setCurrentIndex] = useState(0);
     const [myData, setMyData] = useState([]);
     const [isHighlighted, setIsHighlighted] = useState(1);
+    const navigate = useNavigate();
+
+    const [isMuted, setIsMuted] = useState(true);
 
     const bearerToken =
         "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1MDM0NTc0MjhiYWJjMTExMDE5MmNmYiIsImlhdCI6MTY5NDcxMzIwNCwiZXhwIjoxNzI2MjQ5MjA0fQ.DKJz5ZvO667Ht9irDWLfynH2rhqPxGMxSrncaSPeU5w";
@@ -86,6 +93,16 @@ const Top10Video = () => {
         } else {
             setCurrentIndex(0);
         }
+    };
+
+    let videoURL;
+    const id = "1234";
+
+    const handleVideoURL = (videoURL, title) => {
+        localStorage.setItem("videoURL", videoURL);
+        localStorage.setItem("title", title);
+        localStorage.setItem("id", id);
+        navigate(`/TVShow/1234`);
     };
 
     useEffect(() => {
@@ -165,38 +182,93 @@ const Top10Video = () => {
                                         >
                                             {titleNames[index]}
                                         </h2>
-                                        <div className="included-with-prime">
-                                            <div className="blue-tick-text">
+
+                                        <button
+                                            onClick={() =>
+                                                handleVideoURL(
+                                                    videoSources[index],
+                                                    titleNames[index]
+                                                )
+                                            }
+                                            style={{
+                                                // height: "20px",
+                                                // width: "30px",
+                                                color: "black",
+                                                cursor: "pointer",
+                                                background: "white",
+                                                borderRadius: "50%",
+                                                border: "none",
+                                            }}
+                                        >
+                                            <img
+                                                src="play-btn.PNG"
+                                                alt="play button"
+                                                width={50}
+                                                height={50}
+                                                style={{
+                                                    borderRadius: "50%",
+                                                }}
+                                            />
+                                            {/* <a href="https://s3.ll.videorolls.row.aiv-cdn.net/ww_iad/43c2/951b/7f5d/4eb4-94f1-fefd891c2801/cca79408-987a-4781-a636-e9d5fb527763_video_720p_2500kbps_audio_aaclc_128kbps.mp4">
+                                            Play Video
+                                        </a> */}
+                                        </button>
+                                        <div
+                                        // className="included-with-prime"
+                                        >
+                                            <div
+                                            // className="blue-tick-text"
+                                            >
                                                 <span className="blue-tick">
                                                     <img
                                                         className="blue-tick-img"
                                                         src="prime-blue-tick.png"
                                                         alt="prime-blue-tick"
+                                                        style={{
+                                                            width: "20px",
+                                                            height: "20px",
+                                                        }}
                                                     />
                                                 </span>
-                                                <span className="prime-text">
+                                                <span
+                                                    className="prime-text"
+                                                    style={{ color: "white" }}
+                                                >
                                                     Included with Prime
                                                 </span>
-                                                <span className="UA-container">
+                                                {/* <span className="UA-container">
                                                     U/A 16+
-                                                </span>
+                                                </span> */}
                                             </div>
-                                            <div className="play-btn-text">
-                                                <a
+                                            <div
+                                            // className="play-btn-text"
+                                            >
+                                                {/* <a
                                                     href="#"
                                                     className="play-btn-link"
-                                                >
-                                                    <span className="home-play-btn-container">
-                                                        <img
-                                                            className="home-play-btn"
-                                                            src="play-btn.PNG"
-                                                            alt="play button"
-                                                        />
-                                                    </span>
-                                                    <span className="play-text">
-                                                        Play S2 E1
-                                                    </span>
-                                                </a>
+                                                > */}
+                                                {/* <span className="home-play-btn-container">
+                                                    <img
+                                                        
+                                                        className="home-play-btn"
+                                                        src="play-btn.PNG"
+                                                        alt="play button"
+                                                        onClick={() =>
+                                                            handleVideoURL(
+                                                                videoSources[
+                                                                    index
+                                                                ],
+                                                                titleNames[
+                                                                    index
+                                                                ]
+                                                            )
+                                                        }
+                                                    />
+                                                </span> */}
+                                                <span className="play-text">
+                                                    Play S2 E1
+                                                </span>
+                                                {/* </a> */}
                                                 <div className="watchlist-details-container">
                                                     <button
                                                         className="watchlist-btn"
@@ -242,10 +314,11 @@ const Top10Video = () => {
                                                 maxHeight: "100%",
                                             }}
                                         /> */}
+
                                         <video
                                             className="home-banner-video"
                                             autoPlay
-                                            muted
+                                            muted={isMuted}
                                             ref={videoRef}
                                             onEnded={handleVideoEnded}
                                         >
@@ -254,6 +327,22 @@ const Top10Video = () => {
                                                 type="video/mp4"
                                             />
                                         </video>
+                                        {isMuted ? (
+                                            <BiVolumeMute
+                                                className="volume-btn mute"
+                                                onClick={() => {
+                                                    setIsMuted(false);
+                                                }}
+                                            />
+                                        ) : (
+                                            <GoUnmute
+                                                className="volume-btn unmute"
+                                                onClick={() => {
+                                                    setIsMuted(true);
+                                                    // <BiVolumeMute />;
+                                                }}
+                                            />
+                                        )}
                                     </div>
                                     ;
                                 </div>

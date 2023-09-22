@@ -25,31 +25,51 @@ export const VideoPlayer = () => {
     const [showControls, setShowControls] = useState(true);
     const [fullScreen, setFullScreen] = useState(false);
     const [volumeMouseHover, setvolumeMouseHover] = useState(false);
+    const dummy_id = localStorage.getItem("id");
 
     useEffect(() => {
         const fetchData = async () => {
-            try {
-                const response = await fetch(
-                    `https://academics.newtonschool.co/api/v1/ott/show/${id}`,
+            if (id !== "1234") {
+                try {
+                    const response = await fetch(
+                        `https://academics.newtonschool.co/api/v1/ott/show/${id}`,
 
-                    {
-                        headers: {
-                            projectId: "zxke0qiu2960",
-                        },
+                        {
+                            headers: {
+                                projectId: "zxke0qiu2960",
+                            },
+                        }
+                    );
+                    if (response.ok) {
+                        const data = await response.json();
+                        console.log(data); // getting data
+                        setDetails(data);
+                    } else {
+                        console.log(
+                            "Failed to fetch data:",
+                            response.statusText
+                        );
                     }
-                );
-                if (response.ok) {
-                    const data = await response.json();
-                    console.log(data); // getting data
-                    setDetails(data);
-                } else {
+                } catch (err) {
                     console.log("Failed to fetch data:", response.statusText);
                 }
-            } catch (err) {
-                console.log("Failed to fetch data:", response.statusText);
+                // finally {
+                // }
+            } else {
+                id = dummy_id;
+                navigate(`/TVShow/${id}`);
+                const title = localStorage.getItem("title");
+                const videoURL = localStorage.getItem("videoURL");
+
+                if (videoURL && title) {
+                    setDetails({
+                        data: {
+                            video_url: videoURL,
+                            title: title,
+                        },
+                    });
+                }
             }
-            // finally {
-            // }
         };
         fetchData();
     }, [id]);
@@ -136,7 +156,7 @@ export const VideoPlayer = () => {
             <ReactPlayer
                 className="video-player"
                 ref={playerRef}
-                url={details.data.video_url}
+                url={details?.data.video_url || videoURL}
                 controls={false}
                 playing={isPlaying}
                 muted={muted}
@@ -152,7 +172,7 @@ export const VideoPlayer = () => {
                     <>
                         <div className="show-title-on-video">
                             <h2 style={{ color: "white" }}>
-                                {details.data.title}
+                                {details.data?.title || title}
                             </h2>
                         </div>
                         <div className="top-video-btns">
