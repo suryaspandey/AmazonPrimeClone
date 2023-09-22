@@ -92,7 +92,7 @@ const WatchCards = ({ actualData, projectId }) => {
                                             </div>
                                         </div>
                                         <div className="play-btn-text">
-                                            <a
+                                            <p
                                                 href="#"
                                                 className="play-btn-link"
                                             >
@@ -106,7 +106,7 @@ const WatchCards = ({ actualData, projectId }) => {
                                                     >
                                                         <img
                                                             className="home-play-btn home-play-btn-new"
-                                                            src="play-btn.PNG"
+                                                            src="/play-btn.PNG"
                                                             alt="play button"
                                                             width={265}
                                                         />
@@ -114,11 +114,13 @@ const WatchCards = ({ actualData, projectId }) => {
                                                 </span>
                                                 <span
                                                     className="play-text"
-                                                    style={{ color: "white" }}
+                                                    style={{
+                                                        color: "white",
+                                                    }}
                                                 >
                                                     Resume
                                                 </span>
-                                            </a>
+                                            </p>
                                             <div className="watchlist-details-container">
                                                 <button
                                                     className="watchlist-btn continue-watching-btn"

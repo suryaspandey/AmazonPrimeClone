@@ -204,7 +204,7 @@ const WatchInLanguage = () => {
                                                 width: "90%",
                                                 height: "90%",
                                             }}
-                                            src="./WatchInEng.PNG"
+                                            src="/WatchInEng.PNG"
                                             // alt={jawSummary.title}
                                         />
                                     </Link>

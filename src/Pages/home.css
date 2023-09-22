@@ -264,6 +264,7 @@ body{
     display: flex;
     align-items: center;
     gap: 12px;
+    text-decoration: none;
 }
 
 .carousel .carousel-status {
@@ -505,7 +506,9 @@ title{
 }
 
 .banner-img:hover{
-    border-radius:10px 10px 0 0 !important;
+    border-radius:10px 10px 10px 10px !important;
+    transform: scale(1.05);
+    transition: 0.3s ease-in-out;
 }
 .watch-details-video{
     width: 267.4px;
