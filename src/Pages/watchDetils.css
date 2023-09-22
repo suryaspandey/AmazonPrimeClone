@@ -188,7 +188,8 @@ color: red;
     flex-direction: column;
     justify-content: space-between;
     margin: 0 auto;
-    max-width: 1430px;
+    /* max-width: 1500px; */
+    padding: 0 30px;
 }
 .episodes-container{
     display: grid;
@@ -260,7 +261,7 @@ color: red;
 .tabs-container{
     border-radius: 10px;
     background: #252424;
-    margin: 10px;
+    margin: 10px auto;
     padding: 2px 50px;
 }
 

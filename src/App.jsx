@@ -14,6 +14,7 @@ import { VideoPlayer } from "./Components/PlayShow/VideoPlayer";
 import { PlayShow1 } from "./Components/PlayShow/PlayShow1";
 import { CompleteShowList } from "./Pages/CompleteShowList";
 import LanguageMoviesAndShows from "./Components/Language/LanguageMoviesAndShows";
+import Footer from "./Components/Footer/Footer";
 // import { EpisodeNoContent } from "./EpisodeNoContent";
 
 function App() {
@@ -39,6 +40,7 @@ function App() {
                     />
                 </Routes>
             </BrowserRouter>
+            <Footer />
         </>
         // </EpisodeNoContent>
     );

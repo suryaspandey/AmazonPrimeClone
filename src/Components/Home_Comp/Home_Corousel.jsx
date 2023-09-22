@@ -224,6 +224,8 @@ export default function Home_Corousel() {
             <ComedyMovies />
             <WatchInLanguage />
 
+            <ComedyMovies />
+
             {/* <WatchingList /> */}
             {/* <WatchingList />*/}
             {/* <WatchingList /> */}

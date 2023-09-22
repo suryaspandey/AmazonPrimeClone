@@ -24,17 +24,13 @@ const WatchInLanguage = () => {
                     </span>
                 </h2>
             </div>
-            <div className="carousel-main" style={{ display: "flex" }}>
-                <div
-                    className="continue-watching-container"
-                    // onMouseEnter={() => setIsHovered(item)}
-                    // onMouseLeave={() => setIsHovered(null)}
-                >
+            <div className="carousel-main1">
+                <div className="continue-watching-container1centre">
                     <ul
                         className="continue-watching-ul"
                         style={{ display: "flex" }}
                     >
-                        <li className="continue-wtching-li">
+                        {/* <li className="continue-wtching-li">
                             <div
                             // className="slider-continue-watching-pic"
                             >
@@ -176,7 +172,165 @@ const WatchInLanguage = () => {
                             // className="slider-continue-watching-pic"
                             >
                                 <div
-                                    style={{ height: "250px" }}
+                                    style={{ height: "250px", width: "400px" }}
+                                    // className="banner-imgs"
+                                >
+                                    <Link to={`/WatchInYourLanguage/Tamil`}>
+                                        <img
+                                            className="banner-img"
+                                            style={{
+                                                width: "90%",
+                                                height: "90%",
+                                            }}
+                                            src="./WatchInTamil.PNG"
+                                            // alt={jawSummary.title}
+                                        />
+                                    </Link>
+                                </div>
+                            </div>
+                        </li> */}
+                        <li className="continue-wtching-li">
+                            <div
+                            // className="slider-continue-watching-pic"
+                            >
+                                <div
+                                    style={{ height: "250px", width: "400px" }}
+                                    // className="banner-imgs"
+                                >
+                                    <Link to={`/WatchInYourLanguage/English`}>
+                                        <img
+                                            className="banner-img"
+                                            style={{
+                                                width: "90%",
+                                                height: "90%",
+                                            }}
+                                            src="./WatchInEng.PNG"
+                                            // alt={jawSummary.title}
+                                        />
+                                    </Link>
+                                </div>
+                            </div>
+                        </li>
+                        <li className="continue-wtching-li">
+                            <div
+                            // className="slider-continue-watching-pic"
+                            >
+                                <div
+                                    style={{ height: "250px", width: "400px" }}
+                                    // className="banner-imgs"
+                                >
+                                    <Link to={`/WatchInYourLanguage/Hindi`}>
+                                        <img
+                                            className="banner-img"
+                                            style={{
+                                                width: "90%",
+                                                height: "90%",
+                                            }}
+                                            src="./WatchInHindi.PNG"
+                                            // alt={jawSummary.title}
+                                        />
+                                    </Link>
+                                </div>
+                            </div>
+                        </li>
+                        <li className="continue-wtching-li">
+                            <div
+                            // className="slider-continue-watching-pic"
+                            >
+                                <div
+                                    style={{ height: "250px", width: "400px" }}
+                                    // className="banner-imgs"
+                                >
+                                    <Link to={`/WatchInYourLanguage/Kannada`}>
+                                        <img
+                                            className="banner-img"
+                                            style={{
+                                                width: "90%",
+                                                height: "90%",
+                                            }}
+                                            src="./WatchInKannada.PNG"
+                                            // alt={jawSummary.title}
+                                        />
+                                    </Link>
+                                </div>
+                            </div>
+                        </li>
+
+                        <li className="continue-wtching-li">
+                            <div
+                            // className="slider-continue-watching-pic"
+                            >
+                                <div
+                                    style={{ height: "250px", width: "400px" }}
+                                    // className="banner-imgs"
+                                >
+                                    <Link to={`/WatchInYourLanguage/Marathi`}>
+                                        <img
+                                            className="banner-img"
+                                            style={{
+                                                width: "90%",
+                                                height: "90%",
+                                            }}
+                                            src="./WatchInMarathi.PNG"
+                                            // alt={jawSummary.title}
+                                        />
+                                    </Link>
+                                </div>
+                            </div>
+                        </li>
+
+                        <li className="continue-wtching-li">
+                            <div
+                            // className="slider-continue-watching-pic"
+                            >
+                                <div
+                                    style={{ height: "250px", width: "400px" }}
+                                    // className="banner-imgs"
+                                >
+                                    <Link to={`/WatchInYourLanguage/Telugu`}>
+                                        <img
+                                            className="banner-img"
+                                            style={{
+                                                width: "90%",
+                                                height: "90%",
+                                            }}
+                                            src="./WatchInTelugu.PNG"
+                                            // alt={jawSummary.title}
+                                        />
+                                    </Link>
+                                </div>
+                            </div>
+                        </li>
+
+                        <li className="continue-wtching-li">
+                            <div
+                            // className="slider-continue-watching-pic"
+                            >
+                                <div
+                                    style={{ height: "250px", width: "400px" }}
+                                    // className="banner-imgs"
+                                >
+                                    <Link to={`/WatchInYourLanguage/Punjabi`}>
+                                        <img
+                                            className="banner-img"
+                                            style={{
+                                                width: "90%",
+                                                height: "90%",
+                                            }}
+                                            src="./WatchInPunjabi.PNG"
+                                            // alt={jawSummary.title}
+                                        />
+                                    </Link>
+                                </div>
+                            </div>
+                        </li>
+
+                        {/* <li className="continue-wtching-li">
+                            <div
+                            // className="slider-continue-watching-pic"
+                            >
+                                <div
+                                    style={{ height: "250px", width: "400px" }}
                                     // className="banner-imgs"
                                 >
                                     <Link to={`/WatchInYourLanguage/Tamil`}>
@@ -193,6 +347,52 @@ const WatchInLanguage = () => {
                                 </div>
                             </div>
                         </li>
+
+                        <li className="continue-wtching-li">
+                            <div
+                            // className="slider-continue-watching-pic"
+                            >
+                                <div
+                                    style={{ height: "250px", width: "400px" }}
+                                    // className="banner-imgs"
+                                >
+                                    <Link to={`/WatchInYourLanguage/Tamil`}>
+                                        <img
+                                            className="banner-img"
+                                            style={{
+                                                width: "90%",
+                                                height: "90%",
+                                            }}
+                                            src="./WatchInTamil.PNG"
+                                            // alt={jawSummary.title}
+                                        />
+                                    </Link>
+                                </div>
+                            </div>
+                        </li>
+
+                        <li className="continue-wtching-li">
+                            <div
+                            // className="slider-continue-watching-pic"
+                            >
+                                <div
+                                    style={{ height: "250px", width: "400px" }}
+                                    // className="banner-imgs"
+                                >
+                                    <Link to={`/WatchInYourLanguage/Tamil`}>
+                                        <img
+                                            className="banner-img"
+                                            style={{
+                                                width: "90%",
+                                                height: "90%",
+                                            }}
+                                            src="./WatchInTamil.PNG"
+                                            // alt={jawSummary.title}
+                                        />
+                                    </Link>
+                                </div>
+                            </div>
+                        </li> */}
                     </ul>
                 </div>
             </div>
