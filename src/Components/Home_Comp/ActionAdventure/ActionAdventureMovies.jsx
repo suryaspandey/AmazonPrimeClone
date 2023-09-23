@@ -86,15 +86,15 @@ const ActionAdventureMovies = () => {
             {/* )} */}
 
             <div className="carousel-main" style={{ display: "flex" }}>
-                {myData.map((item) => {
-                    return (
-                        <WatchCards
-                            key={item._id}
-                            actualData={myData}
-                            projectId={projectId}
-                        />
-                    );
-                })}
+                {/* {myData.map((item) => {
+                    return ( */}
+                <WatchCards
+                    // key={item._id}
+                    actualData={myData}
+                    projectId={projectId}
+                />
+                {/* );
+                })} */}
             </div>
         </>
     );

@@ -35,7 +35,7 @@ const WatchInLanguage = () => {
                             // className="slider-continue-watching-pic"
                             >
                                 <div
-                                    style={{ height: "250px", width: "265px" }}
+                                    style={{ height: "250px", width: "400px" }}
                                     // className="banner-imgs"
                                 >
                                     <Link to={`/WatchInYourLanguage/English`}>
@@ -209,75 +209,6 @@ const WatchInLanguage = () => {
                                 </div>
                             </div>
                         </li>
-
-                        {/* <li className="continue-wtching-li">
-                            <div
-                            // className="slider-continue-watching-pic"
-                            >
-                                <div
-                                    style={{ height: "250px", width: "400px" }}
-                                    // className="banner-imgs"
-                                >
-                                    <Link to={`/WatchInYourLanguage/Tamil`}>
-                                        <img
-                                            className="banner-img"
-                                            style={{
-                                                width: "90%",
-                                                height: "90%",
-                                            }}
-                                            src="./WatchInTamil.PNG"
-                                            // alt={jawSummary.title}
-                                        />
-                                    </Link>
-                                </div>
-                            </div>
-                        </li>
-
-                        <li className="continue-wtching-li">
-                            <div
-                            // className="slider-continue-watching-pic"
-                            >
-                                <div
-                                    style={{ height: "250px", width: "400px" }}
-                                    // className="banner-imgs"
-                                >
-                                    <Link to={`/WatchInYourLanguage/Tamil`}>
-                                        <img
-                                            className="banner-img"
-                                            style={{
-                                                width: "90%",
-                                                height: "90%",
-                                            }}
-                                            src="./WatchInTamil.PNG"
-                                            // alt={jawSummary.title}
-                                        />
-                                    </Link>
-                                </div>
-                            </div>
-                        </li>
-
-                        <li className="continue-wtching-li">
-                            <div
-                            // className="slider-continue-watching-pic"
-                            >
-                                <div
-                                    style={{ height: "250px", width: "400px" }}
-                                    // className="banner-imgs"
-                                >
-                                    <Link to={`/WatchInYourLanguage/Tamil`}>
-                                        <img
-                                            className="banner-img"
-                                            style={{
-                                                width: "90%",
-                                                height: "90%",
-                                            }}
-                                            src="./WatchInTamil.PNG"
-                                            // alt={jawSummary.title}
-                                        />
-                                    </Link>
-                                </div>
-                            </div>
-                        </li> */}
                     </ul>
                 </div>
             </div>

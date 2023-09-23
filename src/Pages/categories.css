@@ -1,7 +1,12 @@
 .genres-category, .language-category{
-    display: flex;
+    /* display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: space-between; */
+
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap: 24px;
+    margin: 0 72px;
 }
 
 .category-common-img{

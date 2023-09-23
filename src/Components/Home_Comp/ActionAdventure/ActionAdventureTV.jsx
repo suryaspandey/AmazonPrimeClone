@@ -38,24 +38,6 @@ const ActionAdventureTV = ({ heading }) => {
         navigate("/CompleteShowList/ActionAdventureTVShows");
     };
 
-    // const responsive = {
-    //     superLargeDesktop: {
-    //         breakpoint: { max: 4000, min: 3000 },
-    //         items: 5,
-    //     },
-    //     desktop: {
-    //         breakpoint: { max: 3000, min: 1024 },
-    //         items: 5,
-    //     },
-    //     tablet: {
-    //         breakpoint: { max: 1024, min: 464 },
-    //         items: 2,
-    //     },
-    //     mobile: {
-    //         breakpoint: { max: 464, min: 0 },
-    //         items: 1,
-    //     },
-    // };
     return (
         <>
             {!heading && ( //not to render heading in recommended section
@@ -87,15 +69,15 @@ const ActionAdventureTV = ({ heading }) => {
             )}
 
             <div className="carousel-main" style={{ display: "flex" }}>
-                {myData.map((item) => {
-                    return (
-                        <WatchCards
-                            key={item._id}
-                            actualData={myData}
-                            projectId={projectId}
-                        />
-                    );
-                })}
+                {/* {myData.map((item) => {
+                    return ( */}
+                <WatchCards
+                    // key={item._id}
+                    actualData={myData}
+                    projectId={projectId}
+                />
+                {/* );
+                })} */}
             </div>
         </>
     );

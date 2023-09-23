@@ -59,6 +59,7 @@ const Top10Video = () => {
 
         setCurrentIndex(index);
     };
+    
     return (
         <>
             <div className="cards-heaading">

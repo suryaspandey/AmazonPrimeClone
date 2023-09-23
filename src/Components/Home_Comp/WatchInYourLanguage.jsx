@@ -30,13 +30,11 @@ export const WatchInYourLanguage = () => {
 
     return (
         <div className="cards-main" style={{ display: "flex" }}>
-            {mydata.map((item) => (
-                <WatchCards1
-                    key={item._id}
-                    actualData={mydata}
-                    projectId={projectId}
-                />
-            ))}
+            <WatchCards1
+                // key={item._id}
+                actualData={mydata}
+                projectId={projectId}
+            />
         </div>
     );
 };

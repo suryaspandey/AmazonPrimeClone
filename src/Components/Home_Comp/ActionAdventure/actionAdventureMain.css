@@ -3,4 +3,15 @@
     gap: 10px;
     display: flex;
     list-style-type: none;
+    flex-direction: row;
+}
+.categories-btn{
+    color: #aaa;
+    border: none;
+    font-size: 24px;
+    padding: 20px;
+}
+.categories-btn:hover{
+    background-color: #aaa;
+    color: black;
 }

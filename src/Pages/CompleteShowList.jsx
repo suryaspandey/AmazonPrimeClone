@@ -93,15 +93,15 @@ export const CompleteShowList = () => {
 
                 // className="carousel-main"
             >
-                {myData.map((item) => {
-                    return (
-                        <WatchCards
-                            key={item._id}
-                            actualData={myData}
-                            projectId={projectId}
-                        />
-                    );
-                })}
+                {/* {myData.map((item) => {
+                    return ( */}
+                <WatchCards
+                    // key={item._id}
+                    actualData={myData}
+                    projectId={projectId}
+                />
+                {/* );
+                })} */}
             </div>
         </>
     );
