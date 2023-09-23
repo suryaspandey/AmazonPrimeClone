@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { createRef, useEffect, useRef, useState } from "react";
 // import { Carousel } from "antd";
 import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
@@ -23,18 +23,14 @@ import { Top10 } from "./Top10/Top10";
 import WatchInLanguage from "./Top10/WatchInLanguage";
 import Documentries from "./Documentries";
 import ActionAdventureMovies from "./ActionAdventure/ActionAdventureMovies";
+import Top10Video from "./Top10/Top10Video";
 
-const contentStyle = {
-    height: "160px",
-    color: "#fff",
-    lineHeight: "160px",
-    textAlign: "center",
-    background: "#364d79",
-};
 export default function Home_Corousel() {
-    const videoRef = useRef([]);
+    // const videoRef = useRef([]);
+    // Outside the component
+
     const carouselRef = useRef(null);
-    const [currentIndex, setCurrentIndex] = useState(0);
+    // const [currentIndex, setCurrentIndex] = useState(0);
 
     const videoSources = [
         "https://s3.ll.videorolls.row.aiv-cdn.net/ww_iad/43c2/951b/7f5d/4eb4-94f1-fefd891c2801/cca79408-987a-4781-a636-e9d5fb527763_video_720p_2500kbps_audio_aaclc_128kbps.mp4",
@@ -52,24 +48,49 @@ export default function Home_Corousel() {
         // Add other thumbnail URLs as needed
     ];
 
-    const handleVideoEnded = () => {
-        if (currentIndex < videoSources.length - 1) {
-            setCurrentIndex(currentIndex + 1);
+    const videoRefs = useRef(videoSources.map(() => createRef()));
+
+    const handleVideoEnded = (index) => {
+        if (index < videoSources.length - 1) {
+            videoRefs.current[index + 1].current.play();
+            // setCurrentIndex(currentIndex + 1);
         } else {
-            setCurrentIndex(0);
+            // setCurrentIndex(0);
+            videoRefs.current[0].current.play();
         }
     };
 
-    useEffect(() => {
-        if (videoRef.current) {
-            videoRef.current.play();
-            videoRef.current.addEventListener("ended", handleVideoEnded);
-        }
-    }, [currentIndex]);
+    // useEffect(() => {
+
+    //     if (videoRefs.current) {
+    //         const videos = videoRefs.current;
+    //         videos.play();
+    //         // videoRef.current.play();
+    //         videos.addEventListener("ended", handleVideoEnded);
+    //         return () => {
+    //             videos.removeEventListener("ended", handleVideoEnded);
+    //         };
+    //     }
+    // }, [currentIndex]);
+
+    // useEffect(() => {
+    //     videoRefs.current[0].current.play(); // Start the first video
+
+    //     videoRefs.current.forEach((video, index) => {
+    //         video.current.addEventListener("ended", () =>
+    //             handleVideoEnded(index)
+    //         );
+    //     });
+
+    //     // return () => {
+    //     //     videoRefs.current.forEach((video) => {
+    //     //         video.current.removeEventListener("ended", handleVideoEnded);
+    //     //     });
+    //     // };
+    // }, []);
 
     const handleSlideChange = (index) => {
-        // Pause all videos when manually changing slides
-        videoRef.current.forEach((video, i) => {
+        videoRefs.current.forEach((video, i) => {
             if (video && i !== index) {
                 video.pause();
             }
@@ -81,19 +102,15 @@ export default function Home_Corousel() {
 
     return (
         <div className="home">
-            <div className="corousel-container">
+            {/* <div className="corousel-container">
                 <Carousel
                     showThumbs={false}
                     autoplay
                     infiniteLoop
                     interval={5000}
-                    selectedItem={currentIndex}
+                    // selectedItem={currentIndex}
                     // onChange={handleSlideChange}
-                    // autoPlaySpeed={autoplaySpeed}
-                    ref={carouselRef}
-                    // arrows
-                    // nextArrow={<RightOutlined />}
-                    // prevArrow={<LeftOutlined />}
+                    // ref={carouselRef}
                 >
                     {videoSources.map((source, index) => (
                         <>
@@ -187,12 +204,13 @@ export default function Home_Corousel() {
                                             className="home-banner-video"
                                             autoPlay
                                             muted
+                                            interval={5000}
                                             // ref={(video) =>
                                             //     (videoRef.current[index] =
                                             //         video)
                                             // }
-                                            ref={videoRef}
-                                            onEnded={handleVideoEnded}
+                                            ref={videoRefs.current[index]}
+                                            // onEnded={handleVideoEnded(index)}
                                         >
                                             <source
                                                 src={source}
@@ -206,11 +224,12 @@ export default function Home_Corousel() {
                         </>
                     ))}
                 </Carousel>
-            </div>
+            </div> */}
             {/* <ContinueWatching /> */}
             {/* <ContinueWatchingSlider /> */}
             {/* <ContinueWatchingSlider1 /> */}
             {console.log("home comp")}
+            <Top10Video />
             <RecommendedMovies />
             <MysteryAndThriller />
             <SciFi />
