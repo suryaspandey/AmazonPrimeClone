@@ -16,6 +16,8 @@ import { CompleteShowList } from "./Pages/CompleteShowList";
 import LanguageMoviesAndShows from "./Components/Language/LanguageMoviesAndShows";
 import Footer from "./Components/Footer/Footer";
 import Categories from "./Pages/Categories";
+import ActionAdventureMovies from "./Components/Home_Comp/ActionAdventure/ActionAdventureMovies";
+import ActionAndAdventureMain from "./Components/Home_Comp/ActionAdventure/ActionAndAdventureMain";
 // import { EpisodeNoContent } from "./EpisodeNoContent";
 
 function App() {
@@ -41,6 +43,10 @@ function App() {
                     />
 
                     <Route path="/Categories" element={<Categories />} />
+                    <Route
+                        path="/Categories/ActionAdventure"
+                        element={<ActionAndAdventureMain />}
+                    />
                 </Routes>
             </BrowserRouter>
             <Footer />

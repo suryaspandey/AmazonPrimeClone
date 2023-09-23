@@ -13,7 +13,7 @@ function Categories() {
 
                 <div className="language-category">
                     <div className="action-adv">
-                        <Link>
+                        <Link to={`/Categories/ActionAdventure`}>
                             <img
                                 className="category-common-img"
                                 src="https://m.media-amazon.com/images/S/sonata-images-prod/genre_background_4/a77cb87d-f8ac-4ada-88a8-1ca411d7bf13._UR1920,1080_AGaverage_SX480_FMwebp_.png"

@@ -74,7 +74,7 @@ const ActionAdventureTV = ({ heading }) => {
                         </span>
 
                         <span className="card-indv-heading">
-                            Action and adventure movies
+                            Action and adventure TV Shows
                         </span>
                         <span className="seeMore" onClick={handleSeeMoreClick}>
                             See More
