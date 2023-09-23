@@ -27,7 +27,10 @@ const Footer = () => {
                     </li>
                     <li className="footer-li">
                         <a href="">
-                            @1996-2023, AmazonClone.com,Inc. or its affiliates
+                            @1996-2023, created by{" "}
+                            <span style={{ color: "#79bbf3" }}>
+                                suryaspandey
+                            </span>
                         </a>
                     </li>
                 </ul>

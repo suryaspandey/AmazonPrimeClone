@@ -3,13 +3,7 @@ import { Carousel } from "react-responsive-carousel";
 import { BiVolumeMute } from "react-icons/bi";
 import { GoUnmute } from "react-icons/go";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
-import {
-    LeftOutlined,
-    RightOutlined,
-    PlusOutlined,
-    InfoCircleOutlined,
-} from "@ant-design/icons";
-import { VideoPlayer } from "../../PlayShow/VideoPlayer";
+import { PlusOutlined, InfoCircleOutlined } from "@ant-design/icons";
 import { useNavigate } from "react-router";
 import { MdOutlineTrendingUp } from "react-icons/md";
 import {
@@ -23,39 +17,18 @@ const Top10Video = () => {
     const videoRef = useRef([]);
     const carouselRef = useRef(null);
     const [currentIndex, setCurrentIndex] = useState(0);
-    const [myData, setMyData] = useState([]);
     const [isHighlighted, setIsHighlighted] = useState(true);
     const navigate = useNavigate();
 
     const [isMuted, setIsMuted] = useState(true);
 
-    // const bearerToken =
-    //     "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1MDM0NTc0MjhiYWJjMTExMDE5MmNmYiIsImlhdCI6MTY5NDcxMzIwNCwiZXhwIjoxNzI2MjQ5MjA0fQ.DKJz5ZvO667Ht9irDWLfynH2rhqPxGMxSrncaSPeU5w";
-    // const projectId = "zxke0qiu2960";
-    // const mysteryURL = `https://academics.newtonschool.co/api/v1/ott/show?filter={"$and": [{"keywords": "mystery"}, {"keywords": "thriller"}]}`;
-
-    // useEffect(() => {
-    //     const url = "https://academics.newtonschool.co/api/v1/ott/show";
-
-    //     const headers = {
-    //         projectId: projectId,
-    //         Authorization: `Bearer ${bearerToken}`,
-    //     };
-
-    //     fetch(url, { method: "GET", headers: headers })
-    //         .then((response) => response.json())
-    //         .then((exdata) => {
-    //             const allData = exdata;
-    //             // console.log(allData);
-    //             setMyData(exdata.data);
-    //         });
-    // }, [projectId, bearerToken]);
-
     const handleVideoEnded = () => {
         if (currentIndex < videoSources.length - 1) {
             setCurrentIndex(currentIndex + 1);
+            // onVideoChange(currentIndex + 1);
         } else {
             setCurrentIndex(0);
+            // onVideoChange(0);
         }
     };
 
@@ -165,6 +138,7 @@ const Top10Video = () => {
                                             style={{ color: "white" }}
                                         >
                                             {titleNames[index]}
+                                            {/* {currentIndex} */}
                                         </h2>
 
                                         <button
@@ -335,7 +309,7 @@ const Top10Video = () => {
                     ))}
                 </Carousel>
             </div>
-
+            {/* <Top10Cards currentIndex={currentIndex} /> */}
             {/* <Top10Cards /> */}
         </>
     );
