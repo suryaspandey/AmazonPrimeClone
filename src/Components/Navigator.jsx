@@ -3,6 +3,7 @@ import { IoIosArrowDown, IoIosArrowUp } from "react-icons/io";
 import "../Pages/home.css";
 import { useState } from "react";
 import Home_Corousel from "./Home_Comp/Home_Corousel";
+import { Link } from "react-router-dom";
 // import "./fonts/Amazon Ember Bold.ttf";
 const Navigator = () => {
     const [isHover, setIsHover] = useState(false);
@@ -20,7 +21,9 @@ const Navigator = () => {
             <div className="navigator-container">
                 <div className="navbar-navs">
                     <div className="prime-img">
+                        {/* <Link to={`/Home`}> */}
                         <img src="/primeVideo.PNG" alt="prime video" />
+                        {/* </Link> */}
                     </div>
                     <div className="main-links">
                         <ol className="home-navs">

@@ -139,16 +139,15 @@ export const ContinueWatchingSlider1 = () => {
                     {...settings}
                 > */}
                 <Slider {...settings}>
-                    {myData
-                        // .slice(currentIndex, currentIndex + slidesPerPage)
+                    {/* {myData
                         .map((dat) => {
-                            return (
-                                <WatchCards
-                                    key={dat.summary.id}
-                                    actualData={dat}
-                                />
-                            );
-                        })}
+                            return ( */}
+                    <WatchCards
+                        // key={dat.summary.id}
+                        actualData={dat}
+                    />
+                    {/* );
+                        })} */}
                 </Slider>
                 {/* <button
                     className="carousel-button prev"

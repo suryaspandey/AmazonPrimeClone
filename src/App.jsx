@@ -18,6 +18,7 @@ import Footer from "./Components/Footer/Footer";
 import Categories from "./Pages/Categories";
 import ActionAdventureMovies from "./Components/Home_Comp/ActionAdventure/ActionAdventureMovies";
 import ActionAndAdventureMain from "./Components/Home_Comp/ActionAdventure/ActionAndAdventureMain";
+import Home from "./Pages/Home";
 // import { EpisodeNoContent } from "./EpisodeNoContent";
 
 function App() {
@@ -28,6 +29,7 @@ function App() {
             <BrowserRouter>
                 <Routes>
                     <Route path="/" element={<Home_Corousel />}></Route>
+                    <Route path="/Home" element={<Home />} />
                     <Route
                         path="/watchDetails/:id"
                         element={<WatchDetails />}
@@ -44,7 +46,8 @@ function App() {
 
                     <Route path="/Categories" element={<Categories />} />
                     <Route
-                        path="/Categories/ActionAdventure"
+                        exact
+                        path="/Categories/ActionAdventure/:subheading"
                         element={<ActionAndAdventureMain />}
                     />
                 </Routes>

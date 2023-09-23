@@ -121,11 +121,14 @@ const ContinueWatchingSlider = () => {
                 > */}
                 {/* <h1 style={{ color: "white" }}>Slider Component</h1> */}
                 <Slider {...settings}>
-                    {myData.map((dat) => {
-                        return (
-                            <WatchCards key={dat.summary.id} actualData={dat} />
-                        );
-                    })}
+                    {/* {myData.map((dat) => {
+                        return ( */}
+                    <WatchCards
+                        //  key={dat.summary.id}
+                        actualData={dat}
+                    />
+                    {/* );
+                    })} */}
                 </Slider>
                 {/* </Carousel> */}
                 {/* <button
