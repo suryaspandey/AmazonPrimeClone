@@ -43,13 +43,16 @@ function App() {
                         path="/WatchInYourLanguage/:language"
                         element={<LanguageMoviesAndShows />}
                     />
-
-                    <Route path="/Categories" element={<Categories />} />
                     <Route
                         exact
+                        path="/Categories/ActionAdventure/"
+                        element={<ActionAndAdventureMain />}
+                    />
+                    <Route
                         path="/Categories/ActionAdventure/:subheading"
                         element={<ActionAndAdventureMain />}
                     />
+                    <Route path="/Categories" element={<Categories />} />
                 </Routes>
             </BrowserRouter>
             <Footer />

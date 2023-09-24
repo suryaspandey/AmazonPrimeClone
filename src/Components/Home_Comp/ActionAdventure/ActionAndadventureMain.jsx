@@ -1,8 +1,8 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import ActionAdventureMovies from "./ActionAdventureMovies";
 import ActionAdventureTV from "./ActionAdventureTV";
 import "./actionAdventureMain.css";
-import { useNavigate, useParams } from "react-router";
+import { useLocation, useNavigate, useParams } from "react-router";
 import { Link } from "react-router-dom";
 
 const ActionAndAdventureMain = () => {
@@ -11,16 +11,38 @@ const ActionAndAdventureMain = () => {
     const [showCompTVShow, setShowCompTVShow] = useState(false);
     const [isActive, setIsActive] = useState(1);
 
+    const location = useLocation();
+    console.log("useLocation", location.pathname);
+
     const { subheading } = useParams();
     console.log("subheading: ", subheading);
     const navigate = useNavigate();
+
+    useEffect(() => {
+        if (subheading === "all" || !subheading) {
+            setIsActive(1);
+        } else if (subheading === "movies") {
+            setIsActive(2);
+        } else if (subheading === "TVShows") {
+            setIsActive(3);
+        }
+    });
+
+    const handleClick = ({ subheading, isActive }) => {
+        navigate(`{/Categories/ActionAdventure/${subheading}}`);
+        setIsActive(isActive);
+    };
 
     const handleClickAll = () => {
         setShowCompAll(true);
         setShowCompMovie(true);
         setShowCompTVShow(true);
         setIsActive(1);
-        navigate(`/Categories/ActionAdventure/all`);
+        if (
+            subheading === "all" ||
+            location.pathname === `{/Categories/ActionAdventure/all}`
+        )
+            navigate(`/Categories/ActionAdventure/all`);
     };
 
     const handleClickMovie = () => {
@@ -28,7 +50,11 @@ const ActionAndAdventureMain = () => {
         setShowCompMovie(true);
         setShowCompTVShow(false);
         setIsActive(2);
-        navigate(`/Categories/ActionAdventure/movies`);
+        if (
+            subheading === "movies" ||
+            location.pathname === `{/Categories/ActionAdventure/movies}`
+        )
+            navigate(`/Categories/ActionAdventure/movies`);
     };
 
     const handleClickTVShow = () => {
@@ -36,37 +62,44 @@ const ActionAndAdventureMain = () => {
         setShowCompMovie(false);
         setShowCompTVShow(true);
         setIsActive(3);
-        navigate(`/Categories/ActionAdventure/TVShows`);
+        if (subheading === "TVShows")
+            navigate(`/Categories/ActionAdventure/TVShows`);
     };
     return (
         <>
             <h1>Action and adventure</h1>
             <ul className="actionAdvMain-ul">
                 <li>
-                    <button
-                        className="categories-btn"
-                        onClick={handleClickAll}
-                        style={
-                            showCompAll && isActive === 1
-                                ? {
-                                      background: "white",
-                                      padding: "20px",
-                                      borderRadius: "20px",
-                                      color: "black",
-                                  }
-                                : { background: "transparent", color: "#aaa" }
-                        }
-                    >
-                        All
-                    </button>
+                    <Link to={`/Categories/ActionAdventure/all`}>
+                        <button
+                            className="categories-btn"
+                            onClick={() => handleClick("all", 1)}
+                            style={
+                                (subheading === "all" || !subheading) &&
+                                isActive === 1
+                                    ? {
+                                          background: "white",
+                                          padding: "20px",
+                                          borderRadius: "20px",
+                                          color: "black",
+                                      }
+                                    : {
+                                          background: "transparent",
+                                          color: "#aaa",
+                                      }
+                            }
+                        >
+                            All
+                        </button>
+                    </Link>
                 </li>
                 <li>
                     <Link to={`/Categories/ActionAdventure/movies`}>
                         <button
                             className="categories-btn"
-                            onClick={handleClickMovie}
+                            onClick={() => handleClick("movies", 2)}
                             style={
-                                showCompMovie && isActive === 2
+                                isActive === 2 && subheading === "movies"
                                     ? {
                                           background: "white",
                                           padding: "20px",
@@ -87,9 +120,9 @@ const ActionAndAdventureMain = () => {
                     <Link to={`/Categories/ActionAdventure/TVShows`}>
                         <button
                             className="categories-btn"
-                            onClick={handleClickTVShow}
+                            onClick={() => handleClick("TVShows", 3)}
                             style={
-                                showCompTVShow && isActive === 3
+                                subheading === "TVShows" && isActive === 3
                                     ? {
                                           background: "white",
                                           padding: "20px",
@@ -108,19 +141,19 @@ const ActionAndAdventureMain = () => {
                 </li>
             </ul>
             <div className="shows-contaainer">
-                {showCompAll && (
+                {(subheading === "all" || !subheading) && (
                     <>
                         <ActionAdventureMovies />
                         <ActionAdventureTV />
                     </>
                 )}
-                {showCompMovie && (
+                {subheading === "movies" && (
                     <>
                         <ActionAdventureMovies />
                         {/* <ActionAdventureTV /> */}
                     </>
                 )}
-                {showCompTVShow && (
+                {subheading === "TVShows" && (
                     <>
                         {/* <ActionAdventureMovies /> */}
                         <ActionAdventureTV />
