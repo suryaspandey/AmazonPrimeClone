@@ -28,8 +28,9 @@ function App() {
             <Navigator />
             <BrowserRouter>
                 <Routes>
-                    <Route path="/" element={<Home_Corousel />}></Route>
                     <Route path="/Home" element={<Home />} />
+
+                    <Route path="/" element={<Home_Corousel />}></Route>
                     <Route
                         path="/watchDetails/:id"
                         element={<WatchDetails />}
