@@ -19,6 +19,7 @@ import ActionAdventureMovies from "./Components/Home_Comp/ActionAdventure/Action
 import ActionAndAdventureMain from "./Components/Home_Comp/ActionAdventure/ActionAndAdventureMain";
 import Home from "./Pages/Home";
 import AllTVShows from "./Components/AllTVShows/AllTVShows";
+import AddToWatchList from "./Components/Watchlist/AddToWatchList";
 // import { EpisodeNoContent } from "./EpisodeNoContent";
 
 function App() {
@@ -54,6 +55,7 @@ function App() {
             element={<ActionAndAdventureMain />}
           />
           <Route path="/Categories" element={<Categories />} />
+          <Route path="/myStuff/Watchlist" element={<AddToWatchList />} />
         </Routes>
       </BrowserRouter>
       <Footer />
