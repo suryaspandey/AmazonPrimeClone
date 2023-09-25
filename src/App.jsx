@@ -18,47 +18,48 @@ import Categories from "./Pages/Categories";
 import ActionAdventureMovies from "./Components/Home_Comp/ActionAdventure/ActionAdventureMovies";
 import ActionAndAdventureMain from "./Components/Home_Comp/ActionAdventure/ActionAndAdventureMain";
 import Home from "./Pages/Home";
+import AllTVShows from "./Components/AllTVShows/AllTVShows";
 // import { EpisodeNoContent } from "./EpisodeNoContent";
 
 function App() {
-    return (
-        // <EpisodeNoContent>
-        <>
-            <Navigator />
-            <BrowserRouter>
-                <Routes>
-                    <Route path="/Home" element={<Home />} />
+  return (
+    // <EpisodeNoContent>
+    <>
+      <BrowserRouter>
+        <Navigator />
 
-                    <Route path="/" element={<Home_Corousel />}></Route>
-                    <Route
-                        path="/watchDetails/:id"
-                        element={<WatchDetails />}
-                    />
-                    <Route path="/TVShow/:id" element={<VideoPlayer />} />
-                    <Route
-                        path="/CompleteShowList/:category"
-                        element={<CompleteShowList />}
-                    />
-                    <Route
-                        path="/WatchInYourLanguage/:language"
-                        element={<LanguageMoviesAndShows />}
-                    />
-                    <Route
-                        exact
-                        path="/Categories/ActionAdventure/"
-                        element={<ActionAndAdventureMain />}
-                    />
-                    <Route
-                        path="/Categories/ActionAdventure/:subheading"
-                        element={<ActionAndAdventureMain />}
-                    />
-                    <Route path="/Categories" element={<Categories />} />
-                </Routes>
-            </BrowserRouter>
-            <Footer />
-        </>
-        // </EpisodeNoContent>
-    );
+        <Routes>
+          <Route path="/Home" element={<Home />} />
+          <Route path="/Home/AllMovies" element={<Home_Corousel />} />
+          <Route path="/Home/AllTVShows" element={<AllTVShows />} />
+
+          {/* <Route path="/homeAll" element={<Home_Corousel />}></Route> */}
+          <Route path="/watchDetails/:id" element={<WatchDetails />} />
+          <Route path="/TVShow/:id" element={<VideoPlayer />} />
+          <Route
+            path="/CompleteShowList/:category"
+            element={<CompleteShowList />}
+          />
+          <Route
+            path="/WatchInYourLanguage/:language"
+            element={<LanguageMoviesAndShows />}
+          />
+          <Route
+            exact
+            path="/Categories/ActionAdventure/"
+            element={<ActionAndAdventureMain />}
+          />
+          <Route
+            path="/Categories/ActionAdventure/:subheading"
+            element={<ActionAndAdventureMain />}
+          />
+          <Route path="/Categories" element={<Categories />} />
+        </Routes>
+      </BrowserRouter>
+      <Footer />
+    </>
+    // </EpisodeNoContent>
+  );
 }
 
 export default App;

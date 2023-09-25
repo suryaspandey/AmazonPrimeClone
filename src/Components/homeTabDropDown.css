@@ -1,0 +1,49 @@
+/* ul li:hover {
+  background-color: aqua;
+}
+
+ul li {
+  list-style-type: none;
+} */
+
+.sub-menu {
+  /* display: flex; */
+  display: none;
+  align-items: center;
+  flex-direction: column;
+  padding: 0px;
+  color: "#aaa";
+  position: absolute;
+  top: 100%;
+  z-index: 1;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  list-style-type: none;
+  background-color: #aaa;
+  top: 42px;
+  /* width: 100%; */
+}
+
+.sub-menu.active {
+  display: block;
+}
+
+.sub-menu ul {
+  list-style-type: none;
+  background-color: #aaa;
+}
+.sub-menu li {
+  /* letter-spacing: 0.2em; */
+  width: 24%;
+}
+.sub-menu li:hover {
+  background-color: white;
+  color: black;
+  width: 100%;
+  z-index: 4;
+  width: 100%;
+  /* width: 24%; */
+}
+
+.home-list {
+  padding: 0 20px;
+}

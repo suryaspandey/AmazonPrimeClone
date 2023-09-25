@@ -73,7 +73,7 @@ export default function Home() {
                 alt=""
               />
             </div>
-            <div className="channel">
+            <div className="channel" onClick={() => alert("Coming Soon")}>
               <img
                 src="https://m.media-amazon.com/images/G/31/AmazonVideo/2021/Channels/MLP/LionsgatePlay-426X2946_V1.jpg"
                 alt=""
