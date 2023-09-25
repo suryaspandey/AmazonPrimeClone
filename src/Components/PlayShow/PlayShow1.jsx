@@ -6,25 +6,22 @@ import { Player, ControlBar, BigPlayButton } from "video-react";
 import { RiForward10Fill, RiReplay10Fill } from "react-icons/ri";
 import { FaPlay } from "react-icons/fa";
 import { BsPauseFill } from "react-icons/bs";
-import Container from "@material-ui/core/Container";
-import { makeStyles } from "@material-ui/core/styles";
-import Grid from "@material-ui/core/Grid";
 // import Button from "@mui/material";
-import {
-    Slider,
-    withStyles,
-    Button,
-    Tooltip,
-    Popover,
-} from "@material-ui/core";
-import {
-    FastForward,
-    FastRewind,
-    Pause,
-    PlayArrow,
-    SkipNext,
-    VolumeUp,
-} from "@material-ui/icons";
+// import {
+//     Slider,
+//     withStyles,
+//     Button,
+//     Tooltip,
+//     Popover,
+// } from "@material-ui/core";
+// import {
+//     FastForward,
+//     FastRewind,
+//     Pause,
+//     PlayArrow,
+//     SkipNext,
+//     VolumeUp,
+// } from "@material-ui/icons";
 // GrForwardTen
 import "./playShow.css";
 import { Typography } from "@mui/material";

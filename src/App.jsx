@@ -3,7 +3,6 @@ import reactLogo from "./assets/react.svg";
 import viteLogo from "/vite.svg";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "./App.css";
-import { Router } from "@material-ui/icons";
 // import Home from "./Pages/Home";
 import WatchDetails from "./Pages/WatchDetails";
 import Navigator from "./Components/Navigator";

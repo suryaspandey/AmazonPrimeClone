@@ -6,8 +6,6 @@ import { Badge, Switch } from "antd";
 import { AiOutlineDown } from "react-icons/ai";
 import { IoIosArrowDown, IoIosArrowUp } from "react-icons/io";
 import "./completeShowList.css";
-import { Flag } from "@material-ui/icons";
-import { checkboxClasses } from "@mui/material";
 import WatchCards from "../Components/Home_Comp/WatchCards";
 import { Link, useNavigate } from "react-router-dom";
 // import { useApi } from "../APIContext";#

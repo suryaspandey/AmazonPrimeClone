@@ -1,43 +1,58 @@
-.home-container-main{
-    position: relative;
-    display: flex;
-    height: 100%;
-    width: 100%;
-    /* background-image: linear-gradient( to right, #000 40%, transparent 58% ), url(https://m.media-amazon.com/images/G/31/AmazonVideo/2019/MLP.jpg); */
+.home-container-main,
+.second-home-banner {
+  position: relative;
+  display: flex;
+  height: 100%;
+  width: 100%;
+  /* background-image: linear-gradient( to right, #000 40%, transparent 58% ), url(https://m.media-amazon.com/images/G/31/AmazonVideo/2019/MLP.jpg); */
 }
 
-.home-banner-text-container{
-    position: absolute;
-    top: 50%;
-    left: 3%;
-    color: white;
+.home-banner-text-container {
+  position: absolute;
+  top: 22%;
+  left: 3%;
+  color: white;
+  width: 50%;
 }
 
-.primeoffers-btns-container{
-    display: flex;
-    flex-direction: column;
+.home-banner-text-container-banner2 {
+  position: absolute;
+  color: white;
+  top: 50%;
+  right: 3%;
 }
 
-.primeoffersplanlinks{
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    width: 280px;
-    /* height: 168px; */
+.primeoffers-btns-container {
+  display: flex;
+  flex-direction: column;
 }
 
-.primeoffersbtn{
-    padding: 14px 20px;
-    background-color: #0f79Af;
-    color: white;
-   /* width: 100%;
+.primeoffersBtnandLinks-banner2 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.primeoffersplanlinks {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  width: 280px;
+  /* height: 168px; */
+}
+
+.primeoffersbtn {
+  padding: 14px 20px;
+  background-color: #0f79af;
+  color: white;
+  /* width: 100%;
    height: 100%; */
-    font-size: 18px;
+  font-size: 18px;
 }
-.primeoffersplanlinks{
-    color: white;
-    font-size: 18px;
-    text-align: center;
+.primeoffersplanlinks {
+  color: white;
+  font-size: 18px;
+  text-align: center;
 }
 
 /* https://m.media-amazon.com/images/G/31/AmazonVideo/2021/X-site/MLP/TVOD/TVOD_MLP_Left.jpg */

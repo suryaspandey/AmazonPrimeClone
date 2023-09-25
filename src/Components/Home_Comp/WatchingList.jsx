@@ -2,7 +2,6 @@ import React, { useEffect, useRef, useState } from "react";
 import "./watchingList.css";
 import { AiOutlineLeft, AiOutlineRight } from "react-icons/ai";
 import { ListItem } from "../ListItems/ListItem";
-import { Directions } from "@material-ui/icons";
 import WatchCards from "./WatchCards";
 
 export const WatchingList = () => {
