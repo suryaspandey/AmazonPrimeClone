@@ -22,6 +22,7 @@ import AllTVShows from "./Components/AllTVShows/AllTVShows";
 import AddToWatchList from "./Components/Watchlist/AddToWatchList";
 import Profiles from "./Pages/Profiles";
 import EditProfile from "./Pages/EditProfile";
+import Login from "./Pages/Login";
 // import { EpisodeNoContent } from "./EpisodeNoContent";
 
 function App() {
@@ -29,14 +30,12 @@ function App() {
     // <EpisodeNoContent>
     <>
       <BrowserRouter>
-        <Navigator />
-
+        {/* <Navigator /> */}
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/Home" element={<Home />} />
           <Route path="/Home/AllMovies" element={<Home_Corousel />} />
           <Route path="/Home/AllTVShows" element={<AllTVShows />} />
-
           {/* <Route path="/homeAll" element={<Home_Corousel />}></Route> */}
           <Route path="/watchDetails/:id" element={<WatchDetails />} />
           <Route path="/TVShow/:id" element={<VideoPlayer />} />
@@ -61,6 +60,9 @@ function App() {
           <Route path="/manageprofiles" element={<Profiles />} />
           <Route path="/editProfile" element={<EditProfile />} />
           <Route path="/myStuff/Watchlist" element={<AddToWatchList />} />
+        </Routes>
+        <Routes>
+          <Route path="/login" element={<Login />} />
         </Routes>
       </BrowserRouter>
       <Footer />

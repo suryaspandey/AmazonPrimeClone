@@ -83,8 +83,12 @@ const Navigator = () => {
                   <div className="options-left">
                     <span>Your Account</span>
                     <span>Help</span>
-                    <span>Watch Anywhere</span>
+                    {/* <span>Watch Anywhere</span> */}
                     <span>Accounts and Settings</span>
+                    <span>Prime Benifits</span>
+                    <Link to={"/login"}>
+                      <span>Sign In</span>
+                    </Link>
                   </div>
                   <div className="options-right">
                     <span>Kids</span>
