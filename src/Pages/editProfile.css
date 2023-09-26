@@ -6,3 +6,89 @@
   padding: 24px 0 16px;
   padding-top: 100px;
 }
+
+.editProfile-ul {
+  flex-flow: row wrap;
+  justify-content: center;
+  margin: auto auto 8px;
+  display: flex;
+  padding: 0;
+}
+
+.editProfile-li {
+  cursor: pointer;
+  height: 108px;
+  padding: 8px 16px 0;
+}
+
+.editprofile-img {
+  background-size: 100% 100%;
+  border-radius: 50%;
+  height: 100px;
+  width: 100px;
+}
+
+.profileChange-btn {
+  display: flex;
+  margin: auto;
+  outline: none;
+  padding-bottom: 36px;
+  text-align: center;
+  border: none;
+  background-color: transparent;
+}
+
+.change-profileImg {
+  color: #8197a4;
+  font-size: 15px;
+  line-height: 20px;
+}
+
+.input-profileName {
+  margin-bottom: 12px;
+  margin: auto;
+  width: 320px;
+  padding-bottom: 40px;
+}
+
+.input-edit-create-name {
+  background-color: rgba(0, 0, 0, 0.3);
+  border: 2px solid #425265;
+  box-shadow: none;
+  color: #fff;
+  font-size: 15px;
+  outline: none;
+  transition: opacity 0.2s ease-in-out, border 0.2s ease-in-out,
+    box-shadow 0.2s ease-in-out, color 0.2s ease-in-out,
+    outline 0.2s ease-in-out;
+  width: 100%;
+  border-radius: 3px;
+  padding: 11px;
+  height: auto;
+  text-align: center;
+}
+
+.editProfile-save-cancel-btns {
+  display: flex;
+  justify-content: center;
+}
+
+.editProfile-cancel-btn {
+  margin-right: 16px;
+  background-color: #425265;
+  color: #fff;
+  border-radius: 3px;
+  border: none;
+  box-sizing: border-box;
+  cursor: pointer;
+  display: inline-block;
+  font-family: Amazon Ember, Amazon Arabic Ember, Arial, sans-serif !important;
+  font-size: 17px;
+  line-height: 20px;
+  margin-top: 0;
+  padding: 14px 20px;
+  text-decoration: none;
+  touch-action: manipulation;
+  transition: all 0.2s ease-out;
+  vertical-align: top;
+}
