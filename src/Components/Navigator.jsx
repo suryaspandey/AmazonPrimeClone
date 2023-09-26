@@ -83,13 +83,15 @@ const Navigator = () => {
                   <div className="options-left">
                     <span>Your Account</span>
                     <span>Help</span>
-                    <span>HeWatch Anywherelp</span>
-                    <span>HelAccounts and Settings</span>
+                    <span>Watch Anywhere</span>
+                    <span>Accounts and Settings</span>
                   </div>
                   <div className="options-right">
                     <span>Kids</span>
                     <span>Add New</span>
-                    <span>Manage Profiles</span>
+                    <span>
+                      <Link to={"/manageprofiles"}>Manage Profiles</Link>
+                    </span>
                     <span>Learn More</span>
                   </div>
                 </div>

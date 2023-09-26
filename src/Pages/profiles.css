@@ -1,0 +1,42 @@
+.profile-holder {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.profile-ul {
+  display: inline-flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  margin: auto auto 8px;
+  list-style-type: none;
+}
+
+.profile-li {
+  height: 180px;
+  width: 164px;
+}
+
+.profile-img-btn {
+  padding: 2px 16px 0;
+}
+.profile-img {
+  height: 132px;
+  width: 132px;
+  box-shadow: 0 0 0 2px #fff;
+  border-radius: 50%;
+}
+
+.profile-name {
+  color: rgba(242, 244, 246);
+  display: block;
+  font-size: 17px;
+  font-weight: 700;
+  overflow: hidden;
+  text-align: center;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  width: 100%;
+}

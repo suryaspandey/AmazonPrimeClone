@@ -6,9 +6,12 @@ import App from "./App.jsx";
 // import './index.css'
 
 import { ApiProvider } from "./APIContext.jsx";
+import { WatchListProvider } from "./WatchListContext.jsx";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
-    <ApiProvider>
-        <App />
-    </ApiProvider>
+  <ApiProvider>
+    <WatchListProvider>
+      <App />
+    </WatchListProvider>
+  </ApiProvider>
 );

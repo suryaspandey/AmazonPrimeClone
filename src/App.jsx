@@ -20,6 +20,7 @@ import ActionAndAdventureMain from "./Components/Home_Comp/ActionAdventure/Actio
 import Home from "./Pages/Home";
 import AllTVShows from "./Components/AllTVShows/AllTVShows";
 import AddToWatchList from "./Components/Watchlist/AddToWatchList";
+import Profiles from "./Pages/Profiles";
 // import { EpisodeNoContent } from "./EpisodeNoContent";
 
 function App() {
@@ -30,6 +31,7 @@ function App() {
         <Navigator />
 
         <Routes>
+          <Route path="/" element={<Home />} />
           <Route path="/Home" element={<Home />} />
           <Route path="/Home/AllMovies" element={<Home_Corousel />} />
           <Route path="/Home/AllTVShows" element={<AllTVShows />} />
@@ -55,6 +57,7 @@ function App() {
             element={<ActionAndAdventureMain />}
           />
           <Route path="/Categories" element={<Categories />} />
+          <Route path="/manageprofiles" element={<Profiles />} />
           <Route path="/myStuff/Watchlist" element={<AddToWatchList />} />
         </Routes>
       </BrowserRouter>
