@@ -4,8 +4,17 @@
   flex-direction: column;
   flex-wrap: wrap;
   justify-content: center;
+  margin-bottom: 90px;
 }
-
+.profile-heading {
+  color: #fff;
+  font-size: 30px;
+  font-weight: 900;
+  text-align: center;
+  /* padding: 24px 0 16px; */
+  padding-bottom: 48px;
+  padding-top: 50px;
+}
 .profile-ul {
   display: inline-flex;
   flex-flow: row wrap;
@@ -21,12 +30,20 @@
 
 .profile-img-btn {
   padding: 2px 16px 0;
+  background-color: transparent;
+  border: none;
+  position: relative;
 }
 .profile-img {
   height: 132px;
   width: 132px;
   box-shadow: 0 0 0 2px #fff;
   border-radius: 50%;
+  border: none;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+.profile-img:hover {
+  transform: scale(1.02);
 }
 
 .profile-name {
@@ -39,4 +56,66 @@
   text-overflow: ellipsis;
   white-space: nowrap;
   width: 100%;
+}
+
+.profile-edit-btn-container {
+  display: flex;
+  justify-content: center;
+}
+
+.profile-edit-btn {
+  background-color: #425265;
+  color: #fff;
+  border-radius: 3px;
+  cursor: pointer;
+  display: inline-block;
+  font-family: Amazon Ember, Amazon Arabic Ember, Arial, sans-serif !important;
+  font-size: 17px;
+  line-height: 20px;
+  margin-top: 0;
+  padding: 14px 20px;
+  text-decoration: none;
+  touch-action: manipulation;
+  transition: all 0.2s ease-out;
+  vertical-align: top;
+  border: none;
+}
+
+.profile-edit-btn:hover {
+  background-color: #566b84;
+}
+
+/* .edit-pencil-icon {
+  color: white;
+  left: 45%;
+  background-position: 50%;
+  background-repeat: no-repeat;
+  background-size: 41px 30px;
+  border-radius: 50%;
+  bottom: 0;
+  content: "";
+  position: absolute;
+  top: 35%;
+  z-index: 1;
+  font-size: 35px;
+  /* background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyOCIgaGVpZ2h0PSIyNyI+PGcgZmlsbD0ibm9uZSIgZmlsbC1ydWxlPSJldmVub2RkIiBzdHJva2U9IiNGMkY0RjYiIHN0cm9rZS13aWR0aD0iMiI+PHBhdGggc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIiBkPSJNMjEuMDgyIDEuODc1IDEuODc1IDE5Ljk1OHY1LjE2N2g1LjE2N0wyNi40MTcgNy4xNTl6Ii8+PHBhdGggZD0ibTE3LjM3NSA3LjA0MiAzLjg3NSAzLjg3NSIvPjwvZz48L3N2Zz4=); 
+} */
+
+.edit-pencil-icon {
+  background: rgba(0, 0, 0, 0.5);
+  width: 100%;
+  height: 100%;
+  /* background: burlywood; */
+  color: white;
+  left: 0%;
+  /* background-position: 50%; */
+  background-repeat: no-repeat;
+  /* background-size: 41px 30px; */
+  border-radius: 50%;
+  bottom: 0;
+  content: "";
+  position: absolute;
+  /* top: 35%; */
+  z-index: 1;
+  /* font-size: 18px; */
 }

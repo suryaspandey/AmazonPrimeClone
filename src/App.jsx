@@ -21,6 +21,7 @@ import Home from "./Pages/Home";
 import AllTVShows from "./Components/AllTVShows/AllTVShows";
 import AddToWatchList from "./Components/Watchlist/AddToWatchList";
 import Profiles from "./Pages/Profiles";
+import EditProfile from "./Pages/EditProfile";
 // import { EpisodeNoContent } from "./EpisodeNoContent";
 
 function App() {
@@ -58,6 +59,7 @@ function App() {
           />
           <Route path="/Categories" element={<Categories />} />
           <Route path="/manageprofiles" element={<Profiles />} />
+          <Route path="/editProfile" element={<EditProfile />} />
           <Route path="/myStuff/Watchlist" element={<AddToWatchList />} />
         </Routes>
       </BrowserRouter>
