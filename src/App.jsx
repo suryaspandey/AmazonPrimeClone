@@ -23,6 +23,8 @@ import AddToWatchList from "./Components/Watchlist/AddToWatchList";
 import Profiles from "./Pages/Profiles";
 import EditProfile from "./Pages/EditProfile";
 import Login from "./Pages/Login";
+import LoginPassword from "./Pages/LoginPassword";
+import Register from "./Pages/Register";
 // import { EpisodeNoContent } from "./EpisodeNoContent";
 
 function App() {
@@ -62,6 +64,8 @@ function App() {
         </Routes>
         <Routes>
           <Route path="/login" element={<Login />} />
+          <Route path="/loginpassword" element={<LoginPassword />} />
+          <Route path="/register" element={<Register />} />
         </Routes>
       </BrowserRouter>
       <Footer />

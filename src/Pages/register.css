@@ -1,0 +1,20 @@
+.register-form-container {
+  background-color: white;
+  padding: 14px 18px !important;
+}
+
+.register-form-main {
+  width: 700px;
+  margin: auto;
+  margin-top: 10px;
+}
+
+.register-form {
+  width: 350px;
+  margin: 0 auto;
+  border: 1px #ddd solid;
+  background-color: #fff;
+  position: relative;
+  padding: 14px 18px;
+  border-radius: 8px;
+}

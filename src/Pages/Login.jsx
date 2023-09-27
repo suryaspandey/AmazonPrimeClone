@@ -2,8 +2,15 @@ import React from "react";
 import "./login.css";
 import { LockOutlined, UserOutlined } from "@ant-design/icons";
 import { Button, Checkbox, Form, Input } from "antd";
+import LoginPassword from "./LoginPassword";
+import { Navigate, useNavigate } from "react-router";
 
 const Login = () => {
+  const navigate = useNavigate();
+
+  const handleloginPassword = () => {
+    navigate("/loginpassword");
+  };
   const onFinish = (values) => {
     console.log("Received values of form: ", values);
   };
@@ -74,6 +81,7 @@ const Login = () => {
                 type="primary"
                 htmlType="submit"
                 className="login-form-button login-continue-btn"
+                onClick={handleloginPassword}
               >
                 Continue
               </Button>
@@ -94,6 +102,7 @@ const Login = () => {
         <div className="create-account-btn-container login-form-container">
           <button className="create-account-btn ">
             Create your Amazon Clone account
+            {/* <Navigate to={<LoginPassword />} /> */}
           </button>
         </div>
       </div>
