@@ -25,19 +25,31 @@ import EditProfile from "./Pages/EditProfile";
 import Login from "./Pages/Login";
 import LoginPassword from "./Pages/LoginPassword";
 import Register from "./Pages/Register";
+import PrivateRoute from "./PrivateRoute";
 // import { EpisodeNoContent } from "./EpisodeNoContent";
 
 function App() {
+  // const isAuthenticated = true;
+  const isLoginOrRegister =
+    window.location.pathname === "/login" ||
+    window.location.pathname === "/register";
+
   return (
     // <EpisodeNoContent>
     <>
       <BrowserRouter>
-        {/* <Navigator /> */}
+        {!isLoginOrRegister && <Navigator />}
+
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/Home" element={<Home />} />
           <Route path="/Home/AllMovies" element={<Home_Corousel />} />
           <Route path="/Home/AllTVShows" element={<AllTVShows />} />
+
+          <Route path="/login" element={<Login />} />
+          <Route path="/loginpassword" element={<LoginPassword />} />
+          <Route path="/register" element={<Register />} />
+
           <Route path="/watchDetails/:id" element={<WatchDetails />} />
           <Route path="/TVShow/:id" element={<VideoPlayer />} />
           <Route
@@ -62,12 +74,8 @@ function App() {
           <Route path="/editProfile" element={<EditProfile />} />
           <Route path="/myStuff/Watchlist" element={<AddToWatchList />} />
         </Routes>
-        <Routes>
-          <Route path="/login" element={<Login />} />
-          <Route path="/loginpassword" element={<LoginPassword />} />
-          <Route path="/register" element={<Register />} />
-        </Routes>
       </BrowserRouter>
+      {/* {!isLoginOrRegister && <Footer />} */}
       <Footer />
     </>
     // </EpisodeNoContent>
