@@ -36,7 +36,6 @@ function App() {
           <Route path="/Home" element={<Home />} />
           <Route path="/Home/AllMovies" element={<Home_Corousel />} />
           <Route path="/Home/AllTVShows" element={<AllTVShows />} />
-          {/* <Route path="/homeAll" element={<Home_Corousel />}></Route> */}
           <Route path="/watchDetails/:id" element={<WatchDetails />} />
           <Route path="/TVShow/:id" element={<VideoPlayer />} />
           <Route

@@ -1,3 +1,124 @@
+:root {
+  background-color: white;
+}
 .login-container {
   background-color: white;
+}
+
+.login-prime-img-container {
+  text-align: center;
+  margin-bottom: 18px !important;
+}
+.login-form-main-container {
+  padding-bottom: 20px;
+}
+
+.login-form-container {
+  margin: auto;
+  margin-top: 10px;
+  width: 350px;
+  border-radius: 8px;
+  padding: 20px 26px !important;
+  border: 1px #ddd solid;
+  background-color: #fff;
+}
+
+.login-label-email-phno {
+  display: block;
+  padding-left: 2px;
+  padding-bottom: 2px;
+  font-weight: 700;
+}
+
+.login-username-input {
+  border: 1px solid #a6a6a6;
+  border-top-color: #949494;
+  border-radius: 3px;
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.5),
+    0 1px 0 rgba(0, 0, 0, 0.07) inset;
+  outline: 0;
+}
+
+.login-continue-btn {
+  border-radius: 8px;
+  box-shadow: 0 2px 5px 0 rgba(213, 217, 217, 0.5);
+  background: #ffd814;
+  border-color: #fcd200;
+  width: 100% !important;
+  color: black;
+}
+
+.login-continue-btn:hover {
+  background-color: #fcd200 !important;
+  color: black !important;
+}
+
+.login-divider-container {
+  text-align: center;
+  position: relative;
+  top: 2px;
+  padding-top: 1px;
+  /* margin-bottom: 14px; */
+  line-height: 0;
+}
+
+.new-to-amazonClone-txt {
+  line-height: 1;
+  font-size: 12px;
+  color: #767676;
+  font-weight: 400;
+  z-index: 2;
+  position: relative;
+  display: inline-block;
+  background-color: #fff;
+  padding: 0 8px 0 7px;
+}
+.line-divider {
+  content: "";
+  width: 100%;
+  background-color: transparent;
+  display: block;
+  height: 1px;
+  border-top: 1px solid #e7e7e7;
+  position: absolute;
+  top: 50%;
+  margin-top: -1px;
+  z-index: 1;
+}
+
+.create-account-btn-container {
+  border: none;
+  text-align: center;
+  padding: 0px !important;
+}
+
+.create-account-btn {
+  border-radius: 7px;
+  background: 0 0;
+  box-shadow: none;
+  background: #fff;
+  border-color: #d5d9d9;
+  border-style: solid;
+  border-width: 1px;
+  cursor: pointer;
+  display: inline-block;
+  padding: 10px;
+  text-align: center;
+  text-decoration: none !important;
+  vertical-align: middle;
+  width: 100%;
+}
+
+/* form Input CSS */
+#components-form-demo-normal-login .login-form {
+  max-width: 300px;
+}
+#components-form-demo-normal-login .login-form-forgot {
+  float: right;
+}
+#components-form-demo-normal-login .ant-col-rtl .login-form-forgot {
+  float: left;
+}
+#components-form-demo-normal-login .login-form-button {
+  width: 100%;
 }
