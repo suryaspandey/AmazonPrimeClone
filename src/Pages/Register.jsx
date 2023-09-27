@@ -2,6 +2,7 @@ import React from "react";
 import "./register.css";
 import { Button, Form, Input, Select } from "antd";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 const { Option } = Select;
 // const formItemLayout = {
 //   labelCol: {
@@ -48,15 +49,15 @@ const Register = () => {
           },
         }
       : null;
-  //   const buttonItemLayout =
-  //     formLayout === "horizontal"
-  //       ? {
-  //           wrapperCol: {
-  //             span: 14,
-  //             offset: 4,
-  //           },
-  //         }
-  //       : null;
+  const buttonItemLayout =
+    formLayout === "horizontal"
+      ? {
+          wrapperCol: {
+            span: 14,
+            offset: 4,
+          },
+        }
+      : null;
   const onFinish = (values) => {
     console.log("Received values of form: ", values);
   };
@@ -154,15 +155,20 @@ const Register = () => {
               <Input.Password />
             </Form.Item>
 
-            <Form.Item {...tailFormItemLayout}>
-              <Button type="primary" htmlType="submit">
+            <Form.Item {...buttonItemLayout}>
+              <Button
+                style={{ width: "100%" }}
+                className="register-create-account-btn"
+                type="primary"
+                htmlType="submit"
+              >
                 Create your AmazonClone Account
               </Button>
             </Form.Item>
             <div className="already-account">
               <span>Already have an account?</span>
               <span>
-                <a href="">Sign in</a>
+                <Link to={"/login"}>Sign in</Link>
               </span>
             </div>
           </Form>

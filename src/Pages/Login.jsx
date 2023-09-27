@@ -4,6 +4,7 @@ import { LockOutlined, UserOutlined } from "@ant-design/icons";
 import { Button, Checkbox, Form, Input } from "antd";
 import LoginPassword from "./LoginPassword";
 import { Navigate, useNavigate } from "react-router";
+import { Link } from "react-router-dom";
 
 const Login = () => {
   const navigate = useNavigate();
@@ -101,7 +102,9 @@ const Login = () => {
         </div>
         <div className="create-account-btn-container login-form-container">
           <button className="create-account-btn ">
-            Create your Amazon Clone account
+            <Link to={"/register"} style={{ textDecoration: "none" }}>
+              Create your Amazon Clone account
+            </Link>
             {/* <Navigate to={<LoginPassword />} /> */}
           </button>
         </div>

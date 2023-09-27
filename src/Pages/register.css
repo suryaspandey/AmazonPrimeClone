@@ -18,3 +18,17 @@
   padding: 14px 18px;
   border-radius: 8px;
 }
+.register-create-account-btn {
+  width: 100% !important;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px 0 rgba(213, 217, 217, 0.5);
+  background: #ffd814 !important;
+  border-color: #fcd200 !important;
+  color: black;
+  /* padding: 0; */
+}
+
+.register-create-account-btn:hover {
+  background-color: #fcd200 !important;
+  color: black !important;
+}
