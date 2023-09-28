@@ -1,20 +1,18 @@
 import React, { useState } from "react";
 import "./login.css";
-import { LockOutlined, UserOutlined } from "@ant-design/icons";
-import { Button, Checkbox, Form, Input } from "antd";
-import LoginPassword from "./LoginPassword";
+import { Button, Form, Input } from "antd";
 import { Navigate, useNavigate } from "react-router";
 import { Link } from "react-router-dom";
 
 const Login = () => {
   const navigate = useNavigate();
-  const [loginUserName, setLoginUserName] = useState("");
+  const [loginEmail, setLoginEmail] = useState("");
 
   const onFinish = (values) => {
-    // console.log("Received values of form: ", values);
+    console.log("Received values of form: ", values);
     if (values) {
-      setLoginUserName(values.username);
-      navigate("/loginpassword", { state: { loginUserName: values.username } });
+      setLoginEmail(values.email);
+      navigate("/loginpassword", { state: { loginEmail: values.email } });
     }
   };
   return (
@@ -40,40 +38,16 @@ const Login = () => {
             onFinish={onFinish}
           >
             <Form.Item
-              name="username"
+              name="email"
               rules={[
                 {
                   required: true,
-                  message: "! Enter your username!",
+                  message: "! Enter your email!",
                 },
               ]}
             >
-              <Input className="login-username-input" type="text" />
+              <Input className="login-username-input" type="email" />
             </Form.Item>
-            {/* <Form.Item
-              name="password"
-              rules={[
-                {
-                  required: true,
-                  message: "Please input your Password!",
-                },
-              ]}
-            >
-              <Input
-                // prefix={<LockOutlined className="site-form-item-icon" />}
-                type="password"
-                // placeholder="Password"
-              />
-            </Form.Item>
-            <Form.Item>
-              <Form.Item name="remember" valuePropName="checked" noStyle>
-                <Checkbox>Remember me</Checkbox>
-              </Form.Item>
-
-              <a className="login-form-forgot" href="">
-                Forgot password
-              </a>
-            </Form.Item> */}
 
             <Form.Item>
               <Button
@@ -83,7 +57,6 @@ const Login = () => {
               >
                 Continue
               </Button>
-              {/* Or <a href="">register now!</a> */}
             </Form.Item>
           </Form>
           <div className="login-policy-text">
@@ -102,7 +75,6 @@ const Login = () => {
             <Link to={"/register"} style={{ textDecoration: "none" }}>
               Create your Amazon Clone account
             </Link>
-            {/* <Navigate to={<LoginPassword />} /> */}
           </button>
         </div>
       </div>

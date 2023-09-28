@@ -1,16 +1,52 @@
 import React from "react";
 import "./login.css";
-import { Button, Checkbox, Form, Input } from "antd";
+import { Button, Form, Input } from "antd";
 import { Navigate, useNavigate } from "react-router";
 import { useLocation } from "react-router-dom";
 
-const LoginPassword = ({ loginUserName }) => {
+const LoginPassword = ({ loginEmail }) => {
   const navigate = useNavigate();
   const location = useLocation();
-  const userName = location.state.loginUserName;
+  // ap12345@gmail.com
+  const recievedEmail = location.state.loginEmail;
+  // console.log("recievedEmail", recievedEmail);
+
+  // const bearerToken = localStorage.getItem("access_token");
+  // console.log(bearerToken);
+  const projectId = "zxke0qiu2960";
+
+  const handleLogin = (values) => {
+    fetch("https://academics.newtonschool.co/api/v1/user/login", {
+      method: "POST",
+      headers: {
+        // Authorization: `Bearer ${bearerToken}`,
+        "Content-Type": "application/json",
+        projectId: projectId,
+      },
+      body: JSON.stringify({
+        email: recievedEmail,
+        password: values.password,
+        appType: "ott",
+      }),
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        console.log(data);
+        if (data.status === "success") {
+          localStorage.setItem("access_token", data.token);
+          navigate("/home");
+        } else {
+          console.error("Login failed:", data.message);
+        }
+      })
+      .catch((err) => {
+        console.log("Error while logging in to PrimeClone: ", err);
+      });
+  };
 
   const onFinish = (values) => {
-    console.log("Received values of form: ", values);
+    console.log("Received values of form: ", values.password);
+    handleLogin(values);
   };
   return (
     <div className="login-container">
@@ -24,7 +60,7 @@ const LoginPassword = ({ loginUserName }) => {
         <div className="login-form-container">
           <h1>Sign in</h1>
           <div className="user-login-text">
-            <p>{userName}</p>
+            <p>{recievedEmail}</p>
           </div>
           <label className="login-label-email-phno" htmlFor="userName">
             Password
@@ -57,11 +93,9 @@ const LoginPassword = ({ loginUserName }) => {
                 type="primary"
                 htmlType="submit"
                 className="login-form-button login-continue-btn"
-                // onClick={handleloginPassword}
               >
                 Sign in
               </Button>
-              {/* Or <a href="">register now!</a> */}
             </Form.Item>
           </Form>
         </div>
