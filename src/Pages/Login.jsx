@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "./login.css";
 import { LockOutlined, UserOutlined } from "@ant-design/icons";
 import { Button, Checkbox, Form, Input } from "antd";
@@ -8,12 +8,14 @@ import { Link } from "react-router-dom";
 
 const Login = () => {
   const navigate = useNavigate();
+  const [loginUserName, setLoginUserName] = useState("");
 
-  const handleloginPassword = () => {
-    navigate("/loginpassword");
-  };
   const onFinish = (values) => {
-    console.log("Received values of form: ", values);
+    // console.log("Received values of form: ", values);
+    if (values) {
+      setLoginUserName(values.username);
+      navigate("/loginpassword", { state: { loginUserName: values.username } });
+    }
   };
   return (
     <div className="login-container">
@@ -27,7 +29,7 @@ const Login = () => {
         <div className="login-form-container">
           <h1>Sign in</h1>
           <label className="login-label-email-phno" htmlFor="userName">
-            Email or mobile phone number
+            Email
           </label>
           <Form
             name="normal_login"
@@ -42,15 +44,11 @@ const Login = () => {
               rules={[
                 {
                   required: true,
-                  message: "Please input your Username!",
+                  message: "! Enter your username!",
                 },
               ]}
             >
-              <Input
-                className="login-username-input"
-                // prefix={<UserOutlined className="site-form-item-icon" />}
-                // placeholder="Username"
-              />
+              <Input className="login-username-input" type="text" />
             </Form.Item>
             {/* <Form.Item
               name="password"
@@ -82,7 +80,6 @@ const Login = () => {
                 type="primary"
                 htmlType="submit"
                 className="login-form-button login-continue-btn"
-                onClick={handleloginPassword}
               >
                 Continue
               </Button>

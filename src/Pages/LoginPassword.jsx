@@ -1,11 +1,13 @@
 import React from "react";
 import "./login.css";
-import { LockOutlined, UserOutlined } from "@ant-design/icons";
 import { Button, Checkbox, Form, Input } from "antd";
 import { Navigate, useNavigate } from "react-router";
+import { useLocation } from "react-router-dom";
 
-const LoginPassword = () => {
+const LoginPassword = ({ loginUserName }) => {
   const navigate = useNavigate();
+  const location = useLocation();
+  const userName = location.state.loginUserName;
 
   const onFinish = (values) => {
     console.log("Received values of form: ", values);
@@ -22,7 +24,7 @@ const LoginPassword = () => {
         <div className="login-form-container">
           <h1>Sign in</h1>
           <div className="user-login-text">
-            <p>suryaspandey@gmail.com</p>
+            <p>{userName}</p>
           </div>
           <label className="login-label-email-phno" htmlFor="userName">
             Password

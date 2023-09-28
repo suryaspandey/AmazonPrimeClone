@@ -2,7 +2,7 @@ import React from "react";
 import "./register.css";
 import { Button, Form, Input } from "antd";
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const tailFormItemLayout = {
   wrapperCol: {
@@ -21,6 +21,7 @@ const Register = () => {
   const [form] = Form.useForm();
   const [formLayout, setFormLayout] = useState("vertical");
   const [errorMessage, setErrorMessage] = useState("");
+  const navigate = useNavigate();
   const formItemLayout =
     formLayout === "horizontal"
       ? {
@@ -68,6 +69,7 @@ const Register = () => {
             const access_token = data.token;
             console.log("access_token: ", data.token);
             localStorage.setItem("access_token", access_token);
+            navigate("/home");
           }
         })
       )
