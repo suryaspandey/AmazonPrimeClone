@@ -5,11 +5,21 @@ import { useState } from "react";
 function EditProfile() {
   const [profileImg, setprofileImg] = useState("/adult-4.png");
   const [userName, setUserName] = useState("");
+  const [isCancel, setIsCancel] = useState(false);
+
+  const handleCancelChanges = () => {};
+  const handleSaveChanges = () => {
+    let useNameValue = e.target.value;
+    setUserName(userName);
+
+    let imgValue = e.target.files[0];
+    setprofileImg(profileImg);
+
+    setIsCancel(false);
+  };
 
   const handleProfileImgChange = async (event) => {
-    console.log("change text clicked");
     const file = event.target.files[0];
-    console.log("file", file);
 
     const formData = new FormData();
     formData.append("profileImage", file);
@@ -29,14 +39,13 @@ function EditProfile() {
           },
         }
       );
-      console.log("response", response);
+      // console.log("response", response);
 
       const data = await response.json();
-      console.log("data.data.user.profileImage", data.data.user.profileImage);
 
       if (response.ok) {
         setprofileImg(data.data.user.profileImage);
-        console.log("data.data.user.profileImage", data.data.user.profileImage);
+        setUserName(data.data.user.name);
       } else {
         console.error("Error updating profile image:", data.message);
       }
@@ -78,12 +87,23 @@ function EditProfile() {
             // value={data.data.user.name}
             value={userName}
             onChange={(e) => setUserName(e.target.value)}
+            defaultValue={userName}
           />
         </div>
 
         <div className="editProfile-save-cancel-btns">
-          <button className="editProfile-cancel-btn">Cancel</button>
-          <button className="editProfile-cancel-btn">Save Changes</button>
+          <button
+            className="editProfile-cancel-btn"
+            onClick={handleCancelChanges}
+          >
+            Cancel
+          </button>
+          <button
+            className="editProfile-cancel-btn"
+            onClick={handleSaveChanges}
+          >
+            Save Changes
+          </button>
         </div>
       </div>
     </>

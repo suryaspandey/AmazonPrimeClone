@@ -92,7 +92,7 @@ const Navigator = () => {
                   </div>
                   <div className="options-right">
                     <span>Kids</span>
-                    <span>Add New</span>
+                    {/* <span>Add New</span> */}
                     <span>
                       <Link to={"/manageprofiles"}>Manage Profiles</Link>
                     </span>

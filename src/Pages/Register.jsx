@@ -1,27 +1,9 @@
 import React from "react";
 import "./register.css";
-import { Button, Form, Input, Select } from "antd";
+import { Button, Form, Input } from "antd";
 import { useState } from "react";
 import { Link } from "react-router-dom";
-const { Option } = Select;
-// const formItemLayout = {
-//   labelCol: {
-//     xs: {
-//       span: 24,
-//     },
-//     sm: {
-//       span: 8,
-//     },
-//   },
-//   wrapperCol: {
-//     xs: {
-//       span: 24,
-//     },
-//     sm: {
-//       span: 16,
-//     },
-//   },
-// };
+
 const tailFormItemLayout = {
   wrapperCol: {
     xs: {
@@ -38,6 +20,7 @@ const tailFormItemLayout = {
 const Register = () => {
   const [form] = Form.useForm();
   const [formLayout, setFormLayout] = useState("vertical");
+  const [errorMessage, setErrorMessage] = useState("");
   const formItemLayout =
     formLayout === "horizontal"
       ? {
@@ -58,8 +41,39 @@ const Register = () => {
           },
         }
       : null;
+
+  const projectId = "zxke0qiu2960";
   const onFinish = (values) => {
+    setErrorMessage("");
     console.log("Received values of form: ", values);
+    fetch("https://academics.newtonschool.co/api/v1/user/signup", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        projectId: projectId,
+      },
+      body: JSON.stringify({
+        name: values.nickname,
+        email: values.email,
+        password: values.password,
+        appType: "ott",
+      }),
+    })
+      .then((response) =>
+        response.json().then((data) => {
+          console.log("signup: ", data);
+          if (data.status === "fail") {
+            setErrorMessage(`${data.message}!`);
+          } else {
+            const access_token = data.token;
+            console.log("access_token: ", data.token);
+            localStorage.setItem("access_token", access_token);
+          }
+        })
+      )
+      .catch((err) => {
+        console.log("Error while signing up: ", err);
+      });
   };
   return (
     <>
@@ -83,14 +97,24 @@ const Register = () => {
             }}
             scrollToFirstError
           >
+            {errorMessage && (
+              <p
+                style={{
+                  color: "red",
+                  textAlign: "center",
+                  fontStyle: "italic",
+                }}
+              >
+                {errorMessage}
+              </p>
+            )}
             <Form.Item
               name="nickname"
               label="Your Name"
-              //   tooltip="What do you want others to call you?"
               rules={[
                 {
                   required: true,
-                  message: "Please input your name!",
+                  message: "Enter your name!",
                   whitespace: true,
                 },
               ]}
@@ -107,7 +131,7 @@ const Register = () => {
                 },
                 {
                   required: true,
-                  message: "Please input your E-mail!",
+                  message: "Enter your E-mail!",
                 },
               ]}
             >
@@ -121,6 +145,7 @@ const Register = () => {
                 {
                   required: true,
                   message: "At least 6 characters",
+                  min: 6,
                 },
               ]}
               hasFeedback
@@ -136,18 +161,14 @@ const Register = () => {
               rules={[
                 {
                   required: true,
-                  message: "Please confirm your password!",
+                  message: "Confirm your password!",
                 },
                 ({ getFieldValue }) => ({
                   validator(_, value) {
                     if (!value || getFieldValue("password") === value) {
                       return Promise.resolve();
                     }
-                    return Promise.reject(
-                      new Error(
-                        "The new password that you entered do not match!"
-                      )
-                    );
+                    return Promise.reject(new Error("Passwords do not match!"));
                   },
                 }),
               ]}
