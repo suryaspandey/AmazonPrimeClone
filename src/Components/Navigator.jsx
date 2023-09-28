@@ -1,15 +1,16 @@
-import { CiSearch } from "react-icons/ci";
 import { IoIosArrowDown, IoIosArrowUp } from "react-icons/io";
 import "../Pages/home.css";
 import { useState } from "react";
 import Home_Corousel from "./Home_Comp/Home_Corousel";
-import { Link, Outlet } from "react-router-dom";
+import { Link } from "react-router-dom";
 import HomeTabDropdown from "./HomeTabDropdown";
+import { BsSearch } from "react-icons/bs";
 // import "./fonts/Amazon Ember Bold.ttf";
 
 const Navigator = () => {
   const [isHover, setIsHover] = useState(false);
   const [activePage, setActivePage] = useState("Home");
+  const [isSearchVisible, setIsSearchVisible] = useState(false);
 
   const handleMouseEnter = () => {
     setIsHover(true);
@@ -17,6 +18,10 @@ const Navigator = () => {
 
   const handleMouseLeave = () => {
     setIsHover(false);
+  };
+
+  const toggleSearch = () => {
+    setIsSearchVisible(!isSearchVisible);
   };
 
   return (
@@ -64,12 +69,35 @@ const Navigator = () => {
 
           <div className="search_name">
             <div className="search-btn">
-              <button>
-                <CiSearch />
+              <button style={{ border: "none" }} onClick={toggleSearch}>
+                <BsSearch className="search-icon" />
               </button>
+
+              <div
+                className={`options-search search-dropdown`}
+                style={
+                  isSearchVisible ? { display: "block" } : { display: "none" }
+                }
+              >
+                <div>
+                  <span>
+                    <input
+                      className="input-search search-input"
+                      type="search"
+                      name="phrase"
+                      spellCheck="false"
+                      autoComplete="off"
+                      autoCorrect="off"
+                      autoCapitalize="off"
+                      placeholder="Search"
+                    />
+                  </span>
+                </div>
+              </div>
+
               {/* <input type="text" /> */}
             </div>
-            {/* <div className="user-name">Soumitra</div> */}
+            <div className="user-name">Soumitra</div>
             <div className="user-avatar">
               <li
                 style={{
