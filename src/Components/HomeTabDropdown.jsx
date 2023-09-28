@@ -1,21 +1,11 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "./homeTabDropDown.css";
-import { useState } from "react";
 
 const HomeTabDropdown = ({ isHover }) => {
-  const [isDropdownHovered, setIsDropdownHovered] = useState(false);
   return (
     <>
-      <ul
-        className={`sub-menu ${isHover ? "active" : ""}`}
-        onMouseEnter={() => {
-          isDropdownHovered(true);
-        }}
-        onMouseLeave={() => {
-          isDropdownHovered(false);
-        }}
-      >
+      <ul className={`sub-menu ${isHover ? "active" : ""}`}>
         <li>
           <Link to={"/Home"}>All</Link>
         </li>

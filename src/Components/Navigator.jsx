@@ -2,15 +2,22 @@ import { IoIosArrowDown, IoIosArrowUp } from "react-icons/io";
 import "../Pages/home.css";
 import { useState } from "react";
 import Home_Corousel from "./Home_Comp/Home_Corousel";
-import { Link } from "react-router-dom";
+import { Link, Navigate, useSearchParams } from "react-router-dom";
 import HomeTabDropdown from "./HomeTabDropdown";
 import { BsSearch } from "react-icons/bs";
+import Search from "./Search/search";
 // import "./fonts/Amazon Ember Bold.ttf";
 
 const Navigator = () => {
   const [isHover, setIsHover] = useState(false);
   const [activePage, setActivePage] = useState("Home");
   const [isSearchVisible, setIsSearchVisible] = useState(false);
+  const [searchText, setSearchText] = useState("");
+  const [searchParams, setSearchParams] = useSearchParams();
+
+  const phrase = searchParams.get("myParam");
+
+  setSearchParams({ phrase: { searchText } });
 
   const handleMouseEnter = () => {
     setIsHover(true);
@@ -22,6 +29,19 @@ const Navigator = () => {
 
   const toggleSearch = () => {
     setIsSearchVisible(!isSearchVisible);
+  };
+
+  let searchKey;
+  const handleSearchValue = (e) => {
+    setSearchText(e.target.value);
+    console.log(e.target.value);
+    searchKey = e.target.value;
+    <Link
+      to={{
+        pathname: "/search",
+        search: `?phrase=  ${searchText}`,
+      }}
+    ></Link>;
   };
 
   return (
@@ -48,8 +68,6 @@ const Navigator = () => {
                   Home
                   {isHover ? <IoIosArrowUp /> : <IoIosArrowDown />}
                 </li>
-
-                {/* {isHover ? <IoIosArrowUp /> : <IoIosArrowDown />} */}
 
                 <HomeTabDropdown isHover={isHover} />
               </div>
@@ -90,12 +108,13 @@ const Navigator = () => {
                       autoCorrect="off"
                       autoCapitalize="off"
                       placeholder="Search"
+                      onChange={handleSearchValue}
+                      // onKeyDown={handleSearchValue}
+                      value={searchText}
                     />
                   </span>
                 </div>
               </div>
-
-              {/* <input type="text" /> */}
             </div>
             <div className="user-name">Soumitra</div>
             <div className="user-avatar">

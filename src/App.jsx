@@ -26,6 +26,7 @@ import Login from "./Pages/Login";
 import LoginPassword from "./Pages/LoginPassword";
 import Register from "./Pages/Register";
 import PrivateRoute from "./PrivateRoute";
+import Search from "./Components/Search/search";
 // import { EpisodeNoContent } from "./EpisodeNoContent";
 
 function App() {
@@ -73,6 +74,7 @@ function App() {
           <Route path="/manageprofiles" element={<Profiles />} />
           <Route path="/editProfile" element={<EditProfile />} />
           <Route path="/myStuff/Watchlist" element={<AddToWatchList />} />
+          <Route path="/Search" element={<Search />} />
         </Routes>
       </BrowserRouter>
       {/* {!isLoginOrRegister && <Footer />} */}
