@@ -1,8 +1,8 @@
 import { IoIosArrowDown, IoIosArrowUp } from "react-icons/io";
 import "../Pages/home.css";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Home_Corousel from "./Home_Comp/Home_Corousel";
-import { Link, Navigate, useSearchParams } from "react-router-dom";
+import { Link, Navigate, useNavigate, useSearchParams } from "react-router-dom";
 import HomeTabDropdown from "./HomeTabDropdown";
 import { BsSearch } from "react-icons/bs";
 import Search from "./Search/search";
@@ -11,13 +11,16 @@ import Search from "./Search/search";
 const Navigator = () => {
   const [isHover, setIsHover] = useState(false);
   const [activePage, setActivePage] = useState("Home");
+
   const [isSearchVisible, setIsSearchVisible] = useState(false);
   const [searchText, setSearchText] = useState("");
-  const [searchParams, setSearchParams] = useSearchParams();
+  // const [searchParams, setSearchParams] = useSearchParams();
 
-  const phrase = searchParams.get("myParam");
+  const navigate = useNavigate();
 
-  setSearchParams({ phrase: { searchText } });
+  // const phrase = searchParams.get("myParam");
+
+  // setSearchParams({ phrase: { searchText } });
 
   const handleMouseEnter = () => {
     setIsHover(true);
@@ -31,17 +34,23 @@ const Navigator = () => {
     setIsSearchVisible(!isSearchVisible);
   };
 
-  let searchKey;
+  // let searchKey;
+  // useEffect(() => {
+  //   setSearchParams({ phrase: searchText });
+  // }, [searchText]);
+
   const handleSearchValue = (e) => {
-    setSearchText(e.target.value);
     console.log(e.target.value);
-    searchKey = e.target.value;
-    <Link
-      to={{
-        pathname: "/search",
-        search: `?phrase=  ${searchText}`,
-      }}
-    ></Link>;
+    const searchValue = e.target.value;
+    setSearchText(searchValue);
+
+    // setSearchParams({ phrase: searchValue });
+    // navigate(`/search?phrase=${encodeURIComponent(searchValue)}`);
+  };
+
+  const handleSearchSubmit = (e) => {
+    e.preventDefault();
+    navigate(`/search/${encodeURIComponent(searchText)}`);
   };
 
   return (
@@ -98,21 +107,24 @@ const Navigator = () => {
                 }
               >
                 <div>
-                  <span>
-                    <input
-                      className="input-search search-input"
-                      type="search"
-                      name="phrase"
-                      spellCheck="false"
-                      autoComplete="off"
-                      autoCorrect="off"
-                      autoCapitalize="off"
-                      placeholder="Search"
-                      onChange={handleSearchValue}
-                      // onKeyDown={handleSearchValue}
-                      value={searchText}
-                    />
-                  </span>
+                  <form onSubmit={handleSearchSubmit}>
+                    <span>
+                      <input
+                        className="input-search search-input"
+                        type="search"
+                        name="phrase"
+                        spellCheck="false"
+                        autoComplete="off"
+                        autoCorrect="off"
+                        autoCapitalize="off"
+                        placeholder="Search"
+                        onChange={handleSearchValue}
+                        // onKeyDown={handleSearchValue}
+                        value={searchText}
+                      />
+                    </span>
+                    <button type="submit" style={{ display: "none" }}></button>
+                  </form>
                 </div>
               </div>
             </div>
