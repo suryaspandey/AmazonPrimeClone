@@ -74,7 +74,7 @@ function App() {
           <Route path="/manageprofiles" element={<Profiles />} />
           <Route path="/editProfile" element={<EditProfile />} />
           <Route path="/myStuff/Watchlist" element={<AddToWatchList />} />
-          <Route path="/Search" element={<Search />} />
+          <Route path="/Search/:phrase" element={<Search />} />
         </Routes>
       </BrowserRouter>
       {/* {!isLoginOrRegister && <Footer />} */}
