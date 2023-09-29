@@ -1,0 +1,95 @@
+.categories-dropdown-container {
+  right: 0;
+  box-shadow: 0 4px 8px 2px rgba(0, 5, 13, 0.5);
+  --border-radius: 8px;
+  background-color: #191e25;
+  border-bottom-left-radius: var(--border-radius);
+  border-bottom-right-radius: var(--border-radius);
+  cursor: default;
+  display: none;
+  justify-content: space-evenly;
+  min-width: 100%;
+  position: absolute;
+  top: 100%;
+  z-index: 1;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  padding: 0;
+  margin: 0;
+  display: flex !important;
+  flex-direction: row;
+  /* gap: 20px; */
+  width: 230%;
+  /* Start with display none */
+}
+.visible {
+  display: block;
+}
+
+.featuredCollection-dropdown,
+.genresDropdown {
+  padding-left: 16px;
+  padding-bottom: 8px;
+  padding-top: 8px;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  line-height: 22px;
+  list-style-type: none;
+  /* display: flex; */
+  /* flex-direction: row; */
+  width: 100% !important;
+}
+
+.featured-collection-label {
+  color: white;
+  display: flex;
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  line-height: 22px;
+
+  padding-bottom: 12px;
+  padding-bottom: 8px;
+  padding-top: 12px;
+  padding-top: 8px;
+}
+
+.featured-collection-ul {
+  column-count: 2;
+  column-fill: balance;
+  max-width: 100%;
+  margin: 0;
+  padding: 0;
+  /* display: flex; */
+  /* background-color: #191e25; */
+  width: 100%;
+}
+
+.featured-collection-li {
+  --border-radius: 8px;
+  border-bottom-left-radius: var(--border-radius);
+  border-bottom-right-radius: var(--border-radius);
+  border-top-left-radius: var(--border-radius);
+  border-top-right-radius: var(--border-radius);
+  list-style: none;
+  page-break-inside: avoid;
+  -webkit-column-break-inside: avoid;
+  padding: 5px;
+}
+
+.featured-collection-li:hover {
+  background-color: white;
+  color: black;
+}
+
+.categories-dropdown-container:hover .featuredCollection-dropdown,
+.categories-dropdown-container:hover .genresDropdown {
+  display: block;
+}
+
+.active-page .categories-dropdown-container {
+  display: block; /* Show when active-page class is applied */
+}

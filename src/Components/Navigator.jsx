@@ -8,6 +8,7 @@ import { BsSearch } from "react-icons/bs";
 import Search from "./Search/search";
 import { DownOutlined } from "@ant-design/icons";
 import { Dropdown, Space, Typography } from "antd";
+import CategoriesDropDown from "./CategoriesDropDown";
 
 const Navigator = () => {
   const items = [
@@ -26,7 +27,7 @@ const Navigator = () => {
   ];
 
   const [isHover, setIsHover] = useState(false);
-  const [activePage, setActivePage] = useState("Home");
+  const [activePage, setActivePage] = useState(null);
 
   const [isSearchVisible, setIsSearchVisible] = useState(false);
   const [searchText, setSearchText] = useState("");
@@ -34,16 +35,16 @@ const Navigator = () => {
 
   const navigate = useNavigate();
 
-  // const phrase = searchParams.get("myParam");
-
-  // setSearchParams({ phrase: { searchText } });
-
   const handleMouseEnter = () => {
     setIsHover(true);
   };
 
   const handleMouseLeave = () => {
     setIsHover(false);
+  };
+
+  const handleSetActivePage = (page) => {
+    setActivePage(page);
   };
 
   const toggleSearch = () => {
@@ -86,6 +87,7 @@ const Navigator = () => {
             >
               <div className="home-navs-all">
                 <li
+                  onClick={() => setActivePage("Home")}
                   className={`home-list ${
                     activePage === "Home" && isHover ? "active-page" : ""
                   }`}
@@ -98,8 +100,20 @@ const Navigator = () => {
                 Store <IoIosArrowDown />
               </li>
               <li>Live TV</li>
-              <li onClick={() => setActivePage("Categories")}>
+              <li
+                onMouseEnter={() => handleSetActivePage("Categories")}
+                // onClick={() => }
+                // className="home-category-li"
+                // onMouseLeave={() => handleSetActivePage(null)}
+                className={`home-list ${
+                  activePage === "Categories" && isHover ? "active-page" : ""
+                }`}
+              >
                 Categories <IoIosArrowDown />
+                {/* <CategoriesDropDown /> */}
+                {activePage === "Categories" && isHover && (
+                  <CategoriesDropDown activePage={activePage} />
+                )}
               </li>
               <li>
                 My Stuff <IoIosArrowDown />

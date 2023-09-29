@@ -1,19 +1,4 @@
 .sub-menu {
-  /* display: flex; */
-  /* display: none;
-  align-items: center;
-  flex-direction: column;
-  padding: 0px;
-  color: "#aaa";
-  position: absolute;
-  top: 100%;
-  z-index: 1;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  list-style-type: none;
-  background-color: #aaa;
-  top: 42px; */
-  /* width: 100%; */
-
   display: none;
   position: absolute;
   /* top: 100%; */
