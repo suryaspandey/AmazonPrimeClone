@@ -83,6 +83,7 @@
   padding: 5px;
   color: #aaa;
   /* padding-bottom: 10px; */
+  text-align: left;
 }
 
 .genresDropdown {
@@ -102,4 +103,14 @@
 
 .active-page .categories-dropdown-container {
   display: block; /* Show when active-page class is applied */
+}
+
+.categories-link-text {
+  text-decoration: none;
+  color: #aaa;
+  font: 500;
+}
+
+.categories-link-text:hover {
+  color: black;
 }

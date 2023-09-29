@@ -1,10 +1,16 @@
 import { Dropdown } from "antd";
 import "./categoriesDropDown.css";
 import React from "react";
+import { Link, useNavigate } from "react-router-dom";
 
 const CategoriesDropDown = ({ activePage }) => {
+  const navigate = useNavigate();
   const isVisible = activePage === "Categories";
 
+  const handleCategoriesLangClick = (language) => {
+    navigate(`/WatchInYourLanguage/${language}`);
+    console.log(`/WatchInYourLanguage/${language}`);
+  };
   return (
     <>
       <div
@@ -20,15 +26,78 @@ const CategoriesDropDown = ({ activePage }) => {
             Featured Collection
           </label>
           <ul className="featured-collection-ul">
-            <li className="featured-collection-li">Hindi</li>
-            <li className="featured-collection-li">English</li>
-            <li className="featured-collection-li">Telugu</li>
-            <li className="featured-collection-li">Tamil</li>
-            <li className="featured-collection-li">Kannada</li>
-            <li className="featured-collection-li">Punjabi</li>
-            <li className="featured-collection-li">Bengali</li>
-            <li className="featured-collection-li">Gujarati</li>
-            <li className="featured-collection-li">Marathi</li>
+            <li className="featured-collection-li">
+              <Link
+                className="categories-link-text"
+                to={"/WatchInYourLanguage/Hindi"}
+              >
+                Hindi
+              </Link>
+            </li>
+            <li className="featured-collection-li">
+              <Link
+                className="categories-link-text"
+                to={"/WatchInYourLanguage/English"}
+              >
+                English
+              </Link>
+            </li>
+            <li className="featured-collection-li">
+              <Link
+                className="categories-link-text"
+                to={"/WatchInYourLanguage/Telugu"}
+              >
+                Telugu
+              </Link>
+            </li>
+            <li className="featured-collection-li">
+              <Link
+                className="categories-link-text"
+                to={"/WatchInYourLanguage/Tamil"}
+              >
+                Tamil
+              </Link>
+            </li>
+            <li className="featured-collection-li">
+              <Link
+                className="categories-link-text"
+                to={"/WatchInYourLanguage/Kannada"}
+              >
+                Kannada
+              </Link>
+            </li>
+            <li className="featured-collection-li">
+              <Link
+                className="categories-link-text"
+                to={"/WatchInYourLanguage/Punjabi"}
+              >
+                Punjabi
+              </Link>
+            </li>
+            <li className="featured-collection-li">
+              <Link
+                className="categories-link-text"
+                to={"/WatchInYourLanguage/Bengali"}
+              >
+                Bengali
+              </Link>
+            </li>
+            <li className="featured-collection-li">
+              <Link
+                className="categories-link-text"
+                to={"/WatchInYourLanguage/Gujarati"}
+              >
+                Gujarati
+              </Link>
+            </li>
+            <li className="featured-collection-li">
+              <Link
+                className="categories-link-text"
+                to={"/WatchInYourLanguage/Marathi"}
+              >
+                Marathi
+              </Link>
+            </li>
           </ul>
         </div>
         <div className="genresDropdown">
@@ -38,11 +107,15 @@ const CategoriesDropDown = ({ activePage }) => {
           >
             Genres
           </label>
-          <ul
-            className="featured-collection-ul"
-            // style={{ paddingLeft: "0px", marginLeft: "0px" }}
-          >
-            <li className="featured-collection-li">Action and Adventure</li>
+          <ul className="featured-collection-ul">
+            <li className="featured-collection-li">
+              <Link
+                className="categories-link-text"
+                to={"/Categories/ActionAdventure/"}
+              >
+                Action and Adventure
+              </Link>
+            </li>
             <li className="featured-collection-li">Comedy</li>
             <li className="featured-collection-li">Documentary</li>
             <li className="featured-collection-li">Drama</li>
