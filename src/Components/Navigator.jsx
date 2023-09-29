@@ -6,9 +6,25 @@ import { Link, Navigate, useNavigate, useSearchParams } from "react-router-dom";
 import HomeTabDropdown from "./HomeTabDropdown";
 import { BsSearch } from "react-icons/bs";
 import Search from "./Search/search";
-// import "./fonts/Amazon Ember Bold.ttf";
+import { DownOutlined } from "@ant-design/icons";
+import { Dropdown, Space, Typography } from "antd";
 
 const Navigator = () => {
+  const items = [
+    {
+      key: "1",
+      label: "Item 1",
+    },
+    {
+      key: "2",
+      label: "Item 2",
+    },
+    {
+      key: "3",
+      label: "Item 3",
+    },
+  ];
+
   const [isHover, setIsHover] = useState(false);
   const [activePage, setActivePage] = useState("Home");
 
@@ -74,11 +90,8 @@ const Navigator = () => {
                     activePage === "Home" && isHover ? "active-page" : ""
                   }`}
                 >
-                  Home
-                  {isHover ? <IoIosArrowUp /> : <IoIosArrowDown />}
+                  <HomeTabDropdown isHover={isHover} />
                 </li>
-
-                <HomeTabDropdown isHover={isHover} />
               </div>
 
               <li>

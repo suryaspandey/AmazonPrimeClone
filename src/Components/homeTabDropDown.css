@@ -66,3 +66,28 @@
 /* .home-list {
   padding: 0 20px;
 } */
+
+.dropdown-menu-items {
+  padding: 0px;
+  background-color: #333539;
+  color: #aaa !important;
+  border: none;
+  border-radius: 0px;
+  padding: 0;
+  margin: 0;
+}
+
+.dropdown-menu-items:hover {
+  background-color: white;
+  color: black !important;
+}
+
+.ant-typography {
+  color: #aaa !important;
+  background-color: transparent;
+}
+
+.ant-typography:hover {
+  color: white !important;
+  background-color: #333539;
+}
