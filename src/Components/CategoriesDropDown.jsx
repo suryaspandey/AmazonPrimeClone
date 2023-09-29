@@ -38,7 +38,10 @@ const CategoriesDropDown = ({ activePage }) => {
           >
             Genres
           </label>
-          <ul className="featured-collection-ul">
+          <ul
+            className="featured-collection-ul"
+            // style={{ paddingLeft: "0px", marginLeft: "0px" }}
+          >
             <li className="featured-collection-li">Action and Adventure</li>
             <li className="featured-collection-li">Comedy</li>
             <li className="featured-collection-li">Documentary</li>
@@ -47,6 +50,7 @@ const CategoriesDropDown = ({ activePage }) => {
             <li className="featured-collection-li">Horror</li>
             <li className="featured-collection-li">Mystery and Thrillers</li>
             <li className="featured-collection-li">Romance</li>
+            <li className="featured-collection-li"></li>
           </ul>
         </div>
       </div>

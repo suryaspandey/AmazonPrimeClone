@@ -44,6 +44,7 @@ body {
   color: #aaa;
   position: relative;
   /* width: 100%; */
+  cursor: pointer;
 }
 
 .home-navs > li:hover {
