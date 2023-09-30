@@ -1,0 +1,26 @@
+.subscription-card {
+  height: 300px;
+
+  height: auto;
+  background-position: 50%;
+  background-size: cover;
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+.subscription-carousel-img {
+  width: 100%;
+  height: 100%;
+  border-radius: 8px;
+  padding: 5px;
+  margin: 50px;
+}
+
+.subsription-text {
+  background: linear-gradient(
+    90deg,
+    rgba(0, 5, 13, 0.8) 19.65%,
+    rgba(0, 5, 13, 0) 49.93%
+  );
+}

@@ -52,17 +52,30 @@ const Search = () => {
       .catch((error) => console.log("error", error));
   }, [phrase]);
 
+  if (notFound) {
+    return (
+      <>
+        <h4 style={{ color: "white", paddingTop: "100px", fontSize: "18px" }}>
+          Results for: {phrase}.
+        </h4>
+        <h1 style={{ color: "white", fontSize: "18px" }}>No show found</h1>
+      </>
+    );
+  }
+
   return (
     <>
-      <h1 style={{ color: "white", paddingTop: "100px" }}>
-        Search Results for: {phrase}
+      <h1 style={{ color: "white", paddingTop: "100px", fontSize: "18px" }}>
+        Results for: {phrase}.
       </h1>
-      {notFound && <h1 style={{ color: "red" }}>No show found</h1>}
-      else
+
       {
-        <div className="carousel-main" style={{ display: "flex" }}>
-          <WatchCards actualData={showData} projectId={projectId} />
-        </div>
+        <>
+          <h4 style={{ fontSize: "18px" }}>More videos</h4>
+          <div className="carousel-main" style={{ display: "flex" }}>
+            <WatchCards actualData={showData} projectId={projectId} />
+          </div>
+        </>
       }
     </>
   );

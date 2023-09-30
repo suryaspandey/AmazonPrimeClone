@@ -363,7 +363,7 @@ body {
 
 /* SLick Reac Carousel Slider */
 
-.slick-arrow.slick-prev,
+/* .slick-arrow.slick-prev,
 .slick-arrow.slick-next {
   background-color: #7d767640;
   width: 70px;
@@ -373,16 +373,16 @@ body {
   justify-content: center;
   align-items: center;
   z-index: 1;
-}
+} */
 
-.slick-arrow.slick-prev:hover,
+/* .slick-arrow.slick-prev:hover,
 .slick-arrow.slick-next:hover {
   background-color: #7d767640;
   width: 70px;
   height: 120px;
-}
+} */
 
-.slick-prev {
+/* .slick-prev {
   left: 0;
   border-radius: 0 10px 10px 0;
 }
@@ -390,7 +390,7 @@ body {
 .slick-next {
   right: 0 !important;
   border-radius: 10px 0px 0px 10px;
-}
+} */
 
 .styles-module_slider__o0fqa > * {
   flex: 0 0 0;
