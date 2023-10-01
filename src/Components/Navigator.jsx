@@ -154,7 +154,9 @@ const Navigator = () => {
                     <span>Help</span>
                     {/* <span>Watch Anywhere</span> */}
                     <span>Accounts and Settings</span>
-                    <span>Prime Benifits</span>
+                    <Link to={"/Subscription"}>
+                      <span>Prime Benifits</span>
+                    </Link>
                     <Link to={"/login"}>
                       <span>Sign In</span>
                     </Link>

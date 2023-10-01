@@ -24,3 +24,23 @@
     rgba(0, 5, 13, 0) 49.93%
   );
 }
+
+.carousel-main-subs {
+  overflow-x: scroll;
+  overflow-y: hidden;
+  gap: 10px;
+  /* margin: 0 28px; */
+  padding: 30px;
+  transition: transform 0.5s ease;
+  display: flex;
+}
+
+.carousel-main-subs::-webkit-scrollbar {
+  overflow: hidden;
+}
+
+.subscription-prime-benefits-img {
+  height: 150px;
+  width: 267px;
+  border-radius: 8px;
+}

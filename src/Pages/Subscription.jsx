@@ -41,9 +41,31 @@ const Subscription = () => {
         </div>
       </div>
       <div className="subscription-benifits-cards-container">
-        <div className="subscription-cards prime-shipping-benefits">
+        <div className="carousel-main-subs">
           <div className="subscription-card-img">
             <img
+              className="subscription-prime-benefits-img"
+              src="https://m.media-amazon.com/images/S/sonata-images-prod/twin_carousel_shipping_1/96321b89-0cca-428e-84fe-589ba3c103b7._UR1920,1080_SX360_FMwebp_.jpeg 360w, https://m.media-amazon.com/images/S/sonata-images-prod/twin_carousel_shipping_1/96321b89-0cca-428e-84fe-589ba3c103b7._UR1920,1080_SX480_FMwebp_.jpeg 480w, https://m.media-amazon.com/images/S/sonata-images-prod/twin_carousel_shipping_1/96321b89-0cca-428e-84fe-589ba3c103b7._UR1920,1080_SX720_FMwebp_.jpeg 720w, https://m.media-amazon.com/images/S/sonata-images-prod/twin_carousel_shipping_1/96321b89-0cca-428e-84fe-589ba3c103b7._UR1920,1080_SX1080_FMwebp_.jpeg"
+              alt=""
+            />
+          </div>
+          <div className="subscription-card-img">
+            <img
+              className="subscription-prime-benefits-img"
+              src="https://m.media-amazon.com/images/S/sonata-images-prod/twin_carousel_shipping_1/96321b89-0cca-428e-84fe-589ba3c103b7._UR1920,1080_SX360_FMwebp_.jpeg 360w, https://m.media-amazon.com/images/S/sonata-images-prod/twin_carousel_shipping_1/96321b89-0cca-428e-84fe-589ba3c103b7._UR1920,1080_SX480_FMwebp_.jpeg 480w, https://m.media-amazon.com/images/S/sonata-images-prod/twin_carousel_shipping_1/96321b89-0cca-428e-84fe-589ba3c103b7._UR1920,1080_SX720_FMwebp_.jpeg 720w, https://m.media-amazon.com/images/S/sonata-images-prod/twin_carousel_shipping_1/96321b89-0cca-428e-84fe-589ba3c103b7._UR1920,1080_SX1080_FMwebp_.jpeg"
+              alt=""
+            />
+          </div>
+          <div className="subscription-card-img">
+            <img
+              className="subscription-prime-benefits-img"
+              src="https://m.media-amazon.com/images/S/sonata-images-prod/twin_carousel_shipping_1/96321b89-0cca-428e-84fe-589ba3c103b7._UR1920,1080_SX360_FMwebp_.jpeg 360w, https://m.media-amazon.com/images/S/sonata-images-prod/twin_carousel_shipping_1/96321b89-0cca-428e-84fe-589ba3c103b7._UR1920,1080_SX480_FMwebp_.jpeg 480w, https://m.media-amazon.com/images/S/sonata-images-prod/twin_carousel_shipping_1/96321b89-0cca-428e-84fe-589ba3c103b7._UR1920,1080_SX720_FMwebp_.jpeg 720w, https://m.media-amazon.com/images/S/sonata-images-prod/twin_carousel_shipping_1/96321b89-0cca-428e-84fe-589ba3c103b7._UR1920,1080_SX1080_FMwebp_.jpeg"
+              alt=""
+            />
+          </div>
+          <div className="subscription-card-img">
+            <img
+              className="subscription-prime-benefits-img"
               src="https://m.media-amazon.com/images/S/sonata-images-prod/twin_carousel_shipping_1/96321b89-0cca-428e-84fe-589ba3c103b7._UR1920,1080_SX360_FMwebp_.jpeg 360w, https://m.media-amazon.com/images/S/sonata-images-prod/twin_carousel_shipping_1/96321b89-0cca-428e-84fe-589ba3c103b7._UR1920,1080_SX480_FMwebp_.jpeg 480w, https://m.media-amazon.com/images/S/sonata-images-prod/twin_carousel_shipping_1/96321b89-0cca-428e-84fe-589ba3c103b7._UR1920,1080_SX720_FMwebp_.jpeg 720w, https://m.media-amazon.com/images/S/sonata-images-prod/twin_carousel_shipping_1/96321b89-0cca-428e-84fe-589ba3c103b7._UR1920,1080_SX1080_FMwebp_.jpeg"
               alt=""
             />
