@@ -207,7 +207,7 @@ body {
   z-index: 2;
 }
 
-.ant-carousel .slick-prev,
+/* .ant-carousel .slick-prev,
 .ant-carousel .slick-next {
   color: unset;
   font-size: unset;
@@ -223,7 +223,8 @@ body {
 .slick-prev,
 .slick-next {
   color: white !important;
-}
+} */
+
 .home-main-text {
   color: white;
   font-weight: bold;

@@ -16,32 +16,151 @@ const Subscription = () => {
       <div className="subscription-carousel">Carousel component</div>
       <div className="subscription-cards-container">
         <div className="subscription-carousel">
-          <Carousel
-
-          //   autoplay
-          >
+          <Carousel arrows autoplay>
             <div className="subscription-card">
-              <img
-                className="subscription-carousel-img"
-                src="https://images-eu.ssl-images-amazon.com/images/G/31/Events/img23/Jupiter23/Teaser1_2/J23_T2_PC_Rec_Header_V2.jpg"
-                alt=""
-              />
+              <a href="https://www.amazon.in/b/?_encoding=UTF8&node=90130123031&ref_=atv_me_pri_c_eiVJLU_zMbofx_1_1">
+                <img
+                  className="subscription-carousel-img"
+                  src="https://images-eu.ssl-images-amazon.com/images/G/31/Events/img23/Jupiter23/Teaser1_2/J23_T2_PC_Rec_Header_V2.jpg"
+                  alt=""
+                />
+              </a>
+              <div className="subscription-btn">
+                <a href="https://www.amazon.in/b/?_encoding=UTF8&node=90130123031&ref_=atv_me_pri_c_eiVJLU_zMbofx_1_1">
+                  <button className="subscription-more-details-btn">
+                    More Details
+                  </button>
+                </a>
+              </div>
             </div>
-            <div>
-              <h3 style={contentStyle}>2</h3>
+            <div className="subscription-card">
+              <a href="https://www.amazon.in/b/?node=12627912031&ref=Shipping_PV_Dashborad&ref_=atv_me_pri_c_eiVJLU_JadKnV_1_2">
+                <img
+                  className="subscription-carousel-img"
+                  src="https://m.media-amazon.com/images/S/sonata-images-prod/null/657d45e1-ef69-4223-9d5d-b36be1143ae2._UR3840,1440_SX1440_FMwebp_.jpeg%201440w,%20https://m.media-amazon.com/images/S/sonata-images-prod/null/657d45e1-ef69-4223-9d5d-b36be1143ae2._UR3840,1440_SX2160_FMwebp_.jpeg%202160w,%20https://m.media-amazon.com/images/S/sonata-images-prod/null/657d45e1-ef69-4223-9d5d-b36be1143ae2._UR3840,1440_SX2880_FMwebp_.jpeg%202880w,%20https://m.media-amazon.com/images/S/sonata-images-prod/null/657d45e1-ef69-4223-9d5d-b36be1143ae2._UR3840,1440_SX3840_FMwebp_.jpeg"
+                  alt=""
+                />
+              </a>
+              <div
+                className="subsc-banner-txt-img"
+                style={{
+                  position: "absolute",
+                  top: "24%",
+                  left: "5%",
+                }}
+              >
+                <img
+                  src="https://m.media-amazon.com/images/S/sonata-images-prod/null/909afa6f-6cd2-4bd5-bcfa-3172c1a85879._AC_SX1000_FMpng_.png,%20https://m.media-amazon.com/images/S/sonata-images-prod/null/909afa6f-6cd2-4bd5-bcfa-3172c1a85879._AC_SX1500_FMpng_.png%201.5x,%20https://m.media-amazon.com/images/S/sonata-images-prod/null/909afa6f-6cd2-4bd5-bcfa-3172c1a85879._AC_SX2000_FMpng_.png"
+                  style={{ maxWidth: "100%", width: "200px" }}
+                  alt="https://m.media-amazon.com/images/S/sonata-images-prod/PV_IN_PrimeMusic_CleanSlate/f803d866-7f27-460e-a60f-dfa0bd81d943._AC_SX1000_FMpng_.png,%20https://m.media-amazon.com/images/S/sonata-images-prod/PV_IN_PrimeMusic_CleanSlate/f803d866-7f27-460e-a60f-dfa0bd81d943._AC_SX1500_FMpng_.png%201.5x,%20https://m.media-amazon.com/images/S/sonata-images-prod/PV_IN_PrimeMusic_CleanSlate/f803d866-7f27-460e-a60f-dfa0bd81d943._AC_SX2000_FMpng_.png"
+                />
+              </div>
+              <div className="subscription-btn">
+                <a href="https://www.amazon.in/b/?node=12627912031&ref=Shipping_PV_Dashborad&ref_=atv_me_pri_c_eiVJLU_JadKnV_1_2">
+                  <button className="subscription-more-details-btn">
+                    More Details
+                  </button>
+                </a>
+              </div>
             </div>
-            <div>
-              <h3 style={contentStyle}>3</h3>
+
+            <div className="subscription-card">
+              <a href="https://www.amazon.in/music/prime?ref_=atv_me_pri_c_eiVJLU_BwAwhP_1_3">
+                <img
+                  className="subscription-carousel-img"
+                  src="https://m.media-amazon.com/images/S/sonata-images-prod/PV_IN_PrimeMusic_CleanSlate/189fa490-d59e-4c11-9dc8-194ecb35b140._UR3840,1440_SX1440_FMwebp_.jpeg%201440w,%20https://m.media-amazon.com/images/S/sonata-images-prod/PV_IN_PrimeMusic_CleanSlate/189fa490-d59e-4c11-9dc8-194ecb35b140._UR3840,1440_SX2160_FMwebp_.jpeg%202160w,%20https://m.media-amazon.com/images/S/sonata-images-prod/PV_IN_PrimeMusic_CleanSlate/189fa490-d59e-4c11-9dc8-194ecb35b140._UR3840,1440_SX2880_FMwebp_.jpeg%202880w,%20https://m.media-amazon.com/images/S/sonata-images-prod/PV_IN_PrimeMusic_CleanSlate/189fa490-d59e-4c11-9dc8-194ecb35b140._UR3840,1440_SX3840_FMwebp_.jpeg"
+                  alt=""
+                />
+              </a>
+              <div
+                className="subsc-banner-txt-img"
+                style={{
+                  position: "absolute",
+                  top: "24%",
+                  left: "5%",
+                }}
+              >
+                <img
+                  src="https://m.media-amazon.com/images/S/sonata-images-prod/PV_IN_PrimeMusic_CleanSlate/f803d866-7f27-460e-a60f-dfa0bd81d943._AC_SX1000_FMpng_.png,%20https://m.media-amazon.com/images/S/sonata-images-prod/PV_IN_PrimeMusic_CleanSlate/f803d866-7f27-460e-a60f-dfa0bd81d943._AC_SX1500_FMpng_.png%201.5x,%20https://m.media-amazon.com/images/S/sonata-images-prod/PV_IN_PrimeMusic_CleanSlate/f803d866-7f27-460e-a60f-dfa0bd81d943._AC_SX2000_FMpng_.png"
+                  style={{ maxWidth: "100%", width: "200px" }}
+                  alt=""
+                />
+              </div>
+              <div className="subscription-btn">
+                <a href="https://www.amazon.in/music/prime?ref_=atv_me_pri_c_eiVJLU_BwAwhP_1_3">
+                  <button className="subscription-more-details-btn">
+                    More Details
+                  </button>
+                </a>
+              </div>
             </div>
-            <div>
-              <h3 style={contentStyle}>4</h3>
+
+            <div className="subscription-card">
+              <a href="https://www.amazon.in/kindle-dbs/hz/bookshelf/prime?ref_=atv_me_pri_c_eiVJLU_t2438T_1_4">
+                <img
+                  className="subscription-carousel-img"
+                  src="https://m.media-amazon.com/images/S/sonata-images-prod/PV_IN_ShippingCleanSlate/deabc131-9a19-48b9-a786-ffab82f78f8b._UR3840,1440_SX1440_FMjpg_.jpeg%201440w,%20https://m.media-amazon.com/images/S/sonata-images-prod/PV_IN_ShippingCleanSlate/deabc131-9a19-48b9-a786-ffab82f78f8b._UR3840,1440_SX2160_FMjpg_.jpeg%202160w,%20https://m.media-amazon.com/images/S/sonata-images-prod/PV_IN_ShippingCleanSlate/deabc131-9a19-48b9-a786-ffab82f78f8b._UR3840,1440_SX2880_FMjpg_.jpeg%202880w,%20https://m.media-amazon.com/images/S/sonata-images-prod/PV_IN_ShippingCleanSlate/deabc131-9a19-48b9-a786-ffab82f78f8b._UR3840,1440_SX3840_FMjpg_.jpeg"
+                  alt=""
+                />
+              </a>
+              <div
+                className="subsc-banner-txt-img"
+                style={{
+                  position: "absolute",
+                  top: "24%",
+                  left: "5%",
+                }}
+              >
+                <img
+                  src="https://m.media-amazon.com/images/S/sonata-images-prod/PV_IN_ShippingCleanSlate/d60ec982-9673-4d35-b4db-9ebd015186cf._AC_SX1000_FMpng_.png,%20https://m.media-amazon.com/images/S/sonata-images-prod/PV_IN_ShippingCleanSlate/d60ec982-9673-4d35-b4db-9ebd015186cf._AC_SX1500_FMpng_.png%201.5x,%20https://m.media-amazon.com/images/S/sonata-images-prod/PV_IN_ShippingCleanSlate/d60ec982-9673-4d35-b4db-9ebd015186cf._AC_SX2000_FMpng_.png"
+                  style={{ maxWidth: "100%", width: "200px" }}
+                  alt="https://m.media-amazon.com/images/S/sonata-images-prod/null/d3ed9ad3-4d03-402d-9d35-2b5320fdecd1._AC_SX1000_FMpng_.png,%20https://m.media-amazon.com/images/S/sonata-images-prod/null/d3ed9ad3-4d03-402d-9d35-2b5320fdecd1._AC_SX1500_FMpng_.png%201.5x,%20https://m.media-amazon.com/images/S/sonata-images-prod/null/d3ed9ad3-4d03-402d-9d35-2b5320fdecd1._AC_SX2000_FMpng_.png"
+                />
+              </div>
+              <div className="subscription-btn">
+                <a href="https://www.amazon.in/kindle-dbs/hz/bookshelf/prime?ref_=atv_me_pri_c_eiVJLU_t2438T_1_4">
+                  <button className="subscription-more-details-btn">
+                    More Details
+                  </button>
+                </a>
+              </div>
+            </div>
+
+            <div className="subscription-card">
+              <a href="https://www.amazon.in/cbcc/marketpage?ref_=atv_me_pri_c_eiVJLU_76bcn7_1_5&lop=false">
+                <img
+                  className="subscription-carousel-img"
+                  src="https://m.media-amazon.com/images/S/sonata-images-prod/null/c2b1c82c-cfc0-493f-9898-84750c69cf8d._UR3840,1440_SX1440_FMjpg_.jpeg%201440w,%20https://m.media-amazon.com/images/S/sonata-images-prod/null/c2b1c82c-cfc0-493f-9898-84750c69cf8d._UR3840,1440_SX2160_FMjpg_.jpeg%202160w,%20https://m.media-amazon.com/images/S/sonata-images-prod/null/c2b1c82c-cfc0-493f-9898-84750c69cf8d._UR3840,1440_SX2880_FMjpg_.jpeg%202880w,%20https://m.media-amazon.com/images/S/sonata-images-prod/null/c2b1c82c-cfc0-493f-9898-84750c69cf8d._UR3840,1440_SX3840_FMjpg_.jpeg"
+                  alt=""
+                />
+              </a>
+              <div
+                className="subsc-banner-txt-img"
+                style={{
+                  position: "absolute",
+                  top: "24%",
+                  left: "5%",
+                }}
+              >
+                <img
+                  style={{ maxWidth: "100%", width: "200px" }}
+                  src="https://m.media-amazon.com/images/S/sonata-images-prod/null/d3ed9ad3-4d03-402d-9d35-2b5320fdecd1._AC_SX1000_FMpng_.png,%20https://m.media-amazon.com/images/S/sonata-images-prod/null/d3ed9ad3-4d03-402d-9d35-2b5320fdecd1._AC_SX1500_FMpng_.png%201.5x,%20https://m.media-amazon.com/images/S/sonata-images-prod/null/d3ed9ad3-4d03-402d-9d35-2b5320fdecd1._AC_SX2000_FMpng_.png"
+                />
+              </div>
+              <div className="subscription-btn">
+                <a href="https://www.amazon.in/cbcc/marketpage?ref_=atv_me_pri_c_eiVJLU_76bcn7_1_5&lop=false">
+                  <button className="subscription-more-details-btn">
+                    More Details
+                  </button>
+                </a>
+              </div>
             </div>
           </Carousel>
           <div className="subsription-carousel-text"></div>
         </div>
       </div>
       <div className="subscription-benifits-cards-container">
-        <h3 style={{ color: "white", padding: "0 30px", margin: "0px" }}>
+        <h3 style={{ color: "white", padding: "20px 30px", margin: "0px" }}>
           Prime Shipping benefits
         </h3>
         <div className="carousel-main-subs">
@@ -76,7 +195,7 @@ const Subscription = () => {
       </div>
 
       <div className="subscription-benifits-cards-container">
-        <h3 style={{ color: "white", padding: "0 30px", margin: "0px" }}>
+        <h3 style={{ color: "white", padding: "20px 30px", margin: "0px" }}>
           Amazon Pay ICICI card benefits
         </h3>
         <div className="carousel-main-subs">
@@ -121,7 +240,7 @@ const Subscription = () => {
       </div>
 
       <div className="subscription-benifits-cards-container">
-        <h3 style={{ color: "white", padding: "0 30px", margin: "0px" }}>
+        <h3 style={{ color: "white", padding: "20px 30px", margin: "0px" }}>
           Prime Music benefits
         </h3>
         <div className="carousel-main-subs">
@@ -165,7 +284,7 @@ const Subscription = () => {
       </div>
 
       <div className="subscription-benifits-cards-container">
-        <h3 style={{ color: "white", padding: "0 30px", margin: "0px" }}>
+        <h3 style={{ color: "white", padding: "20px 30px", margin: "0px" }}>
           Prime Reading benefits
         </h3>
         <div className="carousel-main-subs">
