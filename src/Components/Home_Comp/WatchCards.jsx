@@ -6,9 +6,17 @@ import { AiOutlineCheck } from "react-icons/ai";
 import { Link } from "react-router-dom";
 
 const WatchCards = ({ actualData, projectId }) => {
+  console.log("watchlistData", actualData);
   const [isHovered, setIsHovered] = useState(false);
   const [isMuted, setIsMuted] = useState(true);
-  const [watchlistStatus, setWatchlistStatus] = useState({});
+
+  const [watchlistStatus, setWatchlistStatus] = useState(() => {
+    const initialStatus = {};
+    actualData.forEach((item) => {
+      initialStatus[item._id] = false;
+    });
+    return initialStatus;
+  });
 
   const watchlistUpdateAPI =
     "https://academics.newtonschool.co/api/v1/ott/watchlist/like";
@@ -33,7 +41,12 @@ const WatchCards = ({ actualData, projectId }) => {
     })
       .then((response) => response.json())
       .then((watchData) => {
-        console.log(watchData.data);
+        console.log("data data", watchData.data);
+        console.log("data shows", watchData.data.shows);
+        // console.log("data shows_id", watchData.data.shows._id);
+        console.log("data complete watchdata", watchData);
+        // console.log("watchlistData prop", watchlistData);
+
         setWatchlistStatus((prevStatus) => ({
           ...prevStatus,
           [id]: !prevStatus[id],
@@ -154,27 +167,21 @@ const WatchCards = ({ actualData, projectId }) => {
                         </span>
                       </p>
                       <div className="watchlist-details-container">
-                        <button
-                          className="watchlist-btn continue-watching-btn"
-                          title="Watchlist"
-                        >
+                        <button className="watchlist-btn continue-watching-btn">
                           {/* onClick takes function and not function call */}
                           {watchlistStatus[item._id] ? (
-                            <PlusOutlined
+                            <AiOutlineCheck
                               className="home-plus-watchlist-btn"
                               onClick={() => handleWatchList(item._id)}
                             />
                           ) : (
-                            <AiOutlineCheck
+                            <PlusOutlined
                               className="home-plus-watchlist-btn"
                               onClick={() => handleWatchList(item._id)}
                             />
                           )}
                         </button>
-                        <button
-                          className="watchlist-btn continue-watching-btn"
-                          title="More"
-                        >
+                        <button className="watchlist-btn continue-watching-btn">
                           <MoreOutlined className="home-plus-watchlist-btn" />
 
                           {/* <MoreOutlined

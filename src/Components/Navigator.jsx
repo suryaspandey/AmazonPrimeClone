@@ -101,6 +101,9 @@ const Navigator = () => {
               <li>
                 My Stuff <IoIosArrowDown />
               </li>
+              <li>
+                <Link to={"/myStuff/Watchlist"}>WatchList</Link>
+              </li>
             </ol>
           </div>
 
