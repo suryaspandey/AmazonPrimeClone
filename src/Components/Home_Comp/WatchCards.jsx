@@ -8,7 +8,7 @@ import { Link } from "react-router-dom";
 const WatchCards = ({ actualData, projectId }) => {
   const [isHovered, setIsHovered] = useState(false);
   const [isMuted, setIsMuted] = useState(true);
-  const [isAddToWatchList, setIsAddToWatchList] = useState(false);
+  const [watchlistStatus, setWatchlistStatus] = useState({});
 
   const watchlistUpdateAPI =
     "https://academics.newtonschool.co/api/v1/ott/watchlist/like";
@@ -19,13 +19,28 @@ const WatchCards = ({ actualData, projectId }) => {
     const headers = {
       projectId: projectId,
       Authorization: `Bearer ${bearerToken}`,
+      "Content-Type": "application/json",
     };
 
-    fetch(watchlistUpdateAPI, { method: "PATCH", headers: headers })
+    const body = {
+      showId: id,
+    };
+
+    fetch(watchlistUpdateAPI, {
+      method: "PATCH",
+      headers: headers,
+      body: JSON.stringify(body),
+    })
       .then((response) => response.json())
       .then((watchData) => {
         console.log(watchData.data);
-        setIsAddToWatchList(!isAddToWatchList);
+        setWatchlistStatus((prevStatus) => ({
+          ...prevStatus,
+          [id]: !prevStatus[id],
+        }));
+      })
+      .catch((error) => {
+        console.error("Error:", error);
       });
   };
 
@@ -36,6 +51,7 @@ const WatchCards = ({ actualData, projectId }) => {
           className="continue-watching-container"
           onMouseEnter={() => setIsHovered(item)}
           onMouseLeave={() => setIsHovered(null)}
+          key={item._id}
         >
           <ul className="continue-watching-ul">
             <li className="continue-wtching-li">
@@ -142,17 +158,18 @@ const WatchCards = ({ actualData, projectId }) => {
                           className="watchlist-btn continue-watching-btn"
                           title="Watchlist"
                         >
-                          {/* {isAddToWatchList ? ( */}
-                          <PlusOutlined
-                            className="home-plus-watchlist-btn"
-                            // onClick={handleWatchList(item._id)}
-                          />
-                          {/* ) : (
+                          {/* onClick takes function and not function call */}
+                          {watchlistStatus[item._id] ? (
+                            <PlusOutlined
+                              className="home-plus-watchlist-btn"
+                              onClick={() => handleWatchList(item._id)}
+                            />
+                          ) : (
                             <AiOutlineCheck
                               className="home-plus-watchlist-btn"
-                              onClick={handleWatchList(item._id)}
+                              onClick={() => handleWatchList(item._id)}
                             />
-                          )} */}
+                          )}
                         </button>
                         <button
                           className="watchlist-btn continue-watching-btn"
