@@ -56,9 +56,7 @@ const WatchCards = ({
       .then((watchData) => {
         console.log("data data", watchData.data);
         console.log("data shows", watchData.data.shows);
-        // console.log("data shows_id", watchData.data.shows._id);
         console.log("data complete watchdata", watchData);
-        // console.log("watchlistData prop", watchlistData);
 
         setWatchlistStatus(
           (prevStatus) => ({

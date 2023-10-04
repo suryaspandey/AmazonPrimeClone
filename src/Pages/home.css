@@ -155,13 +155,22 @@ body {
 .options {
   display: none;
 }
-
+.user-avatar:hover .avatar-options {
+  display: flex;
+  /* flex-direction: column; */
+  justify-content: space-around;
+  position: absolute;
+  background-color: #191e25;
+  border-radius: 10px;
+  /* left: 0%; */
+  right: 0;
+}
 .user-avatar:hover .options {
   display: flex;
   /* flex-direction: column; */
   justify-content: space-around;
   position: absolute;
-  background-color: #7d7676;
+  background-color: #191e25;
   border-radius: 10px;
 }
 .user-avatar:hover .options .options-left,

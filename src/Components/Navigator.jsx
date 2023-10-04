@@ -6,6 +6,8 @@ import HomeTabDropdown from "./HomeTabDropdown";
 import { BsSearch } from "react-icons/bs";
 import CategoriesDropDown from "./CategoriesDropDown";
 import MyStuffTabDropdown from "./MyStuffTabDropDown";
+import AvatarSignINDropdown from "./AvatarSignINDropdown";
+import LoginUserDropdown from "./LoginUserDropdown";
 
 const Navigator = () => {
   const [isHover, setIsHover] = useState(false);
@@ -85,7 +87,6 @@ const Navigator = () => {
                 <li
                   onMouseEnter={() => handleSetActivePage("Home")}
                   onMouseLeave={() => handleSetActivePage(null)}
-                  // onClick={() => setActivePage("Home")}
                   className={`home-list ${
                     activePage === "Home" && isHover ? "active-page" : ""
                   }`}
@@ -164,7 +165,7 @@ const Navigator = () => {
             <div className="user-name">
               {isProfileUserName || "Try for free"}
             </div>
-            <div className="user-avatar">
+            <div className="user-avatar ">
               <li
                 style={{
                   listStyle: "none",
@@ -172,35 +173,91 @@ const Navigator = () => {
                   cursor: "pointer",
                 }}
               >
-                <img src="/avatar.png" alt="avatar" height={30} width={30} />
                 {isAuthenticated ? (
-                  <div className="options">
-                    <div className="options-left">
-                      <span>Your Account</span>
-                      <span>Help</span>
-                      {/* <span>Watch Anywhere</span> */}
-                      <span>Accounts and Settings</span>
-                      <Link to={"/Subscription"}>
-                        <span>Prime Benifits</span>
-                      </Link>
-                      <Link to={"/"} onClick={handleLogout}>
-                        <span>Sign Out</span>
-                      </Link>
+                  <>
+                    <img
+                      src="/avatar.png"
+                      alt="avatar"
+                      height={30}
+                      width={30}
+                      // className="avatar-navitagor"
+                      onMouseEnter={() => handleSetActivePage("Home")}
+                      onMouseLeave={() => handleSetActivePage(null)}
+                      className={`home-list ${
+                        activePage === "abcd" && isHover ? "active-page" : ""
+                      }`}
+                    />
+                    {/* <LoginUserDropdown isHover={isHover} /> */}
+                    <div className="options avatar-options">
+                      <div className="options-left ">
+                        <span className="optoins-login-headings">
+                          Your Account
+                        </span>
+
+                        <span className="categories-link-text">
+                          <Link className="categories-link-text">Help</Link>
+                        </span>
+
+                        <span className="categories-link-text">
+                          Accounts and Settings
+                        </span>
+                        <span className="categories-link-text">
+                          <Link
+                            to={"/Subscription"}
+                            style={{
+                              listStyleType: "none",
+                              textDecoration: "none",
+                              color: "#aaa",
+                            }}
+                          >
+                            Prime Benefits
+                          </Link>
+                        </span>
+                        <span className="categories-link-text">
+                          <Link
+                            to={"/"}
+                            onClick={handleLogout}
+                            style={{
+                              listStyleType: "none",
+                              textDecoration: "none",
+                              color: "#aaa",
+                            }}
+                          >
+                            Sign Out
+                          </Link>
+                        </span>
+                      </div>
+                      <div className="options-right">
+                        <span className="optoins-login-headings">Kids</span>
+                        <span className="categories-link-text">
+                          <Link
+                            to={"/manageprofiles"}
+                            style={{
+                              // paddingLeft: "10px",
+                              listStyleType: "none",
+                              textDecoration: "none",
+                              color: "#aaa",
+                            }}
+                          >
+                            Manage Profiles
+                          </Link>
+                        </span>
+                        <span className="categories-link-text">Learn More</span>
+                      </div>
                     </div>
-                    <div className="options-right">
-                      <span>Kids</span>
-                      <span>
-                        <Link to={"/manageprofiles"}>Manage Profiles</Link>
-                      </span>
-                      <span>Learn More</span>
-                    </div>
-                  </div>
+                  </>
                 ) : (
                   <>
-                    <Link to={"/login"}>
-                      <span>Sign In</span>
-                    </Link>
-                    <HomeTabDropdown />
+                    <>
+                      <img
+                        src="/avatar.png"
+                        alt="avatar"
+                        height={30}
+                        width={30}
+                        className="avatar-navitagor"
+                      />
+                      <AvatarSignINDropdown isHover={isHover} />
+                    </>
                   </>
                 )}
               </li>

@@ -72,8 +72,7 @@ function App() {
               element={<ActionAndAdventureMain />}
             />
             <Route path="/Categories" element={<Categories />} />
-            <Route path="/manageprofiles" element={<Profiles />} />
-            <Route path="/editProfile" element={<EditProfile />} />
+
             <Route path="/Search/:phrase" element={<Search />} />
             <Route path="/Subscription" element={<Subscription />} />
           </Route>
@@ -81,6 +80,8 @@ function App() {
           <Route element={<PrivateRoute />}>
             <Route path="/TVShow/:id" element={<VideoPlayer />} />
             <Route path="/myStuff/Watchlist" element={<AddToWatchList />} />
+            <Route path="/manageprofiles" element={<Profiles />} />
+            <Route path="/editProfile" element={<EditProfile />} />
           </Route>
         </Routes>
       </BrowserRouter>
