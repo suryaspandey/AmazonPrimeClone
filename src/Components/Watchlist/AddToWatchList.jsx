@@ -7,8 +7,10 @@ const AddToWatchList = () => {
   const [isInWatchList, setIsInWatchList] = useState(false);
   // const [loading, setLoading] = useState(true);
 
-  const bearerToken =
-    "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1MDM0NTc0MjhiYWJjMTExMDE5MmNmYiIsImlhdCI6MTY5NDcxMzIwNCwiZXhwIjoxNzI2MjQ5MjA0fQ.DKJz5ZvO667Ht9irDWLfynH2rhqPxGMxSrncaSPeU5w";
+  const isAuthenticated = !!localStorage.getItem("bearer_token");
+  const [isloggedIn, setIsLoggedIn] = useState(isAuthenticated);
+
+  const bearerToken = localStorage.getItem("bearer_token");
   const projectId = "zxke0qiu2960";
   const watchListAPI =
     "https://academics.newtonschool.co/api/v1/ott/watchlist/like";
@@ -44,16 +46,16 @@ const AddToWatchList = () => {
 
   return (
     <div style={{ color: "white" }}>
-      {/* {watchlistData.map((item) => ( */}
-      <div className="carousel-main" style={{ display: "flex" }}>
-        <WatchCards
-          actualData={watchlistData}
-          projectId={projectId}
-          handleRemoveFromWatchList={handleRemoveFromWatchList}
-          isInWatchListItem={isInWatchList}
-        />
-        {/* ))} */}
-      </div>
+      {isloggedIn && (
+        <div className="carousel-main" style={{ display: "flex" }}>
+          <WatchCards
+            actualData={watchlistData}
+            projectId={projectId}
+            handleRemoveFromWatchList={handleRemoveFromWatchList}
+            isInWatchListItem={isInWatchList}
+          />
+        </div>
+      )}
     </div>
   );
 };

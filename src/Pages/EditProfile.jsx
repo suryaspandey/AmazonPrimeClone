@@ -24,8 +24,8 @@ function EditProfile() {
 
     const formData = new FormData();
     formData.append("profileImage", file);
-    const bearerToken =
-      "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1MDM0NTc0MjhiYWJjMTExMDE5MmNmYiIsImlhdCI6MTY5NDcxMzIwNCwiZXhwIjoxNzI2MjQ5MjA0fQ.DKJz5ZvO667Ht9irDWLfynH2rhqPxGMxSrncaSPeU5w";
+    const bearerToken = localStorage.getItem("bearer_token");
+
     const projectId = "zxke0qiu2960";
 
     try {

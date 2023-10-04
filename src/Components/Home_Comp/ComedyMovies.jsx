@@ -14,9 +14,10 @@ const ComedyMovies = () => {
   const navigate = useNavigate();
   const [myData, setMyData] = useState([]);
   const { setApi } = useApi();
+  const bearerToken = localStorage.getItem("bearer_token");
 
-  const bearerToken =
-    "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1MDM0NTc0MjhiYWJjMTExMDE5MmNmYiIsImlhdCI6MTY5NDcxMzIwNCwiZXhwIjoxNzI2MjQ5MjA0fQ.DKJz5ZvO667Ht9irDWLfynH2rhqPxGMxSrncaSPeU5w";
+  // const bearerToken =
+  //   "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1MDM0NTc0MjhiYWJjMTExMDE5MmNmYiIsImlhdCI6MTY5NDcxMzIwNCwiZXhwIjoxNzI2MjQ5MjA0fQ.DKJz5ZvO667Ht9irDWLfynH2rhqPxGMxSrncaSPeU5w";
   const projectId = "zxke0qiu2960";
   const comedyMoviesURL = `https://academics.newtonschool.co/api/v1/ott/show?filter={"$and": [{"keywords": "comedy"},{"type":"movie"}]}`;
   // const comedyThrillerMOvieAPI = `https://academics.newtonschool.co/api/v1/ott/show?filter={"$and": [{"keywords": "comedy"},{"type":"movie"},{"keywords":"thriller"}]}`;

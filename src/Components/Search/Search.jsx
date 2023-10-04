@@ -8,8 +8,7 @@ const Search = () => {
   const [showData, setShowData] = useState([]);
   const [notFound, setNotFound] = useState(false);
   const projectId = "zxke0qiu2960";
-  const bearerToken =
-    "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1MDM0NTc0MjhiYWJjMTExMDE5MmNmYiIsImlhdCI6MTY5NDcxMzIwNCwiZXhwIjoxNzI2MjQ5MjA0fQ.DKJz5ZvO667Ht9irDWLfynH2rhqPxGMxSrncaSPeU5w";
+  const bearerToken = localStorage.getItem("bearer_token");
 
   // const searchBarFn = () => {
   //   fetch(
