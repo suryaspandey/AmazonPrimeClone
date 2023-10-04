@@ -5,8 +5,14 @@ import { GoUnmute } from "react-icons/go";
 import { AiOutlineCheck } from "react-icons/ai";
 import { Link } from "react-router-dom";
 
-const WatchCards = ({ actualData, projectId }) => {
+const WatchCards = ({
+  actualData,
+  projectId,
+  handleRemoveFromWatchList,
+  isInWatchListItem,
+}) => {
   console.log("watchlistData", actualData);
+  console.log("isInWatchListItem", isInWatchListItem);
   const [isHovered, setIsHovered] = useState(false);
   const [isMuted, setIsMuted] = useState(true);
 
@@ -24,6 +30,7 @@ const WatchCards = ({ actualData, projectId }) => {
     "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1MDM0NTc0MjhiYWJjMTExMDE5MmNmYiIsImlhdCI6MTY5NDcxMzIwNCwiZXhwIjoxNzI2MjQ5MjA0fQ.DKJz5ZvO667Ht9irDWLfynH2rhqPxGMxSrncaSPeU5w";
 
   const handleWatchList = (id) => {
+    console.log("Removing item with id:", id);
     const headers = {
       projectId: projectId,
       Authorization: `Bearer ${bearerToken}`,
@@ -47,14 +54,23 @@ const WatchCards = ({ actualData, projectId }) => {
         console.log("data complete watchdata", watchData);
         // console.log("watchlistData prop", watchlistData);
 
-        setWatchlistStatus((prevStatus) => ({
-          ...prevStatus,
-          [id]: !prevStatus[id],
-        }));
+        setWatchlistStatus(
+          (prevStatus) => ({
+            ...prevStatus,
+            [id]: !prevStatus[id],
+          }),
+          () => {
+            console.log("Updated watchlistStatus:", watchlistStatus);
+          }
+        );
+        console.log("Updated watchlistStatus:", watchlistStatus);
+        handleRemoveFromWatchList(id);
       })
       .catch((error) => {
         console.error("Error:", error);
       });
+
+    // console.log("Updated watchlistStatus:", watchlistStatus);
   };
 
   return (
@@ -169,7 +185,8 @@ const WatchCards = ({ actualData, projectId }) => {
                       <div className="watchlist-details-container">
                         <button className="watchlist-btn continue-watching-btn">
                           {/* onClick takes function and not function call */}
-                          {watchlistStatus[item._id] ? (
+
+                          {isInWatchListItem ? (
                             <AiOutlineCheck
                               className="home-plus-watchlist-btn"
                               onClick={() => handleWatchList(item._id)}

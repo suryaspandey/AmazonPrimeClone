@@ -9,6 +9,7 @@ import Search from "./Search/search";
 import { DownOutlined } from "@ant-design/icons";
 import { Dropdown, Space, Typography } from "antd";
 import CategoriesDropDown from "./CategoriesDropDown";
+import MyStuffTabDropdown from "./MyStuffTabDropDown";
 
 const Navigator = () => {
   const [isHover, setIsHover] = useState(false);
@@ -98,11 +99,14 @@ const Navigator = () => {
                 )} */}
                 {activePage === "Categories" && <CategoriesDropDown />}
               </li>
-              <li>
-                My Stuff <IoIosArrowDown />
-              </li>
-              <li>
-                <Link to={"/myStuff/Watchlist"}>WatchList</Link>
+              <li
+                onMouseEnter={() => handleSetActivePage("My Stuff")}
+                onMouseLeave={() => handleSetActivePage(null)}
+                className={`home-list ${
+                  activePage === "My Stuff" && isHover ? "active-page" : ""
+                }`}
+              >
+                <MyStuffTabDropdown isHover={isHover} />
               </li>
             </ol>
           </div>

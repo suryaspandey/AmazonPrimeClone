@@ -43,40 +43,45 @@ function App() {
         {!isLoginOrRegister && <Navigator />}
 
         <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/Home" element={<Home />} />
-          <Route path="/Home/AllMovies" element={<Home_Corousel />} />
-          <Route path="/Home/AllTVShows" element={<AllTVShows />} />
+          <Route>
+            <Route path="/login" element={<Login />} />
+            <Route path="/loginpassword" element={<LoginPassword />} />
+            <Route path="/register" element={<Register />} />
+            <Route path="/" element={<Home />} />
+            <Route path="/Home" element={<Home />} />
+            <Route path="/Home/AllMovies" element={<Home_Corousel />} />
+            <Route path="/Home/AllTVShows" element={<AllTVShows />} />
 
-          <Route path="/login" element={<Login />} />
-          <Route path="/loginpassword" element={<LoginPassword />} />
-          <Route path="/register" element={<Register />} />
+            <Route path="/watchDetails/:id" element={<WatchDetails />} />
+            {/* <Route path="/TVShow/:id" element={<VideoPlayer />} /> */}
+            <Route
+              path="/CompleteShowList/:category"
+              element={<CompleteShowList />}
+            />
+            <Route
+              path="/WatchInYourLanguage/:language"
+              element={<LanguageMoviesAndShows />}
+            />
+            <Route
+              exact
+              path="/Categories/ActionAdventure/"
+              element={<ActionAndAdventureMain />}
+            />
+            <Route
+              path="/Categories/ActionAdventure/:subheading"
+              element={<ActionAndAdventureMain />}
+            />
+            <Route path="/Categories" element={<Categories />} />
+            <Route path="/manageprofiles" element={<Profiles />} />
+            <Route path="/editProfile" element={<EditProfile />} />
+            <Route path="/myStuff/Watchlist" element={<AddToWatchList />} />
+            <Route path="/Search/:phrase" element={<Search />} />
+            <Route path="/Subscription" element={<Subscription />} />
+          </Route>
 
-          <Route path="/watchDetails/:id" element={<WatchDetails />} />
-          <Route path="/TVShow/:id" element={<VideoPlayer />} />
-          <Route
-            path="/CompleteShowList/:category"
-            element={<CompleteShowList />}
-          />
-          <Route
-            path="/WatchInYourLanguage/:language"
-            element={<LanguageMoviesAndShows />}
-          />
-          <Route
-            exact
-            path="/Categories/ActionAdventure/"
-            element={<ActionAndAdventureMain />}
-          />
-          <Route
-            path="/Categories/ActionAdventure/:subheading"
-            element={<ActionAndAdventureMain />}
-          />
-          <Route path="/Categories" element={<Categories />} />
-          <Route path="/manageprofiles" element={<Profiles />} />
-          <Route path="/editProfile" element={<EditProfile />} />
-          <Route path="/myStuff/Watchlist" element={<AddToWatchList />} />
-          <Route path="/Search/:phrase" element={<Search />} />
-          <Route path="/Subscription" element={<Subscription />} />
+          <Route element={<PrivateRoute />}>
+            <Route path="/TVShow/:id" element={<VideoPlayer />} />
+          </Route>
         </Routes>
       </BrowserRouter>
       {/* {!isLoginOrRegister && <Footer />} */}
