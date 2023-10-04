@@ -11,6 +11,7 @@ function EditProfile() {
   const handleSaveChanges = () => {
     let useNameValue = e.target.value;
     setUserName(userName);
+    localStorage.setItem("profileUserName", userName);
 
     let imgValue = e.target.files[0];
     setprofileImg(profileImg);

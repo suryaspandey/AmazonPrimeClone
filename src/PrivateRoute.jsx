@@ -17,7 +17,7 @@ import React from "react";
 import { Route, Navigate, Outlet } from "react-router";
 
 const PrivateRoute = () => {
-  const isAuthenticated = false;
+  const isAuthenticated = !!localStorage.getItem("bearer_token"); // will return truthy value
   return isAuthenticated ? <Outlet /> : <Navigate to="/login" />;
 };
 

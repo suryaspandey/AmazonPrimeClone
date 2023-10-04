@@ -66,9 +66,10 @@ const Register = () => {
           if (data.status === "fail") {
             setErrorMessage(`${data.message}!`);
           } else {
-            const access_token = data.token;
-            console.log("access_token: ", data.token);
-            localStorage.setItem("access_token", access_token);
+            const bearer_token = data.token;
+            console.log("bearer_token: ", bearer_token);
+            // localStorage.setItem("access_token", access_token);
+            localStorage.setItem("bearer_token", bearer_token);
             navigate("/home");
           }
         })

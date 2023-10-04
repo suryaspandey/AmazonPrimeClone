@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "./login.css";
 import { Button, Form, Input } from "antd";
 import { Navigate, useNavigate } from "react-router";
@@ -7,6 +7,7 @@ import { useLocation } from "react-router-dom";
 const LoginPassword = ({ loginEmail }) => {
   const navigate = useNavigate();
   const location = useLocation();
+  const [errMsg, setErrMsg] = useState("");
   // ap12345@gmail.com
   const recievedEmail = location.state.loginEmail;
   // console.log("recievedEmail", recievedEmail);
@@ -33,10 +34,13 @@ const LoginPassword = ({ loginEmail }) => {
       .then((data) => {
         console.log(data);
         if (data.status === "success") {
-          localStorage.setItem("access_token", data.token);
+          localStorage.setItem("bearer_token", data.token);
+          localStorage.setItem("loginUserName", data.data.name);
+
           navigate("/home");
         } else {
           console.error("Login failed:", data.message);
+          setErrMsg(data.message);
         }
       })
       .catch((err) => {
@@ -58,6 +62,13 @@ const LoginPassword = ({ loginEmail }) => {
       </div>
       <div className="login-form-main-container">
         <div className="login-form-container">
+          {errMsg && (
+            <p
+              style={{ color: "red", fontStyle: "italic", textAlign: "center" }}
+            >
+              {errMsg}
+            </p>
+          )}
           <h1>Sign in</h1>
           <div className="user-login-text">
             <p>{recievedEmail}</p>
