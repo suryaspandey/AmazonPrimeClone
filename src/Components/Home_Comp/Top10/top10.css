@@ -1,65 +1,63 @@
-.card-no{
-    font-size: 100px;
-    display: flex;
-    justify-content: center;
-    text-align: center;
+.card-no {
+  font-size: 100px;
+  display: flex;
+  justify-content: center;
+  text-align: center;
 
-    align-self: stretch;
-    max-width: 126px;
-    width: 50px;
+  align-self: stretch;
+  max-width: 126px;
+  width: 50px;
 }
 
-.card-btn-container{
-    align-items: center;
-    display: flex;
-    background-color: transparent;
-    border: none;
+.card-btn-container {
+  align-items: center;
+  display: flex;
+  background-color: transparent;
+  border: none;
 }
 
-.no-span{
-    font-weight: 900;
-    height: 133px;
-    color: rgb(255, 255, 255);
-    /* background: linear-gradient(90deg,#fff 50.52%,hsla(0,0%,100%,0)); */
-    /* background: #fff; */
-    transition: opacity .3s cubic-bezier(.2,.45,0,1) .1s,left .3s cubic-bezier(.2,.45,0,1),right .3s cubic-bezier(.2,.45,0,1);
+.no-span {
+  font-weight: 900;
+  height: 133px;
+  color: rgb(255, 255, 255);
+  /* background: linear-gradient(90deg,#fff 50.52%,hsla(0,0%,100%,0)); */
+  /* background: #fff; */
+  transition: opacity 0.3s cubic-bezier(0.2, 0.45, 0, 1) 0.1s,
+    left 0.3s cubic-bezier(0.2, 0.45, 0, 1),
+    right 0.3s cubic-bezier(0.2, 0.45, 0, 1);
 }
 
-.no-span-img{
-    height: 133px;
-    background-color: linear-gradient(90deg,#fff 50.52%,hsla(0,0%,100%,0));
+.no-span-img {
+  height: 133px;
+  background-color: linear-gradient(90deg, #fff 50.52%, hsla(0, 0%, 100%, 0));
 }
 
-.top10-card-img{
-    width: 267.4px;
-    height: 150.41px;
-    aspect-ratio: 16/9;
-    border-radius: 10px;
-
+.top10-card-img {
+  width: 267.4px;
+  height: 150.41px;
+  aspect-ratio: 16/9;
+  border-radius: 10px;
 }
 
-.card-no-img{
-    display: flex;
-    justify-content: flex-start;
-    gap: 25px;
+.card-no-img {
+  display: flex;
+  justify-content: flex-start;
+  gap: 25px;
 }
 
-.top10-carousel{
-    position: relative;
-    /* overflow-x: scroll;
+.top10-carousel {
+  position: relative;
+  /* overflow-x: scroll;
     overflow-y: hidden;
     gap: 10px;
    
     padding: 0 65px;
     transition: transform 0.5s ease;
     z-index: 10px; */
-    top: -83px;
-    /* background: linear-gradient(90deg,#fff 50.52%,hsla(0,0%,100%,0)); */
+  top: -83px;
+  /* background: linear-gradient(90deg,#fff 50.52%,hsla(0,0%,100%,0)); */
 }
 
-.carousel .slider-wrapper{
-    height: 800px;
+.carousel .slider-wrapper {
+  /* height: 800px; */
 }
-
-
-

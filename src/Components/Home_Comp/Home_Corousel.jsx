@@ -3,12 +3,12 @@ import React, { createRef, useEffect, useRef, useState } from "react";
 import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import {
-    LeftOutlined,
-    RightOutlined,
-    PlusOutlined,
-    InfoCircleOutlined,
-    // ArrowLeftOutlined,
-    // ArrowRightOutlined,
+  LeftOutlined,
+  RightOutlined,
+  PlusOutlined,
+  InfoCircleOutlined,
+  // ArrowLeftOutlined,
+  // ArrowRightOutlined,
 } from "@ant-design/icons";
 import ContinueWatching from "./ContinueWatching";
 import ContinueWatchingSlider from "./ContinueWatchingSlider";
@@ -26,83 +26,54 @@ import ActionAdventureMovies from "./ActionAdventure/ActionAdventureMovies";
 import Top10Video from "./Top10/Top10Video";
 
 export default function Home_Corousel() {
-    // const videoRef = useRef([]);
-    // Outside the component
+  // const videoRef = useRef([]);
+  // Outside the component
 
-    const carouselRef = useRef(null);
-    // const [currentIndex, setCurrentIndex] = useState(0);
+  const carouselRef = useRef(null);
+  // const [currentIndex, setCurrentIndex] = useState(0);
 
-    const videoSources = [
-        "https://s3.ll.videorolls.row.aiv-cdn.net/ww_iad/43c2/951b/7f5d/4eb4-94f1-fefd891c2801/cca79408-987a-4781-a636-e9d5fb527763_video_720p_2500kbps_audio_aaclc_128kbps.mp4",
-        "https://s3.ll.videorolls.row.aiv-cdn.net/ww_iad/3a55/c17e/8089/4fb8-a021-92315081fe75/aa8e49f3-a93f-4252-bdf2-0ead29b38523_video_720p_2500kbps_audio_aaclc_128kbps.mp4",
-        "https://s3.ll.videorolls.row.aiv-cdn.net/ww_iad/5918/855e/9aa4/40b7-9218-6e8c39ec294c/7854fc8c-a7bb-4b8b-b318-f396ee4cfa79_video_720p_2500kbps_audio_aaclc_128kbps.mp4",
-        "https://s3.ll.videorolls.row.aiv-cdn.net/ww_iad/afa3/0022/b418/49b7-bc67-bef7672b4c6a/bd0e3070-720c-443d-a2a7-d4888d719330_video_720p_2500kbps_audio_aaclc_128kbps.mp4",
-        // "",
-    ];
-    const thumbnailImages = [
-        "https://m.media-amazon.com/images/S/sonata-images-prod/PV_IN_WheelOfTime_S2_NewEpisodeFridays/96a4efdc-aa46-4850-bba7-2346af384a2c._UR3840,1440_SX1440_FMwebp_.jpeg",
-        "https://m.media-amazon.com/images/S/sonata-images-prod/PV_IN_Neeyat/f5548907-54c5-4eb8-9442-c1b53c0165a5._UR3840,1440_SX1440_FMwebp_.jpeg",
-        "https://m.media-amazon.com/images/S/sonata-images-prod/PV_IN_TVOD_SPIDERMAN_ATSV_99/1bcfcb5b-6ae2-43c2-b099-a8446ea76236._UR3840,1440_SX1440_FMwebp_.jpeg",
-        "https://m.media-amazon.com/images/S/sonata-images-prod/PV_IN_APDhillon_S1/54fce2b2-b57a-4f85-a0b7-0cc2758d7e4a._UR3840,1440_SX1440_FMwebp_.jpeg",
-        // "",
-        // Add other thumbnail URLs as needed
-    ];
+  const videoSources = [
+    "https://s3.ll.videorolls.row.aiv-cdn.net/ww_iad/43c2/951b/7f5d/4eb4-94f1-fefd891c2801/cca79408-987a-4781-a636-e9d5fb527763_video_720p_2500kbps_audio_aaclc_128kbps.mp4",
+    "https://s3.ll.videorolls.row.aiv-cdn.net/ww_iad/3a55/c17e/8089/4fb8-a021-92315081fe75/aa8e49f3-a93f-4252-bdf2-0ead29b38523_video_720p_2500kbps_audio_aaclc_128kbps.mp4",
+    "https://s3.ll.videorolls.row.aiv-cdn.net/ww_iad/5918/855e/9aa4/40b7-9218-6e8c39ec294c/7854fc8c-a7bb-4b8b-b318-f396ee4cfa79_video_720p_2500kbps_audio_aaclc_128kbps.mp4",
+    "https://s3.ll.videorolls.row.aiv-cdn.net/ww_iad/afa3/0022/b418/49b7-bc67-bef7672b4c6a/bd0e3070-720c-443d-a2a7-d4888d719330_video_720p_2500kbps_audio_aaclc_128kbps.mp4",
+    // "",
+  ];
+  const thumbnailImages = [
+    "https://m.media-amazon.com/images/S/sonata-images-prod/PV_IN_WheelOfTime_S2_NewEpisodeFridays/96a4efdc-aa46-4850-bba7-2346af384a2c._UR3840,1440_SX1440_FMwebp_.jpeg",
+    "https://m.media-amazon.com/images/S/sonata-images-prod/PV_IN_Neeyat/f5548907-54c5-4eb8-9442-c1b53c0165a5._UR3840,1440_SX1440_FMwebp_.jpeg",
+    "https://m.media-amazon.com/images/S/sonata-images-prod/PV_IN_TVOD_SPIDERMAN_ATSV_99/1bcfcb5b-6ae2-43c2-b099-a8446ea76236._UR3840,1440_SX1440_FMwebp_.jpeg",
+    "https://m.media-amazon.com/images/S/sonata-images-prod/PV_IN_APDhillon_S1/54fce2b2-b57a-4f85-a0b7-0cc2758d7e4a._UR3840,1440_SX1440_FMwebp_.jpeg",
+    // "",
+    // Add other thumbnail URLs as needed
+  ];
 
-    const videoRefs = useRef(videoSources.map(() => createRef()));
+  const videoRefs = useRef(videoSources.map(() => createRef()));
 
-    const handleVideoEnded = (index) => {
-        if (index < videoSources.length - 1) {
-            videoRefs.current[index + 1].current.play();
-            // setCurrentIndex(currentIndex + 1);
-        } else {
-            // setCurrentIndex(0);
-            videoRefs.current[0].current.play();
-        }
-    };
+  const handleVideoEnded = (index) => {
+    if (index < videoSources.length - 1) {
+      videoRefs.current[index + 1].current.play();
+      // setCurrentIndex(currentIndex + 1);
+    } else {
+      // setCurrentIndex(0);
+      videoRefs.current[0].current.play();
+    }
+  };
 
-    // useEffect(() => {
+  const handleSlideChange = (index) => {
+    videoRefs.current.forEach((video, i) => {
+      if (video && i !== index) {
+        video.pause();
+      }
+    });
 
-    //     if (videoRefs.current) {
-    //         const videos = videoRefs.current;
-    //         videos.play();
-    //         // videoRef.current.play();
-    //         videos.addEventListener("ended", handleVideoEnded);
-    //         return () => {
-    //             videos.removeEventListener("ended", handleVideoEnded);
-    //         };
-    //     }
-    // }, [currentIndex]);
+    setCurrentIndex(index);
+  };
+  // console.log("home comp");
 
-    // useEffect(() => {
-    //     videoRefs.current[0].current.play(); // Start the first video
-
-    //     videoRefs.current.forEach((video, index) => {
-    //         video.current.addEventListener("ended", () =>
-    //             handleVideoEnded(index)
-    //         );
-    //     });
-
-    //     // return () => {
-    //     //     videoRefs.current.forEach((video) => {
-    //     //         video.current.removeEventListener("ended", handleVideoEnded);
-    //     //     });
-    //     // };
-    // }, []);
-
-    const handleSlideChange = (index) => {
-        videoRefs.current.forEach((video, i) => {
-            if (video && i !== index) {
-                video.pause();
-            }
-        });
-
-        setCurrentIndex(index);
-    };
-    // console.log("home comp");
-
-    return (
-        <div className="home">
-            {/* <div className="corousel-container">
+  return (
+    <div className="home">
+      {/* <div className="corousel-container">
                 <Carousel
                     showThumbs={false}
                     autoplay
@@ -225,21 +196,18 @@ export default function Home_Corousel() {
                     ))}
                 </Carousel>
             </div> */}
-            {/* <ContinueWatching /> */}
-            {/* <ContinueWatchingSlider /> */}
-            {/* <ContinueWatchingSlider1 /> */}
-            {console.log("home comp")}
-            <Top10Video />
-            <RecommendedMovies />
-            <MysteryAndThriller />
-            <SciFi />
-            <Top10 />
-            <ComedyMovies />
-            <WatchInLanguage />
-            <ActionAdventureMovies />
-            <Documentries />
-            {/* <WatchingList /> */}
-            {/* <WatchInYourLanguage /> */}\
-        </div>
-    );
+      {/* <ContinueWatching /> */}
+      {/* <ContinueWatchingSlider /> */}
+      {/* <ContinueWatchingSlider1 /> */}
+      <Top10Video showHeader={false} />
+      <RecommendedMovies />
+      <MysteryAndThriller />
+      <SciFi />
+      <Top10 />
+      <ComedyMovies />
+      <WatchInLanguage />
+      <ActionAdventureMovies />
+      <Documentries />
+    </div>
+  );
 }

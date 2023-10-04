@@ -13,7 +13,7 @@ import {
 } from "../../Home_Comp/carouselData";
 import Top10Cards from "./Top10Cards";
 
-const Top10Video = () => {
+const Top10Video = ({ showHeader }) => {
   const videoRef = useRef([]);
   const carouselRef = useRef(null);
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -62,19 +62,44 @@ const Top10Video = () => {
 
   return (
     <>
-      <div className="cards-heaading">
-        <h2
-          style={{
-            display: "flex",
-            alignItems: "center",
-          }}
-        >
-          <span className="prime-text-heading" style={{ marginRight: "8px" }}>
-            Prime
-          </span>
+      {showHeader ? (
+        <div className="cards-heaading">
+          <h2
+            style={{
+              display: "flex",
+              alignItems: "center",
+            }}
+          >
+            {/* <span className="prime-text-heading" style={{ marginRight: "8px" }}>
+              Prime
+            </span> */}
 
-          <span className="card-indv-heading">Top 10 in India</span>
-          <span className="seeMore">
+            <span className="card-indv-heading">Top 10 in India</span>
+            <span className="seeMore">
+              <MdOutlineTrendingUp
+                style={{
+                  fontSize: "30px",
+                  border: "3px solid white",
+                  borderRadius: "50%",
+                }}
+              />
+            </span>
+          </h2>
+        </div>
+      ) : (
+        <div className="cards-heaading">
+          <h2
+            style={{
+              display: "flex",
+              alignItems: "center",
+            }}
+          >
+            {/* <span className="prime-text-heading" style={{ marginRight: "8px" }}>
+              Prime
+            </span> */}
+
+            <span className="card-indv-heading">Movies</span>
+            {/* <span className="seeMore">
             <MdOutlineTrendingUp
               style={{
                 fontSize: "30px",
@@ -82,13 +107,15 @@ const Top10Video = () => {
                 borderRadius: "50%",
               }}
             />
-          </span>
-        </h2>
-      </div>
+          </span> */}
+          </h2>
+        </div>
+      )}
+
       <div className="corousel-container">
         <Carousel
           showThumbs={false}
-          autoplay
+          // autoplay
           infiniteLoop
           interval={5000}
           selectedItem={currentIndex}
@@ -100,16 +127,17 @@ const Top10Video = () => {
             <>
               <div
                 className="corousel-container-left-right"
-                style={{ height: "550px" }}
+                // style={{ height: "550px" }}
               >
                 <div
+                  className="carousel-height"
                   // className="left-content"
                   style={{
                     position: "absolute",
                     top: "50%",
                     // left: "10%",
                     width: "30%",
-                    height: "100%",
+                    height: "40%",
                     backgroundColor: "transparent",
                     zIndex: "1",
                   }}
@@ -228,11 +256,12 @@ const Top10Video = () => {
                   </picture>
                 </div>
                 <div
+                  className="top-10-video-container"
                   // className="right-content"
                   style={{
                     position: "relative",
                     width: "100%",
-                    height: "100%",
+                    height: "38%",
                     backgroundColor: "#ffffff",
                     zIndex: "0",
                   }}
@@ -278,7 +307,6 @@ const Top10Video = () => {
                       />
                     )}
                   </div>
-                  ;
                 </div>
               </div>
             </>

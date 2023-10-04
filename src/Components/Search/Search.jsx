@@ -10,23 +10,6 @@ const Search = () => {
   const projectId = "zxke0qiu2960";
   const bearerToken = localStorage.getItem("bearer_token");
 
-  // const searchBarFn = () => {
-  //   fetch(
-  //     `https://academics.newtonschool.co/api/v1/ott/show?filter={"title" : "${phrase}"}`,
-  //     {
-  //       headers: {
-  //         projectId: projectId,
-  //         Authorization: `Bearer ${bearerToken}`,
-  //       },
-  //       method: "GET",
-  //     }
-  //   )
-  //     .then((response) => response.json())
-  //     .then((data) => {
-  //       console.log(data);
-  //     });
-  // };
-
   var myHeaders = new Headers();
   myHeaders.append("projectId", "zxke0qiu2960");
 
