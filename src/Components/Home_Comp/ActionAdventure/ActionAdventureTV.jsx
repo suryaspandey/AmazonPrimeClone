@@ -35,7 +35,7 @@ const ActionAdventureTV = ({ heading }) => {
 
   const handleSeeMoreClick = () => {
     setApi(actionAdventureTVURL);
-    navigate("/CompleteShowList/ActionAdventureTVShows");
+    navigate("/CompleteShowList/Action And Adventure TVShows");
   };
 
   return (

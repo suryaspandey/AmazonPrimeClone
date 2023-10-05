@@ -1,4 +1,5 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
+import "./allShowsType.css";
 import { DownOutlined } from "@ant-design/icons";
 import { Dropdown, Space } from "antd";
 import { Checkbox } from "antd";
@@ -7,15 +8,13 @@ import { AiOutlineDown } from "react-icons/ai";
 import { IoIosArrowDown, IoIosArrowUp } from "react-icons/io";
 import "./completeShowList.css";
 import WatchCards from "../Components/Home_Comp/WatchCards";
-import { Link, useLocation, useNavigate, useParams } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useApi } from "../APIContext";
 
-export const CompleteShowList = () => {
+const AllShowsType = () => {
   const [isArrowclicked, setIsArrowClicked] = useState(false);
   const [checkCount, setIsCheckCount] = useState(0);
   const { api } = useApi();
-  const showType = useParams();
-  console.log("show title location", showType.category);
   // console.log("api", api);
 
   const [myData, setMyData] = useState([]);
@@ -47,7 +46,7 @@ export const CompleteShowList = () => {
 
   return (
     <>
-      {/* <div className="content-dropdown">
+      <div className="content-dropdown">
         <button className="showlistBtn">
           <span className="contnt-type-text">Content Type</span>
           {checkCount > 0 && (
@@ -81,23 +80,9 @@ export const CompleteShowList = () => {
             </button>
           </div>
         )}
-      </div> */}
-      <div className="show-container">
-        <div className="show-name">
-          <h1
-            style={{ color: "white", padding: "24px" }}
-          >{`${showType.category} movies`}</h1>
-        </div>
-      </div>
-      <div className="carousel-main">
-        <div>
-          <WatchCards
-            actualData={myData}
-            projectId={projectId}
-            className="complete-cards-main"
-          />
-        </div>
       </div>
     </>
   );
 };
+
+export default AllShowsType;

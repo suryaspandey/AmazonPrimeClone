@@ -1,48 +1,45 @@
 import React, { useEffect, useState } from "react";
 import WatchCards from "./WatchCards";
 import "./recommendedMovies.css";
-import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
-import { MdKeyboardArrowRight } from "react-icons/md";
 import { useApi } from "../../APIContext";
 import { useNavigate } from "react-router";
-// import { Carousel } from "react-responsive-carousel";
+import { MdKeyboardArrowRight } from "react-icons/md";
 
-const SciFi = () => {
+const RomanceMovies = () => {
   const [myData, setMyData] = useState([]);
-  const { setApi } = useApi();
   const navigate = useNavigate();
+  const { setApi } = useApi();
+
+  // console.log("heading: ", heading); // false
 
   const bearerToken = localStorage.getItem("bearer_token");
 
   const projectId = "zxke0qiu2960";
-  const scifiURL = `https://academics.newtonschool.co/api/v1/ott/show?filter={"$and": [{"keywords": "sci-fi"}, {"type": "movie"}]}`;
+  const romanceURL = `https://academics.newtonschool.co/api/v1/ott/show?filter={"$and": [{"keywords": "romance"}, {"type": "movie"}]}`;
 
   useEffect(() => {
-    // const scifiURL = `https://academics.newtonschool.co/api/v1/ott/show?filter={"keywords" : "sci-fi"}`;
-
     const headers = {
       projectId: projectId,
       Authorization: `Bearer ${bearerToken}`,
     };
 
-    fetch(scifiURL, { method: "GET", headers: headers })
+    fetch(romanceURL, { method: "GET", headers: headers })
       .then((response) => response.json())
       .then((exdata) => {
         const allData = exdata;
-        console.log(allData);
+        // console.log(allData);
         setMyData(exdata.data);
       });
   }, [projectId, bearerToken]);
 
   const handleSeeMoreClick = () => {
-    setApi(scifiURL);
-    navigate("/CompleteShowList/Science And Fiction");
+    setApi(romanceURL);
+    navigate("/CompleteShowList/Romance");
   };
 
   const responsive = {
     superLargeDesktop: {
-      // the naming can be any, depends on you.
       breakpoint: { max: 4000, min: 3000 },
       items: 5,
     },
@@ -59,8 +56,10 @@ const SciFi = () => {
       items: 1,
     },
   };
+  // console.log("mystery", myData);
   return (
     <>
+      {/* {!heading && ( //not to render heading in recommended section */}
       <div className="cards-heaading">
         <h2
           style={{
@@ -71,18 +70,25 @@ const SciFi = () => {
           <span className="prime-text-heading" style={{ marginRight: "8px" }}>
             Prime
           </span>
-          <span className="card-indv-heading">Science and Fiction Movies</span>
+
+          <span className="card-indv-heading">Romance Movies</span>
           <span className="seeMore" onClick={handleSeeMoreClick}>
             See More
             <MdKeyboardArrowRight style={{ fontSize: "40px" }} />
           </span>
         </h2>
       </div>
+      {/* )} */}
+
       <div className="carousel-main" style={{ display: "flex" }}>
-        <WatchCards actualData={myData} projectId={projectId} />
+        <WatchCards
+          // key={item._id}
+          actualData={myData}
+          projectId={projectId}
+        />
       </div>
     </>
   );
 };
 
-export default SciFi;
+export default RomanceMovies;

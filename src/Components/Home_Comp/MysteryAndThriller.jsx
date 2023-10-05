@@ -17,7 +17,7 @@ const MysteryAndThriller = () => {
   const bearerToken = localStorage.getItem("bearer_token");
 
   const projectId = "zxke0qiu2960";
-  const mysteryURL = `https://academics.newtonschool.co/api/v1/ott/show?filter={"$and": [{"keywords": "mystery"}, {"keywords": "thriller"}]}`;
+  const mysteryURL = `https://academics.newtonschool.co/api/v1/ott/show?filter={"$and": [{"keywords": "mystery"}, {"keywords": "thriller"}, {"type": "movie"}]}`;
 
   useEffect(() => {
     const headers = {
@@ -36,7 +36,7 @@ const MysteryAndThriller = () => {
 
   const handleSeeMoreClick = () => {
     setApi(mysteryURL);
-    navigate("/CompleteShowList/MysteryAndThriller");
+    navigate("/CompleteShowList/Mystery And Thriller");
   };
 
   const responsive = {
@@ -57,7 +57,7 @@ const MysteryAndThriller = () => {
       items: 1,
     },
   };
-  console.log("mystery", myData);
+  // console.log("mystery", myData);
   return (
     <>
       {/* {!heading && ( //not to render heading in recommended section */}
@@ -72,7 +72,7 @@ const MysteryAndThriller = () => {
             Prime
           </span>
 
-          <span className="card-indv-heading">Mystery and Thriller</span>
+          <span className="card-indv-heading">Mystery and Thriller Movies</span>
           <span className="seeMore" onClick={handleSeeMoreClick}>
             See More
             <MdKeyboardArrowRight style={{ fontSize: "40px" }} />

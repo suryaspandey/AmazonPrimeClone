@@ -28,6 +28,7 @@ import Register from "./Pages/Register";
 import PrivateRoute from "./PrivateRoute";
 import Search from "./Components/Search/search";
 import Subscription from "./Pages/Subscription";
+import AllShowsType from "./Pages/AllShowsType";
 // import { EpisodeNoContent } from "./EpisodeNoContent";
 
 function App() {
@@ -65,6 +66,7 @@ function App() {
               path="/CompleteShowList/:category"
               element={<CompleteShowList />}
             />
+            <Route path="/AllShowType/:type" element={<AllShowsType />} />
             <Route
               path="/WatchInYourLanguage/:language"
               element={<LanguageMoviesAndShows />}

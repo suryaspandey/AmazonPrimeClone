@@ -24,6 +24,9 @@ import WatchInLanguage from "./Top10/WatchInLanguage";
 import Documentries from "./Documentries";
 import ActionAdventureMovies from "./ActionAdventure/ActionAdventureMovies";
 import Top10Video from "./Top10/Top10Video";
+import RomanceMovies from "./RomanceMovies";
+import HorrorMovies from "./HorrorMovies";
+import FantasyMovies from "./FantasyMovies";
 
 export default function Home_Corousel() {
   // const videoRef = useRef([]);
@@ -205,8 +208,11 @@ export default function Home_Corousel() {
       <SciFi />
       <Top10 />
       <ComedyMovies />
+      <HorrorMovies />
       <WatchInLanguage />
       <ActionAdventureMovies />
+      <RomanceMovies />
+      <FantasyMovies />
       <Documentries />
     </div>
   );

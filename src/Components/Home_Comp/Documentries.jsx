@@ -36,7 +36,7 @@ const Documentries = () => {
 
   const handleSeeMoreClick = () => {
     setApi(documentaryURL);
-    navigate("/CompleteShowList/Documentaries");
+    navigate("/CompleteShowList/Documentary");
   };
   return (
     <>

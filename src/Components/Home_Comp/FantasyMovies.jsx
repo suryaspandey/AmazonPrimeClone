@@ -8,7 +8,7 @@ import { useApi } from "../../APIContext";
 import { useNavigate } from "react-router";
 // import { Carousel } from "react-responsive-carousel";
 
-const SciFi = () => {
+const FantasyMovies = () => {
   const [myData, setMyData] = useState([]);
   const { setApi } = useApi();
   const navigate = useNavigate();
@@ -16,7 +16,7 @@ const SciFi = () => {
   const bearerToken = localStorage.getItem("bearer_token");
 
   const projectId = "zxke0qiu2960";
-  const scifiURL = `https://academics.newtonschool.co/api/v1/ott/show?filter={"$and": [{"keywords": "sci-fi"}, {"type": "movie"}]}`;
+  const fantasyURL = `https://academics.newtonschool.co/api/v1/ott/show?filter={"$and": [{"keywords": "fantasy"}, {"type": "movie"}]}`;
 
   useEffect(() => {
     // const scifiURL = `https://academics.newtonschool.co/api/v1/ott/show?filter={"keywords" : "sci-fi"}`;
@@ -26,7 +26,7 @@ const SciFi = () => {
       Authorization: `Bearer ${bearerToken}`,
     };
 
-    fetch(scifiURL, { method: "GET", headers: headers })
+    fetch(fantasyURL, { method: "GET", headers: headers })
       .then((response) => response.json())
       .then((exdata) => {
         const allData = exdata;
@@ -36,8 +36,8 @@ const SciFi = () => {
   }, [projectId, bearerToken]);
 
   const handleSeeMoreClick = () => {
-    setApi(scifiURL);
-    navigate("/CompleteShowList/Science And Fiction");
+    setApi(fantasyURL);
+    navigate("/CompleteShowList/Fantasy");
   };
 
   const responsive = {
@@ -71,7 +71,7 @@ const SciFi = () => {
           <span className="prime-text-heading" style={{ marginRight: "8px" }}>
             Prime
           </span>
-          <span className="card-indv-heading">Science and Fiction Movies</span>
+          <span className="card-indv-heading">Fantasy Movies</span>
           <span className="seeMore" onClick={handleSeeMoreClick}>
             See More
             <MdKeyboardArrowRight style={{ fontSize: "40px" }} />
@@ -85,4 +85,4 @@ const SciFi = () => {
   );
 };
 
-export default SciFi;
+export default FantasyMovies;

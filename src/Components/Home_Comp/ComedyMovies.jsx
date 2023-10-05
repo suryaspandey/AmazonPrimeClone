@@ -38,7 +38,7 @@ const ComedyMovies = () => {
 
   const handleSeeMoreClick = () => {
     setApi(comedyMoviesURL);
-    navigate("/CompleteShowList/ComedyMovies");
+    navigate("/CompleteShowList/Comedy Movies");
     console.log("comedyThrillerMOvieAPI", comedyMoviesURL);
   };
 
