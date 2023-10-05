@@ -4,12 +4,13 @@ import WatchCards from "../Home_Comp/WatchCards";
 import "./addToWatchList.css";
 import { DownOutlined } from "@ant-design/icons";
 import { Dropdown, Space } from "antd";
+import { MdKeyboardArrowDown, MdKeyboardArrowUp } from "react-icons/md";
 
 const AddToWatchList = () => {
   const [watchlistData, setWatchlistData] = useState([]);
   const [isInWatchList, setIsInWatchList] = useState(false);
   const [selectedShowType, setSelectedShowType] = useState("All");
-  const [showArrows, setShowArrows] = useState(true);
+  const [showDownArrow, setShowDownArrow] = useState(true);
   // const [filteredData, setFilteredData] = useState([]);
   // const [sortedData, setSortedData] = useState([]);
 
@@ -67,6 +68,10 @@ const AddToWatchList = () => {
     // setWatchlistData(filteredData);
   };
 
+  const handleDownArrow = () => {
+    setShowDownArrow(!setShowDownArrow);
+  };
+
   const sortedData = [...watchlistData].sort((a, b) => {
     const titleA = a.title.toUpperCase();
     const titleB = b.title.toUpperCase();
@@ -79,6 +84,7 @@ const AddToWatchList = () => {
 
   const items = [
     {
+      className: "watchlist-items",
       label: "Title: A - Z",
       key: "1",
       onClick: () => {
@@ -87,6 +93,7 @@ const AddToWatchList = () => {
     },
 
     {
+      className: "watchlist-items",
       label: "Title: Z - A",
       key: "2",
       onClick: () => setWatchlistData(sortedData.reverse()),
@@ -96,7 +103,7 @@ const AddToWatchList = () => {
   return (
     <div style={{ height: "100vh" }}>
       <div className="watchlist-header-container">
-        <h1 style={{ color: "white" }}>Watchlist</h1>
+        <h1 className="addTowatchlist-heading">Watchlist</h1>
         <div className="buttons-recent-addition-container">
           <div className="watchlist-btns-container">
             <button
@@ -142,9 +149,26 @@ const AddToWatchList = () => {
               trigger={["click"]}
             >
               <a onClick={(e) => e.preventDefault()}>
-                <Space style={{ color: "white", background: "#ffffff33" }}>
-                  Sort
-                  <DownOutlined />
+                <Space
+                  style={{
+                    color: "white",
+                    background: "#ffffff33",
+                    width: "100%",
+                  }}
+                  className="addToWatchlist-btn"
+                  onClick={handleDownArrow}
+                >
+                  {showDownArrow ? (
+                    <>
+                      Sort
+                      <MdKeyboardArrowDown />
+                    </>
+                  ) : (
+                    <>
+                      Sort
+                      <MdKeyboardArrowUp />
+                    </>
+                  )}
                 </Space>
               </a>
             </Dropdown>
