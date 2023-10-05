@@ -38,18 +38,21 @@ const RecommendedMovies = () => {
       .then((response) => response.json())
       .then((exdata) => {
         const allData = exdata;
-
-        // const randomArr = [];
-        // for (let i = 0; i < 20; i = i + 1) {
-        //   const limit20 = Math.floor(Math.random() * allData.data.length) + 1;
-        //   randomArr.push(limit20);
-        // }
+        // console.log("all data ", allData);
+        const randomArr = [];
+        for (let i = 0; i < 20; i = i + 1) {
+          const limit20 = Math.floor(Math.random() * allData.data.length);
+          randomArr.push(allData.data[limit20]);
+        }
 
         // const randomShowData = randomArr.map((index) => allData.data[index]);
         // setRandomShows(randomShowData);
+
         // console.log("recommended component", allData.data.length);
         // console.log("randomShowData", randomShowData);
-        setMyData(exdata.data);
+        // console.log("data from random list", randomArr);
+        // setMyData(exdata.data);
+        setMyData(randomArr);
       });
   }, [projectId, bearerToken]);
 
@@ -73,22 +76,24 @@ const RecommendedMovies = () => {
     },
   };
   // console.log("recommended movies comp");
-
-  return (
-    <>
-      <div className="cards-heaading">
-        <h2>
-          <span className="prime-text-heading" style={{ marginRight: "8px" }}>
-            Prime
-          </span>
-          <span className="card-indv-heading">Recommended movies</span>
-        </h2>
-      </div>
-      <div className="carousel-main" style={{ display: "flex" }}>
-        <WatchCards actualData={myData} projectId={projectId} />
-      </div>
-    </>
-  );
+  if (myData && myData.length) {
+    return (
+      <>
+        <div className="cards-heaading">
+          <h2>
+            <span className="prime-text-heading" style={{ marginRight: "8px" }}>
+              Prime
+            </span>
+            <span className="card-indv-heading">Recommended movies</span>
+          </h2>
+        </div>
+        <div className="carousel-main" style={{ display: "flex" }}>
+          <WatchCards actualData={myData} projectId={projectId} />
+        </div>
+      </>
+    );
+  }
+  return <div />;
 };
 
 export default RecommendedMovies;

@@ -148,3 +148,8 @@
   text-align: justify;
   width: 47%;
 }
+
+/* modal css */
+.ant-btn-default {
+  display: none;
+}

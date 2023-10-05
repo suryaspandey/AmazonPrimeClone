@@ -31,7 +31,7 @@ const ComedyMovies = () => {
       .then((response) => response.json())
       .then((exdata) => {
         const allData = exdata;
-        console.log(allData);
+        // console.log(allData);
         setMyData(exdata.data);
       });
   }, [projectId, bearerToken]);
@@ -39,7 +39,7 @@ const ComedyMovies = () => {
   const handleSeeMoreClick = () => {
     setApi(comedyMoviesURL);
     navigate("/CompleteShowList/Comedy Movies");
-    console.log("comedyThrillerMOvieAPI", comedyMoviesURL);
+    // console.log("comedyThrillerMOvieAPI", comedyMoviesURL);
   };
 
   const responsive = {

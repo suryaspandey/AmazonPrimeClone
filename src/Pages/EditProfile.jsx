@@ -15,6 +15,7 @@ function EditProfile() {
 
     let imgValue = e.target.files[0];
     setprofileImg(profileImg);
+    console.log("profileImg", profileImg);
 
     setIsCancel(false);
   };
@@ -43,7 +44,9 @@ function EditProfile() {
       const data = await response.json();
 
       if (response.ok) {
+        console.log(data.data.user.profileImage);
         setprofileImg(data.data.user.profileImage);
+        localStorage.setItem("profileImage", data.data.user.profileImage);
         setUserName(data.data.user.name);
       } else {
         console.error("Error updating profile image:", data.message);

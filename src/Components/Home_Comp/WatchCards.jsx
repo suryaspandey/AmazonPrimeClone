@@ -12,8 +12,8 @@ const WatchCards = ({
   isInWatchListItem,
   className,
 }) => {
-  console.log("watchlistData", actualData);
-  console.log("isInWatchListItem", isInWatchListItem);
+  // console.log("watchlistData", actualData);
+  // console.log("isInWatchListItem", isInWatchListItem);
   const [isHovered, setIsHovered] = useState(false);
   const [isMuted, setIsMuted] = useState(true);
 
@@ -37,7 +37,7 @@ const WatchCards = ({
       window.location.href = "/login";
       return;
     }
-    console.log("Removing item with id:", id);
+    // console.log("Removing item with id:", id);
     const headers = {
       projectId: projectId,
       Authorization: `Bearer ${bearerToken}`,
@@ -55,9 +55,9 @@ const WatchCards = ({
     })
       .then((response) => response.json())
       .then((watchData) => {
-        console.log("data data", watchData.data);
-        console.log("data shows", watchData.data.shows);
-        console.log("data complete watchdata", watchData);
+        // console.log("data data", watchData.data);
+        // console.log("data shows", watchData.data.shows);
+        // console.log("data complete watchdata", watchData);
 
         setWatchlistStatus(
           (prevStatus) => ({

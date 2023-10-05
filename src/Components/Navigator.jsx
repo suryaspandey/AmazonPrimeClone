@@ -26,17 +26,16 @@ const Navigator = () => {
       setIsLoggedIn(true);
 
       profileUserName = localStorage.getItem("loginUserName");
-      console.log("users name after login", profileUserName);
+      // console.log("users name after login", profileUserName);
       setIsProfileUserName(profileUserName);
     }
   }, [isAuthenticated]);
 
   const handleLogout = () => {
-    console.log("signout clicked");
     localStorage.removeItem("bearer_token");
     localStorage.removeItem("loginUserName");
-    console.log("bearer_token after log out", bearer_token);
-    console.log("loginUserName after log out", loginUserName);
+    // console.log("bearer_token after log out", bearer_token);
+    // console.log("loginUserName after log out", loginUserName);
   };
 
   // const profileuserName =
@@ -71,7 +70,7 @@ const Navigator = () => {
     e.preventDefault();
     navigate(`/search/${encodeURIComponent(searchText)}`);
   };
-  console.log("isloggedIn :", isloggedIn);
+  // console.log("isloggedIn :", isloggedIn);
   return (
     <>
       <div className="navigator-container">
@@ -95,10 +94,13 @@ const Navigator = () => {
                 </li>
               </div>
 
-              <li>
+              {/* <li>
                 Store <IoIosArrowDown />
-              </li>
-              <li>Live TV</li>
+              </li> */}
+              <Link to={"/Live TV"} className="categories">
+                Live TV
+              </Link>
+
               <li
                 onMouseEnter={() => handleSetActivePage("Categories")}
                 onMouseLeave={() => handleSetActivePage(null)}
@@ -197,9 +199,9 @@ const Navigator = () => {
                           Your Account
                         </span>
 
-                        <span className="categories-link-text">
+                        {/* <span className="categories-link-text">
                           <Link className="categories-link-text">Help</Link>
-                        </span>
+                        </span> */}
 
                         <span className="categories-link-text">
                           Accounts and Settings
@@ -245,7 +247,7 @@ const Navigator = () => {
                             Manage Profiles
                           </Link>
                         </span>
-                        <span className="categories-link-text">Learn More</span>
+                        {/* <span className="categories-link-text">Learn More</span> */}
                       </div>
                     </div>
                   </>

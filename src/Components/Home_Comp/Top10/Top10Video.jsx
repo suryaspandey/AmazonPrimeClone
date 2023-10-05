@@ -112,6 +112,7 @@ const Top10Video = ({ showHeader }) => {
             <>
               <div
                 className="corousel-container-left-right"
+                key={index}
                 // style={{ height: "550px" }}
               >
                 <div
@@ -250,20 +251,6 @@ const Top10Video = ({ showHeader }) => {
                   }}
                 >
                   <div key={index}>
-                    {/* <img
-                                            src={thumbnailImages[index]}
-                                            alt={`Thumbnail ${index}`}
-                                            style={{
-                                                position: "absolute",
-                                                top: "50%",
-                                                left: "50%",
-                                                transform:
-                                                    "translate(-50%, -50%)",
-                                                maxWidth: "100%",
-                                                maxHeight: "100%",
-                                            }}
-                                        /> */}
-
                     <video
                       className="home-banner-video"
                       autoPlay

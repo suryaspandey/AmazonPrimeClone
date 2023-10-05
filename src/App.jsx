@@ -29,6 +29,9 @@ import PrivateRoute from "./PrivateRoute";
 import Search from "./Components/Search/search";
 import Subscription from "./Pages/Subscription";
 import AllShowsType from "./Pages/AllShowsType";
+import LiveTV from "./Pages/LiveTV";
+import ComingSoon from "../ComingSoon";
+import PlanDetailsModal from "./Components/PlanDetailsModal/PlanDetailsModal";
 // import { EpisodeNoContent } from "./EpisodeNoContent";
 
 function App() {
@@ -81,6 +84,9 @@ function App() {
               element={<ActionAndAdventureMain />}
             />
             <Route path="/Categories" element={<Categories />} />
+            <Route path="/Live TV" element={<LiveTV />} />
+            <Route path="/comingSoon" element={<ComingSoon />} />
+            <Route path="planDetails" element={<PlanDetailsModal />} />
 
             <Route path="/Search/:phrase" element={<Search />} />
             <Route path="/Subscription" element={<Subscription />} />

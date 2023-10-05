@@ -1,7 +1,21 @@
-import React from "react";
+import React, { useState } from "react";
 import "./homeMain.css";
+import { useNavigate } from "react-router";
+import PlanDetailsModal from "../Components/PlanDetailsModal/PlanDetailsModal";
+import { Button, Modal } from "antd";
 
 export default function Home() {
+  const [isModal, setIsModal] = useState(false);
+  const navigate = useNavigate();
+  const [modal1Open, setModal1Open] = useState(false);
+
+  const handleComingSoon = () => {
+    navigate("/comingSoon");
+  };
+  const handleModal = () => {
+    navigate("/planDetails");
+  };
+
   return (
     <>
       <div className="home-container-main">
@@ -26,9 +40,39 @@ export default function Home() {
             <button className="primeoffersbtn">
               Start your 30-day Prime free trial
             </button>
-            <a className="primeoffersplanlinks" href="">
+            <Button
+              type="primary"
+              onClick={() => setModal1Open(true)}
+              className="primeoffersplanlinks"
+              style={{
+                background: "transparent",
+                border: "none",
+                padding: "0px",
+                margin: "0px",
+              }}
+            >
               ⓘ Plan details
-            </a>
+            </Button>
+            <Modal
+              title="Enjoy all Prime benefits"
+              style={{
+                top: 20,
+              }}
+              open={modal1Open}
+              onOk={() => setModal1Open(false)}
+              // onCancel={() => setModal1Open(false)}
+            >
+              <p>
+                Watch Prime Video on multiple devices in 4K UHD (2160p) quality
+                (ad-free)
+              </p>
+
+              <p>
+                Get unlimited FREE Same-Day/One-Day free delivery on Amazon
+                purchases
+              </p>
+              <p>Enjoy ad-free music on Prime Music and many more benefits</p>
+            </Modal>
           </div>
         </div>
       </div>
@@ -47,7 +91,13 @@ export default function Home() {
           <h2>Early Access to new movies, before digital subscription</h2>
           <div className="primeoffers-btns-container">
             <div className="primeoffersBtnandLinks-banner2">
-              <button className="primeoffersbtn">Rent Now</button>
+              <button
+                className="primeoffersbtn"
+                style={{ cursor: "pointer" }}
+                onClick={handleComingSoon}
+              >
+                Rent Now
+              </button>
               {/* <a className="primeoffersplanlinks" href="">
                                     ⓘ Plan details
                                 </a> */}
@@ -66,74 +116,74 @@ export default function Home() {
         </div>
         <div className="channels-list-container">
           <div className="channels-grid">
-            <div className="channel">
+            <div className="channel" onClick={() => alert("Coming Soon!")}>
               <img
                 style={{ width: "100%", height: "100%" }}
                 src="https://m.media-amazon.com/images/G/31/AmazonVideo/2021/Channels/MLP/Docubay-426X2947_V1.jpg"
                 alt=""
               />
             </div>
-            <div className="channel" onClick={() => alert("Coming Soon")}>
+            <div className="channel" onClick={() => alert("Coming Soon!")}>
               <img
                 src="https://m.media-amazon.com/images/G/31/AmazonVideo/2021/Channels/MLP/LionsgatePlay-426X2946_V1.jpg"
                 alt=""
               />
             </div>
-            <div className="channel">
+            <div className="channel" onClick={() => alert("Coming Soon!")}>
               <img
                 src="https://m.media-amazon.com/images/G/31/AmazonVideo/2021/Channels/MLP/426x294_Discovery.jpg"
                 alt=""
               />
             </div>
-            <div className="channel">
+            <div className="channel" onClick={() => alert("Coming Soon!")}>
               <img
                 src="https://m.media-amazon.com/images/G/31/AmazonVideo/2021/Channels/MLP/426x294_BBC_PLAYER.png"
                 alt=""
               />
             </div>
-            <div className="channel">
+            <div className="channel" onClick={() => alert("Coming Soon!")}>
               <img
                 src="https://m.media-amazon.com/images/G/31/AmazonVideo/2021/Channels/MLP/Mubi-426X2946_V1.jpg"
                 alt=""
               />
             </div>
-            <div className="channel">
+            <div className="channel" onClick={() => alert("Coming Soon!")}>
               <img
                 src="https://m.media-amazon.com/images/G/31/AmazonVideo/2021/X-site/MLP/Channels/Vrott.png"
                 alt=""
               />
             </div>
-            <div className="channel">
+            <div className="channel" onClick={() => alert("Coming Soon!")}>
               <img
                 src="https://m.media-amazon.com/images/G/31/AmazonVideo/2021/Channels/MLP/426x294_MANORAMAMAX.jpg"
                 alt=""
               />
             </div>
-            <div className="channel">
+            <div className="channel" onClick={() => alert("Coming Soon!")}>
               <img
                 src="https://m.media-amazon.com/images/G/31/AmazonVideo/2021/Channels/MLP/hoichoi-426X2946_V1.jpg"
                 alt=""
               />
             </div>
-            <div className="channel">
+            <div className="channel" onClick={() => alert("Coming Soon!")}>
               <img
                 src="https://m.media-amazon.com/images/G/31/AmazonVideo/2021/Channels/MLP/426x294_Chaupal.png"
                 alt=""
               />
             </div>
-            <div className="channel">
+            <div className="channel" onClick={() => alert("Coming Soon!")}>
               <img
                 src="https://m.media-amazon.com/images/G/31/AmazonVideo/2021/X-site/MLP/Channels/Amc.png"
                 alt=""
               />
             </div>
-            <div className="channel">
+            <div className="channel" onClick={() => alert("Coming Soon!")}>
               <img
                 src="https://m.media-amazon.com/images/G/31/AmazonVideo/2021/Channels/MLP/Erosnow-426X2948_V1.jpg"
                 alt=""
               />
             </div>
-            <div className="channel">
+            <div className="channel" onClick={() => alert("Coming Soon!")}>
               <img
                 src="https://m.media-amazon.com/images/G/31/AmazonVideo/2021/X-site/MLP/Channels/Stingray.png"
                 alt=""
@@ -157,7 +207,13 @@ export default function Home() {
           </p>
           <div className="primeoffers-btns-container">
             <div className="primeoffersBtnandLinks">
-              <button className="primeoffersbtn">Get Started</button>
+              <button
+                className="primeoffersbtn"
+                onClick={handleComingSoon}
+                style={{ cursor: "pointer" }}
+              >
+                Get Started
+              </button>
             </div>
           </div>
         </div>
@@ -180,7 +236,13 @@ export default function Home() {
           </p>
           <div className="primeoffers-btns-container">
             <div className="primeoffersBtnandLinks">
-              <button className="primeoffersbtn">Get Started</button>
+              <button
+                className="primeoffersbtn"
+                onClick={handleComingSoon}
+                style={{ cursor: "pointer" }}
+              >
+                Get Started
+              </button>
             </div>
           </div>
         </div>
