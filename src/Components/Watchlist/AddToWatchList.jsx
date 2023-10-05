@@ -2,12 +2,17 @@ import React, { useState } from "react";
 import { useEffect } from "react";
 import WatchCards from "../Home_Comp/WatchCards";
 import "./addToWatchList.css";
+import { DownOutlined } from "@ant-design/icons";
+import { Dropdown, Space } from "antd";
 
 const AddToWatchList = () => {
   const [watchlistData, setWatchlistData] = useState([]);
   const [isInWatchList, setIsInWatchList] = useState(false);
   const [selectedShowType, setSelectedShowType] = useState("All");
-  const [filteredData, setFilteredData] = useState([]);
+  const [showArrows, setShowArrows] = useState(true);
+  // const [filteredData, setFilteredData] = useState([]);
+  // const [sortedData, setSortedData] = useState([]);
+
   // const [loading, setLoading] = useState(true);
 
   const isAuthenticated = !!localStorage.getItem("bearer_token");
@@ -29,8 +34,7 @@ const AddToWatchList = () => {
       .then((result) => {
         setWatchlistData(result.data.shows);
         setIsInWatchList(true);
-        // console.log("watchlistData: result.data.shows", result.data.shows);
-        console.log("showType in AddTowatchlist ", result.data.shows);
+        // console.log("showType in AddTowatchlist ", result.data.shows);
       })
 
       .catch((error) => console.log("error", error));
@@ -41,22 +45,53 @@ const AddToWatchList = () => {
       (item) => item._id !== removedItem
     );
     setWatchlistData(updatedWatchList);
+    // console.log("handleRemoveFromWatchList", updatedWatchList);
   };
   // if (loading) {
   //   return <div>Loading...</div>;
   // }
-  // console.log("watchlistData from AddtoWatchList:", watchlistData);
-  // console.log("isInWatchList in AddToWatchList:", isInWatchList);
 
   const handleShowType = (showTypes) => {
-    const filteredData = watchlistData.filter((item) =>
-      showTypes.includes(item.type)
-    );
-    setFilteredData(filteredData);
+    let filteredData = [];
+    if (showTypes.includes("All")) {
+      filteredData = [...watchlistData];
+      // console.log("all filtered data for ALL", filteredData);
+    } else {
+      filteredData = watchlistData.filter((item) =>
+        showTypes.includes(item.type)
+      );
+    }
+    // setFilteredData(filteredData);
+    setSelectedShowType(showTypes);
+
+    // setWatchlistData(filteredData);
   };
 
-  const tvShowsArray = ["web series", "tv show"];
-  // console.log(tvShowsArray);
+  const sortedData = [...watchlistData].sort((a, b) => {
+    const titleA = a.title.toUpperCase();
+    const titleB = b.title.toUpperCase();
+    return titleA.localeCompare(titleB);
+  });
+
+  const filteredData = watchlistData.filter((item) =>
+    selectedShowType.includes(item.type)
+  );
+
+  const items = [
+    {
+      label: "Title: A - Z",
+      key: "1",
+      onClick: () => {
+        setWatchlistData(sortedData);
+      },
+    },
+
+    {
+      label: "Title: Z - A",
+      key: "2",
+      onClick: () => setWatchlistData(sortedData.reverse()),
+    },
+  ];
 
   return (
     <div style={{ height: "100vh" }}>
@@ -65,45 +100,80 @@ const AddToWatchList = () => {
         <div className="buttons-recent-addition-container">
           <div className="watchlist-btns-container">
             <button
-              className="addToWatchlist-btn"
+              className={`addToWatchlist-btn ${
+                selectedShowType.includes("All") ? "active" : ""
+              }`}
               onClick={() => {
                 handleShowType("All");
+                setSelectedShowType("All");
               }}
             >
               All
             </button>
             <button
-              className="addToWatchlist-btn"
+              className={`addToWatchlist-btn ${
+                selectedShowType.includes("movie") ? "active" : ""
+              }`}
               onClick={() => {
-                handleShowType(["movie"]);
+                handleShowType(["movie", "documentary"]);
+                setSelectedShowType(["movie", "documentary"]);
               }}
             >
               Movies
             </button>
 
             <button
-              className="addToWatchlist-btn"
+              className={`addToWatchlist-btn ${
+                selectedShowType.includes("tv show") ? "active" : ""
+              }`}
               onClick={() => {
-                // handleShowType("web series");
                 handleShowType(["web series", "tv show"]);
+                setSelectedShowType(["web series", "tv show"]);
               }}
             >
               TV Shows
             </button>
           </div>
           <div className="recent-watchlist-additions">
-            <button>Most Recent additions</button>
+            <Dropdown
+              menu={{
+                items,
+              }}
+              trigger={["click"]}
+            >
+              <a onClick={(e) => e.preventDefault()}>
+                <Space style={{ color: "white", background: "#ffffff33" }}>
+                  Sort
+                  <DownOutlined />
+                </Space>
+              </a>
+            </Dropdown>
           </div>
         </div>
       </div>
       {isloggedIn && (
         <div className="carousel-main" style={{ display: "flex" }}>
-          <WatchCards
-            actualData={filteredData.length > 0 ? filteredData : watchlistData}
-            projectId={projectId}
-            handleRemoveFromWatchList={handleRemoveFromWatchList}
-            isInWatchListItem={isInWatchList}
-          />
+          <>
+            {console.log("all filtered data", filteredData)}
+
+            <WatchCards
+              // actualData={filteredData}
+              actualData={
+                selectedShowType.includes("All") ? watchlistData : filteredData
+              }
+              // actualData={filteredData.length > 0 ? filteredData : watchlistData}
+              // actualData={
+              //   sortedData.length > 0
+              //     ? sortedData
+              //     : filteredData.length > 0
+              //     ? filteredData
+              //     : watchlistData
+              // }
+              projectId={projectId}
+              handleRemoveFromWatchList={handleRemoveFromWatchList}
+              isInWatchListItem={isInWatchList}
+            />
+          </>
         </div>
       )}
     </div>

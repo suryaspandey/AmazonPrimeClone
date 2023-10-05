@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import reactLogo from "./assets/react.svg";
 import viteLogo from "/vite.svg";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
@@ -32,9 +32,16 @@ import Subscription from "./Pages/Subscription";
 
 function App() {
   // const isAuthenticated = true;
-  const isLoginOrRegister =
-    window.location.pathname === "/login" ||
-    window.location.pathname === "/register";
+  const [isLoginOrRegister, setIsLoginOrRegister] = useState(false);
+  useEffect(function () {
+    const listerFn = function (event) {
+      console.log("I am called");
+    };
+    window.addEventListener("popstate", listerFn);
+    return () => {
+      window.removeEventListener("popstate", listerFn);
+    };
+  }, []);
 
   return (
     // <EpisodeNoContent>
