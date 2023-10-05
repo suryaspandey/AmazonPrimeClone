@@ -1,7 +1,8 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./homeMain.css";
 import { useNavigate } from "react-router";
 import { Button, Modal } from "antd";
+import UserMoodsModal from "../Components/UserMoodsModel/UserMoodsModal";
 
 export default function Home() {
   const [isModal, setIsModal] = useState(false);
@@ -14,6 +15,12 @@ export default function Home() {
   const handleModal = () => {
     navigate("/planDetails");
   };
+
+  useEffect(() => {
+    setTimeout(() => {
+      <UserMoodsModal />;
+    }, 3000);
+  }, []);
 
   return (
     <>

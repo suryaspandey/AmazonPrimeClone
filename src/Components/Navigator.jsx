@@ -265,6 +265,19 @@ const Navigator = () => {
                               Manage Profiles
                             </Link>
                           </div>
+                          <div>
+                            <Link
+                              to={"/Home/UserMoods"}
+                              style={{
+                                // paddingLeft: "10px",
+                                listStyleType: "none",
+                                textDecoration: "none",
+                                color: "#aaa",
+                              }}
+                            >
+                              Manage Moods
+                            </Link>
+                          </div>
                         </div>
 
                         {/* <span className="categories-link-text">Learn More</span> */}

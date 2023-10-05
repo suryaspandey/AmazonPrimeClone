@@ -59,7 +59,7 @@ const LoginUserDropdown = ({ activePage }) => {
             </li>
             {/* <li className="featured-collection-li">
               <Link className="categories-link-text" to={"/Home/KidsAll"}>
-                Kids
+                Change Mood
               </Link>
             </li> */}
           </ul>
