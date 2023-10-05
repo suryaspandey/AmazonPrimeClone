@@ -233,20 +233,40 @@ const Navigator = () => {
                         </span>
                       </div>
                       <div className="options-right">
-                        <span className="optoins-login-headings">Kids</span>
-                        <span className="categories-link-text">
-                          <Link
-                            to={"/manageprofiles"}
-                            style={{
-                              // paddingLeft: "10px",
-                              listStyleType: "none",
-                              textDecoration: "none",
-                              color: "#aaa",
-                            }}
-                          >
-                            Manage Profiles
-                          </Link>
-                        </span>
+                        <span className="optoins-login-headings">Profiles</span>
+                        <div
+                          className="Profiles"
+                          // style={{ display: "flex", flexDirection: "column" }}
+                        >
+                          <div>
+                            <Link
+                              className="categories-link-text"
+                              to={"/Home/KidsAll"}
+                              style={{
+                                // paddingLeft: "10px",
+                                listStyleType: "none",
+                                textDecoration: "none",
+                                color: "#aaa",
+                              }}
+                            >
+                              Kids
+                            </Link>
+                          </div>
+                          <div>
+                            <Link
+                              to={"/manageprofiles"}
+                              style={{
+                                // paddingLeft: "10px",
+                                listStyleType: "none",
+                                textDecoration: "none",
+                                color: "#aaa",
+                              }}
+                            >
+                              Manage Profiles
+                            </Link>
+                          </div>
+                        </div>
+
                         {/* <span className="categories-link-text">Learn More</span> */}
                       </div>
                     </div>

@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import "./homeMain.css";
 import { useNavigate } from "react-router";
-import PlanDetailsModal from "../Components/PlanDetailsModal/PlanDetailsModal";
 import { Button, Modal } from "antd";
 
 export default function Home() {

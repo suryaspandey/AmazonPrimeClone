@@ -31,7 +31,7 @@ import Subscription from "./Pages/Subscription";
 import AllShowsType from "./Pages/AllShowsType";
 import LiveTV from "./Pages/LiveTV";
 import ComingSoon from "../ComingSoon";
-import PlanDetailsModal from "./Components/PlanDetailsModal/PlanDetailsModal";
+import KidsAll from "./Components/Kids/KidsAll";
 // import { EpisodeNoContent } from "./EpisodeNoContent";
 
 function App() {
@@ -62,6 +62,7 @@ function App() {
             <Route path="/Home" element={<Home />} />
             <Route path="/Home/AllMovies" element={<Home_Corousel />} />
             <Route path="/Home/AllTVShows" element={<AllTVShows />} />
+            <Route path="/Home/KidsAll" element={<KidsAll />} />
 
             <Route path="/watchDetails/:id" element={<WatchDetails />} />
             {/* <Route path="/TVShow/:id" element={<VideoPlayer />} /> */}
@@ -86,7 +87,6 @@ function App() {
             <Route path="/Categories" element={<Categories />} />
             <Route path="/Live TV" element={<LiveTV />} />
             <Route path="/comingSoon" element={<ComingSoon />} />
-            <Route path="planDetails" element={<PlanDetailsModal />} />
 
             <Route path="/Search/:phrase" element={<Search />} />
             <Route path="/Subscription" element={<Subscription />} />

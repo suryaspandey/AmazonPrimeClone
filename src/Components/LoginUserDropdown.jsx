@@ -48,10 +48,7 @@ const LoginUserDropdown = ({ activePage }) => {
           </label>
           <ul className="featured-collection-ul login-dropdown-ul">
             <li className="featured-collection-li">
-              <Link
-                className="categories-link-text"
-                // to={"/Categories/ActionAdventure/"}
-              >
+              <Link className="categories-link-text" to={"/Home/KidsAll"}>
                 Kids
               </Link>
             </li>
@@ -60,6 +57,11 @@ const LoginUserDropdown = ({ activePage }) => {
                 Manage Profiles
               </Link>
             </li>
+            {/* <li className="featured-collection-li">
+              <Link className="categories-link-text" to={"/Home/KidsAll"}>
+                Kids
+              </Link>
+            </li> */}
           </ul>
         </div>
       </div>
