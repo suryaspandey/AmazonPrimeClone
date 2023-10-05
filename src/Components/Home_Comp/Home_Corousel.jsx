@@ -2,19 +2,11 @@ import React, { createRef, useEffect, useRef, useState } from "react";
 // import { Carousel } from "antd";
 import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
-import {
-  LeftOutlined,
-  RightOutlined,
-  PlusOutlined,
-  InfoCircleOutlined,
-  // ArrowLeftOutlined,
-  // ArrowRightOutlined,
-} from "@ant-design/icons";
+
 import ContinueWatching from "./ContinueWatching";
 import ContinueWatchingSlider from "./ContinueWatchingSlider";
 import RecommendedMovies from "./RecommendedMovies";
 import { ContinueWatchingSlider1 } from "./ContinueWatchingSlider1";
-import { WatchingList } from "./WatchingList";
 // import { WatchInYourLanguage } from "./WatchInYourLanguage";
 import MysteryAndThriller from "./MysteryAndThriller";
 import SciFi from "./SciFi";
@@ -27,6 +19,7 @@ import Top10Video from "./Top10/Top10Video";
 import RomanceMovies from "./RomanceMovies";
 import HorrorMovies from "./HorrorMovies";
 import FantasyMovies from "./FantasyMovies";
+import FantasyTVShow from "../AllTVShows/FantasyTVShow";
 
 export default function Home_Corousel() {
   // const videoRef = useRef([]);
@@ -202,6 +195,13 @@ export default function Home_Corousel() {
       {/* <ContinueWatching /> */}
       {/* <ContinueWatchingSlider /> */}
       {/* <ContinueWatchingSlider1 /> */}
+      <span
+        className="card-indv-heading"
+        style={{ color: "white", marginTop: "24px" }}
+      >
+        Movies
+      </span>
+
       <Top10Video showHeader={false} />
       <RecommendedMovies />
       <MysteryAndThriller />
@@ -214,6 +214,7 @@ export default function Home_Corousel() {
       <RomanceMovies />
       <FantasyMovies />
       <Documentries />
+      {/* <FantasyTVShow /> */}
     </div>
   );
 }

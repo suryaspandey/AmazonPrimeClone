@@ -93,22 +93,7 @@ const Top10Video = ({ showHeader }) => {
               display: "flex",
               alignItems: "center",
             }}
-          >
-            {/* <span className="prime-text-heading" style={{ marginRight: "8px" }}>
-              Prime
-            </span> */}
-
-            <span className="card-indv-heading">Movies</span>
-            {/* <span className="seeMore">
-            <MdOutlineTrendingUp
-              style={{
-                fontSize: "30px",
-                border: "3px solid white",
-                borderRadius: "50%",
-              }}
-            />
-          </span> */}
-          </h2>
+          ></h2>
         </div>
       )}
 
@@ -167,8 +152,6 @@ const Top10Video = ({ showHeader }) => {
                         handleVideoURL(videoSources[index], titleNames[index])
                       }
                       style={{
-                        // height: "20px",
-                        // width: "30px",
                         color: "black",
                         cursor: "pointer",
                         background: "white",

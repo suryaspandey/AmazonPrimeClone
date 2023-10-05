@@ -85,7 +85,7 @@ export const CompleteShowList = () => {
       <div className="show-container">
         <div className="show-name">
           <h1
-            style={{ color: "white", padding: "24px" }}
+            style={{ color: "white", padding: "36px 24px" }}
           >{`${showType.category} movies`}</h1>
         </div>
       </div>
