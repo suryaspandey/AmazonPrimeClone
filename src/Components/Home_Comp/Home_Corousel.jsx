@@ -65,10 +65,11 @@ export default function Home_Corousel() {
 
     setCurrentIndex(index);
   };
-  // console.log("home comp");
 
   return (
     <div className="home">
+      <div className="card-indv-heading-main">Movies</div>
+
       {/* <div className="corousel-container">
                 <Carousel
                     showThumbs={false}
@@ -195,12 +196,12 @@ export default function Home_Corousel() {
       {/* <ContinueWatching /> */}
       {/* <ContinueWatchingSlider /> */}
       {/* <ContinueWatchingSlider1 /> */}
-      <span
+      {/* <span
         className="card-indv-heading"
         style={{ color: "white", marginTop: "24px" }}
       >
         Movies
-      </span>
+      </span> */}
 
       <Top10Video showHeader={false} />
       <RecommendedMovies />

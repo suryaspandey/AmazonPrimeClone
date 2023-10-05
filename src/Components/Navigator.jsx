@@ -107,7 +107,10 @@ const Navigator = () => {
                   activePage === "Categories" && isHover ? "active-page" : ""
                 }`}
               >
-                Categories <IoIosArrowDown />
+                <Link to={"/Categories"} className="categories">
+                  Categories <IoIosArrowDown />
+                </Link>
+
                 {/* <CategoriesDropDown /> */}
                 {/* {activePage === "Categories" && isHover && (
                   <CategoriesDropDown activePage={activePage} />

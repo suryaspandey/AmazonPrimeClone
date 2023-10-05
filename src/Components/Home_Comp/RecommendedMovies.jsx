@@ -7,25 +7,48 @@ import "react-multi-carousel/lib/styles.css";
 
 const RecommendedMovies = () => {
   const [myData, setMyData] = useState([]);
+  // const [randomShows, setRandomShows] = useState([]);
 
   const bearerToken = localStorage.getItem("bearer_token");
 
   const projectId = "zxke0qiu2960";
 
+  // const randomArr = [];
+  // let i;
+  // const genRandomNum = () => {
+  //   for (i = 0; i < 20; i = i + 1) {
+  //     const limit20 = Math.floor(Math.random() * 20) + 1;
+  //     randomArr.push(limit20);
+  //   }
+  // };
+  // genRandomNum();
+  // console.log("genRandomNum", randomArr);
+
   useEffect(() => {
     const url = "https://academics.newtonschool.co/api/v1/ott/show";
-    const webSeriesurl = `https://academics.newtonschool.co/api/v1/ott/show?filter={"type" : "web series"}`;
+
+    const webSeriesurl = `https://academics.newtonschool.co/api/v1/ott/show?filter={"type" : "web series"}&limit=20`;
 
     const headers = {
       projectId: projectId,
       Authorization: `Bearer ${bearerToken}`,
     };
-    console.log("recommended page");
+
     fetch(webSeriesurl, { method: "GET", headers: headers })
       .then((response) => response.json())
       .then((exdata) => {
         const allData = exdata;
-        console.log(allData);
+
+        // const randomArr = [];
+        // for (let i = 0; i < 20; i = i + 1) {
+        //   const limit20 = Math.floor(Math.random() * allData.data.length) + 1;
+        //   randomArr.push(limit20);
+        // }
+
+        // const randomShowData = randomArr.map((index) => allData.data[index]);
+        // setRandomShows(randomShowData);
+        // console.log("recommended component", allData.data.length);
+        // console.log("randomShowData", randomShowData);
         setMyData(exdata.data);
       });
   }, [projectId, bearerToken]);
