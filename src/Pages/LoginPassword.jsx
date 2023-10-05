@@ -10,10 +10,7 @@ const LoginPassword = ({ loginEmail }) => {
   const [errMsg, setErrMsg] = useState("");
   // ap12345@gmail.com
   const recievedEmail = location.state.loginEmail;
-  // console.log("recievedEmail", recievedEmail);
 
-  // const bearerToken = localStorage.getItem("access_token");
-  // console.log(bearerToken);
   const projectId = "zxke0qiu2960";
 
   const handleLogin = (values) => {
@@ -36,8 +33,8 @@ const LoginPassword = ({ loginEmail }) => {
         if (data.status === "success") {
           localStorage.setItem("bearer_token", data.token);
           localStorage.setItem("loginUserName", data.data.name);
-
-          navigate("/home");
+          navigate("/Home/UserMoods");
+          // navigate("/home");
         } else {
           console.error("Login failed:", data.message);
           setErrMsg(data.message);

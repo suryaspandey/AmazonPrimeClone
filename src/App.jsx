@@ -32,6 +32,7 @@ import AllShowsType from "./Pages/AllShowsType";
 import LiveTV from "./Pages/LiveTV";
 import ComingSoon from "../ComingSoon";
 import KidsAll from "./Components/Kids/KidsAll";
+import UserMoodsModal from "./Components/UserMoodsModel/UserMoodsModal";
 // import { EpisodeNoContent } from "./EpisodeNoContent";
 
 function App() {
@@ -60,6 +61,7 @@ function App() {
             <Route path="/register" element={<Register />} />
             <Route path="/" element={<Home />} />
             <Route path="/Home" element={<Home />} />
+            <Route path="/Home/UserMoods" element={<UserMoodsModal />} />
             <Route path="/Home/AllMovies" element={<Home_Corousel />} />
             <Route path="/Home/AllTVShows" element={<AllTVShows />} />
             <Route path="/Home/KidsAll" element={<KidsAll />} />

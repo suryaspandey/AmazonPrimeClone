@@ -1,0 +1,10 @@
+.moods-main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.ant-modal-footer {
+  display: none;
+}
