@@ -12,9 +12,6 @@ export default function Home() {
   const handleComingSoon = () => {
     navigate("/comingSoon");
   };
-  const handleModal = () => {
-    navigate("/planDetails");
-  };
 
   useEffect(() => {
     setTimeout(() => {

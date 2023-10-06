@@ -777,3 +777,7 @@ title {
   grid-template-columns: repeat(4, 1fr) !important;
   gap: 8px !important;
 }
+
+.seeMore {
+  cursor: pointer;
+}

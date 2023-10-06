@@ -15,27 +15,13 @@
   text-align: center;
   align-items: center;
   height: 100vh;
-  /* background-image: url("/public/Designer.png"); */
-  background-repeat: no-repeat;
-  /* background-position: center; */
   object-fit: contain;
-  /* padding-left: 50%; */
 }
-/* .ant-btn-primary {
-  position: absolute;
-  display: flex;
-  color: #fff;
-  background-color: #1677ff;
-  box-shadow: 0 2px 0 rgba(5, 145, 255, 0.1);
-  align-items: center;
-  justify-content: center;
-} */
 
 .modal-main-div > .ant-btn-primary {
   position: absolute;
   display: flex;
   color: #fff;
-  background-color: #1677ff;
   box-shadow: 0 2px 0 rgba(5, 145, 255, 0.1);
   align-items: center;
   justify-content: center;

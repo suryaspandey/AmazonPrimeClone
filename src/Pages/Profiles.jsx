@@ -4,6 +4,15 @@ import { Link, useNavigate } from "react-router-dom";
 import { MdOutlineEdit } from "react-icons/md";
 
 const Profiles = () => {
+  const [profileImg, setprofileImg] = useState(() => {
+    const profileImage = localStorage.getItem("profileImage");
+    return profileImage ? profileImage : "/avatar.png";
+  });
+
+  const loginUserName = localStorage.getItem("loginUserName");
+  const capName = loginUserName[0].toUpperCase() + loginUserName.slice(1);
+  // const name2= loginUserName.split(1)
+  console.log("capName", capName);
   const [isEditClicked, setIsEditClicked] = useState(false);
   const navigate = useNavigate();
 
@@ -29,7 +38,7 @@ const Profiles = () => {
             <li className="profile-li">
               <Link to={"/Home"} style={{ textDecoration: "none" }}>
                 <button className="profile-img-btn">
-                  <img className="profile-img" src="/adult-1.png" alt="" />
+                  <img className="profile-img" src={profileImg} alt="" />
                   {isEditClicked && (
                     <MdOutlineEdit
                       className="edit-pencil-icon"
@@ -38,7 +47,7 @@ const Profiles = () => {
                   )}
                 </button>
 
-                <span className="profile-name">surya pandey</span>
+                <span className="profile-name">{capName}</span>
               </Link>
             </li>
 

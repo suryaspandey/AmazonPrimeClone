@@ -1,5 +1,35 @@
+// import React from "react";
+
+// const CreateNewPassword = () => {
+//   return (
+//     <>
+//       <div className="createNewPwd-main">
+//         <div className="create-new-pwd">
+//           <h2>Create New Password</h2>
+//           <div className="password-input-container">
+//             <label htmlFor="">Current Password</label>
+//             <input type="password" required />
+
+//             <label htmlFor="">New Password</label>
+//             <input type="password" required />
+
+//             <label htmlFor="">Re-enter New Password</label>
+//             <input type="password" required />
+
+//             <input type="submit">
+//               <span>Save Changes</span>
+//             </input>
+//           </div>
+//         </div>
+//       </div>
+//     </>
+//   );
+// };
+
+// export default CreateNewPassword;
+
 import React from "react";
-import "./register.css";
+// import "./register.css";
 import { Button, Form, Input } from "antd";
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
@@ -17,11 +47,13 @@ const tailFormItemLayout = {
   },
 };
 
-const Register = () => {
+const CreateNewPassword = () => {
   const [form] = Form.useForm();
   const [formLayout, setFormLayout] = useState("vertical");
   const [errorMessage, setErrorMessage] = useState("");
   const navigate = useNavigate();
+  const loginUserName = localStorage.getItem("loginUserName");
+  console.log("create new pass user name", loginUserName);
   const formItemLayout =
     formLayout === "horizontal"
       ? {
@@ -44,39 +76,42 @@ const Register = () => {
       : null;
 
   const projectId = "zxke0qiu2960";
+
+  const bearer_token = localStorage.getItem("bearer_token");
   const onFinish = (values) => {
     setErrorMessage("");
     console.log("Received values of form: ", values);
-    fetch("https://academics.newtonschool.co/api/v1/user/signup", {
-      method: "POST",
+    fetch("https://academics.newtonschool.co/api/v1/user/updateMyPassword", {
+      method: "PATCH",
       headers: {
         "Content-Type": "application/json",
         projectId: projectId,
+        Authorization: `Bearer ${bearer_token}`,
       },
       body: JSON.stringify({
-        name: values.nickname,
+        name: loginUserName,
         email: values.email,
-        password: values.password,
+        passwordCurrent: values.oldpassword, // new password
+        password: values.newpassword, // old password
         appType: "ott",
       }),
+      redirect: "follow",
     })
       .then((response) =>
         response.json().then((data) => {
-          console.log("signup: ", data);
+          console.log("password change text: ", response);
+
           if (data.status === "fail") {
             setErrorMessage(`${data.message}!`);
           } else {
-            const bearer_token = data.token;
-            console.log("bearer_token: ", bearer_token);
-            // localStorage.setItem("access_token", access_token);
             localStorage.setItem("bearer_token", bearer_token);
-            localStorage.setItem("loginUserName", values.nickname);
+
             navigate("/home");
           }
         })
       )
       .catch((err) => {
-        console.log("Error while signing up: ", err);
+        console.log("Error while changing password: ", err);
       });
   };
   return (
@@ -112,8 +147,8 @@ const Register = () => {
                 {errorMessage}
               </p>
             )}
-            <Form.Item
-              name="nickname"
+            {/* <Form.Item
+              name="name"
               label="Your Name"
               rules={[
                 {
@@ -124,7 +159,7 @@ const Register = () => {
               ]}
             >
               <Input />
-            </Form.Item>
+            </Form.Item> */}
             <Form.Item
               name="email"
               label="E-mail"
@@ -143,8 +178,23 @@ const Register = () => {
             </Form.Item>
 
             <Form.Item
-              name="password"
-              label="Password"
+              name="oldpassword"
+              label="Old Password"
+              rules={[
+                {
+                  required: true,
+                  message: "At least 6 characters",
+                  min: 6,
+                },
+              ]}
+              hasFeedback
+            >
+              <Input.Password />
+            </Form.Item>
+
+            <Form.Item
+              name="newpassword"
+              label="New Password"
               rules={[
                 {
                   required: true,
@@ -169,7 +219,7 @@ const Register = () => {
                 },
                 ({ getFieldValue }) => ({
                   validator(_, value) {
-                    if (!value || getFieldValue("password") === value) {
+                    if (!value || getFieldValue("newpassword") === value) {
                       return Promise.resolve();
                     }
                     return Promise.reject(new Error("Passwords do not match!"));
@@ -187,15 +237,9 @@ const Register = () => {
                 type="primary"
                 htmlType="submit"
               >
-                Create your AmazonClone Account
+                Save Changes
               </Button>
             </Form.Item>
-            <div className="already-account">
-              <span>Already have an account?</span>
-              <span>
-                <Link to={"/login"}>Sign in</Link>
-              </span>
-            </div>
           </Form>
         </div>
       </div>
@@ -203,4 +247,4 @@ const Register = () => {
   );
 };
 
-export default Register;
+export default CreateNewPassword;

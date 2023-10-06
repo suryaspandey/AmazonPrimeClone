@@ -1,10 +1,11 @@
+@import url("https://fonts.googleapis.com/css2?family=Black+Ops+One&family=DM+Serif+Display&family=Galdeano&family=Lexend+Mega:wght@900&family=Nunito+Sans:wght@200&family=Oswald:wght@200&family=Permanent+Marker&family=Poppins:wght@300;500;700&family=Roboto+Mono:wght@200&family=Ruwudu&display=swap");
 
-
-  @import url('https://fonts.googleapis.com/css2?family=Black+Ops+One&family=DM+Serif+Display&family=Galdeano&family=Lexend+Mega:wght@900&family=Nunito+Sans:wght@200&family=Oswald:wght@200&family=Permanent+Marker&family=Poppins:wght@300;500;700&family=Roboto+Mono:wght@200&family=Ruwudu&display=swap');
-
-body{
-    background-color:black ;
-    /* font-family: 'Poppins'; */
-    font-family: 'Nunito Sans';
+body {
+  background-color: black;
+  /* font-family: 'Poppins'; */
+  font-family: "Nunito Sans";
 }
 
+.seeMore {
+  cursor: pointer;
+}

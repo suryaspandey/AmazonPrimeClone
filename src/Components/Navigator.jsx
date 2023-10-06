@@ -21,21 +21,26 @@ const Navigator = () => {
   const [isloggedIn, setIsLoggedIn] = useState(isAuthenticated);
   const [isProfileUserName, setIsProfileUserName] = useState("");
 
+  const [profileImg, setprofileImg] = useState(() => {
+    const profileImage = localStorage.getItem("profileImage");
+    return profileImage ? profileImage : "/avatar.png";
+  });
+
   useEffect(() => {
     if (isAuthenticated) {
       setIsLoggedIn(true);
-
-      profileUserName = localStorage.getItem("loginUserName");
-      // console.log("users name after login", profileUserName);
-      setIsProfileUserName(profileUserName);
+      const userName = localStorage.getItem("loginUserName");
+      // profileUserName = userName[0].toUpperCase() + userName.slice(1);
+      console.log("users name after login", userName);
+      setIsProfileUserName(userName);
     }
   }, [isAuthenticated]);
 
   const handleLogout = () => {
     localStorage.removeItem("bearer_token");
     localStorage.removeItem("loginUserName");
-    // console.log("bearer_token after log out", bearer_token);
-    // console.log("loginUserName after log out", loginUserName);
+    console.log("bearer_token after log out", bearer_token);
+    console.log("loginUserName after log out", loginUserName);
   };
 
   // const profileuserName =
@@ -70,7 +75,7 @@ const Navigator = () => {
     e.preventDefault();
     navigate(`/search/${encodeURIComponent(searchText)}`);
   };
-  // console.log("isloggedIn :", isloggedIn);
+  console.log("isloggedIn :", isloggedIn);
   return (
     <>
       <div className="navigator-container">
@@ -181,10 +186,11 @@ const Navigator = () => {
                 {isAuthenticated ? (
                   <>
                     <img
-                      src="/avatar.png"
+                      src={profileImg}
                       alt="avatar"
                       height={30}
                       width={30}
+                      style={{ borderRadius: "50%" }}
                       // className="avatar-navitagor"
                       onMouseEnter={() => handleSetActivePage("Home")}
                       onMouseLeave={() => handleSetActivePage(null)}
@@ -202,10 +208,12 @@ const Navigator = () => {
                         {/* <span className="categories-link-text">
                           <Link className="categories-link-text">Help</Link>
                         </span> */}
+                        <Link to={"/createNewPassword"}>
+                          <span className="categories-link-text">
+                            Accounts and Settings
+                          </span>
+                        </Link>
 
-                        <span className="categories-link-text">
-                          Accounts and Settings
-                        </span>
                         <span className="categories-link-text">
                           <Link
                             to={"/Subscription"}

@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "./login.css";
 import { Button, Form, Input } from "antd";
 import { Navigate, useNavigate } from "react-router";
-import { useLocation } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 const LoginPassword = ({ loginEmail }) => {
   const navigate = useNavigate();
@@ -92,9 +92,7 @@ const LoginPassword = ({ loginEmail }) => {
             >
               <Input type="password" className="login-username-input" />
             </Form.Item>
-            <a className="login-form-forgot" href="">
-              Forgot password
-            </a>
+            {/* <Link to={"/forgotPassword"}>Change Password</Link> */}
 
             <Form.Item>
               <Button

@@ -33,11 +33,17 @@ import LiveTV from "./Pages/LiveTV";
 import ComingSoon from "../ComingSoon";
 import KidsAll from "./Components/Kids/KidsAll";
 import UserMoodsModal from "./Components/UserMoodsModel/UserMoodsModal";
+import CreateNewPassword from "./Components/CreateNewPassword/CreateNewPassword";
 // import { EpisodeNoContent } from "./EpisodeNoContent";
 
 function App() {
   // const isAuthenticated = true;
-  const [isLoginOrRegister, setIsLoginOrRegister] = useState(false);
+  const isLoginOrRegister =
+    window.location.pathname === "/login" ||
+    window.location.pathname === "/register";
+
+  // const [isLoginOrRegister, setIsLoginOrRegister] = useState(false);
+
   useEffect(function () {
     const listerFn = function (event) {
       console.log("I am called");
@@ -99,6 +105,7 @@ function App() {
             <Route path="/myStuff/Watchlist" element={<AddToWatchList />} />
             <Route path="/manageprofiles" element={<Profiles />} />
             <Route path="/editProfile" element={<EditProfile />} />
+            <Route path="/createNewPassword" element={<CreateNewPassword />} />
           </Route>
         </Routes>
       </BrowserRouter>

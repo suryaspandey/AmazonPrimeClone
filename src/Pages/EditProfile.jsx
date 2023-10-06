@@ -3,17 +3,22 @@ import "./editProfile.css";
 import { useState } from "react";
 
 function EditProfile() {
-  const [profileImg, setprofileImg] = useState("/adult-4.png");
+  const [profileImg, setprofileImg] = useState(() => {
+    const profileImage = localStorage.getItem("profileImage");
+    return profileImage ? profileImage : "/avatar.png";
+  });
+
   const [userName, setUserName] = useState("");
   const [isCancel, setIsCancel] = useState(false);
 
   const handleCancelChanges = () => {};
+
   const handleSaveChanges = () => {
-    let useNameValue = e.target.value;
     setUserName(userName);
     localStorage.setItem("profileUserName", userName);
 
-    let imgValue = e.target.files[0];
+    // setprofileImg(profileImage);
+
     setprofileImg(profileImg);
     console.log("profileImg", profileImg);
 
