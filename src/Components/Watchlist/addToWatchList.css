@@ -85,3 +85,12 @@
 /* .ant-dropdown-menu:hover {
   /* background-color: white; 
 } */
+
+.no-watchlistData {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  height: 100vh;
+  font-size: 24px;
+}

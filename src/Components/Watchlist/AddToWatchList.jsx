@@ -100,6 +100,18 @@ const AddToWatchList = () => {
     },
   ];
 
+  if (watchlistData.length === 0) {
+    return (
+      <>
+        <h1 className="addTowatchlist-heading">Watchlist</h1>
+
+        <div className="no-watchlistData">
+          <h2 style={{ color: "white" }}>Your watchlist is empty!</h2>
+        </div>
+      </>
+    );
+  }
+
   return (
     <div style={{ height: "100vh" }}>
       <div className="watchlist-header-container">
@@ -179,6 +191,7 @@ const AddToWatchList = () => {
         <div className="carousel-main" style={{ display: "flex" }}>
           <>
             {console.log("all filtered data", filteredData)}
+            {console.log("all watchlist data", watchlistData.length)}
 
             <WatchCards
               // actualData={filteredData}

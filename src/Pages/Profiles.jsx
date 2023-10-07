@@ -36,19 +36,29 @@ const Profiles = () => {
         <div className="profile-holder">
           <ul className="profile-ul">
             <li className="profile-li">
-              <Link to={"/Home"} style={{ textDecoration: "none" }}>
-                <button className="profile-img-btn">
-                  <img className="profile-img" src={profileImg} alt="" />
-                  {isEditClicked && (
-                    <MdOutlineEdit
-                      className="edit-pencil-icon"
-                      onClick={() => navigate("/EditProfile")}
-                    />
-                  )}
-                </button>
+              {/* <Link style={{ textDecoration: "none" }}> */}
+              <button className="profile-img-btn">
+                <img
+                  className="profile-img"
+                  src={profileImg}
+                  alt=""
+                  onClick={() => {
+                    navigate("/");
+                  }}
+                />
+              </button>
+              {isEditClicked && (
+                <MdOutlineEdit
+                  className="edit-pencil-icon"
+                  onClick={() => {
+                    console.log("edit pencil clicked");
+                    navigate("/EditProfile");
+                  }}
+                />
+              )}
 
-                <span className="profile-name">{capName}</span>
-              </Link>
+              <span className="profile-name">{capName}</span>
+              {/* </Link> */}
             </li>
 
             <li className="profile-li">
