@@ -49,13 +49,13 @@ const Navigator = () => {
 
   const navigate = useNavigate();
 
-  const handleMouseEnter = () => {
-    setIsHover(true);
-  };
+  // const handleMouseEnter = () => {
+  //   setIsHover(true);
+  // };
 
-  const handleMouseLeave = () => {
-    setIsHover(false);
-  };
+  // const handleMouseLeave = () => {
+  //   setIsHover(false);
+  // };
 
   const handleSetActivePage = (page) => {
     setActivePage(page);
@@ -118,10 +118,6 @@ const Navigator = () => {
                   Categories <IoIosArrowDown />
                 </Link>
 
-                {/* <CategoriesDropDown /> */}
-                {/* {activePage === "Categories" && isHover && (
-                  <CategoriesDropDown activePage={activePage} />
-                )} */}
                 {activePage === "Categories" && <CategoriesDropDown />}
               </li>
               {isloggedIn && (
@@ -200,7 +196,7 @@ const Navigator = () => {
                     />
                     {/* <LoginUserDropdown isHover={isHover} /> */}
                     <div className="options avatar-options">
-                      <div className="options-left ">
+                      <div className="options-left">
                         <span className="optoins-login-headings">
                           Your Account
                         </span>
@@ -208,11 +204,19 @@ const Navigator = () => {
                         {/* <span className="categories-link-text">
                           <Link className="categories-link-text">Help</Link>
                         </span> */}
-                        <Link to={"/createNewPassword"}>
-                          <span className="categories-link-text">
+
+                        <span className="categories-link-text">
+                          <Link
+                            to={"/createNewPassword"}
+                            style={{
+                              listStyleType: "none",
+                              textDecoration: "none",
+                              color: "#aaa",
+                            }}
+                          >
                             Accounts and Settings
-                          </span>
-                        </Link>
+                          </Link>
+                        </span>
 
                         <span className="categories-link-text">
                           <Link
@@ -240,15 +244,17 @@ const Navigator = () => {
                           </Link>
                         </span>
                       </div>
-                      <div className="options-right">
+                      <div className="options-left">
                         <span className="optoins-login-headings">Profiles</span>
-                        <div
-                          className="Profiles"
-                          // style={{ display: "flex", flexDirection: "column" }}
-                        >
-                          <div>
+                        {/* <div
+                        className="Profiles"
+                        style={{ display: "flex", flexDirection: "column" }}
+                        > */}
+                        {/* <div> */}
+                        {/* to={"/Home/KidsAll"} */}
+                        {/* <span className="categories-link-text">
                             <Link
-                              className="categories-link-text"
+                              // className="categories-link-text"
                               to={"/Home/KidsAll"}
                               style={{
                                 // paddingLeft: "10px",
@@ -259,37 +265,54 @@ const Navigator = () => {
                             >
                               Kids
                             </Link>
-                          </div>
-                          <div>
-                            <Link
-                              to={"/manageprofiles"}
-                              style={{
-                                // paddingLeft: "10px",
-                                listStyleType: "none",
-                                textDecoration: "none",
-                                color: "#aaa",
-                              }}
-                            >
-                              Manage Profiles
-                            </Link>
-                          </div>
-                          <div>
-                            <Link
-                              to={"/Home/UserMoods"}
-                              style={{
-                                // paddingLeft: "10px",
-                                listStyleType: "none",
-                                textDecoration: "none",
-                                color: "#aaa",
-                              }}
-                            >
-                              Manage Moods
-                            </Link>
-                          </div>
-                        </div>
+                          </span> */}
 
-                        {/* <span className="categories-link-text">Learn More</span> */}
+                        <span className="categories-link-text">
+                          <Link
+                            to={"/Home/KidsAll"}
+                            style={{
+                              listStyleType: "none",
+                              textDecoration: "none",
+                              color: "#aaa",
+                            }}
+                          >
+                            Kids
+                          </Link>
+                        </span>
+
+                        {/* </div> */}
+
+                        <span className="categories-link-text">
+                          <Link
+                            to={"/manageprofiles"}
+                            style={{
+                              // paddingLeft: "10px",
+                              listStyleType: "none",
+                              textDecoration: "none",
+                              color: "#aaa",
+                            }}
+                          >
+                            Manage Profiles
+                          </Link>
+                        </span>
+
+                        <span className="categories-link-text">
+                          <Link
+                            to={"/Home/UserMoods"}
+                            style={{
+                              // paddingLeft: "10px",
+                              listStyleType: "none",
+                              textDecoration: "none",
+                              color: "#aaa",
+                            }}
+                          >
+                            Manage Moods
+                          </Link>
+                        </span>
                       </div>
+
+                      {/* <span className="categories-link-text">Learn More</span> */}
+                      {/* </div> */}
                     </div>
                   </>
                 ) : (
