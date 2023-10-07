@@ -16,12 +16,29 @@ const UserMoodsModal = () => {
   };
   const navigate = useNavigate();
   const userName = localStorage.getItem("loginUserName");
+  const surpriseMeOptions = [
+    "Fantasy",
+    "Documentary",
+    "Horror",
+    "Comedy",
+    "MysteryAndThriller",
+    "Drama",
+  ];
+  let n = surpriseMeOptions.length;
+
+  let num = Math.floor(Math.random() * n);
+  for (let i = 0; i < n; i++) {
+    num = Math.floor(Math.random() * n) + 1;
+  }
+
+  console.log("surpriseMeOptions" + num);
+
   return (
     <>
       <div className="modal-main-div">
         <img src="/Designer.png" alt="" height="100%" />
         <Button type="primary" onClick={showModal}>
-          Try Your Mood
+          {`Pick Your Mood ${userName} ?`}
         </Button>
         <Modal
           className="modal-container"
@@ -39,7 +56,7 @@ const UserMoodsModal = () => {
                   width={100}
                   alt=""
                   onClick={() => {
-                    navigate("/Categories/ActionAdventure/");
+                    navigate("/Categories/Fantasy/all");
                   }}
                 />
                 <h4>Happy</h4>
@@ -51,7 +68,7 @@ const UserMoodsModal = () => {
                   width={100}
                   alt=""
                   onClick={() => {
-                    navigate("/Categories/ActionAdventure/");
+                    navigate("/Categories/Comedy/all");
                   }}
                 />
                 <h4>Sad</h4>
@@ -63,7 +80,7 @@ const UserMoodsModal = () => {
                   width={100}
                   alt=""
                   onClick={() => {
-                    navigate("/Categories/ActionAdventure/");
+                    navigate("/Categories/ActionAdventure/all");
                   }}
                 />
                 <h4>Bored</h4>
@@ -75,7 +92,7 @@ const UserMoodsModal = () => {
                   width={100}
                   alt=""
                   onClick={() => {
-                    navigate("/Categories/ActionAdventure/");
+                    navigate("/Categories/Romance/all");
                   }}
                 />
                 <h4>Romantic</h4>
@@ -87,7 +104,7 @@ const UserMoodsModal = () => {
                   width={100}
                   alt=""
                   onClick={() => {
-                    navigate("/Categories/ActionAdventure/");
+                    navigate(`/Categories/${surpriseMeOptions[num]}/all`);
                   }}
                 />
                 <h4>Surprise Me!!</h4>
