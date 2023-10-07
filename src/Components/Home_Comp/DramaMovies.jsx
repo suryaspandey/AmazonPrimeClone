@@ -1,22 +1,20 @@
 import React, { useEffect, useState } from "react";
-import WatchCards from "../WatchCards";
-import "../recommendedMovies.css";
+import WatchCards from "./WatchCards";
+import "./recommendedMovies.css";
 import "react-multi-carousel/lib/styles.css";
-import { useApi } from "../../../APIContext";
-import { useNavigate } from "react-router";
 import { MdKeyboardArrowRight } from "react-icons/md";
+import { useApi } from "../../APIContext";
+import { useNavigate } from "react-router";
 
-// const ActionAdventureMovies = ({ heading }) => {
-const ActionAdventureMovies = () => {
+const DramaMovies = () => {
   const [myData, setMyData] = useState([]);
-  const navigate = useNavigate();
   const { setApi } = useApi();
+  const navigate = useNavigate();
 
-  // console.log("heading: ", heading); // false
   const bearerToken = localStorage.getItem("bearer_token");
 
   const projectId = "zxke0qiu2960";
-  const actionAdventureMovieURL = `https://academics.newtonschool.co/api/v1/ott/show?filter={"$and":[{"keywords":"action"},{"type":"movie"},{"keywords":"adventure"}]}`;
+  const dramaURL = `https://academics.newtonschool.co/api/v1/ott/show?filter={"$and": [{"keywords": "drama"},{"type": "movie"}]}`;
 
   useEffect(() => {
     const headers = {
@@ -24,7 +22,7 @@ const ActionAdventureMovies = () => {
       Authorization: `Bearer ${bearerToken}`,
     };
 
-    fetch(actionAdventureMovieURL, { method: "GET", headers: headers })
+    fetch(dramaURL, { method: "GET", headers: headers })
       .then((response) => response.json())
       .then((exdata) => {
         const allData = exdata;
@@ -34,14 +32,12 @@ const ActionAdventureMovies = () => {
   }, [projectId, bearerToken]);
 
   const handleSeeMoreClick = () => {
-    setApi(actionAdventureMovieURL);
-    navigate("/CompleteShowList/Action And Adventure Movies");
+    setApi(dramaURL);
+    navigate("/CompleteShowList/Drama");
   };
 
   return (
     <>
-      {/* {!heading && ( //not to render heading in recommended section */}
-
       <div className="cards-heaading">
         <h2
           style={{
@@ -52,29 +48,18 @@ const ActionAdventureMovies = () => {
           <span className="prime-text-heading" style={{ marginRight: "8px" }}>
             Prime
           </span>
-
-          <span className="card-indv-heading">Action and adventure movies</span>
+          <span className="card-indv-heading">Drama Movies</span>
           <span className="seeMore" onClick={handleSeeMoreClick}>
             See More
             <MdKeyboardArrowRight style={{ fontSize: "40px" }} />
           </span>
         </h2>
       </div>
-      {/* )} */}
-
       <div className="carousel-main" style={{ display: "flex" }}>
-        {/* {myData.map((item) => {
-                    return ( */}
-        <WatchCards
-          // key={item._id}
-          actualData={myData}
-          projectId={projectId}
-        />
-        {/* );
-                })} */}
+        <WatchCards actualData={myData} projectId={projectId} />
       </div>
     </>
   );
 };
 
-export default ActionAdventureMovies;
+export default DramaMovies;

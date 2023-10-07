@@ -120,7 +120,7 @@ const WatchDetails = () => {
           <div className="watchDetails-img">
             <img src={details.data.thumbnail} alt={details.title} />
           </div>
-
+          <div className="content-main"></div>
           <div className="watchdetails-text-btn-content">
             <div className="details-title-description">
               <h1 className="show-title" style={{ fontSize: "50px" }}>
@@ -180,7 +180,9 @@ const WatchDetails = () => {
                 />
                 {isPlayBtnClicked && handleShowDetials()}
               </span>
-              <span style={{ color: "white" }}>Play</span>
+              <span className="play-text " style={{ color: "white" }}>
+                Play
+              </span>
               <span>
                 <div className="more-purchase-options">
                   <button className="more-purchase-options-btn">

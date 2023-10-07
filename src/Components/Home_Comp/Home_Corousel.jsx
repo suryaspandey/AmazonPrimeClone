@@ -19,7 +19,7 @@ import Top10Video from "./Top10/Top10Video";
 import RomanceMovies from "./RomanceMovies";
 import HorrorMovies from "./HorrorMovies";
 import FantasyMovies from "./FantasyMovies";
-import FantasyTVShow from "../AllTVShows/FantasyTVShow";
+import DramaMovies from "./DramaMovies";
 
 export default function Home_Corousel() {
   // const videoRef = useRef([]);
@@ -204,7 +204,7 @@ export default function Home_Corousel() {
       </span> */}
 
       <Top10Video showHeader={false} />
-      <RecommendedMovies />
+      {/* <RecommendedMovies /> */}
       <MysteryAndThriller />
       <SciFi />
       <Top10 />
@@ -215,7 +215,7 @@ export default function Home_Corousel() {
       <RomanceMovies />
       <FantasyMovies />
       <Documentries />
-      {/* <FantasyTVShow /> */}
+      <DramaMovies />
     </div>
   );
 }

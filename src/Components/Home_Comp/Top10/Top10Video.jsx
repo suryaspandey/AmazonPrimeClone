@@ -6,12 +6,15 @@ import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { PlusOutlined, InfoCircleOutlined } from "@ant-design/icons";
 import { useNavigate } from "react-router";
 import { MdOutlineTrendingUp } from "react-icons/md";
+import { BsPlayFill } from "react-icons/bs";
+import { Tooltip } from "antd";
 import {
   videoSources,
   thumbnailImages,
   titleNames,
 } from "../../Home_Comp/carouselData";
 import Top10Cards from "./Top10Cards";
+import { Link } from "react-router-dom";
 
 const Top10Video = ({ showHeader }) => {
   const videoRef = useRef([]);
@@ -21,6 +24,7 @@ const Top10Video = ({ showHeader }) => {
   const navigate = useNavigate();
 
   const [isMuted, setIsMuted] = useState(true);
+  const projectId = "zxke0qiu2960";
 
   const handleVideoEnded = () => {
     if (currentIndex < videoSources.length - 1) {
@@ -101,7 +105,7 @@ const Top10Video = ({ showHeader }) => {
         <Carousel
           showThumbs={false}
           // autoplay
-          infiniteLoop
+          // infiniteLoop
           interval={5000}
           selectedItem={currentIndex}
           ref={carouselRef}
@@ -115,28 +119,16 @@ const Top10Video = ({ showHeader }) => {
                 key={index}
                 // style={{ height: "550px" }}
               >
-                <div
-                  className="carousel-height"
-                  // className="left-content"
-                  style={{
-                    position: "absolute",
-                    top: "50%",
-                    // left: "10%",
-                    width: "30%",
-                    height: "40%",
-                    backgroundColor: "transparent",
-                    zIndex: "1",
-                  }}
-                >
+                <div className="carousel-height">
                   <span className="home-main-text">New Episode Friday</span>
                   <picture className="home-corousel-pic">
-                    <img
+                    {/* <img
                       className="amazon-original"
                       height={20}
                       width={50}
                       src="https://m.media-amazon.com/images/S/pv-target-images/7e5ebe135ef7e9f912cf8c29b6c9f4e22cab8ff78c0584a45c129cc1df33336e._AC_SX750_FMwebp_.png"
                       alt="amazon-otiginal"
-                    />
+                    /> */}
                     {/* <img
                                             className="series-name"
                                             src="https://m.media-amazon.com/images/S/sonata-images-prod/PV_IN_WheelOfTime_S2/8bc35ebc-7543-4156-b218-f20a535d9f91._AC_SX1500_FMwebp_.png"
@@ -145,20 +137,13 @@ const Top10Video = ({ showHeader }) => {
                                         /> */}
                     <h2 className="series-name" style={{ color: "white" }}>
                       {titleNames[index]}
-                      {/* {currentIndex} */}
                     </h2>
 
-                    <button
+                    {/* <button
+                      className="carousel-play-btn"
                       onClick={() =>
                         handleVideoURL(videoSources[index], titleNames[index])
                       }
-                      style={{
-                        color: "black",
-                        cursor: "pointer",
-                        background: "white",
-                        borderRadius: "50%",
-                        border: "none",
-                      }}
                     >
                       <img
                         src="/play-btn.PNG"
@@ -169,15 +154,14 @@ const Top10Video = ({ showHeader }) => {
                           borderRadius: "50%",
                         }}
                       />
-                      {/* <a href="https://s3.ll.videorolls.row.aiv-cdn.net/ww_iad/43c2/951b/7f5d/4eb4-94f1-fefd891c2801/cca79408-987a-4781-a636-e9d5fb527763_video_720p_2500kbps_audio_aaclc_128kbps.mp4">
-                                            Play Video
-                                        </a> */}
-                    </button>
+                    </button> */}
                     <div
                     // className="included-with-prime"
                     >
                       <div
-                      // className="blue-tick-text"
+                        className="prime-btn-UA"
+
+                        // className="blue-tick-text"
                       >
                         <span className="blue-tick">
                           <img
@@ -190,50 +174,76 @@ const Top10Video = ({ showHeader }) => {
                             }}
                           />
                         </span>
-                        <span className="prime-text" style={{ color: "white" }}>
+                        <span
+                          className="prime-text"
+                          style={{ color: "white", margin: "10px 0" }}
+                        >
                           Included with Prime
                         </span>
-                        {/* <span className="UA-container">
-                                                    U/A 16+
-                                                </span> */}
+                        <span className="UA-container">U/A 16+</span>
                       </div>
+
                       <div
                       // className="play-btn-text"
                       >
-                        {/* <a
-                                                    href="#"
-                                                    className="play-btn-link"
-                                                > */}
-                        {/* <span className="home-play-btn-container">
-                                                    <img
-                                                        
-                                                        className="home-play-btn"
-                                                        src="play-btn.PNG"
-                                                        alt="play button"
-                                                        onClick={() =>
-                                                            handleVideoURL(
-                                                                videoSources[
-                                                                    index
-                                                                ],
-                                                                titleNames[
-                                                                    index
-                                                                ]
-                                                            )
-                                                        }
-                                                    />
-                                                </span> */}
-                        <span className="play-text">Play S2 E1</span>
+                        {/* <span className="play-text">Play S2 E1</span> */}
                         {/* </a> */}
                         <div className="watchlist-details-container">
+                          <Link
+                            to={`/TVShow/64cffee700bad552e8dcd509`}
+                            state={{
+                              projectId: projectId,
+                            }}
+                          >
+                            <BsPlayFill
+                              className="carousel-play-btn"
+                              style={{
+                                fontSize: "65px",
+                              }}
+                              // onClick={() =>
+                              //   handleVideoURL(
+                              //     videoSources[index],
+                              //     titleNames[index]
+                              //   )
+                              // }
+                            />
+                          </Link>
+
+                          <span className="play-text">Play</span>
+
                           <button className="watchlist-btn" title="Watchlist">
                             <PlusOutlined
-                              // style={{ fontSize: "30px" }}
-                              className="home-plus-watchlist-btn"
+                              // className="home-plus-watchlist-btn"
+                              className="watchlist-icon-img"
+                              style={{ fontSize: "30px" }}
                             />
                           </button>
-                          <button className="watchlist-btn" title="Details">
-                            <InfoCircleOutlined className="home-plus-watchlist-btn" />
-                          </button>
+                          <div>
+                            <button className="watchlist-btn">
+                              <Tooltip
+                                title="Details"
+                                placement="bottom"
+                                arrow={false}
+                                style={{ paddingTop: "10px" }}
+                              >
+                                {/* <span>
+                                <GoDownload className="episode-download" />
+                              </span> */}
+
+                                <InfoCircleOutlined
+                                  className="watchlist-icon-img"
+                                  // className="home-plus-watchlist-btn"
+                                  // style={{ gap: "10px" }}
+                                  onClick={() => {
+                                    navigate(
+                                      "/watchDetails/64cffee700bad552e8dcd509"
+                                    );
+                                  }}
+                                />
+                                {/* <div style={{ marginBottom: "10px" }}></div> */}
+                              </Tooltip>
+                            </button>
+                          </div>
                         </div>
                       </div>
                     </div>
@@ -242,15 +252,21 @@ const Top10Video = ({ showHeader }) => {
                 <div
                   className="top-10-video-container"
                   // className="right-content"
-                  style={{
-                    position: "relative",
-                    width: "100%",
-                    height: "38%",
-                    backgroundColor: "#ffffff",
-                    zIndex: "0",
-                  }}
+                  // style={{
+                  //   position: "relative",
+                  //   width: "100%",
+                  //   // height: "38%",
+                  //   // height: "200px",
+                  //   // height: "100%",
+                  //   backgroundColor: "#ffffff",
+                  //   zIndex: "0",
+                  // }}
                 >
-                  <div key={index}>
+                  <div
+                    className="video-banner-main"
+                    // style={{ height: "100vh" }}
+                    key={index}
+                  >
                     <video
                       className="home-banner-video"
                       autoPlay

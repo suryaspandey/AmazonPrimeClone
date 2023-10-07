@@ -58,6 +58,43 @@
   /* background: linear-gradient(90deg,#fff 50.52%,hsla(0,0%,100%,0)); */
 }
 
-.carousel .slider-wrapper {
-  /* height: 800px; */
+.carousel-height {
+  position: absolute;
+  top: 40%;
+  width: 30%;
+  height: 40%;
+  background-color: transparent;
+  z-index: 1;
+  padding-left: 20px;
+}
+
+.carousel-play-btn {
+  color: black;
+  cursor: pointer;
+  background-color: white;
+  border-radius: 50%;
+  border: none;
+}
+
+.prime-btn-UA {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+}
+
+.watchlist-icon-img {
+  font-size: 30px;
+  border-radius: 50%;
+  padding: 10px;
+}
+
+.top-10-video-container {
+  position: relative;
+  width: 100%;
+  height: 38%;
+  /* height: 500px;
+  height: 200px; */
+  background-color: black;
+  z-index: 0;
 }

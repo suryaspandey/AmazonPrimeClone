@@ -110,18 +110,68 @@ const CategoriesDropDown = ({ activePage }) => {
             <li className="featured-collection-li">
               <Link
                 className="categories-link-text"
-                to={"/Categories/ActionAdventure/"}
+                to={"/Categories/ActionAdventure/all"}
               >
                 Action and Adventure
               </Link>
             </li>
-            <li className="featured-collection-li">Comedy</li>
-            <li className="featured-collection-li">Documentary</li>
-            <li className="featured-collection-li">Drama</li>
-            <li className="featured-collection-li">Fantasy</li>
-            <li className="featured-collection-li">Horror</li>
-            <li className="featured-collection-li">Mystery and Thrillers</li>
-            <li className="featured-collection-li">Romance</li>
+            <li className="featured-collection-li">
+              <Link
+                className="categories-link-text"
+                to={"/Categories/Comedy/all"}
+              >
+                Comedy
+              </Link>
+            </li>
+            <li className="featured-collection-li">
+              <Link
+                className="categories-link-text"
+                to={"/Categories/Documentary/all"}
+              >
+                Documentary
+              </Link>
+            </li>
+            <li className="featured-collection-li">
+              <Link
+                className="categories-link-text"
+                to={"/Categories/Drama/all"}
+              >
+                Drama
+              </Link>
+            </li>
+            <li className="featured-collection-li">
+              <Link
+                className="categories-link-text"
+                to={"/Categories/Fantasy/all"}
+              >
+                Fantasy
+              </Link>
+            </li>
+            <li className="featured-collection-li">
+              <Link
+                className="categories-link-text"
+                to={"/Categories/Horror/all"}
+              >
+                Horror
+              </Link>
+            </li>
+
+            <li className="featured-collection-li">
+              <Link
+                className="categories-link-text"
+                to={"/Categories/MysteryAndThriller/all"}
+              >
+                Mystery and Thrillers
+              </Link>
+            </li>
+            <li className="featured-collection-li">
+              <Link
+                className="categories-link-text"
+                to={"/Categories/Romance/all"}
+              >
+                Romance
+              </Link>
+            </li>
             <li className="featured-collection-li"></li>
           </ul>
         </div>

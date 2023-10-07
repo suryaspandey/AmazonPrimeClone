@@ -15,10 +15,22 @@ const WatchCards = ({
   // console.log("watchlistData", actualData);
   // console.log("isInWatchListItem", isInWatchListItem);
   const [isHovered, setIsHovered] = useState(false);
+  const [isVideoHovered, setIsVideoHovered] = useState(false);
+
   const [isMuted, setIsMuted] = useState(true);
 
   const isAuthenticated = !!localStorage.getItem("bearer_token");
   const [isloggedIn, setIsLoggedIn] = useState(isAuthenticated);
+
+  const handleVideoHover = () => {
+    setIsVideoHovered(true);
+    setIsHovered(false);
+  };
+
+  const handleImgHover = () => {
+    setIsVideoHovered(false);
+    setIsHovered(true);
+  };
 
   const [watchlistStatus, setWatchlistStatus] = useState(() => {
     const initialStatus = {};
@@ -77,174 +89,205 @@ const WatchCards = ({
 
     // console.log("Updated watchlistStatus:", watchlistStatus);
   };
-
+  console.log("watch list");
   return (
     <>
       {/* <div className="cards-container "> */}
+      {/* <div className={`cards-container ${className}`}> this classname is coming from CompleteShowList
+       to display the content in grid  */}
       <div className={`cards-container ${className}`}>
         {actualData.map((item, index) => (
           <div
             className="continue-watching-container"
-            onMouseEnter={() => setIsHovered(item)}
-            onMouseLeave={() => setIsHovered(null)}
+            // onMouseEnter={() => setIsHovered(item)}
+            // onMouseLeave={() => setIsHovered(null)}
             key={item._id}
           >
             <ul className="continue-watching-ul">
               <li className="continue-wtching-li">
                 <div className="slider-continue-watching-pic">
-                  <div className="banner-imgs">
+                  <div
+                    className="banner-imgs"
+
+                    // onMouseEnter={handleImgHover}
+                    // onMouseLeave={handleVideoHover}
+                  >
+                    <>
+                      {console.log(
+                        "isVideoHovered in img",
+                        item._id,
+                        isVideoHovered
+                      )}
+                      {console.log("isImgHovered on img", item._id, isHovered)}
+
+                      <Link
+                        to={`/watchDetails/${item._id}`}
+                        state={{ projectId: projectId }}
+                      >
+                        <img
+                          className="banner-img"
+                          src={item.thumbnail}
+                          // alt={jawSummary.title}
+                        />
+                      </Link>
+                    </>
+                  </div>
+                  <div
+                    className="video-btns-container"
+                    // onMouseEnter={handleVideoHover}
+                    // onMouseEnter={handleImgHover}
+                  >
                     <Link
                       to={`/watchDetails/${item._id}`}
                       state={{ projectId: projectId }}
                     >
-                      <img
-                        className="banner-img"
-                        src={item.thumbnail}
-                        // alt={jawSummary.title}
+                      <video
+                        className="watch-details-video"
+                        src={item.video_url}
+                        autoPlay={true}
+                        loop
+                        muted={isMuted}
                       />
                     </Link>
-                  </div>
-                  {isHovered === item && (
-                    <>
-                      <div className="video-btns-container">
-                        <Link
-                          to={`/watchDetails/${item._id}`}
-                          state={{ projectId: projectId }} // Pass projectId as state
-                        >
-                          <video
-                            className="watch-details-video"
-                            src={item.video_url}
-                            autoPlay={true}
-                            loop
-                            muted={isMuted}
-                          />
-                        </Link>
-                        {isMuted ? (
-                          <BiVolumeMute
-                            className="volume-btn mute"
-                            onClick={() => {
-                              setIsMuted(false);
-                            }}
-                          />
-                        ) : (
-                          <GoUnmute
-                            className="volume-btn unmute"
-                            onClick={() => {
-                              setIsMuted(true);
-                              // <BiVolumeMute />;
-                            }}
-                          />
-                        )}
-                      </div>
-                      <div className="continue-watching-text-description">
-                        <div className="included-with-prime-header blue-tick-text">
-                          <img
-                            className="blue-tick-img"
-                            src="/prime-blue-tick.png"
-                            alt=""
-                          />
-                          <h5
-                            style={{
-                              color: "white",
-                              margin: "8px",
-                            }}
-                          >
-                            Included with prime
-                          </h5>
-                        </div>
-                      </div>
-                      <div className="play-btn-text video-hover-content">
-                        <p href="#" className="play-btn-link">
-                          <span className="home-play-btn-container-new ">
-                            <Link
-                              to={`/watchDetails/${item._id}`}
-                              state={{
-                                projectId: projectId,
-                              }}
-                            >
-                              <img
-                                className="home-play-btn home-play-btn-new"
-                                src="/play-btn.PNG"
-                                alt="play button"
-                                width={265}
-                              />
-                            </Link>
-                          </span>
-                          <span
-                            className="play-text"
-                            style={{
-                              color: "white",
-                            }}
-                          >
-                            Resume
-                          </span>
-                        </p>
-                        <div className="watchlist-details-container">
-                          <button className="watchlist-btn continue-watching-btn">
-                            {/* onClick takes function and not function call */}
-
-                            {isloggedIn && isInWatchListItem ? (
-                              <AiOutlineCheck
-                                className="home-plus-watchlist-btn"
-                                onClick={() => handleWatchList(item._id)}
-                              />
-                            ) : (
-                              <PlusOutlined
-                                className="home-plus-watchlist-btn"
-                                onClick={() => handleWatchList(item._id)}
-                              />
-                            )}
-                          </button>
-                          <button className="watchlist-btn continue-watching-btn">
-                            <MoreOutlined className="home-plus-watchlist-btn" />
-                          </button>
-                        </div>
-                      </div>
-                      <h4
-                        className="continue-watching-title video-hover-content"
-                        style={{ padding: "0 10px" }}
-                      >
-                        {/* {jawSummary.title} */}
-                        {item.title}
-                      </h4>
-                      <div className="continue-watching-year-UA video-hover-content">
-                        <h4
-                          className="continue-watching-title "
-                          style={{ color: "grey" }}
-                        >
-                          {parseInt(item.createdAt.split("-")[0]) -
-                            Math.floor(Math.random() * 10) +
-                            1}
-
-                          {/* 2023-08-06T20:13:27.503Z */}
-                        </h4>
-                        <h4 className="continue-watching-title">2h 6min</h4>
-                        <div className="UA-num">
-                          <h3 style={{ fontSize: "14px" }}>U/A 16+</h3>
-                        </div>
-                      </div>
-                      <div
-                        className="continue-watching-description video-hover-content"
-                        style={{
-                          overflow: "hidden",
-                          textOverflow: "ellipsis",
+                    {isMuted ? (
+                      <BiVolumeMute
+                        className="volume-btn mute"
+                        onClick={() => {
+                          setIsMuted(false);
                         }}
-                      >
-                        <h4
+                      />
+                    ) : (
+                      <GoUnmute
+                        className="volume-btn unmute"
+                        onClick={() => {
+                          setIsMuted(true);
+                          // <BiVolumeMute />;
+                        }}
+                      />
+                    )}
+                  </div>
+                  <>
+                    <>
+                      {console.log(
+                        "isVideoHovered on video",
+                        item._id,
+                        isVideoHovered
+                      )}
+                      {console.log(
+                        "isImgHovered on video",
+                        item._id,
+                        isHovered
+                      )}
+                    </>
+
+                    <div className="continue-watching-text-description">
+                      <div className="included-with-prime-header blue-tick-text">
+                        <img
+                          className="blue-tick-img"
+                          src="/prime-blue-tick.png"
+                          alt=""
+                        />
+                        <h5
                           style={{
-                            textAlign: "left",
-                            fontSize: "14px",
-                            paddingLeft: "2px",
-                            // background: "yellow",
-                            margin: "3px",
+                            color: "white",
+                            margin: "8px 0 0",
                           }}
                         >
-                          {/* {jawSummary.synopsis} */}
-                          {item.description}
-                        </h4>
+                          Included with prime
+                        </h5>
                       </div>
-                    </>
-                  )}
+                    </div>
+                    <div className="play-btn-text video-hover-content">
+                      <p href="#" className="play-btn-link">
+                        <span className="home-play-btn-container-new ">
+                          <Link
+                            to={`/watchDetails/${item._id}`}
+                            state={{
+                              projectId: projectId,
+                            }}
+                          >
+                            <img
+                              className="home-play-btn home-play-btn-new"
+                              src="/play-btn.PNG"
+                              alt="play button"
+                              width={265}
+                            />
+                          </Link>
+                        </span>
+                        <span
+                          className="play-text"
+                          style={{
+                            color: "white",
+                          }}
+                        >
+                          Resume
+                        </span>
+                      </p>
+                      <div className="watchlist-details-container">
+                        <button className="watchlist-btn continue-watching-btn">
+                          {/* onClick takes function and not function call */}
+
+                          {isloggedIn && isInWatchListItem ? (
+                            <AiOutlineCheck
+                              className="home-plus-watchlist-btn"
+                              onClick={() => handleWatchList(item._id)}
+                            />
+                          ) : (
+                            <PlusOutlined
+                              className="home-plus-watchlist-btn"
+                              onClick={() => handleWatchList(item._id)}
+                            />
+                          )}
+                        </button>
+                        <button className="watchlist-btn continue-watching-btn">
+                          <MoreOutlined className="home-plus-watchlist-btn" />
+                        </button>
+                      </div>
+                    </div>
+                    <h4
+                      className="continue-watching-title video-hover-content"
+                      style={{ padding: "0 10px" }}
+                    >
+                      {/* {jawSummary.title} */}
+                      {item.title}
+                    </h4>
+                    <div className="continue-watching-year-UA video-hover-content">
+                      <h4
+                        className="continue-watching-title "
+                        style={{ color: "grey" }}
+                      >
+                        {parseInt(item.createdAt.split("-")[0]) -
+                          Math.floor(Math.random() * 10) +
+                          1}
+
+                        {/* 2023-08-06T20:13:27.503Z */}
+                      </h4>
+                      <h4 className="continue-watching-title">2h 6min</h4>
+                      <div className="UA-num">
+                        <h3 style={{ fontSize: "14px" }}>U/A 16+</h3>
+                      </div>
+                    </div>
+                    <div
+                      className="continue-watching-description video-hover-content"
+                      style={{
+                        overflow: "hidden",
+                        textOverflow: "ellipsis",
+                      }}
+                    >
+                      <h4
+                        style={{
+                          textAlign: "left",
+                          fontSize: "14px",
+                          paddingLeft: "7px",
+                          // background: "yellow",
+                          margin: "3px",
+                        }}
+                      >
+                        {/* {jawSummary.synopsis} */}
+                        {item.description}
+                      </h4>
+                    </div>
+                  </>
                 </div>
               </li>
             </ul>

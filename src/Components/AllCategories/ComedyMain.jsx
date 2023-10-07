@@ -1,14 +1,12 @@
 import React, { useEffect, useState } from "react";
-import ActionAdventureMovies from "./ActionAdventureMovies";
-import ActionAdventureTV from "./ActionAdventureTV";
-import "./actionAdventureMain.css";
 import { useLocation, useNavigate, useParams } from "react-router";
 import { Link } from "react-router-dom";
+import MysteryAndThriller from "../Home_Comp/MysteryAndThriller";
+import MysteryThrillerTVShows from "../AllTVShows/MysteryThrillerTVShows";
+import ComedyMovies from "../Home_Comp/ComedyMovies";
+import ComedyTVShows from "../AllTVShows/ComedyTVShows";
 
-const ActionAndAdventureMain = () => {
-  const [showCompAll, setShowCompAll] = useState(true);
-  const [showCompMovie, setShowCompMovie] = useState(false);
-  const [showCompTVShow, setShowCompTVShow] = useState(false);
+const ComedyMain = () => {
   const [isActive, setIsActive] = useState(1);
 
   const location = useLocation();
@@ -29,48 +27,16 @@ const ActionAndAdventureMain = () => {
   });
 
   const handleClick = ({ subheading, isActive }) => {
-    navigate(`{/Categories/ActionAdventure/${subheading}}`);
+    navigate(`{/Categories/Comedy/${subheading}}`);
     setIsActive(isActive);
   };
 
-  const handleClickAll = () => {
-    setShowCompAll(true);
-    setShowCompMovie(true);
-    setShowCompTVShow(true);
-    setIsActive(1);
-    if (
-      subheading === "all" ||
-      location.pathname === `{/Categories/ActionAdventure/all}`
-    )
-      navigate(`/Categories/ActionAdventure/all`);
-  };
-
-  const handleClickMovie = () => {
-    setShowCompAll(false);
-    setShowCompMovie(true);
-    setShowCompTVShow(false);
-    setIsActive(2);
-    if (
-      subheading === "movies" ||
-      location.pathname === `{/Categories/ActionAdventure/movies}`
-    )
-      navigate(`/Categories/ActionAdventure/movies`);
-  };
-
-  const handleClickTVShow = () => {
-    setShowCompAll(false);
-    setShowCompMovie(false);
-    setShowCompTVShow(true);
-    setIsActive(3);
-    if (subheading === "TVShows")
-      navigate(`/Categories/ActionAdventure/TVShows`);
-  };
   return (
     <>
-      <h1 style={{ color: "white", padding: "24px" }}>Action and Adventure</h1>
+      <h1 style={{ color: "white", padding: "24px" }}>Comedy</h1>
       <ul className="actionAdvMain-ul">
         <li>
-          <Link to={`/Categories/ActionAdventure/all`}>
+          <Link to={`/Categories/Comedy/all`}>
             <button
               className="categories-btn"
               onClick={() => handleClick("all", 1)}
@@ -93,7 +59,7 @@ const ActionAndAdventureMain = () => {
           </Link>
         </li>
         <li>
-          <Link to={`/Categories/ActionAdventure/movies`}>
+          <Link to={`/Categories/Comedy/movies`}>
             <button
               className="categories-btn"
               onClick={() => handleClick("movies", 2)}
@@ -116,7 +82,7 @@ const ActionAndAdventureMain = () => {
           </Link>
         </li>
         <li>
-          <Link to={`/Categories/ActionAdventure/TVShows`}>
+          <Link to={`/Categories/Comedy/TVShows`}>
             <button
               className="categories-btn"
               onClick={() => handleClick("TVShows", 3)}
@@ -142,20 +108,18 @@ const ActionAndAdventureMain = () => {
       <div className="shows-contaainer">
         {(subheading === "all" || !subheading) && (
           <>
-            <ActionAdventureMovies />
-            <ActionAdventureTV />
+            <ComedyMovies />
+            <ComedyTVShows />
           </>
         )}
         {subheading === "movies" && (
           <>
-            <ActionAdventureMovies />
-            {/* <ActionAdventureTV /> */}
+            <ComedyMovies />
           </>
         )}
         {subheading === "TVShows" && (
           <>
-            {/* <ActionAdventureMovies /> */}
-            <ActionAdventureTV />
+            <ComedyTVShows />
           </>
         )}
       </div>
@@ -163,4 +127,4 @@ const ActionAndAdventureMain = () => {
   );
 };
 
-export default ActionAndAdventureMain;
+export default ComedyMain;

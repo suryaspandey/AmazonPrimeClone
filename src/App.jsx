@@ -34,6 +34,10 @@ import ComingSoon from "../ComingSoon";
 import KidsAll from "./Components/Kids/KidsAll";
 import UserMoodsModal from "./Components/UserMoodsModel/UserMoodsModal";
 import CreateNewPassword from "./Components/CreateNewPassword/CreateNewPassword";
+import MysteryThrillerMain from "./Components/AllCategories/MysteryThrillerMain";
+import DocumentaryMain from "./Components/AllCategories/DocumentaryMain";
+import ComedyMain from "./Components/AllCategories/ComedyMain";
+import DramaMain from "./Components/AllCategories/DramaMain";
 // import { EpisodeNoContent } from "./EpisodeNoContent";
 
 function App() {
@@ -83,14 +87,26 @@ function App() {
               path="/WatchInYourLanguage/:language"
               element={<LanguageMoviesAndShows />}
             />
-            <Route
-              exact
-              path="/Categories/ActionAdventure/"
-              element={<ActionAndAdventureMain />}
-            />
+
             <Route
               path="/Categories/ActionAdventure/:subheading"
               element={<ActionAndAdventureMain />}
+            />
+            <Route
+              path="/Categories/MysteryAndThriller/:subheading"
+              element={<MysteryThrillerMain />}
+            />
+            <Route
+              path="/Categories/Comedy/:subheading"
+              element={<ComedyMain />}
+            />
+            <Route
+              path="/Categories/Documentary/:subheading"
+              element={<DocumentaryMain />}
+            />
+            <Route
+              path="/Categories/Drama/:subheading"
+              element={<DramaMain />}
             />
             <Route path="/Categories" element={<Categories />} />
             <Route path="/Live TV" element={<LiveTV />} />
