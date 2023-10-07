@@ -96,7 +96,7 @@ function EditProfile() {
   };
   return (
     <>
-      <div className="editProfile-heading">Edit profile</div>
+      <div className="editProfile-heading">Edit Profile</div>
       <div className="editProfile-img-container">
         <ul className="editProfile-ul">
           <li className="editProfile-li">

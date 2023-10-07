@@ -1,38 +1,9 @@
-// import React from "react";
-
-// const CreateNewPassword = () => {
-//   return (
-//     <>
-//       <div className="createNewPwd-main">
-//         <div className="create-new-pwd">
-//           <h2>Create New Password</h2>
-//           <div className="password-input-container">
-//             <label htmlFor="">Current Password</label>
-//             <input type="password" required />
-
-//             <label htmlFor="">New Password</label>
-//             <input type="password" required />
-
-//             <label htmlFor="">Re-enter New Password</label>
-//             <input type="password" required />
-
-//             <input type="submit">
-//               <span>Save Changes</span>
-//             </input>
-//           </div>
-//         </div>
-//       </div>
-//     </>
-//   );
-// };
-
-// export default CreateNewPassword;
-
 import React from "react";
 // import "./register.css";
 import { Button, Form, Input } from "antd";
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import { message } from "antd";
 
 const tailFormItemLayout = {
   wrapperCol: {
@@ -103,9 +74,10 @@ const CreateNewPassword = () => {
 
           if (data.status === "fail") {
             setErrorMessage(`${data.message}!`);
+            message.info("Changes Cancelled");
           } else {
             localStorage.setItem("bearer_token", bearer_token);
-
+            message.success("Changes Saved");
             navigate("/home");
           }
         })
@@ -124,6 +96,7 @@ const CreateNewPassword = () => {
           />
         </div>
         <div className="register-form-main">
+          <h1 style={{ textAlign: "center" }}>Change Password</h1>
           <Form
             className="register-form"
             {...formItemLayout}
