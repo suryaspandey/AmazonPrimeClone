@@ -1,17 +1,18 @@
-.actionAdvMain-ul{
-    margin: 10px 10px;
-    gap: 10px;
-    display: flex;
-    list-style-type: none;
-    flex-direction: row;
+.actionAdvMain-ul {
+  margin: 10px 10px;
+  gap: 10px;
+  display: flex;
+  list-style-type: none;
+  flex-direction: row;
 }
-.categories-btn{
-    color: #aaa;
-    border: none;
-    font-size: 24px;
-    padding: 20px;
+.categories-btn {
+  color: #aaa;
+  border: none;
+  font-size: 24px;
+  padding: 20px;
+  cursor: pointer;
 }
-.categories-btn:hover{
-    background-color: #aaa;
-    color: black;
+.categories-btn:hover {
+  background-color: #aaa;
+  color: black;
 }

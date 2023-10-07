@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { useLocation, useNavigate, useParams } from "react-router";
 import { Link } from "react-router-dom";
-import Documentries from "../Home_Comp/Documentries";
+import HorrorMovies from "../Home_Comp/HorrorMovies";
+import HorrorTVShows from "../AllTVShows/HorrorTVShows";
 
-const DocumentaryMain = () => {
+const HorrorMain = () => {
   const [isActive, setIsActive] = useState(1);
 
   const location = useLocation();
@@ -24,16 +25,16 @@ const DocumentaryMain = () => {
   });
 
   const handleClick = ({ subheading, isActive }) => {
-    navigate(`{/Categories/Documentary/${subheading}}`);
+    navigate(`{/Categories/Horror/${subheading}}`);
     setIsActive(isActive);
   };
 
   return (
     <>
-      <h1 style={{ color: "white", padding: "24px" }}>Documentary</h1>
+      <h1 style={{ color: "white", padding: "24px" }}>Horror</h1>
       <ul className="actionAdvMain-ul">
         <li>
-          <Link to={`/Categories/Documentary/all`}>
+          <Link to={`/Categories/Horror/all`}>
             <button
               className="categories-btn"
               onClick={() => handleClick("all", 1)}
@@ -56,7 +57,7 @@ const DocumentaryMain = () => {
           </Link>
         </li>
         <li>
-          <Link to={`/Categories/Documentary/movies`}>
+          <Link to={`/Categories/Horror/movies`}>
             <button
               className="categories-btn"
               onClick={() => handleClick("movies", 2)}
@@ -79,7 +80,7 @@ const DocumentaryMain = () => {
           </Link>
         </li>
         <li>
-          <Link to={`/Categories/Documentary/TVShows`}>
+          <Link to={`/Categories/Horror/TVShows`}>
             <button
               className="categories-btn"
               onClick={() => handleClick("TVShows", 3)}
@@ -105,27 +106,18 @@ const DocumentaryMain = () => {
       <div className="shows-contaainer">
         {(subheading === "all" || !subheading) && (
           <>
-            <Documentries />
+            <HorrorMovies />
+            <HorrorTVShows />
           </>
         )}
         {subheading === "movies" && (
           <>
-            <Documentries />
+            <HorrorMovies />
           </>
         )}
         {subheading === "TVShows" && (
           <>
-            <h1
-              style={{
-                color: "white",
-                display: "flex",
-                justifyContent: "center",
-                alignItems: "center",
-                fontSize: "24px",
-              }}
-            >
-              No Shows available
-            </h1>
+            <HorrorTVShows />
           </>
         )}
       </div>
@@ -133,4 +125,4 @@ const DocumentaryMain = () => {
   );
 };
 
-export default DocumentaryMain;
+export default HorrorMain;

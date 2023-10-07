@@ -1,9 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useLocation, useNavigate, useParams } from "react-router";
 import { Link } from "react-router-dom";
-import MysteryAndThriller from "../Home_Comp/MysteryAndThriller";
-import MysteryThrillerTVShows from "../AllTVShows/MysteryThrillerTVShows";
-import Documentries from "../Home_Comp/Documentries";
+
 import DramaTVShow from "../AllTVShows/DramaTVShows";
 import DramaMovies from "../Home_Comp/DramaMovies";
 

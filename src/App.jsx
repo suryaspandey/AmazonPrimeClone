@@ -38,6 +38,9 @@ import MysteryThrillerMain from "./Components/AllCategories/MysteryThrillerMain"
 import DocumentaryMain from "./Components/AllCategories/DocumentaryMain";
 import ComedyMain from "./Components/AllCategories/ComedyMain";
 import DramaMain from "./Components/AllCategories/DramaMain";
+import FantasyMain from "./Components/AllCategories/FantasyMain";
+import HorrorMain from "./Components/AllCategories/HorrorMain";
+import RomanceMain from "./Components/AllCategories/RomanceMain";
 // import { EpisodeNoContent } from "./EpisodeNoContent";
 
 function App() {
@@ -107,6 +110,20 @@ function App() {
             <Route
               path="/Categories/Drama/:subheading"
               element={<DramaMain />}
+            />
+            <Route
+              path="/Categories/Fantasy/:subheading"
+              element={<FantasyMain />}
+            />
+
+            <Route
+              path="/Categories/Horror/:subheading"
+              element={<HorrorMain />}
+            />
+
+            <Route
+              path="/Categories/Romance/:subheading"
+              element={<RomanceMain />}
             />
             <Route path="/Categories" element={<Categories />} />
             <Route path="/Live TV" element={<LiveTV />} />
