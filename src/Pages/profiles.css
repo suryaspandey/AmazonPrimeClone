@@ -90,12 +90,13 @@
 .edit-pencil-icon {
   width: 25%;
   height: 25%;
-  color: #72a1da;
-  left: 45%;
+  /* color: #72a1da; */
+  color: white;
+  left: 40%;
   background-repeat: no-repeat;
   border-radius: 50%;
   content: "";
   position: absolute;
-  top: 22%;
+  top: 25%;
   z-index: 10;
 }

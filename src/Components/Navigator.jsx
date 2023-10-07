@@ -36,6 +36,21 @@ const Navigator = () => {
     }
   }, [isAuthenticated]);
 
+  useEffect(() => {
+    const handleProfileImgSTorageChange = (e) => {
+      const profileImage = localStorage.getItem("profileImage");
+      if (profileImage) {
+        setprofileImg(profileImage);
+      }
+    };
+
+    window.addEventListener("storage", handleProfileImgSTorageChange);
+
+    return () => {
+      window.removeEventListener("storage", handleProfileImgSTorageChange);
+    };
+  }, []);
+
   const handleLogout = () => {
     localStorage.removeItem("bearer_token");
     localStorage.removeItem("loginUserName");
@@ -76,6 +91,7 @@ const Navigator = () => {
     navigate(`/search/${encodeURIComponent(searchText)}`);
   };
   console.log("isloggedIn :", isloggedIn);
+
   return (
     <>
       <div className="navigator-container">
@@ -246,26 +262,6 @@ const Navigator = () => {
                       </div>
                       <div className="options-left">
                         <span className="optoins-login-headings">Profiles</span>
-                        {/* <div
-                        className="Profiles"
-                        style={{ display: "flex", flexDirection: "column" }}
-                        > */}
-                        {/* <div> */}
-                        {/* to={"/Home/KidsAll"} */}
-                        {/* <span className="categories-link-text">
-                            <Link
-                              // className="categories-link-text"
-                              to={"/Home/KidsAll"}
-                              style={{
-                                // paddingLeft: "10px",
-                                listStyleType: "none",
-                                textDecoration: "none",
-                                color: "#aaa",
-                              }}
-                            >
-                              Kids
-                            </Link>
-                          </span> */}
 
                         <span className="categories-link-text">
                           <Link
@@ -310,9 +306,6 @@ const Navigator = () => {
                           </Link>
                         </span>
                       </div>
-
-                      {/* <span className="categories-link-text">Learn More</span> */}
-                      {/* </div> */}
                     </div>
                   </>
                 ) : (

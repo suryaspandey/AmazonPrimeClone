@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./editProfile.css";
 import { useState } from "react";
 import { message } from "antd";
@@ -28,6 +28,7 @@ function EditProfile() {
     setCurrProfileImg(newProfileImg);
     localStorage.setItem("profileImage", newProfileImg);
     localStorage.setItem("profileUserName", userName);
+    window.dispatchEvent(new Event("storage"));
     setIscancelled(false);
     {
       !isCancelled && message.success("Changes Saved");
