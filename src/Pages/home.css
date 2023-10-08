@@ -724,7 +724,7 @@ title {
 /* .continue-watching-text-description, */
 .blue-tick-text {
   /* display: none; */
-  /* display: block; */
+  display: flex;
 }
 
 /* .continue-watching-container:hover .play-btn-text,

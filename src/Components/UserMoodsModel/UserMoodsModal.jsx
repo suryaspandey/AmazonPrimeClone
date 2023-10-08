@@ -38,14 +38,25 @@ const UserMoodsModal = () => {
       <div className="modal-main-div">
         <img src="/Designer.png" alt="" height="100%" />
         <Button type="primary" onClick={showModal}>
-          {`Pick Your Mood ${userName} ?`}
+          {`Pick Your Mood ${userName} !!`}
         </Button>
         <Modal
-          className="modal-container"
           title={`What's your mood ${userName} ?`}
           open={isModalOpen}
           onOk={handleOk}
           onCancel={handleCancel}
+          // -- trying new buttons
+          footer={[
+            <Button
+              className="noThanks-mood-btn"
+              key="submit"
+              type="primary"
+              onClick={handleCancel}
+              // style={{ backgroundColor: "rgb(113 113 119)" }}
+            >
+              Skip
+            </Button>,
+          ]}
         >
           <div className="moods-container">
             <div className="moods-main">

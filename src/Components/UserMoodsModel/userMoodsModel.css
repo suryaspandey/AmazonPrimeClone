@@ -5,9 +5,9 @@
   text-align: center;
 }
 
-.modal-container .ant-modal-footer {
+/* .modal-container .ant-modal-footer {
   display: none;
-}
+} */
 
 .modal-main-div {
   justify-content: center;
@@ -31,5 +31,14 @@
 }
 
 .modal-main-div > .ant-btn-primary:hover {
+  background-color: black !important;
+}
+
+.noThanks-mood-btn {
+  color: rgb(251, 249, 249) !important;
+  background-color: rgb(113 113 119);
+}
+
+.noThanks-mood-btn:hover {
   background-color: black !important;
 }
