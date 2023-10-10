@@ -35,6 +35,7 @@ const AddToWatchList = () => {
       .then((result) => {
         setWatchlistData(result.data.shows);
         setIsInWatchList(true);
+        // setIsInWatchList(result.data.shows.length > 0);
         // console.log("showType in AddTowatchlist ", result.data.shows);
       })
 
@@ -46,6 +47,8 @@ const AddToWatchList = () => {
       (item) => item._id !== removedItem
     );
     setWatchlistData(updatedWatchList);
+    // setIsInWatchList(false);
+
     // console.log("handleRemoveFromWatchList", updatedWatchList);
   };
   // if (loading) {
@@ -111,6 +114,8 @@ const AddToWatchList = () => {
       </>
     );
   }
+
+  console.log("isInWatchList ", isInWatchList);
 
   return (
     <div style={{ height: "100vh" }}>
@@ -190,9 +195,13 @@ const AddToWatchList = () => {
       {isloggedIn && (
         <div className="carousel-main" style={{ display: "flex" }}>
           <>
-            {console.log("all filtered data", filteredData)}
-            {console.log("all watchlist data", watchlistData.length)}
-
+            {/* {console.log("all filtered data", filteredData)}
+            {console.log("all watchlist data", watchlistData.length)} */}
+            {console.log(
+              "inside add to watchlist return",
+              "isInWatchList",
+              isInWatchList
+            )}
             <WatchCards
               // actualData={filteredData}
               actualData={
@@ -208,7 +217,7 @@ const AddToWatchList = () => {
               // }
               projectId={projectId}
               handleRemoveFromWatchList={handleRemoveFromWatchList}
-              isInWatchListItem={isInWatchList}
+              isInWatchList={isInWatchList}
             />
           </>
         </div>

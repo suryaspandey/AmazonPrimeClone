@@ -21,21 +21,25 @@ const WatchInLanguage = () => {
       </div>
       <div className="carousel-main1">
         <div className="continue-watching-container1centre">
-          <ul className="continue-watching-ul" style={{ display: "flex" }}>
+          <ul
+            className="continue-watching-ul"
+            style={{ display: "flex", gap: "10px" }}
+          >
             <li className="continue-wtching-li">
               <div
               // className="slider-continue-watching-pic"
               >
                 <div
-                  style={{ height: "250px", width: "400px" }}
+                  className="lang-banner-imgs"
+                  style={{ height: "150px", width: "250px" }}
                   // className="banner-imgs"
                 >
                   <Link to={`/WatchInYourLanguage/English`}>
                     <img
                       className="banner-img"
                       style={{
-                        width: "90%",
-                        height: "90%",
+                        width: "100%",
+                        height: "100%",
                       }}
                       src="/WatchInEng.PNG"
                       // alt={jawSummary.title}
@@ -44,20 +48,21 @@ const WatchInLanguage = () => {
                 </div>
               </div>
             </li>
+
             <li className="continue-wtching-li">
               <div
               // className="slider-continue-watching-pic"
               >
                 <div
-                  style={{ height: "250px", width: "400px" }}
+                  style={{ height: "150px", width: "250px" }}
                   // className="banner-imgs"
                 >
                   <Link to={`/WatchInYourLanguage/Hindi`}>
                     <img
                       className="banner-img"
                       style={{
-                        width: "90%",
-                        height: "90%",
+                        width: "100%",
+                        height: "100%",
                       }}
                       src="/WatchInHindi.PNG"
                       // alt={jawSummary.title}
@@ -71,15 +76,15 @@ const WatchInLanguage = () => {
               // className="slider-continue-watching-pic"
               >
                 <div
-                  style={{ height: "250px", width: "400px" }}
+                  style={{ height: "150px", width: "250px" }}
                   // className="banner-imgs"
                 >
                   <Link to={`/WatchInYourLanguage/Kannada`}>
                     <img
                       className="banner-img"
                       style={{
-                        width: "90%",
-                        height: "90%",
+                        width: "100%",
+                        height: "100%",
                       }}
                       src="/WatchInKannada.PNG"
                       // alt={jawSummary.title}
@@ -93,15 +98,15 @@ const WatchInLanguage = () => {
               // className="slider-continue-watching-pic"
               >
                 <div
-                  style={{ height: "250px", width: "400px" }}
+                  style={{ height: "150px", width: "250px" }}
                   // className="banner-imgs"
                 >
                   <Link to={`/WatchInYourLanguage/Bengali`}>
                     <img
                       className="banner-img"
                       style={{
-                        width: "90%",
-                        height: "90%",
+                        width: "100%",
+                        height: "100%",
                       }}
                       src="/WatchInBengali.PNG"
                       // alt={jawSummary.title}
@@ -116,15 +121,15 @@ const WatchInLanguage = () => {
               // className="slider-continue-watching-pic"
               >
                 <div
-                  style={{ height: "250px", width: "400px" }}
+                  style={{ height: "150px", width: "250px" }}
                   // className="banner-imgs"
                 >
                   <Link to={`/WatchInYourLanguage/Marathi`}>
                     <img
                       className="banner-img"
                       style={{
-                        width: "90%",
-                        height: "90%",
+                        width: "100%",
+                        height: "100%",
                       }}
                       src="/WatchInMarathi.PNG"
                       // alt={jawSummary.title}
@@ -139,15 +144,15 @@ const WatchInLanguage = () => {
               // className="slider-continue-watching-pic"
               >
                 <div
-                  style={{ height: "250px", width: "400px" }}
+                  style={{ height: "150px", width: "250px" }}
                   // className="banner-imgs"
                 >
                   <Link to={`/WatchInYourLanguage/Telugu`}>
                     <img
                       className="banner-img"
                       style={{
-                        width: "90%",
-                        height: "90%",
+                        width: "100%",
+                        height: "100%",
                       }}
                       src="/WatchInTelugu.PNG"
                       // alt={jawSummary.title}
@@ -162,15 +167,15 @@ const WatchInLanguage = () => {
               // className="slider-continue-watching-pic"
               >
                 <div
-                  style={{ height: "250px", width: "400px" }}
+                  style={{ height: "150px", width: "250px" }}
                   // className="banner-imgs"
                 >
                   <Link to={`/WatchInYourLanguage/Punjabi`}>
                     <img
                       className="banner-img"
                       style={{
-                        width: "90%",
-                        height: "90%",
+                        width: "100%",
+                        height: "100%",
                       }}
                       src="/WatchInPunjabi.PNG"
                       // alt={jawSummary.title}
@@ -184,15 +189,15 @@ const WatchInLanguage = () => {
               // className="slider-continue-watching-pic"
               >
                 <div
-                  style={{ height: "250px", width: "400px" }}
+                  style={{ height: "150px", width: "250px" }}
                   // className="banner-imgs"
                 >
                   <Link to={`/WatchInYourLanguage/Gujarati`}>
                     <img
                       className="banner-img"
                       style={{
-                        width: "90%",
-                        height: "90%",
+                        width: "100%",
+                        height: "100%",
                       }}
                       src="/WatchInGujarati.PNG"
                       // alt={jawSummary.title}

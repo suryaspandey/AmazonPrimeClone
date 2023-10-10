@@ -7,7 +7,6 @@ import { BsSearch } from "react-icons/bs";
 import CategoriesDropDown from "./CategoriesDropDown";
 import MyStuffTabDropdown from "./MyStuffTabDropDown";
 import AvatarSignINDropdown from "./AvatarSignINDropdown";
-import LoginUserDropdown from "./LoginUserDropdown";
 
 const Navigator = () => {
   const [isHover, setIsHover] = useState(false);

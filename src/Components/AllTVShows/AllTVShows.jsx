@@ -13,15 +13,19 @@ import RomanceTVShows from "./RomanceTVShows";
 const AllTVShows = () => {
   return (
     <>
-      <div className="card-indv-heading-main">TV Shows</div>
-      <Top10Video showHeader={false} />
-      <ActionAdventureTV />
-      <FantasyTVShow />
-      <ComedyTVShows />
-      <DramaTVShow />
-      <Top10 />
-      <ScienceFictionTVShows />
-      <RomanceTVShows />
+      <div className="home">
+        <div className="card-indv-heading-main">TV Shows main</div>
+        <Top10Video showHeader={false} />
+        <ActionAdventureTV />
+        <FantasyTVShow />
+        <ComedyTVShows />
+        <DramaTVShow />
+        <Top10 />
+        <ScienceFictionTVShows />
+        <div className="last-card-slider" style={{ height: "475px" }}>
+          <RomanceTVShows />
+        </div>
+      </div>
     </>
   );
 };

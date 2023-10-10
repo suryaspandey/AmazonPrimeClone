@@ -54,7 +54,19 @@ const ComedyTVShows = () => {
         </h2>
       </div>
 
-      <div className="carousel-main" style={{ display: "flex" }}>
+      {/* <div className="carousel-main"> */}
+      <div
+        className="content"
+        style={{
+          margin: "2.3rem",
+          marginTop: "8rem",
+          gap: "3rem",
+          flexWrap: "wrap",
+          gap: "1rem",
+          display: "flex",
+          flexDirection: "column",
+        }}
+      >
         <WatchCards actualData={myData} projectId={projectId} />
       </div>
     </>

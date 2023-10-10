@@ -37,3 +37,17 @@
   justify-content: center;
   list-style-type: none;
 }
+
+@media screen and (max-width: 415px) {
+  .emptypadding {
+    display: none;
+  }
+
+  .footer-ul {
+    flex-direction: column;
+  }
+
+  .footer-li a {
+    font-size: 15px;
+  }
+}

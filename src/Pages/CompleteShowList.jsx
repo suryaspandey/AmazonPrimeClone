@@ -82,22 +82,25 @@ export const CompleteShowList = () => {
           </div>
         )}
       </div> */}
-      <div className="show-container">
+      <div className="complete-show-list-grid">
+        {/* <div className="show-container"> */}
         <div className="show-name">
           <h1
             style={{ color: "white", padding: "36px 24px" }}
           >{`${showType.category} movies`}</h1>
         </div>
       </div>
-      <div className="carousel-main">
-        <div>
-          <WatchCards
-            actualData={myData}
-            projectId={projectId}
-            className="complete-cards-main"
-          />
-        </div>
+      {/* <div className="carousel-main"> */}
+      <div>
+        <WatchCards
+          actualData={myData}
+          projectId={projectId}
+          // className="complete-cards-main"
+          className="complete-cards-ul-grid"
+        />
       </div>
+      {/* </div> */}
+      {/* </div> */}
     </>
   );
 };

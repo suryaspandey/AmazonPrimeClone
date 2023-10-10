@@ -35,7 +35,7 @@ const ActionAdventureMovies = () => {
 
   const handleSeeMoreClick = () => {
     setApi(actionAdventureMovieURL);
-    navigate("/CompleteShowList/Action And Adventure Movies");
+    navigate("/CompleteShowList/Action And Adventure");
   };
 
   return (

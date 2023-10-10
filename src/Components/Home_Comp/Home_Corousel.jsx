@@ -215,7 +215,9 @@ export default function Home_Corousel() {
       <RomanceMovies />
       <FantasyMovies />
       <Documentries />
-      <DramaMovies />
+      <div className="last-card-slider" style={{ height: "475px" }}>
+        <DramaMovies />
+      </div>
     </div>
   );
 }

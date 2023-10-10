@@ -98,3 +98,13 @@
   background-color: black;
   z-index: 0;
 }
+
+@media (max-width: 415px) {
+  .no-span .no-span-img {
+    font-size: 72px;
+  }
+
+  .card-no-img {
+    padding-top: 72px;
+  }
+}

@@ -497,7 +497,7 @@ body {
 
 .continue-wtching-li {
   display: flex;
-  /* flex-direction: column; */
+  flex-direction: column;
   justify-content: center;
   margin-bottom: 10px;
 }
@@ -566,7 +566,7 @@ title {
 /* new continue watching */
 
 .slider-continue-watching-pic {
-  position: relative;
+  /* position: relative; */
   border-radius: 10px;
   z-index: 1 !important;
 }
@@ -604,66 +604,49 @@ title {
   height: 100%;
 }
 
-.banner-img:hover {
-  /* border-radius: 10px 10px 10px 10px !important;
-  transform: scale(1.05);
-  transition: 0.3s ease-in-out; */
-}
-
-/* .video-btns-container {
-  display: none;
-} */
-
 .video-btns-container {
   display: block;
-  /* padding: 8px; */
+  position: relative;
   top: 0;
-  position: absolute;
   width: 250px;
   height: 150px;
-  z-index: 1;
-  /* border-radius: 10px; */
 }
 .watch-details-video {
   width: 100%;
-
   height: 100%;
-
-  position: absolute;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
 }
-.video-hover-content {
-  /* padding: 0 10px; */
-}
 
 .slider-continue-watching-pic:hover .banner-img {
   border-radius: 10px 10px 0 0 !important;
-  /* border-radius: 10px; */
 }
 
 .continue-watching-ul {
   list-style-type: none;
-  /* height: 275.7px; */
   padding: 0;
 }
 
-.carousel-main {
+/* .carousel-main {
   overflow-x: scroll;
-  overflow-y: hidden;
+  overflow-y: visible;
   gap: 10px;
-  /* margin: 0 28px; */
   padding: 0 65px;
   transition: transform 0.5s ease;
-}
+} */
 
-.carousel-main::-webkit-scrollbar {
-  overflow: hidden;
-}
+/* .carousel-main::-webkit-scrollbar {
+  overflow: visible;
+} */
 .cards-container::-webkit-scrollbar {
   overflow: hidden;
+}
+
+.increase-watchCardHeight {
+  height: 100%;
+  z-index: 100;
 }
 
 /* .slider-continue-watching-pic:hover .continue-watching-text-description {
@@ -786,13 +769,76 @@ title {
   position: relative;
   gap: 8px;
   display: flex;
+  overflow: visible;
+  /* z-index: 1000; */
 }
 .complete-cards-main {
-  display: grid !important;
+  /* display: grid !important;
   grid-template-columns: repeat(4, 1fr) !important;
-  gap: 8px !important;
+  gap: 8px !important; */
+
+  /* new */
+  /* position: relative; */
 }
+
+.complete-cards-ul {
+  display: flex;
+  position: relative;
+  height: 150px;
+  overflow: visible;
+}
+
+/* .complete-cards-ul-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 10px;
+  } */
 
 .seeMore {
   cursor: pointer;
+}
+
+/* .watchCardsContainer:hover {
+  transform: scale(1.02);
+} */
+
+.slider-action {
+  position: absolute;
+  z-index: 99;
+  height: 100%;
+
+  bottom: 0;
+  width: 50px;
+  transition: 0.3s ease-in-out;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.none {
+  display: none;
+}
+
+.left {
+  left: 0;
+}
+
+.right {
+  right: 0;
+  position: absolute;
+}
+.actual-card {
+  margin-right: 10px; /* Adjust as needed */
+}
+
+@media (max-width: 415px) {
+  .card-indv-heading,
+  .prime-text-heading,
+  .seeMore {
+    font-size: 16px;
+  }
+
+  .home-banner-video {
+    display: none;
+  }
 }
