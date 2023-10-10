@@ -99,8 +99,43 @@
   z-index: 0;
 }
 
+.carousel.carousel-slider {
+  overflow: inherit;
+}
+
+.carousel .slider-wrapper {
+  overflow: inherit;
+}
+
+.carousel-img-height {
+  background-color: transparent;
+  z-index: 1;
+  padding-left: 20px;
+}
+.banner-img-blue-tick {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+}
+.banner-imgs-text-container {
+  gap: 10px;
+  display: flex;
+  position: absolute;
+  top: 46%;
+  left: 14%;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+}
+
+.top10-banner-img-blue-tick {
+  left: 10%;
+  top: 90%;
+  position: absolute;
+}
+
 @media (max-width: 415px) {
-  .no-span .no-span-img {
+  .card-no {
     font-size: 72px;
   }
 

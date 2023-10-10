@@ -20,8 +20,26 @@ import RomanceMovies from "./RomanceMovies";
 import HorrorMovies from "./HorrorMovies";
 import FantasyMovies from "./FantasyMovies";
 import DramaMovies from "./DramaMovies";
+import Top10HomeImages from "./Top10/Top10HomeImages";
 
 export default function Home_Corousel() {
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 414);
+    };
+    // Initial check on component mount
+    handleResize();
+
+    // Attach event listener for window resize
+    window.addEventListener("resize", handleResize);
+
+    // Cleanup event listener on component unmount
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
   // const videoRef = useRef([]);
   // Outside the component
 
@@ -202,9 +220,13 @@ export default function Home_Corousel() {
       >
         Movies
       </span> */}
+      {isMobile ? (
+        <Top10HomeImages showHeader={false} />
+      ) : (
+        <Top10Video showHeader={false} />
+      )}
+      <RecommendedMovies />
 
-      <Top10Video showHeader={false} />
-      {/* <RecommendedMovies /> */}
       <MysteryAndThriller />
       <SciFi />
       <Top10 />
@@ -215,6 +237,7 @@ export default function Home_Corousel() {
       <RomanceMovies />
       <FantasyMovies />
       <Documentries />
+
       <div className="last-card-slider" style={{ height: "475px" }}>
         <DramaMovies />
       </div>

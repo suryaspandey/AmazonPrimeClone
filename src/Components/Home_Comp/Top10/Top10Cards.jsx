@@ -21,7 +21,6 @@ const Top10Cards = () => {
                   >
                     <button className="card-btn-container">
                       <div className="card-no" style={{ color: "white" }}>
-                        {/* {selectedVideoIndex ? ( */}
                         <span
                           className="no-span no-span-img"
                           style={{
@@ -30,30 +29,11 @@ const Top10Cards = () => {
                           }}
                         >
                           {index + 1}
-
-                          {/* </span> */}
-                          {/* ) : ( */}
-                          {/* <span
-                                                        className="no-span no-span-img"
-                                                        style={{
-                                                            fontSize:
-                                                                index === 9
-                                                                    ? "77px"
-                                                                    : "100px",
-                                                            color: "red",
-                                                        }}
-                                                    > */}
-                          {/* {index + 1} */}
-                          {/* {setIsHighlighted(
-                                                            isHighlighted + 1
-                                                        )} */}
                         </span>
-                        {/* )} */}
                       </div>
                       <span className="card-img-div">
                         <img
                           className="top10-card-img"
-                          // src={item.thumbnail}
                           src={thumbnailImages[index]}
                           alt={item.title}
                         />

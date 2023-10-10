@@ -109,7 +109,7 @@ const Top10Video = ({ showHeader }) => {
           interval={5000}
           selectedItem={currentIndex}
           ref={carouselRef}
-          dot={false}
+          dot={true}
           renderIndicator={false}
         >
           {videoSources.map((source, index) => (
@@ -158,11 +158,7 @@ const Top10Video = ({ showHeader }) => {
                     <div
                     // className="included-with-prime"
                     >
-                      <div
-                        className="prime-btn-UA"
-
-                        // className="blue-tick-text"
-                      >
+                      <div className="prime-btn-UA">
                         <span className="blue-tick">
                           <img
                             className="blue-tick-img"
@@ -268,7 +264,7 @@ const Top10Video = ({ showHeader }) => {
                     key={index}
                   >
                     <video
-                      className="home-banner-video"
+                      className="home-banner-video "
                       autoPlay
                       muted={isMuted}
                       ref={videoRef}
