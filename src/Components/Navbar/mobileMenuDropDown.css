@@ -1,0 +1,6 @@
+.mobile-tv-movie-home {
+  gap: 10px;
+  display: flex;
+  color: white;
+  justify-content: flex-start;
+}

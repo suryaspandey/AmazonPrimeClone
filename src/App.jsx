@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
-import reactLogo from "./assets/react.svg";
-import viteLogo from "/vite.svg";
+
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "./App.css";
 // import Home from "./Pages/Home";
@@ -41,6 +40,9 @@ import DramaMain from "./Components/AllCategories/DramaMain";
 import FantasyMain from "./Components/AllCategories/FantasyMain";
 import HorrorMain from "./Components/AllCategories/HorrorMain";
 import RomanceMain from "./Components/AllCategories/RomanceMain";
+import MobileNavbar from "./Components/Navbar/MobileNavbar";
+import MobileMenuDropDown from "./Components/Navbar/MobileMenuDropDown";
+import SciFiMain from "./Components/AllCategories/SciFiMain";
 // import { EpisodeNoContent } from "./EpisodeNoContent";
 
 function App() {
@@ -50,6 +52,20 @@ function App() {
     window.location.pathname === "/register";
 
   // const [isLoginOrRegister, setIsLoginOrRegister] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 414);
+    };
+    handleResize();
+
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
 
   useEffect(function () {
     const listerFn = function (event) {
@@ -65,7 +81,7 @@ function App() {
     // <EpisodeNoContent>
     <>
       <BrowserRouter>
-        {!isLoginOrRegister && <Navigator />}
+        {!isLoginOrRegister && (isMobile ? <MobileNavbar /> : <Navigator />)}
 
         <Routes>
           <Route>
@@ -125,12 +141,18 @@ function App() {
               path="/Categories/Romance/:subheading"
               element={<RomanceMain />}
             />
+            <Route
+              path="/Categories/SciFi/:subheading"
+              element={<SciFiMain />}
+            />
             <Route path="/Categories" element={<Categories />} />
             <Route path="/Live TV" element={<LiveTV />} />
             <Route path="/comingSoon" element={<ComingSoon />} />
 
             <Route path="/Search/:phrase" element={<Search />} />
             <Route path="/Subscription" element={<Subscription />} />
+
+            {/* <Route path="/menu" element={<MobileMenuDropDown />} /> */}
           </Route>
 
           <Route element={<PrivateRoute />}>

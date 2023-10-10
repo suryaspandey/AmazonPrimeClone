@@ -50,4 +50,21 @@
   .carousel-main1 {
     margin-left: 46px;
   }
+
+  .watch-in {
+    font-size: 30px;
+  }
+
+  .language-text {
+    top: 30%;
+    left: 32%;
+  }
+
+  .language-banner {
+    height: 220px;
+    margin: 10px;
+  }
+  .lang-more-details {
+    display: none;
+  }
 }

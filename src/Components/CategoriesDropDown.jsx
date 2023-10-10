@@ -172,7 +172,15 @@ const CategoriesDropDown = ({ activePage }) => {
                 Romance
               </Link>
             </li>
-            <li className="featured-collection-li"></li>
+            <li className="featured-collection-li">
+              <Link
+                className="categories-link-text"
+                to={"/Categories/SciFi/all"}
+              >
+                SciFi
+              </Link>
+            </li>
+            {/* <li className="featured-collection-li"></li> */}
           </ul>
         </div>
       </div>

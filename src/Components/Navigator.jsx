@@ -63,14 +63,6 @@ const Navigator = () => {
 
   const navigate = useNavigate();
 
-  // const handleMouseEnter = () => {
-  //   setIsHover(true);
-  // };
-
-  // const handleMouseLeave = () => {
-  //   setIsHover(false);
-  // };
-
   const handleSetActivePage = (page) => {
     setActivePage(page);
   };

@@ -9,13 +9,35 @@ import DramaTVShow from "./DramaTVShows";
 import { Top10 } from "../Home_Comp/Top10/Top10";
 import ScienceFictionTVShows from "./ScienceFictionTVShows";
 import RomanceTVShows from "./RomanceTVShows";
+import Top10HomeImages from "../Home_Comp/Top10/Top10HomeImages";
 
 const AllTVShows = () => {
+  const [isMobile, setIsMobile] = useState(false);
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 414);
+    };
+    // Initial check on component mount
+    handleResize();
+
+    // Attach event listener for window resize
+    window.addEventListener("resize", handleResize);
+
+    // Cleanup event listener on component unmount
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
   return (
     <>
       <div className="home">
-        <div className="card-indv-heading-main">TV Shows main</div>
-        <Top10Video showHeader={false} />
+        <div className="card-indv-heading-main">TV Shows</div>
+        {isMobile ? (
+          <Top10HomeImages showHeader={false} />
+        ) : (
+          <Top10Video showHeader={false} />
+        )}
+
         <ActionAdventureTV />
         <FantasyTVShow />
         <ComedyTVShows />
