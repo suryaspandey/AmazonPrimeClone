@@ -55,7 +55,10 @@ const DramaTVShow = () => {
         </h2>
       </div>
 
-      <div className="carousel-main" style={{ display: "flex" }}>
+      <div
+        className="carousel-main new-carousel-main"
+        style={{ display: "flex" }}
+      >
         <WatchCards actualData={myData} projectId={projectId} />
       </div>
     </>

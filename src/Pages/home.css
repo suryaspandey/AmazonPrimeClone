@@ -831,6 +831,10 @@ title {
   margin-right: 10px; /* Adjust as needed */
 }
 
+/* .mob-wrapper-main {
+  display: none;
+} */
+
 @media (max-width: 415px) {
   .card-indv-heading,
   .prime-text-heading,
@@ -840,5 +844,41 @@ title {
 
   .home-banner-video {
     display: none;
+  }
+  .card-indv-heading-main {
+    margin: 12px 0 0 20px;
+  }
+  .prime-show {
+    display: none;
+  }
+
+  .last-card-slider {
+    height: 0;
+  }
+
+  /* .carousel-main {
+    overflow-y: hidden;
+    overflow-x: scroll;
+    display: flex;
+  }
+  .carousel-main::-webkit-scrollbar {
+    overflow: hidden;
+  } */
+  .mob-wrapper-main {
+    overflow-y: hidden;
+    overflow-x: scroll;
+    display: flex;
+  }
+
+  .carousel-main {
+    display: block !important;
+  }
+
+  /* .wrapper-main {
+    display: none;
+  } */
+
+  .mob-wrapper-main::-webkit-scrollbar {
+    overflow: hidden;
   }
 }

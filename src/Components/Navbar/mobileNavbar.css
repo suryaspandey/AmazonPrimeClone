@@ -11,7 +11,11 @@
   align-items: center;
 }
 .mobile-navbar-container {
+  z-index: 100;
+  top: 0;
+  position: sticky;
   padding: 5px;
+  background-color: #00050d;
 }
 .mob-avatar-header {
   display: flex;
@@ -24,6 +28,14 @@
 
 .categories-submenu-label:hover {
   color: white;
+}
+
+.mobile-tv-movie-home {
+  gap: 24px;
+  display: flex;
+  color: white;
+  justify-content: flex-start;
+  padding: 0 24px;
 }
 .ant-dropdown-submenu-popup {
   left: 100% !important;

@@ -1,14 +1,30 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./mobileNavbar.css";
 import AvatarSignINDropdown from "../AvatarSignINDropdown";
 import { Link, useNavigate } from "react-router-dom";
 import { BsSearch } from "react-icons/bs";
 import MobileMenuDropDown from "./MobileMenuDropDown";
+import { LiaHomeSolid } from "react-icons/lia";
 
 const MobileNavbar = () => {
   const navigate = useNavigate();
   const [isSearchVisible, setIsSearchVisible] = useState(false);
   const [searchText, setSearchText] = useState("");
+
+  useEffect(() => {
+    const handleProfileImgSTorageChange = (e) => {
+      const profileImage = localStorage.getItem("profileImage");
+      if (profileImage) {
+        setprofileImg(profileImage);
+      }
+    };
+
+    window.addEventListener("storage", handleProfileImgSTorageChange);
+
+    return () => {
+      window.removeEventListener("storage", handleProfileImgSTorageChange);
+    };
+  }, []);
 
   const toggleSearch = () => {
     setIsSearchVisible(!isSearchVisible);
@@ -247,10 +263,28 @@ const MobileNavbar = () => {
             </div> */}
           </div>
         </div>
-        <div className="mobile-tv-movie-home" style={{ color: "white" }}>
-          <div className="mob-home-header">Home</div>
-          <div className="mob-movies-header">Movies</div>
-          <div className="mob-tv-header">TV Shows</div>
+        <div className="mobile-tv-movie-home">
+          <div className="mob-home-header">
+            <Link to={"/"}>
+              <LiaHomeSolid style={{ color: "white" }} />
+            </Link>
+          </div>
+          <div className="mob-movies-header">
+            <Link
+              style={{ color: "white", textDecoration: "none" }}
+              to={"/Home/AllMovies"}
+            >
+              Movies
+            </Link>
+          </div>
+          <div className="mob-tv-header">
+            <Link
+              style={{ color: "white", textDecoration: "none" }}
+              to={"/Home/AllTVShows"}
+            >
+              TV Shows
+            </Link>
+          </div>
         </div>
       </div>
     </>

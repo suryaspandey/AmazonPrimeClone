@@ -7,7 +7,7 @@ const Top10Cards = () => {
 
   return (
     <>
-      <div className="carousel-main top10-carousel">
+      <div className="carousel-main1 top10-carousel">
         <span className="card-no-img">
           {thumbnailImages.map((item, index) => {
             while (index < 10) {

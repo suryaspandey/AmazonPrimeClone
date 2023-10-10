@@ -32,7 +32,7 @@ const KidsAndFamilyMovies = () => {
 
   const handleSeeMoreClick = () => {
     setApi(kidsMovie);
-    navigate("/CompleteShowList/Kids and Family Movies");
+    navigate("/CompleteShowList/Kids and Family");
   };
   return (
     <>

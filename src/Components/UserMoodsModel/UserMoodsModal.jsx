@@ -36,7 +36,7 @@ const UserMoodsModal = () => {
   return (
     <>
       <div className="modal-main-div">
-        <img src="/Designer.png" alt="" height="100%" />
+        <img src="/Designer.png" alt="" height="100%" width="100%" />
         <Button type="primary" onClick={showModal}>
           {`Pick Your Mood ${userName} !!`}
         </Button>
@@ -62,9 +62,8 @@ const UserMoodsModal = () => {
             <div className="moods-main">
               <div className="mood-happy">
                 <img
+                  className="moods-imgs"
                   src="/happy_mood.png"
-                  height={100}
-                  width={100}
                   alt=""
                   onClick={() => {
                     navigate("/Categories/Fantasy/all");
@@ -74,9 +73,8 @@ const UserMoodsModal = () => {
               </div>
               <div className="mood-happy">
                 <img
+                  className="moods-imgs"
                   src="/sad_mood.png"
-                  height={100}
-                  width={100}
                   alt=""
                   onClick={() => {
                     navigate("/Categories/Comedy/all");
@@ -86,9 +84,8 @@ const UserMoodsModal = () => {
               </div>
               <div className="mood-happy">
                 <img
+                  className="moods-imgs"
                   src="/bored_mood.png"
-                  height={100}
-                  width={100}
                   alt=""
                   onClick={() => {
                     navigate("/Categories/ActionAdventure/all");
@@ -98,9 +95,8 @@ const UserMoodsModal = () => {
               </div>
               <div className="mood-happy">
                 <img
+                  className="moods-imgs"
                   src="/romantic_mood.png"
-                  height={100}
-                  width={100}
                   alt=""
                   onClick={() => {
                     navigate("/Categories/Romance/all");
@@ -110,15 +106,15 @@ const UserMoodsModal = () => {
               </div>
               <div className="mood-happy">
                 <img
-                  src="/surprise2_mood.png"
-                  height={100}
-                  width={100}
+                  // style={{ marginTop: "10px" }}
+                  className="moods-imgs"
+                  src="/mystery_mood.png"
                   alt=""
                   onClick={() => {
                     navigate(`/Categories/${surpriseMeOptions[num]}/all`);
                   }}
                 />
-                <h4>Surprise Me!!</h4>
+                <h4>Surprise</h4>
               </div>
             </div>
           </div>

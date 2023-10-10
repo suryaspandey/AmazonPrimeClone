@@ -42,3 +42,15 @@
 .noThanks-mood-btn:hover {
   background-color: black !important;
 }
+
+.moods-imgs {
+  height: 100px;
+  width: 100px;
+}
+
+@media (max-width: 414px) {
+  .moods-imgs {
+    height: 30px !important;
+    width: 30px !important;
+  }
+}

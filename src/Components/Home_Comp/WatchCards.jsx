@@ -133,7 +133,7 @@ const WatchCards = ({
        to display the content in grid  */}
 
       <div
-        className="wrapper-main"
+        className="wrapper-main mob-wrapper-main"
         style={{
           display: "flex",
           gap: "1rem",

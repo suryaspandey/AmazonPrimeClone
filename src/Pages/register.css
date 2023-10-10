@@ -32,3 +32,11 @@
   background-color: #fcd200 !important;
   color: black !important;
 }
+
+@media (max-width: 415px) {
+  .register-form-main {
+    margin: auto;
+    margin-top: 10px;
+    width: 350px;
+  }
+}
