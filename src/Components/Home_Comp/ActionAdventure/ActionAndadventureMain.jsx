@@ -68,7 +68,10 @@ const ActionAndAdventureMain = () => {
   return (
     <>
       <div className="home">
-        <h1 style={{ color: "white", padding: "24px" }}>
+        <h1
+          className="categories-heading"
+          style={{ color: "white", padding: "24px" }}
+        >
           Action and Adventure
         </h1>
         <ul className="actionAdvMain-ul">

@@ -33,7 +33,12 @@ const DramaMain = () => {
   return (
     <>
       <div className="home">
-        <h1 style={{ color: "white", padding: "24px" }}>Drama</h1>
+        <h1
+          className="categories-heading"
+          style={{ color: "white", padding: "24px" }}
+        >
+          Drama
+        </h1>
         <ul className="actionAdvMain-ul">
           <li>
             <Link to={`/Categories/Drama/all`}>

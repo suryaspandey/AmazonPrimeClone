@@ -170,19 +170,24 @@ const WatchDetails = () => {
               </div>
             </div>
             <div className="details-btns-container">
-              <span className="home-play-btn-container-new ">
-                <img
-                  onClick={() => SetIsPlayBtnClicked(true)}
-                  className="details-play-btn"
-                  src="/play-btn.PNG"
-                  alt="play button"
-                  width={275}
-                />
-                {isPlayBtnClicked && handleShowDetials()}
+              <span className="home-play-btn-container-new  ">
+                <div className="watchDetails-play-btn-container">
+                  <img
+                    onClick={() => SetIsPlayBtnClicked(true)}
+                    className="details-play-btn"
+                    src="/play-btn.PNG"
+                    alt="play button"
+                    width={275}
+                  />
+                  <span className="play-text " style={{ color: "white" }}>
+                    Play
+                  </span>
+                  {isPlayBtnClicked && handleShowDetials()}
+                </div>
               </span>
-              <span className="play-text " style={{ color: "white" }}>
+              {/* <span className="play-text " style={{ color: "white" }}>
                 Play
-              </span>
+              </span> */}
               <span>
                 <div className="more-purchase-options">
                   <button className="more-purchase-options-btn">
@@ -190,41 +195,49 @@ const WatchDetails = () => {
                   </button>
                 </div>
               </span>
-              <span className="home-play-btn-container-new trailer-span">
-                <Tooltip title="Trailer" placement="bottom" arrow={false}>
-                  <span>
-                    <BiMoviePlay className="trailer-img" />
-                  </span>
-                </Tooltip>
-              </span>
-              <span className="home-play-btn-container-new trailer-span">
-                <Tooltip title="Watchlist" placement="bottom" arrow={false}>
-                  <span>
-                    <AiOutlinePlus className="trailer-img" />
-                  </span>
-                </Tooltip>
-              </span>
-              <span className="home-play-btn-container-new trailer-span">
-                <Tooltip title="Download" placement="bottom" arrow={false}>
-                  <span>
-                    <GoDownload className="trailer-img" />
-                  </span>
-                </Tooltip>
-              </span>
-              <span className="home-play-btn-container-new trailer-span">
-                <Tooltip title="Watch Party" placement="bottom" arrow={false}>
-                  <span>
-                    <GiPartyPopper className="trailer-img" />
-                  </span>
-                </Tooltip>
-              </span>
-              <span className="home-play-btn-container-new trailer-span">
-                <Tooltip title="Share" placement="bottom" arrow={false}>
-                  <span>
-                    <HiOutlineShare className="trailer-img" />
-                  </span>
-                </Tooltip>
-              </span>
+              <div className="watchDetails-btn-options-container">
+                <span className="home-play-btn-container-new trailer-span">
+                  <Tooltip title="Trailer" placement="bottom" arrow={false}>
+                    <span>
+                      <BiMoviePlay className="trailer-img" />
+                      {/* <p style={{ color: "white" }}>Trailer</p> */}
+                    </span>
+                  </Tooltip>
+                  {/* <p style={{ color: "white" }}>Trailer</p> */}
+                </span>
+                <span className="home-play-btn-container-new trailer-span">
+                  <Tooltip title="Watchlist" placement="bottom" arrow={false}>
+                    <span>
+                      <AiOutlinePlus className="trailer-img" />
+                      {/* <p style={{ color: "white" }}>Trailer</p> */}
+                    </span>
+                  </Tooltip>
+                </span>
+                <span className="home-play-btn-container-new trailer-span">
+                  <Tooltip title="Download" placement="bottom" arrow={false}>
+                    <span>
+                      <GoDownload className="trailer-img" />
+                      {/* <p style={{ color: "white" }}>Trailer</p> */}
+                    </span>
+                  </Tooltip>
+                </span>
+                <span className="home-play-btn-container-new trailer-span">
+                  <Tooltip title="Watch Party" placement="bottom" arrow={false}>
+                    <span>
+                      <GiPartyPopper className="trailer-img" />
+                      {/* <p style={{ color: "white" }}>Trailer</p> */}
+                    </span>
+                  </Tooltip>
+                </span>
+                <span className="home-play-btn-container-new trailer-span">
+                  <Tooltip title="Share" placement="bottom" arrow={false}>
+                    <span>
+                      <HiOutlineShare className="trailer-img" />
+                      {/* <p style={{ color: "white" }}>Trailer</p> */}
+                    </span>
+                  </Tooltip>
+                </span>
+              </div>
             </div>
           </div>
           <div className="episodes-details-container">

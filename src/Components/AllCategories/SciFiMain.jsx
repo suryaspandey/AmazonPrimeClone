@@ -34,7 +34,12 @@ const SciFiMain = () => {
   return (
     <>
       <div className="home">
-        <h1 style={{ color: "white", padding: "24px" }}>Science and Fiction</h1>
+        <h1
+          className="categories-heading"
+          style={{ color: "white", padding: "24px" }}
+        >
+          Science and Fiction
+        </h1>
         <ul className="actionAdvMain-ul">
           <li>
             <Link to={`/Categories/SciFi/all`}>

@@ -35,7 +35,10 @@ const MysteryThrillerMain = () => {
   return (
     <>
       <div className="home">
-        <h1 style={{ color: "white", padding: "24px" }}>
+        <h1
+          className="categories-heading"
+          style={{ color: "white", padding: "24px" }}
+        >
           Mystery and Thriller
         </h1>
         <ul className="actionAdvMain-ul">

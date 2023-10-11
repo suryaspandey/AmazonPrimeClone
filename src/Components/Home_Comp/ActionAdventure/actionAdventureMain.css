@@ -16,3 +16,17 @@
   background-color: #aaa;
   color: black;
 }
+
+@media (max-width: 415px) {
+  .actionAdvMain-ul {
+    margin: 0;
+  }
+  .categories-btn {
+    padding: 10px !important;
+    border-radius: 5px !important;
+    font-size: 20px;
+  }
+  .categories-heading {
+    padding: 0 24px !important;
+  }
+}

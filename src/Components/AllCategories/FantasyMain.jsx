@@ -32,7 +32,12 @@ const FantasyMain = () => {
   return (
     <>
       <div className="home">
-        <h1 style={{ color: "white", padding: "24px" }}>Fantasy</h1>
+        <h1
+          className="categories-heading"
+          style={{ color: "white", padding: "24px" }}
+        >
+          Fantasy
+        </h1>
         <ul className="actionAdvMain-ul">
           <li>
             <Link to={`/Categories/Fantasy/all`}>

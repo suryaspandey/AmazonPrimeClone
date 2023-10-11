@@ -298,3 +298,91 @@
 .details-title-description {
   width: 75%;
 }
+
+@media (max-width: 415px) {
+  .content-main {
+    background-image: none;
+  }
+
+  .watchDetails-img {
+    height: 100%;
+  }
+  .details-title-description {
+    position: absolute;
+    top: 90%;
+  }
+  .watchdetails-text-btn-content {
+    position: relative;
+  }
+  .details-btns-container {
+    flex-direction: column;
+  }
+  /* .play-text {
+    display: none;
+  } */
+  .home-play-btn-container-new {
+    width: 100%;
+  }
+
+  .watchDetails-play-btn-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 10px 0;
+    background-color: hsl(0deg 3.8% 35.65% / 88%);
+  }
+  .details-play-btn {
+    width: 60px;
+    height: 60px;
+  }
+  .trailer-img {
+    background-color: transparent;
+  }
+
+  .show-title {
+    font-size: 25px !important;
+  }
+  .show-description {
+    font-size: 20px;
+  }
+  .trailer-img {
+    width: 35px;
+    height: 35px;
+  }
+  .details-title-description {
+    width: 100%;
+  }
+
+  .episodes-details-container {
+    position: absolute;
+    top: 110%;
+    padding: 0;
+  }
+  .tabs-container {
+    width: 85%;
+    padding: 2px 0px;
+    background-color: transparent;
+  }
+  .ant-tabs .ant-tabs-tab {
+    display: inline-flex;
+    align-items: center;
+    padding: 7px 11px;
+    font-size: 15px;
+    background: transparent;
+    border: 0;
+    outline: none;
+    cursor: pointer;
+    border-radius: 10px;
+    /* background-color: transparent; */
+  }
+  .imdb-details {
+    padding-top: 0;
+    font-size: 20px;
+    justify-content: center;
+  }
+  .genre ul {
+    font-size: 20px;
+    padding: 0 24px;
+  }
+}

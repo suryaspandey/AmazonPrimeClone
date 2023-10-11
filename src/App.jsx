@@ -65,7 +65,7 @@ function App() {
     return () => {
       window.removeEventListener("resize", handleResize);
     };
-  }, []);
+  });
 
   useEffect(function () {
     const listerFn = function (event) {
