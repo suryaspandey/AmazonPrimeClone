@@ -69,7 +69,7 @@ const UserMoodsModal = () => {
                     navigate("/Categories/Fantasy/all");
                   }}
                 />
-                <h4>Happy</h4>
+                <h4 style={{ margin: "0px" }}>Happy</h4>
               </div>
               <div className="mood-happy">
                 <img
@@ -80,7 +80,7 @@ const UserMoodsModal = () => {
                     navigate("/Categories/Comedy/all");
                   }}
                 />
-                <h4>Sad</h4>
+                <h4 style={{ margin: "0px" }}>Sad</h4>
               </div>
               <div className="mood-happy">
                 <img
@@ -91,7 +91,7 @@ const UserMoodsModal = () => {
                     navigate("/Categories/ActionAdventure/all");
                   }}
                 />
-                <h4>Bored</h4>
+                <h4 style={{ margin: "0px" }}>Bored</h4>
               </div>
               <div className="mood-happy">
                 <img
@@ -102,19 +102,19 @@ const UserMoodsModal = () => {
                     navigate("/Categories/Romance/all");
                   }}
                 />
-                <h4>Romantic</h4>
+                <h4 style={{ margin: "0px" }}>Romantic</h4>
               </div>
               <div className="mood-happy">
                 <img
                   // style={{ marginTop: "10px" }}
                   className="moods-imgs"
-                  src="/mystery_mood.png"
+                  src="/surprise2_mood.png"
                   alt=""
                   onClick={() => {
                     navigate(`/Categories/${surpriseMeOptions[num]}/all`);
                   }}
                 />
-                <h4>Surprise</h4>
+                <h4 style={{ margin: "0px" }}>Surprise Me!!</h4>
               </div>
             </div>
           </div>

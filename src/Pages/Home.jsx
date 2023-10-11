@@ -82,6 +82,7 @@ export default function Home() {
       <div className="second-home-banner">
         <div className="home-container-main">
           <img
+            // className="second-home-banner-img"
             width="100%"
             height="100%"
             src="https://m.media-amazon.com/images/G/31/AmazonVideo/2021/X-site/MLP/TVOD/TVOD_MLP_Left.jpg"
@@ -223,8 +224,9 @@ export default function Home() {
       </div>
       {/*  */}
 
-      <div className="home-container-main firestick-container">
+      <div className="home-container-main firestick-container family-home-container">
         <img
+          className="family-banner-img"
           width="100%"
           height="100%"
           src="https://m.media-amazon.com/images/G/01/digital/video/Magellan_MLP/IN-kids-30Jan._CB1517304519_.jpg"

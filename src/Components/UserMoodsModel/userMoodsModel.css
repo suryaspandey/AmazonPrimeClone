@@ -3,6 +3,7 @@
   align-items: center;
   justify-content: center;
   text-align: center;
+  flex-direction: row;
 }
 
 /* .modal-container .ant-modal-footer {
@@ -44,13 +45,12 @@
 }
 
 .moods-imgs {
-  height: 100px;
-  width: 100px;
+  height: 75px;
+  width: 75px;
 }
 
-@media (max-width: 414px) {
-  .moods-imgs {
-    height: 30px !important;
-    width: 30px !important;
+@media (max-width: 415px) {
+  .moods-main {
+    flex-direction: column !important;
   }
 }

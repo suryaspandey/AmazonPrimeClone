@@ -38,6 +38,8 @@
   align-items: center;
   flex-direction: column;
   width: 280px;
+  color: white;
+  font-size: 18px;
 }
 
 .primeoffersbtn {
@@ -46,11 +48,6 @@
   color: white;
   font-size: 18px;
   border: none;
-}
-.primeoffersplanlinks {
-  color: white;
-  font-size: 18px;
-  text-align: center;
 }
 
 .home-channels-container {
@@ -152,4 +149,89 @@
 /* modal css */
 .ant-btn-default {
   display: none;
+}
+
+@media (max-width: 415px) {
+  .home-banner-text-container {
+    /* top: 5%; */
+    width: 100%;
+    position: relative;
+    text-align: center;
+  }
+
+  .home-banner-text-container h1 {
+    /* font-size: 26px; */
+    margin: 0px;
+  }
+  .banner1-text h2 {
+    font-size: 18px;
+    text-align: center;
+  }
+  /* .home-container-main {
+    margin-top: 78px;
+  } */
+
+  .primeoffersbtn {
+    padding: 5px 5px;
+    background-color: #0f79af;
+    color: white;
+    font-size: 13px;
+    border: none;
+  }
+  .home-banner-text-container-banner2 {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    padding-bottom: 10px;
+  }
+  .home-banner-text-container-banner2 h2 {
+    font-size: 15px;
+  }
+  .home-banner-text-container-banner2 h1 {
+    font-size: 26px;
+    margin: 0px;
+  }
+
+  .primeoffersplanlinks {
+    /* padding: 16px; */
+    width: 100%;
+  }
+
+  .home-container-main,
+  .second-home-banner {
+    position: relative;
+    flex-direction: column;
+  }
+
+  .home-channels-container {
+    flex-direction: column;
+    align-items: center;
+  }
+  .channels-text,
+  .channels-list-container {
+    max-width: 100%;
+    text-align: justify;
+  }
+  .firestick-text {
+    position: relative;
+  }
+  .primeoffersBtnandLinks {
+    text-align: center;
+  }
+  .firestick-text {
+    padding: 15px;
+  }
+  .family-friendly {
+    width: 100%;
+  }
+  /* .family-banner-img {
+    display: none;
+  } */
+  /* .family-home-container {
+    background-image: linear-gradient(to top, #000 0%, transparent 20%),
+      url(https://m.media-amazon.com/images/G/01/digital/video/Magellan_MLP/IN-kids-30Jan._SX1440_CR575,0,865,675_QL80_AC_FP_.jpg);
+  } */
 }
