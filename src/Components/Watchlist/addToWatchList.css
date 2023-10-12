@@ -94,3 +94,21 @@
   height: 100vh;
   font-size: 24px;
 }
+
+@media (max-width: 415px) {
+  .addTowatchlist-heading {
+    line-height: 0;
+    padding: 4px 24px;
+    font-size: 20px;
+  }
+  .buttons-recent-addition-container {
+    margin: 0 8px;
+    margin-bottom: 0;
+    justify-content: space-evenly;
+  }
+
+  .addToWatchlist-btn {
+    font-size: 16px;
+    padding: 4px;
+  }
+}

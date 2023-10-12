@@ -56,16 +56,6 @@ const MyStuffTabDropdown = ({ isHover }) => {
         // style={{ color: "red" }}
         overlay={menu}
         trigger={["hover"]}
-        // placement="bottomCenter"
-        // menu={{
-        //   items,
-        //   selectable: true,
-        //   defaultSelectedKeys: ["1"],
-        //   onItemClick: ({ key }) => {
-        //     const selectedItem = items.find((item) => item.key === key);
-        //     handleLinkClick(selectedItem);
-        //   },
-        // }}
       >
         <Typography.Link>
           <Space>

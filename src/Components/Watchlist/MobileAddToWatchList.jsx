@@ -1,27 +1,21 @@
 import React, { useState } from "react";
 import { useEffect } from "react";
 import WatchCards from "../Home_Comp/WatchCards";
-import "./addToWatchList.css";
+import "./mobileAddToWatchList.css";
 import { DownOutlined } from "@ant-design/icons";
 import { Dropdown, Space } from "antd";
 import { MdKeyboardArrowDown, MdKeyboardArrowUp } from "react-icons/md";
 
-const AddToWatchList = () => {
+const MobileAddToWatchList = () => {
+  const [isMobile, setIsMobile] = useState(false);
   const [watchlistData, setWatchlistData] = useState([]);
   const [isInWatchList, setIsInWatchList] = useState(false);
   const [selectedShowType, setSelectedShowType] = useState("All");
   const [showDownArrow, setShowDownArrow] = useState(true);
+  // const [filteredData, setFilteredData] = useState([]);
+  // const [sortedData, setSortedData] = useState([]);
 
   // const [loading, setLoading] = useState(true);
-
-  const isAuthenticated = !!localStorage.getItem("bearer_token");
-  const [isloggedIn, setIsLoggedIn] = useState(isAuthenticated);
-
-  const bearerToken = localStorage.getItem("bearer_token");
-  const projectId = "zxke0qiu2960";
-  const watchListAPI =
-    "https://academics.newtonschool.co/api/v1/ott/watchlist/like";
-
   useEffect(() => {
     const headers = {
       projectId: projectId,
@@ -38,11 +32,24 @@ const AddToWatchList = () => {
       .catch((error) => console.log("error", error));
   }, []);
 
+  const isAuthenticated = !!localStorage.getItem("bearer_token");
+  const [isloggedIn, setIsLoggedIn] = useState(isAuthenticated);
+
+  const bearerToken = localStorage.getItem("bearer_token");
+  const projectId = "zxke0qiu2960";
+  const watchListAPI =
+    "https://academics.newtonschool.co/api/v1/ott/watchlist/like";
+
+  //   s
+
   const handleRemoveFromWatchList = (removedItem) => {
     const updatedWatchList = watchlistData.filter(
       (item) => item._id !== removedItem
     );
     setWatchlistData(updatedWatchList);
+    // setIsInWatchList(false);
+
+    // console.log("handleRemoveFromWatchList", updatedWatchList);
   };
   // if (loading) {
   //   return <div>Loading...</div>;
@@ -58,7 +65,10 @@ const AddToWatchList = () => {
         showTypes.includes(item.type)
       );
     }
+    // setFilteredData(filteredData);
     setSelectedShowType(showTypes);
+
+    // setWatchlistData(filteredData);
   };
 
   const handleDownArrow = () => {
@@ -110,7 +120,7 @@ const AddToWatchList = () => {
   return (
     <div style={{ height: "100vh" }}>
       <div className="watchlist-header-container">
-        <h1 className="addTowatchlist-heading">Watchlist</h1>
+        <h1 className="addTowatchlist-heading">Watchlist im Mob</h1>
         <div className="buttons-recent-addition-container">
           <div className="watchlist-btns-container">
             <button
@@ -183,15 +193,16 @@ const AddToWatchList = () => {
         </div>
       </div>
       {isloggedIn && (
-        <div className="carousel-main" style={{ display: "flex" }}>
+        <div
+        //   className="carousel-main"
+        //   style={{ display: "flex" }}
+        >
           <>
-            {/* {console.log("all filtered data", filteredData)}
-            {console.log("all watchlist data", watchlistData.length)} */}
-            {console.log(
+            {/* {console.log(
               "inside add to watchlist return",
               "isInWatchList",
               isInWatchList
-            )}
+            )} */}
             <WatchCards
               actualData={
                 selectedShowType.includes("All") ? watchlistData : filteredData
@@ -207,4 +218,4 @@ const AddToWatchList = () => {
   );
 };
 
-export default AddToWatchList;
+export default MobileAddToWatchList;

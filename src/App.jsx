@@ -44,6 +44,7 @@ import MobileNavbar from "./Components/Navbar/MobileNavbar";
 import MobileMenuDropDown from "./Components/Navbar/MobileMenuDropDown";
 import SciFiMain from "./Components/AllCategories/SciFiMain";
 import WatcDetailsMobile from "./Pages/WatchDetails/WatcDetailsMobile";
+import MobileAddToWatchList from "./Components/Watchlist/MobileAddToWatchList";
 // import { EpisodeNoContent } from "./EpisodeNoContent";
 
 function App() {
@@ -168,16 +169,24 @@ function App() {
 
           <Route element={<PrivateRoute />}>
             <Route path="/TVShow/:id" element={<VideoPlayer />} />
-            <Route path="/myStuff/Watchlist" element={<AddToWatchList />} />
+            {isMobile ? (
+              <Route
+                path="/myStuff/MobWatchlist"
+                element={<MobileAddToWatchList />}
+              />
+            ) : (
+              <Route path="/myStuff/Watchlist" element={<AddToWatchList />} />
+            )}
             <Route path="/manageprofiles" element={<Profiles />} />
             <Route path="/editProfile" element={<EditProfile />} />
             <Route path="/createNewPassword" element={<CreateNewPassword />} />
           </Route>
         </Routes>
       </BrowserRouter>
-      {!isLoginOrRegister && !window.location.pathname.includes("/TVShow") && (
+      {!isLoginOrRegister && <Footer />}
+      {/* {!isLoginOrRegister && !window.location.pathname.includes("/TVShow") && (
         <Footer />
-      )}
+      )} */}
       {/* <Footer /> */}
     </>
     // </EpisodeNoContent>

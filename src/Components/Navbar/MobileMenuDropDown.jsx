@@ -23,7 +23,7 @@ const items = [
       },
       {
         icon: <CgDisplayGrid />,
-        label: <a href="/myStuff/Watchlist">My Stuff</a>,
+        label: <a href="/myStuff/MobWatchlist">My Stuff</a>,
         key: "1-4",
       },
     ],

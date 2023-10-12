@@ -11,6 +11,7 @@ const WatchCardsDescription = ({
   isloggedIn,
   addtowatchlist,
   isInWatchList,
+  handleWatchList,
 }) => {
   const [isMobile, setIsMobile] = useState(false);
 
@@ -82,13 +83,13 @@ const WatchCardsDescription = ({
                 !addtowatchlist ||
                 !isInWatchList) ? (
                 <span>
-                  <AiOutlineCheck
+                  <PlusOutlined
                     className="home-plus-watchlist-btn "
                     onClick={() => handleWatchList(item._id)}
                   />
                 </span>
               ) : (
-                <PlusOutlined
+                <AiOutlineCheck
                   className="home-plus-watchlist-btn"
                   onClick={() => handleWatchList(item._id)}
                 />

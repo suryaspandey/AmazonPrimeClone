@@ -13,6 +13,7 @@ const WatchCardMain = ({
   isInWatchList,
   handleRemoveFromWatchList,
   actualData,
+  handleWatchList,
 }) => {
   const [isHovered, setIsHovered] = useState(false);
 
@@ -121,6 +122,7 @@ const WatchCardMain = ({
                   isInWatchList={isInWatchList}
                   handleRemoveFromWatchList={handleRemoveFromWatchList}
                   actualData={actualData}
+                  handleWatchList={handleWatchList}
                 />
               </div>
             </div>

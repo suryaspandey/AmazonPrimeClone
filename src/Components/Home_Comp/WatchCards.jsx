@@ -1,5 +1,5 @@
 import { PlusOutlined, MoreOutlined } from "@ant-design/icons";
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { BiVolumeMute } from "react-icons/bi";
 import { GoUnmute } from "react-icons/go";
 import { AiOutlineCheck, AiOutlineLeft, AiOutlineRight } from "react-icons/ai";
@@ -9,6 +9,7 @@ import WatchCardsDescription from "./WatchCardsDescription";
 import WatchCardsVideo from "./WatchCardsVideo";
 import WatchCardsImage from "./WatchCardsImage";
 import WatchCardMain from "./WatchCardMain";
+import MobileAddToWatchList from "../Watchlist/MobileAddToWatchList";
 
 const CARD_WIDTH = 250;
 const WatchCards = ({
@@ -43,7 +44,7 @@ const WatchCards = ({
       window.location.href = "/login";
       return;
     }
-    // console.log("Removing item with id:", id);
+
     const headers = {
       projectId: projectId,
       Authorization: `Bearer ${bearerToken}`,
@@ -61,18 +62,10 @@ const WatchCards = ({
     })
       .then((response) => response.json())
       .then((watchData) => {
-        // console.log("data data", watchData.data);
-
-        setWatchlistStatus(
-          (prevStatus) => ({
-            ...prevStatus,
-            [id]: !prevStatus[id],
-          }),
-          () => {
-            console.log("Updated watchlistStatus:", watchlistStatus);
-          }
-        );
-
+        setWatchlistStatus((prevStatus) => ({
+          ...prevStatus,
+          [id]: !prevStatus[id], // Toggle the status
+        }));
         setAddTowatchlist(true);
         handleRemoveFromWatchList(id);
       })
@@ -127,11 +120,23 @@ const WatchCards = ({
     }
   };
 
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 414);
+    };
+    handleResize();
+
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  });
+
   return (
     <>
-      {/* <div className={`cards-container ${className}`}> this classname is coming from CompleteShowList
-       to display the content in grid  */}
-
       <div
         className="wrapper-main mob-wrapper-main"
         style={{
@@ -212,6 +217,7 @@ const WatchCards = ({
                     isInWatchList={isInWatchList}
                     handleRemoveFromWatchList={handleRemoveFromWatchList}
                     actualData={actualData}
+                    handleWatchList={handleWatchList}
                   />
                 </div>
               ))}
@@ -230,6 +236,9 @@ const WatchCards = ({
           </div>
         </div>
       </div>
+
+      {/* <div className={`cards-container ${className}`}> this classname is coming from CompleteShowList
+       to display the content in grid  */}
     </>
   );
 };
