@@ -217,7 +217,7 @@ const WatchCards = ({
               ))}
             </ul>
           </div>
-          {/* <div
+          <div
             className={`slider-action right ${
               sliderPosition >= actualData.length - 2 ? "none" : ""
             } `}
@@ -227,7 +227,7 @@ const WatchCards = ({
               onClick={() => handleDirection("right")}
               style={{ color: "white", fontSize: "40px" }}
             />
-          </div> */}
+          </div>
         </div>
       </div>
     </>

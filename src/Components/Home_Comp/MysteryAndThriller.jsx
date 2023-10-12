@@ -81,12 +81,17 @@ const MysteryAndThriller = () => {
       </div>
       {/* )} */}
 
-      <div className="carousel-main" style={{ display: "flex" }}>
-        <WatchCards
-          // key={item._id}
-          actualData={myData}
-          projectId={projectId}
-        />
+      <div
+        className="carousel-main"
+        // style={{ display: "flex" }}
+      >
+        <div>
+          <WatchCards
+            // key={item._id}
+            actualData={myData}
+            projectId={projectId}
+          />
+        </div>
       </div>
     </>
   );

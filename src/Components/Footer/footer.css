@@ -50,4 +50,23 @@
   .footer-li a {
     font-size: 15px;
   }
+  .footer-container {
+    top: 150%;
+    position: absolute;
+    padding: 24px;
+  }
+}
+
+@media (max-width: 375px) {
+  .footer-container {
+    position: absolute;
+    top: 190%;
+  }
+}
+
+@media (max-width: 390px) {
+  .footer-container {
+    top: 155%;
+    position: absolute;
+  }
 }
