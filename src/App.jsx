@@ -52,6 +52,8 @@ function App() {
     window.location.pathname === "/login" ||
     window.location.pathname === "/register";
 
+  const isVideoPlayerPage = window.location.pathname.includes("/TVShow");
+
   // const [isLoginOrRegister, setIsLoginOrRegister] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
 
@@ -82,7 +84,9 @@ function App() {
     // <EpisodeNoContent>
     <>
       <BrowserRouter>
-        {!isLoginOrRegister && (isMobile ? <MobileNavbar /> : <Navigator />)}
+        {!isLoginOrRegister &&
+          !isVideoPlayerPage &&
+          (isMobile ? <MobileNavbar /> : <Navigator />)}
 
         <Routes>
           <Route>
@@ -171,7 +175,9 @@ function App() {
           </Route>
         </Routes>
       </BrowserRouter>
-      {!isLoginOrRegister && <Footer />}
+      {!isLoginOrRegister && !window.location.pathname.includes("/TVShow") && (
+        <Footer />
+      )}
       {/* <Footer /> */}
     </>
     // </EpisodeNoContent>
