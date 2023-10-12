@@ -225,7 +225,7 @@ export default function Home_Corousel() {
       ) : (
         <Top10Video showHeader={false} />
       )}
-      <RecommendedMovies />
+      {/* <RecommendedMovies /> */}
 
       <MysteryAndThriller />
       <SciFi />

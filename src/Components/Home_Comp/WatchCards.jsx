@@ -1,15 +1,10 @@
 import { PlusOutlined, MoreOutlined } from "@ant-design/icons";
 import { useEffect, useRef, useState } from "react";
-import { BiVolumeMute } from "react-icons/bi";
-import { GoUnmute } from "react-icons/go";
 import { AiOutlineCheck, AiOutlineLeft, AiOutlineRight } from "react-icons/ai";
-import { Link, useNavigate } from "react-router-dom";
-import { Tooltip } from "antd";
-import WatchCardsDescription from "./WatchCardsDescription";
-import WatchCardsVideo from "./WatchCardsVideo";
-import WatchCardsImage from "./WatchCardsImage";
+
 import WatchCardMain from "./WatchCardMain";
 import MobileAddToWatchList from "../Watchlist/MobileAddToWatchList";
+import { Link } from "react-router-dom";
 
 const CARD_WIDTH = 250;
 const WatchCards = ({
@@ -238,7 +233,7 @@ const WatchCards = ({
       </div>
 
       {/* <div className={`cards-container ${className}`}> this classname is coming from CompleteShowList
-       to display the content in grid  */}
+         to display the content in grid  */}
     </>
   );
 };
