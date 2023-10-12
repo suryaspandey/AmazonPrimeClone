@@ -1,5 +1,5 @@
 .banner-watchDetails-container {
-  padding-top: 10px;
+  /* padding-top: 10px; */
 }
 
 .watchDetails-img {
@@ -38,6 +38,7 @@
   color: white;
   top: 20%;
   z-index: 3;
+  left: 5%;
   /* background-color: red; */
 
   margin: 10px;
@@ -121,7 +122,7 @@
   z-index: 1;
 }
 
-.watchDetails-btn-option-container {
+.watchDetails-btn-options-container {
   display: flex;
   gap: 5px;
 }
@@ -234,14 +235,14 @@
   display: flex;
 }
 .episode-img img {
-  width: 100%;
-  height: 27vh;
+  width: 90%;
+  height: 24vh;
   border-radius: 20px;
 }
 
 .episode-date-duration {
   color: white;
-  font-size: 25px;
+  /* font-size: 25px; */
   display: flex;
   gap: 20px;
 }
@@ -263,8 +264,8 @@
   background-color: white;
   border-radius: 50%;
   position: absolute;
-  left: 40%;
-  top: 40%;
+  left: 35%;
+  top: 28%;
   padding: 10px;
 }
 
@@ -312,7 +313,7 @@
   gap: 15px;
 }
 
-@media (max-width: 415px) {
+/* @media (max-width: 415px) {
   .content-main {
     background-image: none;
   }
@@ -332,9 +333,7 @@
   .details-btns-container {
     flex-direction: column;
   }
-  /* .play-text {
-    display: none;
-  } */
+ 
   .home-play-btn-container-new {
     width: 100%;
   }
@@ -346,7 +345,6 @@
     gap: 10px;
     padding: 10px 0;
     background-color: #252424;
-    /* background-color: hsl(0deg 3.8% 35.65% / 88%); */
     border-radius: 8px;
   }
   .details-play-btn {
@@ -392,7 +390,6 @@
     outline: none;
     cursor: pointer;
     border-radius: 10px;
-    /* background-color: transparent; */
   }
   .imdb-details {
     padding-top: 0;
@@ -461,4 +458,4 @@
   .content-main {
     display: none;
   }
-}
+} */

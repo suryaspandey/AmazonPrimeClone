@@ -8,9 +8,9 @@ import { GiPartyPopper } from "react-icons/gi";
 import { HiOutlineShare } from "react-icons/hi";
 import { Tooltip } from "antd";
 import { Tabs, ConfigProvider } from "antd";
-import { Series_Episodes } from "../Components/Episodes/Series_Episodes";
-import { ShowDetails } from "../Components/ShowDetails/ShowDetails";
-import RelatedMovies from "../Components/Episodes/RelatedMovies";
+import { Series_Episodes } from "../../Components/Episodes/Series_Episodes";
+import { ShowDetails } from "../../Components/ShowDetails/ShowDetails";
+import RelatedMovies from "../../Components/Episodes/RelatedMovies";
 
 const WatchDetails = () => {
   let { id } = useParams();

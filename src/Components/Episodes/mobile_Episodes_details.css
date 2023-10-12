@@ -1,0 +1,47 @@
+.episodes-play-btn1 {
+  color: white;
+}
+.episodes-img-container1 {
+  display: flex !important;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.episode-date-duration1 {
+  display: flex !important;
+  color: white;
+  font-size: 11px;
+}
+.mob-episode-text-container {
+  margin-left: 5px;
+}
+.mob-ep-accordian-label {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ant-collapse
+  > .ant-collapse-item
+  > .ant-collapse-header
+  .ant-collapse-expand-icon {
+  display: none;
+}
+.episode-playbtn1 {
+  background-color: white;
+  font-size: 38px;
+  border-radius: 50%;
+}
+.mob-episode-header {
+  margin-left: 10px;
+  color: white;
+}
+.mob-episode-img {
+  height: 95px;
+  width: 170px;
+}
+
+.tabs-container1 .ant-tabs .ant-tabs-tab {
+  padding: 12px;
+  font-size: 16px;
+}

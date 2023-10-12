@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Tooltip } from "antd";
 import { PlusOutlined, MoreOutlined } from "@ant-design/icons";
 import { AiOutlineCheck } from "react-icons/ai";
@@ -12,6 +12,18 @@ const WatchCardsDescription = ({
   addtowatchlist,
   isInWatchList,
 }) => {
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 414);
+    };
+    window.addEventListener("resize", handleResize);
+
+    handleResize();
+    window.removeEventListener("resize", handleResize);
+  });
+
   const navigate = useNavigate();
   const handleTrailer = () => {
     // console.log(actualData[0].type);
@@ -36,7 +48,11 @@ const WatchCardsDescription = ({
         <p href="#" className="play-btn-link">
           <span className="home-play-btn-container-new ">
             <Link
-              to={`/watchDetails/${item._id}`}
+              to={
+                isMobile
+                  ? `/watchDetailsMob/${item._id}`
+                  : `/watchDetails/${item._id}`
+              }
               state={{
                 projectId: projectId,
               }}

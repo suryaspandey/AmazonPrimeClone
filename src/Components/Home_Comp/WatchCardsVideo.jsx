@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { BiVolumeMute } from "react-icons/bi";
 import { GoUnmute } from "react-icons/go";
 import { useNavigate } from "react-router";
@@ -19,12 +19,29 @@ const WatchCardsVideo = ({
 }) => {
   const [isMuted, setIsMuted] = useState(true);
   const [isVideoHovered, setIsVideoHovered] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 414);
+    };
+    window.addEventListener("resize", handleResize);
+
+    handleResize();
+    window.removeEventListener("resize", handleResize);
+  });
 
   return (
     <>
       {/* <div className="video-btns-container"> */}
 
-      <Link to={`/watchDetails/${item._id}`} state={{ projectId: projectId }}>
+      <Link
+        to={
+          isMobile
+            ? `/watchDetailsMob/${item._id}`
+            : `/watchDetails/${item._id}`
+        }
+      >
         <video
           style={{
             width: "100%",

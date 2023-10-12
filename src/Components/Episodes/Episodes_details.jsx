@@ -28,25 +28,23 @@ export const Episodes_details = ({ imgdata, episodeNo, id }) => {
 
           {isHovered && (
             <>
-              {/* {isPlayClicked && ( */}
               <BsPlayFill
                 className="episode-playbtn"
                 onClick={handleShowDetials}
               />
-              {/* )} */}
             </>
           )}
         </div>
 
         <div className="episodes-download-btn-container">
           <div className="episode-content">
-            <h1
-              style={{ color: "white" }}
-            >{`S1 E${episodeNo} - Episode ${episodeNo}`}</h1>
-            <span className="episode-date-duration">
-              <h4>September 14, 2023</h4>
-              <h4>45 min</h4>
-              <h4>A</h4>
+            <h2
+              style={{ color: "white", margin: "0px" }}
+            >{`S1 E${episodeNo} - Episode ${episodeNo}`}</h2>
+            <span className="episode-date-duration" style={{ margin: "5px" }}>
+              <h3 style={{ margin: "0px" }}>September 14, 2023</h3>
+              <h3 style={{ margin: "0px" }}>45 min</h3>
+              <h3 style={{ margin: "0px" }}>A</h3>
             </span>
             <div className="episode-details" style={{ color: "white" }}>
               <h4 style={{ color: "#aaa" }}>
@@ -69,6 +67,7 @@ export const Episodes_details = ({ imgdata, episodeNo, id }) => {
                 style={{
                   color: "white",
                   margin: "8px",
+                  fontSize: "16px",
                 }}
               >
                 Included with prime

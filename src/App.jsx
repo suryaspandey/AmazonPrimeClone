@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "./App.css";
 // import Home from "./Pages/Home";
-import WatchDetails from "./Pages/WatchDetails";
+import WatchDetails from "./Pages/WatchDetails/WatchDetails";
 import Navigator from "./Components/Navigator";
 import Home_Corousel from "./Components/Home_Comp/Home_Corousel";
 import { PlayShow } from "./Components/PlayShow/PlayShow";
@@ -43,6 +43,7 @@ import RomanceMain from "./Components/AllCategories/RomanceMain";
 import MobileNavbar from "./Components/Navbar/MobileNavbar";
 import MobileMenuDropDown from "./Components/Navbar/MobileMenuDropDown";
 import SciFiMain from "./Components/AllCategories/SciFiMain";
+import WatcDetailsMobile from "./Pages/WatchDetails/WatcDetailsMobile";
 // import { EpisodeNoContent } from "./EpisodeNoContent";
 
 function App() {
@@ -96,6 +97,12 @@ function App() {
             <Route path="/Home/KidsAll" element={<KidsAll />} />
 
             <Route path="/watchDetails/:id" element={<WatchDetails />} />
+            {isMobile && (
+              <Route
+                path="/watchDetailsMob/:id"
+                element={<WatcDetailsMobile />}
+              />
+            )}
             {/* <Route path="/TVShow/:id" element={<VideoPlayer />} /> */}
             <Route
               path="/CompleteShowList/:category"
@@ -164,8 +171,8 @@ function App() {
           </Route>
         </Routes>
       </BrowserRouter>
-      {/* {!isLoginOrRegister && <Footer />} */}
-      <Footer />
+      {!isLoginOrRegister && <Footer />}
+      {/* <Footer /> */}
     </>
     // </EpisodeNoContent>
   );

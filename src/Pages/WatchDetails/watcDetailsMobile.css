@@ -1,0 +1,105 @@
+/* .mobile-tv-movie-home {
+  display: none;
+} */
+.watchDetails-btn-options-container1 {
+  display: flex;
+  color: white;
+}
+.details-btns-container1 {
+  flex-direction: column;
+}
+.watchDetails-play-btn-container1 {
+  background-color: #353232;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5px;
+}
+
+.home-play-btn-container-new1 {
+  /* background-color: #252424; */
+  margin: 0 10px;
+  width: 100%;
+}
+
+.trailer-img1 {
+  background-color: #353232 !important;
+  height: 30px;
+  width: 30px;
+  padding: 5px;
+  border-radius: 50%;
+}
+
+.details-play-btn1 {
+  height: 40px;
+  width: 40px;
+  margin-right: 10px;
+  border-radius: 50%;
+}
+
+.play-text1 {
+  font-size: 15px;
+}
+.watchdetails-text-btn-content1 {
+  position: relative;
+}
+.more-purchase-options-btn1 {
+  font-size: 15px;
+  min-height: 45px;
+  width: 100%;
+  background-color: #353232;
+  color: white;
+  border: none;
+  margin-bottom: 5px;
+}
+.show-title1 {
+  font-size: 20px !important;
+  color: white;
+}
+.imdb-details1 {
+  font-size: 18px;
+  padding-top: 5px;
+  display: flex;
+  justify-content: space-around;
+  color: gray;
+}
+.show-description1 {
+  font-size: 15px;
+}
+.details-title-description {
+  width: 100%;
+}
+.genre1 ul {
+  font-size: 15px;
+  display: flex;
+  justify-content: space-around;
+}
+
+.included-with-prime-img-txt1 h5 {
+  font-size: 15px;
+}
+
+.tabs-container1 {
+  padding: 0;
+}
+
+.episodes-details-container1 {
+  padding: 0;
+}
+.watchDetails-img1 {
+  height: 100% !important;
+}
+.watchDetails-img1 img {
+  width: 100%;
+}
+
+.watchDetails-btn-options-container1 {
+  display: flex;
+  color: white;
+  align-items: center;
+  justify-content: space-around;
+}
+.banner-watchDetails-container1 {
+  padding: 0 10px;
+}
