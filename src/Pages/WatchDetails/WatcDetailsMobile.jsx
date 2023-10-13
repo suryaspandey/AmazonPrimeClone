@@ -26,6 +26,8 @@ const WatcDetailsMobile = () => {
   const [TVShowType, setTVShowType] = useState(false);
 
   const [isInWatchList, setIsInWatchList] = useState(false);
+  // const bearerToken = localStorage.getItem("bearer_token");
+  const projectId = "zxke0qiu2960";
 
   useEffect(() => {
     const fetchData = async () => {
@@ -155,11 +157,7 @@ const WatcDetailsMobile = () => {
     })
       .then((response) => response.json())
       .then((watchData) => {
-        console.log("mob watchdata", watchData);
-        // setWatchlistStatus((prevStatus) => ({
-        //   ...prevStatus,
-        //   [id]: !prevStatus[id], // Toggle the status
-        // }));
+        // console.log("mob watchdata", watchData);
 
         setIsInWatchList((prevStatus) => !prevStatus);
 
@@ -169,6 +167,12 @@ const WatcDetailsMobile = () => {
       .catch((error) => {
         console.error("Error:", error);
       });
+  };
+  const handleRemoveFromWatchList = (removedItem) => {
+    const updatedWatchList = watchlistData.filter(
+      (item) => item._id !== removedItem
+    );
+    setWatchlistData(updatedWatchList);
   };
   return (
     <div className="banner-watchDetails-container1">
@@ -212,22 +216,22 @@ const WatcDetailsMobile = () => {
               </span>
               <span className="home-play-btn-container-new trailer-span">
                 <span>
-                  {/* {isloggedIn && !isInWatchList ? (
-                      // !addtowatchlist ||
-                      // !isInWatchList
-                      <span>
-                        <PlusOutlined
-                          className="trailer-img1"
-                          onClick={() => handleWatchList}
-                        />
-                      </span>
-                    ) : (
-                      <AiOutlineCheck
+                  {(isloggedIn && !isInWatchList) ||
+                  !addtowatchlist ||
+                  !isInWatchList ? (
+                    <span>
+                      <AiOutlinePlus
                         className="trailer-img1"
-                        onClick={() => handleWatchList}
+                        onClick={handleWatchList}
                       />
-                    )} */}
-                  <AiOutlinePlus className="trailer-img1" />
+                    </span>
+                  ) : (
+                    <AiOutlineCheck
+                      className="trailer-img1"
+                      onClick={() => handleWatchList()}
+                    />
+                  )}
+                  {/* <AiOutlinePlus className="trailer-img1" /> */}
                   <p className="mob-watchdetails-tooltip-name">Watchlist</p>
                 </span>
               </span>

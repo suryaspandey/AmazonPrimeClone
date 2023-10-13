@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import "./watchdetils.css";
 import { BiMoviePlay } from "react-icons/bi";
-import { AiOutlinePlus } from "react-icons/ai";
+import { AiOutlineCheck, AiOutlinePlus } from "react-icons/ai";
 import { GoDownload } from "react-icons/go";
 import { GiPartyPopper } from "react-icons/gi";
 import { HiOutlineShare } from "react-icons/hi";
@@ -21,6 +21,14 @@ const WatchDetails = () => {
   const [activeTab, setActiveTab] = useState("1");
   const navigate = useNavigate();
   const [TVShowType, setTVShowType] = useState(false);
+  const [isInWatchList, setIsInWatchList] = useState(false);
+  const [addtowatchlist, setAddTowatchlist] = useState("false");
+
+  const bearerToken = localStorage.getItem("bearer_token");
+
+  const isAuthenticated = !!localStorage.getItem("bearer_token");
+  const [isloggedIn, setIsLoggedIn] = useState(isAuthenticated);
+  const projectId = "zxke0qiu2960";
 
   useEffect(() => {
     const fetchData = async () => {
@@ -111,6 +119,50 @@ const WatchDetails = () => {
   const handleShowDetials = () => {
     navigate(`/TVShow/${id}`);
   };
+
+  const watchlistUpdateAPI =
+    "https://academics.newtonschool.co/api/v1/ott/watchlist/like";
+  const handleWatchList = () => {
+    if (!isloggedIn) {
+      window.location.href = "/login";
+      return;
+    }
+
+    const headers = {
+      projectId: projectId,
+      Authorization: `Bearer ${bearerToken}`,
+      "Content-Type": "application/json",
+    };
+
+    const body = {
+      showId: details.data._id,
+    };
+
+    fetch(watchlistUpdateAPI, {
+      method: "PATCH",
+      headers: headers,
+      body: JSON.stringify(body),
+    })
+      .then((response) => response.json())
+      .then((watchData) => {
+        // console.log("mob watchdata", watchData);
+
+        setIsInWatchList((prevStatus) => !prevStatus);
+
+        setAddTowatchlist(true);
+        handleRemoveFromWatchList(id);
+      })
+      .catch((error) => {
+        console.error("Error:", error);
+      });
+  };
+  const handleRemoveFromWatchList = (removedItem) => {
+    const updatedWatchList = watchlistData.filter(
+      (item) => item._id !== removedItem
+    );
+    setWatchlistData(updatedWatchList);
+  };
+
   return (
     <div className="banner-watchDetails-container">
       {loading ? (
@@ -200,16 +252,28 @@ const WatchDetails = () => {
                   <Tooltip title="Trailer" placement="bottom" arrow={false}>
                     <span>
                       <BiMoviePlay className="trailer-img" />
-                      {/* <p style={{ color: "white" }}>Trailer</p> */}
                     </span>
                   </Tooltip>
-                  {/* <p style={{ color: "white" }}>Trailer</p> */}
                 </span>
                 <span className="home-play-btn-container-new trailer-span">
                   <Tooltip title="Watchlist" placement="bottom" arrow={false}>
                     <span>
-                      <AiOutlinePlus className="trailer-img" />
-                      {/* <p style={{ color: "white" }}>Trailer</p> */}
+                      {(isloggedIn && !isInWatchList) ||
+                      !addtowatchlist ||
+                      !isInWatchList ? (
+                        <span>
+                          <AiOutlinePlus
+                            className="trailer-img"
+                            onClick={handleWatchList}
+                          />
+                        </span>
+                      ) : (
+                        <AiOutlineCheck
+                          className="trailer-img"
+                          onClick={() => handleWatchList()}
+                        />
+                      )}
+                      {/* <AiOutlinePlus className="trailer-img1" /> */}
                     </span>
                   </Tooltip>
                 </span>
@@ -217,7 +281,6 @@ const WatchDetails = () => {
                   <Tooltip title="Download" placement="bottom" arrow={false}>
                     <span>
                       <GoDownload className="trailer-img" />
-                      {/* <p style={{ color: "white" }}>Trailer</p> */}
                     </span>
                   </Tooltip>
                 </span>
@@ -225,7 +288,6 @@ const WatchDetails = () => {
                   <Tooltip title="Watch Party" placement="bottom" arrow={false}>
                     <span>
                       <GiPartyPopper className="trailer-img" />
-                      {/* <p style={{ color: "white" }}>Trailer</p> */}
                     </span>
                   </Tooltip>
                 </span>
@@ -233,7 +295,6 @@ const WatchDetails = () => {
                   <Tooltip title="Share" placement="bottom" arrow={false}>
                     <span>
                       <HiOutlineShare className="trailer-img" />
-                      {/* <p style={{ color: "white" }}>Trailer</p> */}
                     </span>
                   </Tooltip>
                 </span>
