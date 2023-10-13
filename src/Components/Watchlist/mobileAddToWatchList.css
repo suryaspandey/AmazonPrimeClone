@@ -1,0 +1,15 @@
+.addtoWatchlist-three-dots .ant-btn-primary {
+  background-color: transparent;
+  padding: 0;
+}
+
+.addtoWatchlist-three-dots .ant-btn-primary:enabled {
+  background-color: transparent;
+}
+.ant-modal-content {
+  height: 100px !important;
+  width: 100% !important;
+  position: absolute !important;
+  bottom: 0px;
+  background-color: #232424;
+}

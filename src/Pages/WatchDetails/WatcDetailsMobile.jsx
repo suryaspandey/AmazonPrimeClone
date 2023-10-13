@@ -205,17 +205,14 @@ const WatcDetailsMobile = () => {
             {/* </span> */}
             <div className="watchDetails-btn-options-container1">
               <span className="home-play-btn-container-new trailer-span">
-                <Tooltip title="Trailer" placement="bottom" arrow={false}>
-                  <span>
-                    <BiMoviePlay className="trailer-img1" />
-                    <p className="mob-watchdetails-tooltip-name">Trailer</p>
-                  </span>
-                </Tooltip>
+                <span>
+                  <BiMoviePlay className="trailer-img1" />
+                  <p className="mob-watchdetails-tooltip-name">Trailer</p>
+                </span>
               </span>
               <span className="home-play-btn-container-new trailer-span">
-                <Tooltip title="Watchlist" placement="bottom" arrow={false}>
-                  <span>
-                    {/* {isloggedIn && !isInWatchList ? (
+                <span>
+                  {/* {isloggedIn && !isInWatchList ? (
                       // !addtowatchlist ||
                       // !isInWatchList
                       <span>
@@ -230,34 +227,27 @@ const WatcDetailsMobile = () => {
                         onClick={() => handleWatchList}
                       />
                     )} */}
-                    <AiOutlinePlus className="trailer-img1" />
-                    <p className="mob-watchdetails-tooltip-name">Watchlist</p>
-                  </span>
-                </Tooltip>
+                  <AiOutlinePlus className="trailer-img1" />
+                  <p className="mob-watchdetails-tooltip-name">Watchlist</p>
+                </span>
               </span>
               <span className="home-play-btn-container-new trailer-span">
-                <Tooltip title="Download" placement="bottom" arrow={false}>
-                  <span>
-                    <GoDownload className="trailer-img1" />
-                    <p className="mob-watchdetails-tooltip-name">Download</p>
-                  </span>
-                </Tooltip>
+                <span>
+                  <GoDownload className="trailer-img1" />
+                  <p className="mob-watchdetails-tooltip-name">Download</p>
+                </span>
               </span>
               <span className="home-play-btn-container-new trailer-span">
-                <Tooltip title="Watch Party" placement="bottom" arrow={false}>
-                  <span>
-                    <GiPartyPopper className="trailer-img1" />
-                    <p className="mob-watchdetails-tooltip-name">Watch Party</p>
-                  </span>
-                </Tooltip>
+                <span>
+                  <GiPartyPopper className="trailer-img1" />
+                  <p className="mob-watchdetails-tooltip-name">Watch Party</p>
+                </span>
               </span>
               <span className="home-play-btn-container-new trailer-span">
-                <Tooltip title="Share" placement="bottom" arrow={false}>
-                  <span>
-                    <HiOutlineShare className="trailer-img1" />
-                    <p className="mob-watchdetails-tooltip-name">Share</p>
-                  </span>
-                </Tooltip>
+                <span>
+                  <HiOutlineShare className="trailer-img1" />
+                  <p className="mob-watchdetails-tooltip-name">Share</p>
+                </span>
               </span>
             </div>
           </div>

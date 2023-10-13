@@ -73,31 +73,17 @@ export const CompleteShowList = () => {
                   style={{
                     display: "flex",
                     alignItems: "center",
-                    // justifyContent: "center",
                     gap: "5px",
                   }}
                 >
-                  <div
-                    className="mob-showlist-img-container"
-                    // style={{
-                    //   height: "100px",
-                    //   width: "178px",
-                    // }}
-                  >
+                  <div className="mob-showlist-img-container">
                     <Link
                       to={`/watchDetailsMob/${item._id}`}
                       state={{ projectId: projectId }}
                     >
                       {console.log("item.thumbnail", item.thumbnail)}
                       <img
-                        // className="banner-img"
                         src={item.thumbnail}
-                        // style={{
-                        //   width: "100%",
-                        //   height: "100%",
-                        //   zIndex: 10,
-                        //   borderRadius: "0.2rem",
-                        // }}
                         style={{
                           height: "100px",
                           width: "178px",
@@ -267,33 +253,20 @@ export const CompleteShowList = () => {
         )}
       </div> */}
       <div className="complete-showList-container">
-        {/* <div className="complete-show-list-grid"> */}
-        {/* <div className="show-container"> */}
         <div className="show-name">
           <h1
             style={{ color: "white", padding: "36px 24px" }}
           >{`${showType.category} movies`}</h1>
         </div>
       </div>
-      {/* <div className="carousel-main"> */}
+
       <div>
         <WatchCards
           actualData={myData}
           projectId={projectId}
-          // className="complete-cards-main"
           className="seeMoreList"
         />
-        {/* </div> */}
       </div>
-      {/* </div> */}
-      {/* </div> */}
-      <>
-        {/* <div className="complete-watchcards-list-container">
-          <div className="complete-watchcardimg-video-container">
-
-          </div>
-      </div> */}
-      </>
     </>
   );
 };

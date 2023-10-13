@@ -5,6 +5,9 @@ import "./mobileAddToWatchList.css";
 import { DownOutlined } from "@ant-design/icons";
 import { Dropdown, Space } from "antd";
 import { MdKeyboardArrowDown, MdKeyboardArrowUp } from "react-icons/md";
+import { Link } from "react-router-dom";
+import { PiDotsThreeVerticalBold } from "react-icons/pi";
+import WatchListModal from "./WatchListModal";
 
 const MobileAddToWatchList = () => {
   const [isMobile, setIsMobile] = useState(false);
@@ -12,8 +15,14 @@ const MobileAddToWatchList = () => {
   const [isInWatchList, setIsInWatchList] = useState(false);
   const [selectedShowType, setSelectedShowType] = useState("All");
   const [showDownArrow, setShowDownArrow] = useState(true);
-  // const [filteredData, setFilteredData] = useState([]);
-  // const [sortedData, setSortedData] = useState([]);
+
+  const [isMOdal, setIsModal] = useState(false);
+
+  const [selectedItem, setSelectedItem] = useState(null);
+
+  const handleModal = () => {
+    setIsModal(!isMOdal);
+  };
 
   // const [loading, setLoading] = useState(true);
   useEffect(() => {
@@ -40,7 +49,21 @@ const MobileAddToWatchList = () => {
   const watchListAPI =
     "https://academics.newtonschool.co/api/v1/ott/watchlist/like";
 
-  //   s
+  useEffect(() => {
+    const headers = {
+      projectId: projectId,
+      Authorization: `Bearer ${bearerToken}`,
+    };
+
+    fetch(watchListAPI, { method: "GET", headers: headers, redirect: "follow" })
+      .then((response) => response.json())
+      .then((result) => {
+        setWatchlistData(result.data.shows);
+        setIsInWatchList(true);
+      })
+
+      .catch((error) => console.log("error", error));
+  }, []);
 
   const handleRemoveFromWatchList = (removedItem) => {
     const updatedWatchList = watchlistData.filter(
@@ -59,7 +82,6 @@ const MobileAddToWatchList = () => {
     let filteredData = [];
     if (showTypes.includes("All")) {
       filteredData = [...watchlistData];
-      // console.log("all filtered data for ALL", filteredData);
     } else {
       filteredData = watchlistData.filter((item) =>
         showTypes.includes(item.type)
@@ -193,24 +215,252 @@ const MobileAddToWatchList = () => {
         </div>
       </div>
       {isloggedIn && (
-        <div
-        //   className="carousel-main"
-        //   style={{ display: "flex" }}
-        >
+        <div>
           <>
-            {/* {console.log(
-              "inside add to watchlist return",
-              "isInWatchList",
-              isInWatchList
-            )} */}
-            <WatchCards
-              actualData={
-                selectedShowType.includes("All") ? watchlistData : filteredData
-              }
-              projectId={projectId}
-              handleRemoveFromWatchList={handleRemoveFromWatchList}
-              isInWatchList={isInWatchList}
-            />
+            <>
+              <div className="mob-watchdetails-main">
+                <ul>
+                  {selectedShowType.includes("All")
+                    ? watchlistData.map((item) => {
+                        return (
+                          <div
+                            className="mob-all-watchcards"
+                            style={{
+                              display: "flex",
+                              alignItems: "center",
+                              gap: "5px",
+                            }}
+                          >
+                            <div className="mob-showlist-img-container">
+                              <Link
+                                to={`/watchDetailsMob/${item._id}`}
+                                state={{ projectId: projectId }}
+                              >
+                                {console.log("item.thumbnail", item.thumbnail)}
+                                <img
+                                  src={item.thumbnail}
+                                  style={{
+                                    height: "100px",
+                                    width: "178px",
+                                    borderRadius: "8px",
+                                  }}
+                                />
+                              </Link>
+                            </div>
+
+                            <div className="mob-watchCardsDescriptions">
+                              <h4
+                                className="continue-watching-title"
+                                style={{ padding: "0 10px", fontSize: "13px" }}
+                              >
+                                {item.title}
+                              </h4>
+                              <div
+                                className="continue-watching-year-UA"
+                                style={{
+                                  fontSize: "13px",
+                                  padding: "10px",
+                                  gap: "15px",
+                                }}
+                              >
+                                <h4
+                                  className="continue-watching-title "
+                                  style={{ color: "grey" }}
+                                >
+                                  {parseInt(item?.createdAt?.split("-")[0]) -
+                                    Math.floor(Math.random() * 10) +
+                                    1}
+                                </h4>
+                                <h4 className="continue-watching-title">
+                                  2h 6min
+                                </h4>
+                                <div className="UA-num">
+                                  <h3 style={{ fontSize: "14px" }}>U/A 16+</h3>
+                                </div>
+                                <div className="addtoWatchlist-three-dots">
+                                  {
+                                    <WatchListModal
+                                      selectedItem={item}
+                                      handleRemoveFromWatchList={
+                                        handleRemoveFromWatchList
+                                      }
+                                      watchlistData={watchlistData}
+                                      setWatchlistData={setWatchlistData}
+                                    />
+                                  }
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        );
+                      })
+                    : filteredData.map((item) => {
+                        return (
+                          <div
+                            className="mob-all-watchcards"
+                            style={{
+                              display: "flex",
+                              alignItems: "center",
+                              gap: "5px",
+                            }}
+                          >
+                            <div className="mob-showlist-img-container">
+                              <Link
+                                to={`/watchDetailsMob/${item._id}`}
+                                state={{ projectId: projectId }}
+                              >
+                                {console.log("item.thumbnail", item.thumbnail)}
+                                <img
+                                  src={item.thumbnail}
+                                  style={{
+                                    height: "100px",
+                                    width: "178px",
+                                    borderRadius: "8px",
+                                  }}
+                                />
+                              </Link>
+                            </div>
+
+                            <div className="mob-watchCardsDescriptions">
+                              {/* <div className="play-btn-text">
+                      <p href="#" className="play-btn-link">
+                        <span className="home-play-btn-container-new ">
+                          <Link
+                            to={
+                              // isMobile
+                              // ?
+                              `/watchDetailsMob/${item._id}`
+                              // : `/watchDetails/${item._id}`
+                            }
+                            state={{
+                              projectId: projectId,
+                            }}
+                          >
+                            <img
+                              className="home-play-btn home-play-btn-new"
+                              src="/play-btn.PNG"
+                              alt="play button"
+                              width={265}
+                            />
+                          </Link>
+                        </span>
+                        <span
+                          className="play-text"
+                          style={{
+                            color: "white",
+                          }}
+                        >
+                          Resume
+                        </span>
+                      </p>
+                      <div className="watchlist-details-container">
+                        <button className="watchlist-btn continue-watching-btn">
+                          <Tooltip
+                            title="Watchlist"
+                            placement="bottom"
+                            arrow={false}
+                          >
+                            {isloggedIn &&
+                            (watchlistStatus[item._id] ||
+                              !addtowatchlist ||
+                              !isInWatchList) ? (
+                              <span>
+                                <PlusOutlined
+                                  className="home-plus-watchlist-btn "
+                                  onClick={() => handleWatchList(item._id)}
+                                />
+                              </span>
+                            ) : (
+                              <AiOutlineCheck
+                                className="home-plus-watchlist-btn"
+                                onClick={() => handleWatchList(item._id)}
+                              />
+                            )}
+                          </Tooltip>
+                        </button>
+                        <button className="watchlist-btn continue-watching-btn">
+                          <Tooltip
+                            onClick={() => {
+                              handleTrailer();
+                            }}
+                            title="Trailer"
+                            placement="bottom"
+                            arrow={false}
+                          >
+                            <MoreOutlined className="home-plus-watchlist-btn" />
+                          </Tooltip>
+                        </button>
+                      </div>
+                    </div> */}
+                              <h4
+                                className="continue-watching-title"
+                                style={{ padding: "0 10px", fontSize: "13px" }}
+                              >
+                                {item.title}
+                              </h4>
+                              <div
+                                className="continue-watching-year-UA"
+                                style={{
+                                  fontSize: "13px",
+                                  padding: "10px",
+                                  gap: "15px",
+                                }}
+                              >
+                                <h4
+                                  className="continue-watching-title "
+                                  style={{ color: "grey" }}
+                                >
+                                  {parseInt(item?.createdAt?.split("-")[0]) -
+                                    Math.floor(Math.random() * 10) +
+                                    1}
+                                </h4>
+                                <h4 className="continue-watching-title">
+                                  2h 6min
+                                </h4>
+                                <div className="UA-num">
+                                  <h3 style={{ fontSize: "14px" }}>U/A 16+</h3>
+                                </div>
+                                <div className="addtoWatchlist-three-dots">
+                                  {
+                                    <WatchListModal
+                                      selectedItem={item}
+                                      handleRemoveFromWatchList={
+                                        handleRemoveFromWatchList
+                                      }
+                                      watchlistData={watchlistData}
+                                      setWatchlistData={setWatchlistData}
+                                    />
+                                  }
+                                </div>
+                              </div>
+
+                              {/* {isMOdal && <WatchListModal />} */}
+                              {/* <div
+                      className="continue-watching-description "
+                      style={{
+                        overflow: "hidden",
+                        textOverflow: "ellipsis",
+                      }}
+                    >
+                      <h4
+                        style={{
+                          textAlign: "left",
+                          fontSize: "14px",
+                          paddingLeft: "7px",
+
+                          margin: "3px",
+                        }}
+                      >
+                        {item.description}
+                      </h4>
+                    </div> */}
+                            </div>
+                          </div>
+                        );
+                      })}
+                </ul>
+              </div>
+            </>
           </>
         </div>
       )}
