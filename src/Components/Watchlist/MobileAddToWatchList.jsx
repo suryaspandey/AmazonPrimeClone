@@ -142,7 +142,7 @@ const MobileAddToWatchList = () => {
   return (
     <div style={{ height: "100vh" }}>
       <div className="watchlist-header-container">
-        <h1 className="addTowatchlist-heading">Watchlist im Mob</h1>
+        {/* <h1 className="addTowatchlist-heading">Watchlist im Mob</h1> */}
         <div className="buttons-recent-addition-container">
           <div className="watchlist-btns-container">
             <button

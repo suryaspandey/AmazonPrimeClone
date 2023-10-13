@@ -1,15 +1,37 @@
 .addtoWatchlist-three-dots .ant-btn-primary {
-  background-color: transparent;
-  padding: 0;
+  background-color: transparent !important;
+  padding: 4px 0 !important;
 }
 
-.addtoWatchlist-three-dots .ant-btn-primary:enabled {
+/* .addtoWatchlist-three-dots .ant-btn-primary:enabled {
   background-color: transparent;
-}
-.ant-modal-content {
+} */
+.mobile-watchlist-modal .ant-modal-content {
   height: 100px !important;
   width: 100% !important;
   position: absolute !important;
   bottom: 0px;
-  background-color: #232424;
+  /* background-color: #232424; */
+  background-color: #595d5d;
+}
+.mobile-watchlist-modal .ant-modal-title {
+  background-color: #595d5d;
+  color: white;
+}
+
+.mobile-watchlist-modal .ant-modal-footer {
+  display: none;
+}
+
+.mobile-watchlist-modal .ant-btn {
+  padding: 4px 0;
+}
+
+.watchlist-delete-container {
+  background-color: transparent;
+  color: white;
+  gap: 10px;
+  width: 100%;
+  display: flex;
+  align-items: center;
 }

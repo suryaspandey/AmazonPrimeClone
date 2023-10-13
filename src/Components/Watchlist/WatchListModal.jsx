@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Button, Modal } from "antd";
 import { RiDeleteBin6Line } from "react-icons/ri";
 import { PiDotsThreeVerticalBold } from "react-icons/pi";
+import "./watchlistMOdal.css";
 const WatchListModal = ({
   selectedItem,
   handleRemoveFromWatchList,
@@ -10,13 +11,6 @@ const WatchListModal = ({
 }) => {
   const [open, setOpen] = useState(false);
 
-  //   const handleRemove = () => {
-  //     handleRemoveFromWatchList(selectedItem._id);
-  //     const updatedWatchList = watchlistData.filter(
-  //       (item) => item._id !== selectedItem._id
-  //     );
-  //     setWatchlistData(updatedWatchList);
-  //   };
   const bearerToken = localStorage.getItem("bearer_token");
   const handleRemove = () => {
     fetch("https://academics.newtonschool.co/api/v1/ott/watchlist/like", {
@@ -47,20 +41,21 @@ const WatchListModal = ({
         <PiDotsThreeVerticalBold style={{ color: "white", fontSize: "20px" }} />
       </Button>
       <Modal
+        className="mobile-watchlist-modal"
         title="Your Watchlist"
         centered
         open={open}
         onOk={() => setOpen(false)}
         onCancel={() => setOpen(false)}
         // width={1000}
-        style={{
-          height: "100vh",
-          bottom: "100px",
-          position: "absolute",
-          left: "0px",
-          right: "0px",
-          //   top: "0px",
-        }}
+        // style={{
+        //   height: "100vh",
+        //   bottom: "100px",
+        //   position: "absolute",
+        //   left: "0px",
+        //   right: "0px",
+        //   //   top: "0px",
+        // }}
       >
         <button
           className="watchlist-delete-container"
