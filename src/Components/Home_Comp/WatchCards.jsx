@@ -129,7 +129,60 @@ const WatchCards = ({
       window.removeEventListener("resize", handleResize);
     };
   });
-
+  if (className === "seeMoreList") {
+    return (
+      <>
+        <h1 style={{ color: "white" }}>{`${className}  is the classname`}</h1>
+        <div
+          style={{
+            // display: "flex",
+            gap: "1rem",
+            position: "relative", //-->
+            padding: "1rem 0",
+          }}
+          showControls={showControls}
+          onMouseEnter={() => setShowControls(true)}
+          onMouseLeave={() => setShowControls(false)}
+          // className={`cards-container ${className}`}
+        >
+          <div>
+            {console.log("classname recieved", className)}
+            <ul
+              className={`${className}`}
+              style={{
+                // new
+                display: "grid",
+                gridTemplateColumns: "repeat(auto-fill, minmax(250px, 1fr))",
+                gap: "10px",
+              }}
+            >
+              {actualData.map((item, index) => (
+                <div
+                  className={`actual-card ${className}`}
+                  key={item._id}
+                  style={{
+                    overflow: "visible",
+                  }}
+                >
+                  <WatchCardMain
+                    item={item}
+                    projectId={projectId}
+                    watchlistStatus={watchlistStatus}
+                    isloggedIn={isloggedIn}
+                    addtowatchlist={addtowatchlist}
+                    isInWatchList={isInWatchList}
+                    handleRemoveFromWatchList={handleRemoveFromWatchList}
+                    actualData={actualData}
+                    handleWatchList={handleWatchList}
+                  />
+                </div>
+              ))}
+            </ul>
+          </div>
+        </div>
+      </>
+    );
+  }
   return (
     <>
       <div

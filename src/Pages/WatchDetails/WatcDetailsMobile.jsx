@@ -5,11 +5,13 @@ import { useNavigate, useParams } from "react-router";
 import RelatedMovies from "../../Components/Episodes/RelatedMovies";
 import { Tooltip } from "antd";
 import { BiMoviePlay } from "react-icons/bi";
-import { AiOutlinePlus } from "react-icons/ai";
+import { AiOutlineCheck, AiOutlinePlus } from "react-icons/ai";
 import { GoDownload } from "react-icons/go";
 import { GiPartyPopper } from "react-icons/gi";
 import { HiOutlineShare } from "react-icons/hi";
 import { Tabs, ConfigProvider } from "antd";
+// import { PlusOutlined } from "react-icons/pi"
+import { PlusOutlined, MoreOutlined } from "@ant-design/icons";
 import "./watcDetailsMobile.css";
 import Mobile_Episodes_details from "../../Components/Episodes/Mobile_Episodes_details";
 
@@ -22,6 +24,8 @@ const WatcDetailsMobile = () => {
   const [activeTab, setActiveTab] = useState("1");
   const navigate = useNavigate();
   const [TVShowType, setTVShowType] = useState(false);
+
+  const [isInWatchList, setIsInWatchList] = useState(false);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -112,6 +116,60 @@ const WatcDetailsMobile = () => {
   const handleShowDetials = () => {
     navigate(`/TVShow/${id}`);
   };
+  const isAuthenticated = !!localStorage.getItem("bearer_token");
+  const [isloggedIn, setIsLoggedIn] = useState(isAuthenticated);
+  const [addtowatchlist, setAddTowatchlist] = useState("false");
+
+  // const [watchlistStatus, setWatchlistStatus] = useState(() => {
+  //   const initialStatus = {};
+  //   actualData.forEach((item) => {
+  //     initialStatus[item._id] = false;
+  //   });
+  //   return initialStatus;
+  // });
+
+  const watchlistUpdateAPI =
+    "https://academics.newtonschool.co/api/v1/ott/watchlist/like";
+  const bearerToken = localStorage.getItem("bearer_token");
+
+  const handleWatchList = () => {
+    if (!isloggedIn) {
+      window.location.href = "/login";
+      return;
+    }
+
+    const headers = {
+      projectId: projectId,
+      Authorization: `Bearer ${bearerToken}`,
+      "Content-Type": "application/json",
+    };
+
+    const body = {
+      showId: details.data._id,
+    };
+
+    fetch(watchlistUpdateAPI, {
+      method: "PATCH",
+      headers: headers,
+      body: JSON.stringify(body),
+    })
+      .then((response) => response.json())
+      .then((watchData) => {
+        console.log("mob watchdata", watchData);
+        // setWatchlistStatus((prevStatus) => ({
+        //   ...prevStatus,
+        //   [id]: !prevStatus[id], // Toggle the status
+        // }));
+
+        setIsInWatchList((prevStatus) => !prevStatus);
+
+        setAddTowatchlist(true);
+        handleRemoveFromWatchList(id);
+      })
+      .catch((error) => {
+        console.error("Error:", error);
+      });
+  };
   return (
     <div className="banner-watchDetails-container1">
       {loading ? (
@@ -138,10 +196,7 @@ const WatcDetailsMobile = () => {
                 {isPlayBtnClicked && handleShowDetials()}
               </div>
             </span>
-            {/* <span className="play-text " style={{ color: "white" }}>
-                      Play
-                    </span> */}
-            {/* <span> */}
+
             <div className="more-purchase-options1">
               <button className="more-purchase-options-btn1">
                 More Purchase Options
@@ -153,16 +208,30 @@ const WatcDetailsMobile = () => {
                 <Tooltip title="Trailer" placement="bottom" arrow={false}>
                   <span>
                     <BiMoviePlay className="trailer-img1" />
-                    {/* <p style={{ color: "white" }}>Trailer</p> */}
+                    <p className="mob-watchdetails-tooltip-name">Trailer</p>
                   </span>
                 </Tooltip>
-                {/* <p style={{ color: "white" }}>Trailer</p> */}
               </span>
               <span className="home-play-btn-container-new trailer-span">
                 <Tooltip title="Watchlist" placement="bottom" arrow={false}>
                   <span>
+                    {/* {isloggedIn && !isInWatchList ? (
+                      // !addtowatchlist ||
+                      // !isInWatchList
+                      <span>
+                        <PlusOutlined
+                          className="trailer-img1"
+                          onClick={() => handleWatchList}
+                        />
+                      </span>
+                    ) : (
+                      <AiOutlineCheck
+                        className="trailer-img1"
+                        onClick={() => handleWatchList}
+                      />
+                    )} */}
                     <AiOutlinePlus className="trailer-img1" />
-                    {/* <p style={{ color: "white" }}>Trailer</p> */}
+                    <p className="mob-watchdetails-tooltip-name">Watchlist</p>
                   </span>
                 </Tooltip>
               </span>
@@ -170,7 +239,7 @@ const WatcDetailsMobile = () => {
                 <Tooltip title="Download" placement="bottom" arrow={false}>
                   <span>
                     <GoDownload className="trailer-img1" />
-                    {/* <p style={{ color: "white" }}>Trailer</p> */}
+                    <p className="mob-watchdetails-tooltip-name">Download</p>
                   </span>
                 </Tooltip>
               </span>
@@ -178,7 +247,7 @@ const WatcDetailsMobile = () => {
                 <Tooltip title="Watch Party" placement="bottom" arrow={false}>
                   <span>
                     <GiPartyPopper className="trailer-img1" />
-                    {/* <p style={{ color: "white" }}>Trailer</p> */}
+                    <p className="mob-watchdetails-tooltip-name">Watch Party</p>
                   </span>
                 </Tooltip>
               </span>
@@ -186,7 +255,7 @@ const WatcDetailsMobile = () => {
                 <Tooltip title="Share" placement="bottom" arrow={false}>
                   <span>
                     <HiOutlineShare className="trailer-img1" />
-                    {/* <p style={{ color: "white" }}>Trailer</p> */}
+                    <p className="mob-watchdetails-tooltip-name">Share</p>
                   </span>
                 </Tooltip>
               </span>

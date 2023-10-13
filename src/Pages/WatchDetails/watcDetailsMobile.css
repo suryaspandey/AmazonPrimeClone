@@ -103,3 +103,9 @@
 .banner-watchDetails-container1 {
   padding: 0 10px;
 }
+
+.mob-watchdetails-tooltip-name {
+  color: white;
+  margin: 0px;
+  font-size: 13px;
+}
