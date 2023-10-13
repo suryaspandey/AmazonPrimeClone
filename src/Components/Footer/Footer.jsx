@@ -15,7 +15,7 @@ const Footer = () => {
   return (
     <>
       {!isMobile && (
-        <div className="emptypadding" style={{ paddingTop: "140px" }}></div>
+        <div className="emptypadding" style={{ paddingTop: "180px" }}></div>
       )}
       <div className="footer-container" style={{ padding: "24px" }}>
         <div className="footer-img">

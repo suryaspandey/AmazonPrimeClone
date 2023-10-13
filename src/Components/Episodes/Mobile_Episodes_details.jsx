@@ -89,9 +89,9 @@ const Mobile_Episodes_details = ({ imgdata, id }) => {
               className="mob-episode-text-container"
               style={{ marginLeft: "5px" }}
             >
-              <p style={{ color: "white" }}>{`S1 E${1} - Episode ${1}`}</p>
+              <p style={{ color: "white" }}>{`S1 E${2} - Episode ${2}`}</p>
               <span className="episode-date-duration1">
-                <p>September 14, 2023</p>
+                <p>September 24, 2023</p>
                 <p>45 min</p>
                 <p>A</p>
               </span>

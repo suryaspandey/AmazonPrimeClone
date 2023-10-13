@@ -183,15 +183,10 @@ const AddToWatchList = () => {
         </div>
       </div>
       {isloggedIn && (
-        <div className="carousel-main" style={{ display: "flex" }}>
+        <div
+        // className="carousel-main" style={{ display: "flex" }}
+        >
           <>
-            {/* {console.log("all filtered data", filteredData)}
-            {console.log("all watchlist data", watchlistData.length)} */}
-            {console.log(
-              "inside add to watchlist return",
-              "isInWatchList",
-              isInWatchList
-            )}
             <WatchCards
               actualData={
                 selectedShowType.includes("All") ? watchlistData : filteredData
@@ -199,6 +194,7 @@ const AddToWatchList = () => {
               projectId={projectId}
               handleRemoveFromWatchList={handleRemoveFromWatchList}
               isInWatchList={isInWatchList}
+              className="seeMoreList"
             />
           </>
         </div>

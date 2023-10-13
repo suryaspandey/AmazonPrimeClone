@@ -12,10 +12,10 @@
   position: absolute !important;
   bottom: 0px;
   /* background-color: #232424; */
-  background-color: #595d5d;
+  background-color: #191e25;
 }
 .mobile-watchlist-modal .ant-modal-title {
-  background-color: #595d5d;
+  background-color: #191e25;
   color: white;
 }
 
@@ -25,6 +25,10 @@
 
 .mobile-watchlist-modal .ant-btn {
   padding: 4px 0;
+}
+
+.mobile-watchlist-modal .ant-modal-close-x {
+  color: white;
 }
 
 .watchlist-delete-container {

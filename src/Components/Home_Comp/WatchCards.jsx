@@ -132,7 +132,7 @@ const WatchCards = ({
   if (className === "seeMoreList") {
     return (
       <>
-        <h1 style={{ color: "white" }}>{`${className}  is the classname`}</h1>
+        {/* <h1 style={{ color: "white" }}>{`${className}  is the classname`}</h1> */}
         <div
           style={{
             // display: "flex",
