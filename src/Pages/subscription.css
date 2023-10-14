@@ -1,5 +1,5 @@
 .subscription-cards-container {
-  padding: 0 20px;
+  padding: 70px 20px;
   background: linear-gradient(
     90deg,
     rgba(0, 5, 13, 0.8) 19.65%,
@@ -83,4 +83,26 @@
   flex-direction: column;
   grid-column: 1/12;
   justify-content: center;
+}
+
+@media (max-width: 415px) {
+  /* .subscription-carousel-img {
+    padding-top: 150px;
+  } */
+
+  .subscription-prime-benefits-img {
+    height: 132px;
+    width: 237px;
+    border-radius: 8px;
+  }
+  .carousel-main-subs {
+    padding: 0 30px;
+  }
+
+  .subscription-carousel .ant-carousel .slick-slider {
+    height: 220px;
+  }
+  .subscription-cards-container {
+    padding: 10px 20px;
+  }
 }
