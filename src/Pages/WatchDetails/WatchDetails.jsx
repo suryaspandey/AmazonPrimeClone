@@ -11,6 +11,8 @@ import { Tabs, ConfigProvider } from "antd";
 import { Series_Episodes } from "../../Components/Episodes/Series_Episodes";
 import { ShowDetails } from "../../Components/ShowDetails/ShowDetails";
 import RelatedMovies from "../../Components/Episodes/RelatedMovies";
+import MobileWatchCard from "../../Components/Watchlist/MobileWatchCard";
+import WatcDetailsMobile from "./WatcDetailsMobile";
 
 const WatchDetails = () => {
   let { id } = useParams();
@@ -29,6 +31,20 @@ const WatchDetails = () => {
   const isAuthenticated = !!localStorage.getItem("bearer_token");
   const [isloggedIn, setIsLoggedIn] = useState(isAuthenticated);
   const projectId = "zxke0qiu2960";
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 414);
+    };
+    handleResize();
+
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  });
 
   useEffect(() => {
     const fetchData = async () => {
@@ -162,7 +178,13 @@ const WatchDetails = () => {
     );
     setWatchlistData(updatedWatchList);
   };
-
+  // if (isMobile) {
+  //   return (
+  //     <>
+  //       <WatcDetailsMobile />
+  //     </>
+  //   );
+  // }
   return (
     <div className="banner-watchDetails-container">
       {loading ? (

@@ -49,7 +49,10 @@ const ComedyTVShows = () => {
           <span className="card-indv-heading">Comedy TV Shows</span>
           <span className="seeMore" onClick={handleSeeMoreClick}>
             See More
-            <MdKeyboardArrowRight style={{ fontSize: "40px" }} />
+            <MdKeyboardArrowRight
+              className="seeMoreIcon"
+              style={{ fontSize: "40px" }}
+            />
           </span>
         </h2>
       </div>
@@ -57,15 +60,15 @@ const ComedyTVShows = () => {
       {/* <div className="carousel-main"> */}
       <div
         className="content"
-        style={{
-          margin: "2.3rem",
-          marginTop: "8rem",
-          gap: "3rem",
-          flexWrap: "wrap",
-          gap: "1rem",
-          display: "flex",
-          flexDirection: "column",
-        }}
+        // style={{
+        //   margin: "2.3rem",
+        //   marginTop: "8rem",
+        //   gap: "3rem",
+        //   flexWrap: "wrap",
+        //   gap: "1rem",
+        //   display: "flex",
+        //   flexDirection: "column",
+        // }}
       >
         <WatchCards actualData={myData} projectId={projectId} />
       </div>

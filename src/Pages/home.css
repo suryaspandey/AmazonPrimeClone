@@ -839,9 +839,14 @@ title {
   .card-indv-heading,
   .prime-text-heading,
   .seeMore {
-    font-size: 13px;
+    font-size: 16px;
   }
-
+  .seeMoreIcon {
+    font-size: 30px !important;
+  }
+  .seeMoreIcon-trending {
+    font-size: 15px;
+  }
   .home-banner-video {
     display: none;
   }

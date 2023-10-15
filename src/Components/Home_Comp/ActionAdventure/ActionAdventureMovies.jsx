@@ -49,14 +49,20 @@ const ActionAdventureMovies = () => {
             alignItems: "center",
           }}
         >
-          <span className="prime-text-heading" style={{ marginRight: "8px" }}>
+          <span
+            className="prime-text-heading prime-show"
+            style={{ marginRight: "8px" }}
+          >
             Prime
           </span>
 
           <span className="card-indv-heading">Action and adventure movies</span>
           <span className="seeMore" onClick={handleSeeMoreClick}>
             See More
-            <MdKeyboardArrowRight style={{ fontSize: "40px" }} />
+            <MdKeyboardArrowRight
+              className="seeMoreIcon"
+              style={{ fontSize: "40px" }}
+            />
           </span>
         </h2>
       </div>

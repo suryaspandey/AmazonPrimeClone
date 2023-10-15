@@ -33,6 +33,7 @@ const Top10HomeImages = ({ showHeader }) => {
             <span className="card-indv-heading">Top 10 in India</span>
             <span className="seeMore">
               <MdOutlineTrendingUp
+                className="seeMoreIcon-trending"
                 style={{
                   fontSize: "30px",
                   border: "3px solid white",
@@ -66,6 +67,7 @@ const Top10HomeImages = ({ showHeader }) => {
             <div className="corousel-container-left-right" key={index}>
               <Link
                 to={`/watchDetailsMob/64cffee700bad552e8dcd509`}
+                // to={`/watchDetails/64cffee700bad552e8dcd509`}
                 state={{
                   projectId: projectId,
                 }}
@@ -84,18 +86,27 @@ const Top10HomeImages = ({ showHeader }) => {
                         src="/prime-blue-tick.png"
                         alt="prime-blue-tick"
                         style={{
-                          width: "20px",
-                          height: "20px",
+                          width: "15px",
+                          height: "15px",
                         }}
                       />
                     </span>
                     <span
                       className="prime-text"
-                      style={{ color: "white", margin: "10px 0" }}
+                      style={{
+                        color: "white",
+                        margin: "10px 0",
+                        fontSize: "13px",
+                      }}
                     >
                       Included with Prime
                     </span>
-                    <span className="UA-container">U/A 16+</span>
+                    <span
+                      className="UA-container"
+                      style={{ fontSize: "13px", padding: "3px" }}
+                    >
+                      U/A 16+
+                    </span>
                   </div>
 
                   <div>

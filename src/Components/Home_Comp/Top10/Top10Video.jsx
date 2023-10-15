@@ -81,6 +81,7 @@ const Top10Video = ({ showHeader }) => {
             <span className="card-indv-heading">Top 10 in India</span>
             <span className="seeMore">
               <MdOutlineTrendingUp
+                className="seeMoreIcon-trending"
                 style={{
                   fontSize: "30px",
                   border: "3px solid white",

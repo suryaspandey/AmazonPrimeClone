@@ -224,8 +224,28 @@
   .firestick-text {
     padding: 15px;
   }
+  .firestick-text h1 {
+    padding: 0;
+    font-size: 24px;
+  }
+
+  .firestick-text p {
+    font-size: 18px !important;
+  }
   .family-friendly {
     width: 100%;
+  }
+
+  .channels-text h1 {
+    font-size: 26px;
+  }
+
+  .channels-text p {
+    font-size: 17px;
+  }
+
+  .channels-list-container {
+    padding: 0;
   }
   /* .family-banner-img {
     display: none;

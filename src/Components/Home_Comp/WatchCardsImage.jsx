@@ -37,6 +37,7 @@ const WatchCardsImage = ({ item, projectId }) => {
                 height: "100%",
                 zIndex: 10,
                 borderRadius: "0.2rem",
+                objectFit: "cover",
               }}
             />
           </Link>

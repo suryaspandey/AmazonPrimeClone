@@ -79,6 +79,7 @@ export const CompleteShowList = () => {
                   <div className="mob-showlist-img-container">
                     <Link
                       to={`/watchDetailsMob/${item._id}`}
+                      // to={`/watchDetails/${item._id}`}
                       state={{ projectId: projectId }}
                     >
                       {console.log("item.thumbnail", item.thumbnail)}
@@ -88,6 +89,7 @@ export const CompleteShowList = () => {
                           height: "100px",
                           width: "178px",
                           borderRadius: "8px",
+                          objectFit: "cover",
                         }}
                       />
                     </Link>
@@ -217,41 +219,6 @@ export const CompleteShowList = () => {
   }
   return (
     <>
-      {/* <div className="content-dropdown">
-        <button className="showlistBtn">
-          <span className="contnt-type-text">Content Type</span>
-          {checkCount > 0 && (
-            <span className="checkCountSpan">{checkCount}</span>
-          )}
-
-          <span
-            onClick={() => setIsArrowClicked(!isArrowclicked)}
-            style={{ fontSize: "24px" }}
-          >
-            {isArrowclicked ? <IoIosArrowDown /> : <IoIosArrowUp />}
-          </span>
-        </button>
-        {isArrowclicked && (
-          <div className="checkbox-container">
-            <button className="showlistBtnCheckbox showCheckbox">
-              <Checkbox
-                className="checkboxText"
-                onChange={(e) => handleCheckbox(e.target.checked)}
-              >
-                Movies
-              </Checkbox>
-            </button>
-            <button className="showlistBtnCheckbox showCheckbox">
-              <Checkbox
-                className="checkboxText"
-                onChange={(e) => handleCheckbox(e.target.checked)}
-              >
-                TV Shows
-              </Checkbox>
-            </button>
-          </div>
-        )}
-      </div> */}
       <div className="complete-showList-container">
         <div className="show-name">
           <h1

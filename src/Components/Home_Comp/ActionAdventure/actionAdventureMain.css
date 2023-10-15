@@ -22,11 +22,12 @@
     margin: 0;
   }
   .categories-btn {
-    padding: 10px !important;
+    padding: 6px !important;
     border-radius: 5px !important;
-    font-size: 20px;
+    font-size: 18px;
   }
   .categories-heading {
     padding: 0 24px !important;
+    font-size: 22px;
   }
 }

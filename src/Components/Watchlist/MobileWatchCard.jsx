@@ -1,8 +1,10 @@
 import React from "react";
 import WatchCardsImage from "../Home_Comp/WatchCardsImage";
 import { Link } from "react-router-dom";
+import MobileSubNavbar from "../Navbar/MobileSubNavbar";
 
 const MobileWatchCard = () => {
+  // <MobileSubNavbar noShow={false} />;
   return (
     <>
       <div className="mobile-watchcard-container">
@@ -12,10 +14,7 @@ const MobileWatchCard = () => {
               <Link
                 to={
                   `/watchDetailsMob/${item._id}`
-
-                  //   isMobile
-                  //     ? `/watchDetailsMob/${item._id}`
-                  //     : `/watchDetails/${item._id}`
+                  // `/watchDetails/${item._id}`
                 }
                 state={{ projectId: projectId }}
               >

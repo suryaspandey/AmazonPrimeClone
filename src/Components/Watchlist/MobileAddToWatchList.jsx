@@ -243,6 +243,7 @@ const MobileAddToWatchList = () => {
                                     height: "100px",
                                     width: "178px",
                                     borderRadius: "8px",
+                                    objectFit: "cover",
                                   }}
                                 />
                               </Link>

@@ -101,13 +101,17 @@ function App() {
             <Route path="/Home/AllTVShows" element={<AllTVShows />} />
             <Route path="/Home/KidsAll" element={<KidsAll />} />
 
-            <Route path="/watchDetails/:id" element={<WatchDetails />} />
-            {isMobile && (
+            {isMobile ? (
               <Route
                 path="/watchDetailsMob/:id"
                 element={<WatcDetailsMobile />}
               />
+            ) : (
+              <Route path="/watchDetails/:id" element={<WatchDetails />} />
             )}
+
+            {/* <Route path="/watchDetails/:id" element={<WatchDetails />} /> */}
+
             {/* <Route path="/TVShow/:id" element={<VideoPlayer />} /> */}
             <Route
               path="/CompleteShowList/:category"

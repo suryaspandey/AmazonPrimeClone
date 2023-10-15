@@ -129,6 +129,7 @@ const WatchCards = ({
       window.removeEventListener("resize", handleResize);
     };
   });
+
   if (className === "seeMoreList") {
     return (
       <>

@@ -1,6 +1,7 @@
 .register-form-container {
   background-color: white;
   padding: 14px 18px !important;
+  height: 100vh;
 }
 
 .register-form-main {

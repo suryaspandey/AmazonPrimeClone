@@ -50,7 +50,10 @@ const FantasyTVShow = () => {
           <span className="card-indv-heading">Fantasy TV Shows</span>
           <span className="seeMore" onClick={handleSeeMoreClick}>
             See More
-            <MdKeyboardArrowRight style={{ fontSize: "40px" }} />
+            <MdKeyboardArrowRight
+              className="seeMoreIcon"
+              style={{ fontSize: "40px" }}
+            />
           </span>
         </h2>
       </div>

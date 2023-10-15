@@ -5,8 +5,11 @@ import { Link, useNavigate } from "react-router-dom";
 import { BsSearch } from "react-icons/bs";
 import MobileMenuDropDown from "./MobileMenuDropDown";
 import { LiaHomeSolid } from "react-icons/lia";
+import MobileSubNavbar from "./MobileSubNavbar";
 
 const MobileNavbar = () => {
+  const [isHover, setIsHover] = useState(false);
+
   const navigate = useNavigate();
   const [isSearchVisible, setIsSearchVisible] = useState(false);
   const [searchText, setSearchText] = useState("");
@@ -71,11 +74,13 @@ const MobileNavbar = () => {
             {/* </Link> */}
           </div>
           <div className="mob-prime">
-            <img
-              src="/primeVideo.PNG"
-              alt="prime video"
-              style={{ width: "102px" }}
-            />
+            <Link to={"/"}>
+              <img
+                src="/primeVideo.PNG"
+                alt="prime video"
+                style={{ width: "102px" }}
+              />
+            </Link>
           </div>
           <div className="mob-avatar-header">
             <div className="search_name">
@@ -263,7 +268,9 @@ const MobileNavbar = () => {
             </div> */}
           </div>
         </div>
-        <div className="mobile-tv-movie-home">
+        {isloggedIn && <MobileSubNavbar />}
+
+        {/* <div className="mobile-tv-movie-home">
           <div className="mob-home-header">
             <Link to={"/"}>
               <LiaHomeSolid style={{ color: "white" }} />
@@ -285,7 +292,7 @@ const MobileNavbar = () => {
               TV Shows
             </Link>
           </div>
-        </div>
+        </div> */}
       </div>
     </>
   );

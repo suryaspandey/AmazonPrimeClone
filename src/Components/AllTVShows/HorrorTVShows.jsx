@@ -54,7 +54,10 @@ const HorrorTVShows = () => {
             style={{ cursor: "pointer" }}
           >
             See More
-            <MdKeyboardArrowRight style={{ fontSize: "40px" }} />
+            <MdKeyboardArrowRight
+              className="seeMoreIcon"
+              style={{ fontSize: "40px" }}
+            />
           </span>
         </h2>
       </div>

@@ -50,7 +50,10 @@ const KidsAndFamilyMovies = () => {
           <span className="card-indv-heading">Kids and Family Movies</span>
           <span className="seeMore" onClick={handleSeeMoreClick}>
             See More
-            <MdKeyboardArrowRight style={{ fontSize: "40px" }} />
+            <MdKeyboardArrowRight
+              className="seeMoreIcon"
+              style={{ fontSize: "40px" }}
+            />
           </span>
         </h2>
       </div>
