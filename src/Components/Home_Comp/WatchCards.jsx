@@ -5,6 +5,7 @@ import { AiOutlineCheck, AiOutlineLeft, AiOutlineRight } from "react-icons/ai";
 import WatchCardMain from "./WatchCardMain";
 import MobileAddToWatchList from "../Watchlist/MobileAddToWatchList";
 import { Link } from "react-router-dom";
+import CardLoader from "../Loader/CardLoader";
 
 const CARD_WIDTH = 250;
 const WatchCards = ({
@@ -21,7 +22,7 @@ const WatchCards = ({
   useEffect(() => {
     const timer = setTimeout(() => {
       setLoading(false);
-    }, 2000);
+    }, 1000);
 
     return () => clearTimeout(timer); // Clean up the timer when component is unmounted
   }, []);
@@ -253,34 +254,38 @@ const WatchCards = ({
                 }
               }
             >
-              {actualData.map((item, index) => (
-                <div
-                  className={`actual-card ${className}`}
-                  key={item._id}
-                  style={{
-                    position: "absolute",
+              {actualData.map((item, index) =>
+                loading ? (
+                  <CardLoader />
+                ) : (
+                  <div
+                    className={`actual-card ${className}`}
+                    key={item._id}
+                    style={{
+                      position: "absolute",
 
-                    left: `${index * (CARD_WIDTH + 10)}px`,
-                    // zIndex: 1002,
-                    overflow: "visible",
+                      left: `${index * (CARD_WIDTH + 10)}px`,
+                      // zIndex: 1002,
+                      overflow: "visible",
 
-                    // new
-                    // position: "relative",
-                  }}
-                >
-                  <WatchCardMain
-                    item={item}
-                    projectId={projectId}
-                    watchlistStatus={watchlistStatus}
-                    isloggedIn={isloggedIn}
-                    addtowatchlist={addtowatchlist}
-                    isInWatchList={isInWatchList}
-                    handleRemoveFromWatchList={handleRemoveFromWatchList}
-                    actualData={actualData}
-                    handleWatchList={handleWatchList}
-                  />
-                </div>
-              ))}
+                      // new
+                      // position: "relative",
+                    }}
+                  >
+                    <WatchCardMain
+                      item={item}
+                      projectId={projectId}
+                      watchlistStatus={watchlistStatus}
+                      isloggedIn={isloggedIn}
+                      addtowatchlist={addtowatchlist}
+                      isInWatchList={isInWatchList}
+                      handleRemoveFromWatchList={handleRemoveFromWatchList}
+                      actualData={actualData}
+                      handleWatchList={handleWatchList}
+                    />
+                  </div>
+                )
+              )}
             </ul>
           </div>
           <div

@@ -12,8 +12,9 @@ const CardLoader = () => {
     <div>
       <Card
         style={{
-          width: 300,
-          marginTop: 16,
+          width: 250,
+          //   marginTop: 16,
+          margin: 16,
         }}
         loading={loading}
       >

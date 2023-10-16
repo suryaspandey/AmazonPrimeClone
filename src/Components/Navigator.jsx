@@ -103,7 +103,7 @@ const Navigator = () => {
           </div>
           <div className="main-links">
             <ol className="home-navs">
-              <div className="home-navs-all">
+              <div className="home-navs-all" style={{ display: "flex" }}>
                 <li
                   onMouseEnter={() => handleSetActivePage("Home")}
                   onMouseLeave={() => handleSetActivePage(null)}

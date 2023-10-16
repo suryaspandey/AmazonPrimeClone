@@ -1,1 +1,28 @@
+.ant-dropdown-menu-submenu
+  .ant-dropdown-menu-submenu-popup
+  .ant-dropdown-menu
+  .ant-dropdown-menu-light
+  .css-dev-only-do-not-override-1vr7spz
+  .ant-dropdown-menu-submenu-placement-leftTop {
+  /* --arrow-x: 85.5875015258789px !important;
+  --arrow-y: 16px !important; */
+  inset: 199.8px auto auto 218.2375px !important;
+  box-sizing: border-box !important;
+}
 
+.ant-dropdown-menu-submenu
+  .ant-dropdown-menu-submenu-popup
+  .ant-dropdown-menu
+  .ant-dropdown-menu-light
+  .css-dev-only-do-not-override-1vr7spz
+  .ant-dropdown-menu-submenu-placement-leftTop {
+  /* --arrow-x: 166.8000030517578px !important;
+  --arrow-y: 16px !important; */
+  inset: 213.8px auto auto 134.025px !important;
+  box-sizing: border-box !important;
+}
+
+.ant-dropdown-menu-submenu .ant-dropdown-menu {
+  padding: 3px 0px 3px 3px !important;
+  margin-left: 30px;
+}
