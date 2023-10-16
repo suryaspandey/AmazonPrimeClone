@@ -44,6 +44,7 @@ body {
   flex-direction: row;
   text-decoration: none;
   list-style: none;
+  gap: 35px;
   /* font-size: 16px;     */
 }
 
@@ -58,7 +59,10 @@ body {
   /* width: 100%; */
   cursor: pointer;
 }
-
+.nav-avatar {
+  height: 30px !important;
+  width: 30px !important;
+}
 .home-navs > li:hover {
   color: white;
 }
@@ -66,10 +70,14 @@ body {
 .categories {
   color: #aaa;
   text-decoration: none;
+  display: flex;
+  align-items: center;
+  min-width: 52.5px;
   /* list-style-type: none; */
 }
 .categories:hover {
   color: white;
+  min-width: 53px;
 }
 .search_name {
   display: flex;
@@ -156,6 +164,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  width: 62px;
 }
 
 .home-list:hover {

@@ -9,8 +9,15 @@ export default function Home() {
   const navigate = useNavigate();
   const [modal1Open, setModal1Open] = useState(false);
 
+  const isAuthenticated = !!localStorage.getItem("bearer_token"); // will return truthy value
+  // return isAuthenticated ? <Outlet /> : <Navigate to="/login" />;
+
   const handleComingSoon = () => {
     navigate("/comingSoon");
+  };
+
+  const handleLoginPage = () => {
+    navigate("/login");
   };
 
   useEffect(() => {
@@ -40,9 +47,16 @@ export default function Home() {
 
         <div className="primeoffers-btns-container">
           <div className="primeoffersBtnandLinks">
-            <button className="primeoffersbtn">
-              Start your 30-day Prime free trial
-            </button>
+            {isAuthenticated ? (
+              <button className="primeoffersbtn" onClick={handleComingSoon}>
+                Start your 30-day Prime free trial
+              </button>
+            ) : (
+              <button className="primeoffersbtn" onClick={handleLoginPage}>
+                Login to Prime Video Clone
+              </button>
+            )}
+
             <Button
               type="primary"
               onClick={() => setModal1Open(true)}

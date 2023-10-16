@@ -8,11 +8,7 @@ import { useNavigate } from "react-router";
 import { MdOutlineTrendingUp } from "react-icons/md";
 import { BsPlayFill } from "react-icons/bs";
 import { Tooltip } from "antd";
-import {
-  videoSources,
-  thumbnailImages,
-  titleNames,
-} from "../../Home_Comp/carouselData";
+import { videoSources, titleNames } from "../../Home_Comp/carouselData";
 import Top10Cards from "./Top10Cards";
 import { Link } from "react-router-dom";
 

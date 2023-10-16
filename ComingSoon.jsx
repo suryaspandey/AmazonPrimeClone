@@ -11,7 +11,7 @@ const ComingSoon = () => {
         height: "100%",
       }}
     >
-      <h1
+      {/* <h1
         style={{
           height: "100vh",
           textAlign: "center",
@@ -21,7 +21,8 @@ const ComingSoon = () => {
         }}
       >
         This Content is coming soon !!
-      </h1>
+      </h1> */}
+      <img src="/coming_soon.jpg" alt="coming soon" width="100%" />
     </div>
   );
 };

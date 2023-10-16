@@ -13,6 +13,7 @@ import { ShowDetails } from "../../Components/ShowDetails/ShowDetails";
 import RelatedMovies from "../../Components/Episodes/RelatedMovies";
 import MobileWatchCard from "../../Components/Watchlist/MobileWatchCard";
 import WatcDetailsMobile from "./WatcDetailsMobile";
+import Loader from "../../Components/Loader/Loader";
 
 const WatchDetails = () => {
   let { id } = useParams();
@@ -185,10 +186,15 @@ const WatchDetails = () => {
   //     </>
   //   );
   // }
+
+  const handleComingSoon = () => {
+    navigate("/comingSoon");
+  };
   return (
     <div className="banner-watchDetails-container">
       {loading ? (
-        <div style={{ color: "white", fontSize: "100px" }}>Loading...</div>
+        // <div style={{ color: "white", fontSize: "100px" }}>Loading...</div>
+        <Loader />
       ) : details ? (
         <>
           <div className="watchDetails-img">
@@ -264,13 +270,19 @@ const WatchDetails = () => {
               </span> */}
               <span>
                 <div className="more-purchase-options">
-                  <button className="more-purchase-options-btn">
+                  <button
+                    className="more-purchase-options-btn"
+                    onClick={handleComingSoon}
+                  >
                     More Purchase Options
                   </button>
                 </div>
               </span>
               <div className="watchDetails-btn-options-container">
-                <span className="home-play-btn-container-new trailer-span">
+                <span
+                  className="home-play-btn-container-new trailer-span"
+                  onClick={handleComingSoon}
+                >
                   <Tooltip title="Trailer" placement="bottom" arrow={false}>
                     <span>
                       <BiMoviePlay className="trailer-img" />
@@ -299,21 +311,30 @@ const WatchDetails = () => {
                     </span>
                   </Tooltip>
                 </span>
-                <span className="home-play-btn-container-new trailer-span">
+                <span
+                  className="home-play-btn-container-new trailer-span"
+                  onClick={handleComingSoon}
+                >
                   <Tooltip title="Download" placement="bottom" arrow={false}>
                     <span>
                       <GoDownload className="trailer-img" />
                     </span>
                   </Tooltip>
                 </span>
-                <span className="home-play-btn-container-new trailer-span">
+                <span
+                  className="home-play-btn-container-new trailer-span"
+                  onClick={handleComingSoon}
+                >
                   <Tooltip title="Watch Party" placement="bottom" arrow={false}>
                     <span>
                       <GiPartyPopper className="trailer-img" />
                     </span>
                   </Tooltip>
                 </span>
-                <span className="home-play-btn-container-new trailer-span">
+                <span
+                  className="home-play-btn-container-new trailer-span"
+                  onClick={handleComingSoon}
+                >
                   <Tooltip title="Share" placement="bottom" arrow={false}>
                     <span>
                       <HiOutlineShare className="trailer-img" />

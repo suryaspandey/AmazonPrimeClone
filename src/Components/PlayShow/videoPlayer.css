@@ -88,6 +88,10 @@
   height: 15px;
 }
 
+.footer-container {
+  display: none;
+}
+
 @media (max-width: 415px) {
   .show-title-on-video {
     font-size: 10px;

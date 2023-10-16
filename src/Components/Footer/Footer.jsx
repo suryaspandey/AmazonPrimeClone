@@ -3,6 +3,8 @@ import "./footer.css";
 
 const Footer = () => {
   const [isMobile, setIsMobile] = useState(false);
+  const noShow = location.pathname.includes("TVShow");
+
   useEffect(() => {
     const handleResize = () => {
       setIsMobile(window.innerWidth <= 414);
@@ -17,6 +19,7 @@ const Footer = () => {
       {!isMobile && (
         <div className="emptypadding" style={{ paddingTop: "180px" }}></div>
       )}
+
       <div className="footer-container" style={{ padding: "24px" }}>
         <div className="footer-img">
           <img

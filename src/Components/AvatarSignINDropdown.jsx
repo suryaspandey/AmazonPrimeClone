@@ -15,13 +15,8 @@ const items = [
   {
     key: "2",
     label: "Watch Anywhere",
-    path: "/watchAnywhere",
+    path: "https://www.primevideo.com/region/eu/splash/watchAnywhere/ref=atv_nb_wa",
   },
-  // {
-  //   key: "3",
-  //   label: "",
-  //   path: "/Home/AllTVShows",
-  // },
 ];
 
 const AvatarSignINDropdown = ({ isHover }) => {
@@ -30,7 +25,11 @@ const AvatarSignINDropdown = ({ isHover }) => {
 
   const handleLinkClick = (item) => {
     if (item.path) {
-      navigate(item.path);
+      if (item.path.startsWith("https")) {
+        window.open(item.path, "_blank");
+      } else {
+        navigate(item.path);
+      }
       // history.push(item.path);
     }
   };
@@ -95,34 +94,6 @@ const AvatarSignINDropdown = ({ isHover }) => {
           </Space>
         </Typography.Link>
       </Dropdown>
-
-      {/* <ul className={`sub-menu ${isHover ? "active" : ""}`}>
-        <li>
-          <Link to={"/Home"}>All</Link>
-        </li>
-
-        <li>
-          <Link
-            to={"/Home/AllMovies"}
-            onClick={() => {
-              console.log("All Movies clicked");
-            }}
-          >
-            Movies
-          </Link>
-        </li>
-
-        <li>
-          <Link
-            to={"/Home/AllTVShows"}
-            onClick={() => {
-              console.log("All TVS clicked");
-            }}
-          >
-            TV Shows
-          </Link>
-        </li>
-      </ul> */}
     </>
   );
 };

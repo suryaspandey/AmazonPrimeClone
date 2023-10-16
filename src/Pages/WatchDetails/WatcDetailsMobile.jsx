@@ -14,6 +14,7 @@ import { Tabs, ConfigProvider } from "antd";
 import { PlusOutlined, MoreOutlined } from "@ant-design/icons";
 import "./watcDetailsMobile.css";
 import Mobile_Episodes_details from "../../Components/Episodes/Mobile_Episodes_details";
+import Loader from "../../Components/Loader/Loader";
 
 const WatcDetailsMobile = () => {
   let { id } = useParams();
@@ -174,11 +175,16 @@ const WatcDetailsMobile = () => {
     );
     setWatchlistData(updatedWatchList);
   };
+
+  const handleComingSoon = () => {
+    navigate("/comingSoon");
+  };
   return (
     <div className="banner-watchDetails-container1">
       {loading ? (
-        <div style={{ color: "white", fontSize: "100px" }}>Loading...</div>
-      ) : details ? (
+        <Loader />
+      ) : // <div style={{ color: "white", fontSize: "100px" }}>Loading...</div>
+      details ? (
         <>
           <div className="watchDetails-img1">
             <img src={details.data.thumbnail} alt={details.title} />
@@ -202,7 +208,10 @@ const WatcDetailsMobile = () => {
             </span>
 
             <div className="more-purchase-options1">
-              <button className="more-purchase-options-btn1">
+              <button
+                className="more-purchase-options-btn1"
+                onClick={handleComingSoon}
+              >
                 More Purchase Options
               </button>
             </div>
@@ -235,19 +244,28 @@ const WatcDetailsMobile = () => {
                   <p className="mob-watchdetails-tooltip-name">Watchlist</p>
                 </span>
               </span>
-              <span className="home-play-btn-container-new trailer-span">
+              <span
+                className="home-play-btn-container-new trailer-span"
+                onClick={handleComingSoon}
+              >
                 <span>
                   <GoDownload className="trailer-img1" />
                   <p className="mob-watchdetails-tooltip-name">Download</p>
                 </span>
               </span>
-              <span className="home-play-btn-container-new trailer-span">
+              <span
+                className="home-play-btn-container-new trailer-span"
+                onClick={handleComingSoon}
+              >
                 <span>
                   <GiPartyPopper className="trailer-img1" />
                   <p className="mob-watchdetails-tooltip-name">Watch Party</p>
                 </span>
               </span>
-              <span className="home-play-btn-container-new trailer-span">
+              <span
+                className="home-play-btn-container-new trailer-span"
+                onClick={handleComingSoon}
+              >
                 <span>
                   <HiOutlineShare className="trailer-img1" />
                   <p className="mob-watchdetails-tooltip-name">Share</p>

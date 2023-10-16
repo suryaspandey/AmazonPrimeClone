@@ -65,6 +65,7 @@ const Navigator = () => {
 
   const handleSetActivePage = (page) => {
     setActivePage(page);
+    setIsHover(!isHover);
   };
 
   const toggleSearch = () => {
@@ -82,6 +83,14 @@ const Navigator = () => {
     navigate(`/search/${encodeURIComponent(searchText)}`);
   };
   console.log("isloggedIn :", isloggedIn);
+
+  // const [noShow, setNoShow] = useState(false);
+  // useEffect(() => {
+  //   const noShowBar =
+  //     location.pathname.includes("/login") ||
+  //     location.pathname.includes("/register");
+  //   setNoShow(noShowBar);
+  // }, location.pathname);
 
   return (
     <>
@@ -197,7 +206,7 @@ const Navigator = () => {
                       // className="avatar-navitagor"
                       onMouseEnter={() => handleSetActivePage("Home")}
                       onMouseLeave={() => handleSetActivePage(null)}
-                      className={`home-list ${
+                      className={`home-list nav-avatar ${
                         activePage === "abcd" && isHover ? "active-page" : ""
                       }`}
                     />

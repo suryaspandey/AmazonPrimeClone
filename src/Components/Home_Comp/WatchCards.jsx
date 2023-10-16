@@ -17,6 +17,14 @@ const WatchCards = ({
   const [isHovered, setIsHovered] = useState(false);
 
   // const [isMuted, setIsMuted] = useState(true);
+  const [loading, setLoading] = useState(true);
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setLoading(false);
+    }, 2000);
+
+    return () => clearTimeout(timer); // Clean up the timer when component is unmounted
+  }, []);
 
   const isAuthenticated = !!localStorage.getItem("bearer_token");
   const [isloggedIn, setIsLoggedIn] = useState(isAuthenticated);
@@ -151,33 +159,36 @@ const WatchCards = ({
             <ul
               className={`${className}`}
               style={{
-                // new
                 display: "grid",
                 gridTemplateColumns: "repeat(auto-fill, minmax(250px, 1fr))",
                 gap: "10px",
               }}
             >
-              {actualData.map((item, index) => (
-                <div
-                  className={`actual-card ${className}`}
-                  key={item._id}
-                  style={{
-                    overflow: "visible",
-                  }}
-                >
-                  <WatchCardMain
-                    item={item}
-                    projectId={projectId}
-                    watchlistStatus={watchlistStatus}
-                    isloggedIn={isloggedIn}
-                    addtowatchlist={addtowatchlist}
-                    isInWatchList={isInWatchList}
-                    handleRemoveFromWatchList={handleRemoveFromWatchList}
-                    actualData={actualData}
-                    handleWatchList={handleWatchList}
-                  />
-                </div>
-              ))}
+              {actualData.map((item, index) =>
+                loading ? (
+                  <CardLoader />
+                ) : (
+                  <div
+                    className={`actual-card ${className}`}
+                    key={item._id}
+                    style={{
+                      overflow: "visible",
+                    }}
+                  >
+                    <WatchCardMain
+                      item={item}
+                      projectId={projectId}
+                      watchlistStatus={watchlistStatus}
+                      isloggedIn={isloggedIn}
+                      addtowatchlist={addtowatchlist}
+                      isInWatchList={isInWatchList}
+                      handleRemoveFromWatchList={handleRemoveFromWatchList}
+                      actualData={actualData}
+                      handleWatchList={handleWatchList}
+                    />
+                  </div>
+                )
+              )}
             </ul>
           </div>
         </div>

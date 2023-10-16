@@ -45,10 +45,14 @@ import MobileMenuDropDown from "./Components/Navbar/MobileMenuDropDown";
 import SciFiMain from "./Components/AllCategories/SciFiMain";
 import WatcDetailsMobile from "./Pages/WatchDetails/WatcDetailsMobile";
 import MobileAddToWatchList from "./Components/Watchlist/MobileAddToWatchList";
+import { videoSources } from "./Components/Home_Comp/carouselData";
+
+import CardLoader from "./Components/Loader/CardLoader";
 // import { EpisodeNoContent } from "./EpisodeNoContent";
 
 function App() {
   // const isAuthenticated = true;
+
   const isLoginOrRegister =
     window.location.pathname === "/login" ||
     window.location.pathname === "/register";
@@ -57,6 +61,16 @@ function App() {
 
   // const [isLoginOrRegister, setIsLoginOrRegister] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
+
+  // const [isLoginOrRegister, setIsLoginOrRegister] = useState(
+  //   window.location.pathname === "/login" ||
+  //     window.location.pathname === "/register"
+  // );
+
+  // useEffect(() => {
+  //   const pathname = window.location.pathname;
+  //   setIsLoginOrRegister(pathname === "/login" || pathname === "/register");
+  // }, [window.location.pathname]);
 
   useEffect(() => {
     const handleResize = () => {
@@ -100,6 +114,9 @@ function App() {
             <Route path="/Home/AllMovies" element={<Home_Corousel />} />
             <Route path="/Home/AllTVShows" element={<AllTVShows />} />
             <Route path="/Home/KidsAll" element={<KidsAll />} />
+
+            {/* loader to be removed */}
+            <Route path="/loader" element={<CardLoader />} />
 
             {isMobile ? (
               <Route
@@ -188,10 +205,11 @@ function App() {
         </Routes>
       </BrowserRouter>
       {!isLoginOrRegister && <Footer />}
+      {/* {!isVideoPlayerPage && <Footer />} */}
+
       {/* {!isLoginOrRegister && !window.location.pathname.includes("/TVShow") && (
         <Footer />
       )} */}
-      {/* <Footer /> */}
     </>
     // </EpisodeNoContent>
   );
