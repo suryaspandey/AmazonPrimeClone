@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { useLocation, useParams, useSearchParams } from "react-router-dom";
 import WatchCards from "../Home_Comp/WatchCards";
+import ShortFilms from "../Home_Comp/ShortFilms";
+import HorrorMovies from "../Home_Comp/HorrorMovies";
 
 const Search = () => {
   const { phrase } = useParams();
@@ -37,28 +39,48 @@ const Search = () => {
   if (notFound) {
     return (
       <>
-        <h4 style={{ color: "white", paddingTop: "100px", fontSize: "18px" }}>
-          Results for: {phrase}.
-        </h4>
-        <h1 style={{ color: "white", fontSize: "18px" }}>No show found</h1>
+        <div className="home">
+          <div className="searchNotFound">
+            <h4
+              style={{
+                color: "white",
+                padding: "100px 0 0 40px",
+                fontSize: "18px",
+              }}
+            >
+              Results for: {phrase}.
+            </h4>
+            <h1
+              style={{
+                color: "white",
+                fontSize: "18px",
+                padding: "10px 0 0 40px",
+              }}
+            >
+              We didn't find any matches for "{phrase}". Browse our most popular
+              TV shows and movies.
+            </h1>
+            <ShortFilms />
+          </div>
+        </div>
       </>
     );
   }
 
   return (
     <>
-      <h1 style={{ color: "white", paddingTop: "100px", fontSize: "18px" }}>
+      <h1
+        style={{ color: "white", padding: "100px 0 0 40px", fontSize: "18px" }}
+      >
         Results for: {phrase}.
       </h1>
 
-      {
-        <>
-          <h4 style={{ fontSize: "18px" }}>More videos</h4>
-          <div className="carousel-main" style={{ display: "flex" }}>
-            <WatchCards actualData={showData} projectId={projectId} />
-          </div>
-        </>
-      }
+      <>
+        <h4 style={{ fontSize: "18px" }}>More videos</h4>
+        <div className="carousel-main" style={{ display: "flex" }}>
+          <WatchCards actualData={showData} projectId={projectId} />
+        </div>
+      </>
     </>
   );
 };

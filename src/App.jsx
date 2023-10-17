@@ -29,7 +29,7 @@ import Search from "./Components/Search/search";
 import Subscription from "./Pages/Subscription";
 import AllShowsType from "./Pages/AllShowsType";
 import LiveTV from "./Pages/LiveTV";
-import ComingSoon from "../ComingSoon";
+import ComingSoon from "./Pages/ComingSoon";
 import KidsAll from "./Components/Kids/KidsAll";
 import UserMoodsModal from "./Components/UserMoodsModel/UserMoodsModal";
 import CreateNewPassword from "./Components/CreateNewPassword/CreateNewPassword";

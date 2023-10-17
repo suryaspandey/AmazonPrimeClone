@@ -32,7 +32,7 @@
   width: 100%;
 }
 .sub-menu li:hover {
-  background-color: white;
+  background-color: white !important;
   /* color: black;
   width: 100%;
   z-index: 4;
@@ -66,7 +66,7 @@
 }
 
 .dropdown-menu-items:hover {
-  background-color: white;
+  background-color: white !important;
   color: black !important;
 }
 
@@ -76,14 +76,14 @@
 }
 
 .ant-typography:hover {
-  color: white !important;
+  /* color: white !important; */
 
   /* background-color: #333539; */
   /* background-color: #191e25; */
 }
 .optoins-login-headings:hover {
   background-color: transparent !important;
-  color: white !important;
+  /* color: white !important; */
   cursor: default;
 }
 .categories-link-text {
@@ -93,3 +93,8 @@
 .avatar-options {
   padding: 5px;
 }
+
+/* .ant-dropdown-menu-item:hover {
+  color: black !important;
+  background-color: white !important;
+} */

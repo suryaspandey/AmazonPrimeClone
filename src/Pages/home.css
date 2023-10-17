@@ -58,6 +58,7 @@ body {
   position: relative;
   /* width: 100%; */
   cursor: pointer;
+  width: 74px;
 }
 .nav-avatar {
   height: 30px !important;

@@ -118,9 +118,17 @@ const Navigator = () => {
               {/* <li>
                 Store <IoIosArrowDown />
               </li> */}
-              <Link to={"/Live TV"} className="categories">
-                Live TV
-              </Link>
+              <li
+                onMouseEnter={() => handleSetActivePage("Live TV")}
+                onMouseLeave={() => handleSetActivePage(null)}
+                className={`home-list ${
+                  activePage === "Live TV" && isHover ? "active-page" : ""
+                }`}
+              >
+                <Link to={"/Live TV"} className="categories">
+                  Live TV
+                </Link>
+              </li>
 
               <li
                 onMouseEnter={() => handleSetActivePage("Categories")}
@@ -136,6 +144,7 @@ const Navigator = () => {
 
                 {activePage === "Categories" && <CategoriesDropDown />}
               </li>
+
               {isloggedIn && (
                 <li
                   onMouseEnter={() => handleSetActivePage("My Stuff")}

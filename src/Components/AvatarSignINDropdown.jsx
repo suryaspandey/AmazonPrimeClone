@@ -1,10 +1,9 @@
 import React from "react";
 import { Link, Navigate, useNavigate } from "react-router-dom";
 import "./homeTabDropDown.css";
-import { DownOutlined } from "@ant-design/icons";
+
 import { ConfigProvider, Dropdown, Menu, Space, Typography } from "antd";
 import { IoIosArrowDown, IoIosArrowUp } from "react-icons/io";
-// import { useHistory } from "react-router-dom";
 
 const items = [
   {
@@ -15,22 +14,22 @@ const items = [
   {
     key: "2",
     label: "Watch Anywhere",
-    path: "https://www.primevideo.com/region/eu/splash/watchAnywhere/ref=atv_nb_wa",
+    path: "/comingSoon",
   },
 ];
 
 const AvatarSignINDropdown = ({ isHover }) => {
-  // const history = useHistory();
   const navigate = useNavigate();
 
   const handleLinkClick = (item) => {
     if (item.path) {
-      if (item.path.startsWith("https")) {
-        window.open(item.path, "_blank");
-      } else {
-        navigate(item.path);
-      }
+      //   if (item.path.startsWith("https")) {
+      //     window.open(item.path, "_blank");
+      //   } else {
+      //     navigate(item.path);
+      //   }
       // history.push(item.path);
+      navigate(item.path);
     }
   };
 
@@ -49,13 +48,10 @@ const AvatarSignINDropdown = ({ isHover }) => {
         <Menu.Item
           style={{
             borderRadius: "0px",
-            // position: "absolute",
-            // right: "0px",
           }}
           className="dropdown-menu-items"
           key={item.key}
           onClick={() => handleLinkClick(item)}
-          // style={{ padding: "8px 16px", backgroundColor: "blue" }}
         >
           {item.label}
         </Menu.Item>

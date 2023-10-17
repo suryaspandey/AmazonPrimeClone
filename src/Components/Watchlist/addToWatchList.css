@@ -65,10 +65,15 @@
   color: black;
   display: flex;
 }
+
+/* .watchlist-items {
+  margin: 0 !important;
+  padding: 0 !important;
+}
 .watchlist-items:hover {
   background-color: #ffffff33;
   color: white;
-}
+} */
 
 .ant-dropdown-menu-item {
   background-color: #191e25;
@@ -76,14 +81,23 @@
 }
 
 .ant-dropdown-menu-item :hover {
-  /* background-color: white !important; */
-  color: rgb(248, 245, 245) !important;
+  background-color: white !important;
+  color: black;
+  /* black on navbar on hover */
 }
 .ant-dropdown-menu {
   background-color: #191e25 !important;
 }
 /* .ant-dropdown-menu:hover {
   /* background-color: white; 
+} */
+
+/* .ant-dropdown-menu-item
+  .ant-dropdown-menu-item-only-child */
+
+/* .watchlist-items:hover {
+  margin: 0 !important;
+  padding: 0 !important;
 } */
 
 .no-watchlistData {
