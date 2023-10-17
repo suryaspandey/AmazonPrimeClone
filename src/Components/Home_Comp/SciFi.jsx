@@ -1,12 +1,10 @@
 import React, { useEffect, useState } from "react";
 import WatchCards from "./WatchCards";
 import "./recommendedMovies.css";
-import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import { MdKeyboardArrowRight } from "react-icons/md";
 import { useApi } from "../../APIContext";
 import { useNavigate } from "react-router";
-// import { Carousel } from "react-responsive-carousel";
 
 const SciFi = () => {
   const [myData, setMyData] = useState([]);
@@ -19,8 +17,6 @@ const SciFi = () => {
   const scifiURL = `https://academics.newtonschool.co/api/v1/ott/show?filter={"$and": [{"keywords": "sci-fi"}, {"type": "movie"}]}`;
 
   useEffect(() => {
-    // const scifiURL = `https://academics.newtonschool.co/api/v1/ott/show?filter={"keywords" : "sci-fi"}`;
-
     const headers = {
       projectId: projectId,
       Authorization: `Bearer ${bearerToken}`,
@@ -30,7 +26,6 @@ const SciFi = () => {
       .then((response) => response.json())
       .then((exdata) => {
         const allData = exdata;
-        // console.log(allData);
         setMyData(exdata.data);
       });
   }, [projectId, bearerToken]);
@@ -40,25 +35,6 @@ const SciFi = () => {
     navigate("/CompleteShowList/Science And Fiction");
   };
 
-  const responsive = {
-    superLargeDesktop: {
-      // the naming can be any, depends on you.
-      breakpoint: { max: 4000, min: 3000 },
-      items: 5,
-    },
-    desktop: {
-      breakpoint: { max: 3000, min: 1024 },
-      items: 5,
-    },
-    tablet: {
-      breakpoint: { max: 1024, min: 464 },
-      items: 2,
-    },
-    mobile: {
-      breakpoint: { max: 464, min: 0 },
-      items: 1,
-    },
-  };
   return (
     <>
       <div className="cards-heaading">

@@ -9,7 +9,6 @@ const Top10Cards = () => {
 
   const handleImgClick = (index) => {
     navigate(videoSources[index]);
-    // console.log("videoSources[index]", videoSources[index]);
     console.log("videoSources[index]", index);
   };
 

@@ -27,24 +27,10 @@ const WatchCardsDescription = ({
 
   const navigate = useNavigate();
   const handleTrailer = () => {
-    // console.log(actualData[0].type);
     navigate("/comingSoon");
   };
   return (
     <>
-      {/* <div className="continue-watching-text-description">
-        <div className="included-with-prime-header blue-tick-text">
-          <img className="blue-tick-img" src="/prime-blue-tick.png" alt="" />
-          <h5
-            style={{
-              color: "white",
-              margin: "8px 0 0",
-            }}
-          >
-            Included with prime
-          </h5>
-        </div>
-      </div> */}
       <div className="play-btn-text">
         <p href="#" className="play-btn-link">
           <span className="home-play-btn-container-new ">

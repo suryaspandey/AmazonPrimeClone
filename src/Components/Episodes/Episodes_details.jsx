@@ -2,19 +2,15 @@ import React, { useState } from "react";
 import { Tooltip } from "antd";
 import { BsPlayFill } from "react-icons/bs";
 import { GoDownload } from "react-icons/go";
-import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
-import { PlayShow } from "../PlayShow/PlayShow";
-
-// import { useEpisodeId } from "../../EpisodeNoContent";
-
 export const Episodes_details = ({ imgdata, episodeNo, id }) => {
   const navigate = useNavigate();
   const [isHovered, setIsHovered] = useState(false);
-  // const {setEpisodeId} = useEpisodeId(); // Get the setEpisodeId function from context
-
   const handleShowDetials = () => {
     navigate(`/TVShow/${id}`);
+  };
+  const handleDownloadClick = () => {
+    navigate("/comingSoon");
   };
   return (
     <>
@@ -76,14 +72,13 @@ export const Episodes_details = ({ imgdata, episodeNo, id }) => {
           </div>
           <div className="episode-download-btn">
             <Tooltip title="Download" placement="bottom" arrow={false}>
-              <span>
+              <span onClick={handleDownloadClick}>
                 <GoDownload className="episode-download" />
               </span>
             </Tooltip>
           </div>
         </div>
       </div>
-      {/* {isPlayClicked && <PlayShow id={id} />} */}
     </>
   );
 };

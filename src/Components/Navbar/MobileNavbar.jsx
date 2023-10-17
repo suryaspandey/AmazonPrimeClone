@@ -57,7 +57,7 @@ const MobileNavbar = () => {
     localStorage.removeItem("bearer_token");
     localStorage.removeItem("loginUserName");
   };
-  console.log("isloggedIn :", isloggedIn);
+
   return (
     <>
       <div className="mobile-navbar-container">
@@ -66,12 +66,7 @@ const MobileNavbar = () => {
           style={{ color: "white" }}
         >
           <div className="mob-menu">
-            {/* <Link
-              to={"/menu"}
-              style={{ color: "white", textDecoration: "none" }}
-            > */}
             <MobileMenuDropDown />
-            {/* </Link> */}
           </div>
           <div className="mob-prime">
             <Link to={"/"}>
@@ -108,7 +103,6 @@ const MobileNavbar = () => {
                           autoCapitalize="off"
                           placeholder="Search"
                           onChange={handleSearchValue}
-                          // onKeyDown={handleSearchValue}
                           value={searchText}
                         />
                       </span>
@@ -120,10 +114,7 @@ const MobileNavbar = () => {
                   </div>
                 </div>
               </div>
-              <div className="user-name">
-                {/* {isProfileUserName || "Try for free"} */}
-                {isProfileUserName || ""}
-              </div>
+              <div className="user-name">{isProfileUserName || ""}</div>
               <div className="user-avatar ">
                 <li
                   style={{
@@ -140,14 +131,8 @@ const MobileNavbar = () => {
                         height={30}
                         width={30}
                         style={{ borderRadius: "50%" }}
-                        // className="avatar-navitagor"
-                        // onMouseEnter={() => handleSetActivePage("Home")}
-                        // onMouseLeave={() => handleSetActivePage(null)}
-                        // className={`home-list ${
-                        //   activePage === "abcd" && isHover ? "active-page" : ""
-                        // }`}
                       />
-                      {/* <LoginUserDropdown isHover={isHover} /> */}
+
                       <div className="options avatar-options">
                         <div className="options-left">
                           <span className="optoins-login-headings">
@@ -211,13 +196,10 @@ const MobileNavbar = () => {
                             </Link>
                           </span>
 
-                          {/* </div> */}
-
                           <span className="categories-link-text">
                             <Link
                               to={"/manageprofiles"}
                               style={{
-                                // paddingLeft: "10px",
                                 listStyleType: "none",
                                 textDecoration: "none",
                                 color: "#aaa",
@@ -231,7 +213,6 @@ const MobileNavbar = () => {
                             <Link
                               to={"/Home/UserMoods"}
                               style={{
-                                // paddingLeft: "10px",
                                 listStyleType: "none",
                                 textDecoration: "none",
                                 color: "#aaa",
@@ -260,39 +241,9 @@ const MobileNavbar = () => {
                 </li>
               </div>
             </div>
-            {/* <div className="mob-search">
-              <input type="text" style={{ padding: "0 8px" }} />
-            </div>
-            <div className="mob-avatar">
-              <img src="/avatar.png" alt="user-avatar" height={30} width={30} />
-            </div> */}
           </div>
         </div>
         {isloggedIn && <MobileSubNavbar />}
-
-        {/* <div className="mobile-tv-movie-home">
-          <div className="mob-home-header">
-            <Link to={"/"}>
-              <LiaHomeSolid style={{ color: "white" }} />
-            </Link>
-          </div>
-          <div className="mob-movies-header">
-            <Link
-              style={{ color: "white", textDecoration: "none" }}
-              to={"/Home/AllMovies"}
-            >
-              Movies
-            </Link>
-          </div>
-          <div className="mob-tv-header">
-            <Link
-              style={{ color: "white", textDecoration: "none" }}
-              to={"/Home/AllTVShows"}
-            >
-              TV Shows
-            </Link>
-          </div>
-        </div> */}
       </div>
     </>
   );

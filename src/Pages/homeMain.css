@@ -4,7 +4,6 @@
   display: flex;
   height: 100%;
   width: 100%;
-  /* background-image: linear-gradient( to right, #000 40%, transparent 58% ), url(https://m.media-amazon.com/images/G/31/AmazonVideo/2019/MLP.jpg); */
 }
 
 .home-banner-text-container {
@@ -54,11 +53,7 @@
   padding: 10px 5%;
   min-height: 70vh;
   background-color: white;
-  /* position: absolute; */
-  /* z-index: 1; */
   color: black;
-  /* width: 100%; */
-
   display: flex;
   position: relative;
 }
@@ -86,23 +81,13 @@
 }
 
 .channels-grid {
-  /* max-width: 800px; */
   display: flex;
   flex-flow: row wrap;
   justify-content: space-around;
-  /* justify-items: flex-start; */
   flex-wrap: wrap;
 }
 
 .channel {
-  /* display: flex;
-  flex: 1 32%;
-  max-width: 256px;
-  padding: 0;
-  margin: 3px;
-  transition: box-shadow 0.2s ease-in-out;
-  z-index: 1; */
-
   display: flex;
   flex: 1 32%;
   max-width: 256px;
@@ -110,16 +95,6 @@
   margin: 3px;
   transition: box-shadow 0.2s ease-in-out;
   z-index: 1;
-
-  /* flex-basis: calc(33.33% - 10px);
-  margin: 5px;
-  padding: 10px;
-  background-color: rgb(
-    86,
-    130,
-    205
-  ); 
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); */
 }
 
 .channel img {
@@ -153,23 +128,18 @@
 
 @media (max-width: 415px) {
   .home-banner-text-container {
-    /* top: 5%; */
     width: 100%;
     position: relative;
     text-align: center;
   }
 
   .home-banner-text-container h1 {
-    /* font-size: 26px; */
     margin: 0px;
   }
   .banner1-text h2 {
     font-size: 18px;
     text-align: center;
   }
-  /* .home-container-main {
-    margin-top: 78px;
-  } */
 
   .primeoffersbtn {
     padding: 5px 5px;
@@ -196,7 +166,6 @@
   }
 
   .primeoffersplanlinks {
-    /* padding: 16px; */
     width: 100%;
   }
 
@@ -247,11 +216,4 @@
   .channels-list-container {
     padding: 0;
   }
-  /* .family-banner-img {
-    display: none;
-  } */
-  /* .family-home-container {
-    background-image: linear-gradient(to top, #000 0%, transparent 20%),
-      url(https://m.media-amazon.com/images/G/01/digital/video/Magellan_MLP/IN-kids-30Jan._SX1440_CR575,0,865,675_QL80_AC_FP_.jpg);
-  } */
 }

@@ -10,8 +10,6 @@
   bottom: 10px;
   left: 50%;
   transform: translateX(-50%);
-  /* background-color: rgba(207, 199, 199, 0.5); */
-  /* padding: 5px; */
   display: flex;
   justify-content: center;
   width: 100%;
@@ -34,7 +32,7 @@
 .middle-video-btns {
   position: absolute;
   top: 50%;
-  left: 50%;
+  left: 44%;
   color: white;
   background-color: transparent;
   display: flex;
@@ -51,7 +49,7 @@
 .show-title-on-video {
   position: absolute;
   top: 12%;
-  left: 40%;
+  left: 38%;
   font-weight: bold;
   font-size: 24px;
 }
@@ -118,12 +116,31 @@
     font-size: 12px !important;
   }
 }
+@media (max-width: 390px) {
+  .top-video-btns {
+    top: 13%;
+  }
+  .show-title-on-video {
+    top: 17%;
+    left: 31%;
+  }
+}
 @media (max-width: 821px) {
   .middle-video-btns {
-    left: 43%;
+    left: 38%;
   }
   .show-title-on-video {
     top: 3%;
-    left: 33%;
+    left: 31%;
+  }
+  .episode-date-duration h3 {
+    font-size: 16px;
+  }
+  .episodes-container {
+    grid-column-gap: 15px;
+  }
+  .episode-details h4 {
+    text-align: justify;
+    font-size: 18px;
   }
 }

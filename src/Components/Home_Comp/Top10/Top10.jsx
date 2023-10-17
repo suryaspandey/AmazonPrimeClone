@@ -34,10 +34,6 @@ export const Top10 = () => {
                 alignItems: "center",
               }}
             >
-              {/* <span className="prime-text-heading" style={{ marginRight: "8px" }}>
-              Prime
-            </span> */}
-
               <span className="card-indv-heading">Top 10 in India</span>
               <span className="seeMore">
                 <MdOutlineTrendingUp

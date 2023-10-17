@@ -10,7 +10,6 @@ export default function Home() {
   const [modal1Open, setModal1Open] = useState(false);
 
   const isAuthenticated = !!localStorage.getItem("bearer_token"); // will return truthy value
-  // return isAuthenticated ? <Outlet /> : <Navigate to="/login" />;
 
   const handleComingSoon = () => {
     navigate("/comingSoon");
@@ -96,7 +95,6 @@ export default function Home() {
       <div className="second-home-banner">
         <div className="home-container-main">
           <img
-            // className="second-home-banner-img"
             width="100%"
             height="100%"
             src="https://m.media-amazon.com/images/G/31/AmazonVideo/2021/X-site/MLP/TVOD/TVOD_MLP_Left.jpg"
@@ -116,9 +114,6 @@ export default function Home() {
               >
                 Rent Now
               </button>
-              {/* <a className="primeoffersplanlinks" href="">
-                                    ⓘ Plan details
-                                </a> */}
             </div>
           </div>
         </div>
@@ -236,7 +231,6 @@ export default function Home() {
           </div>
         </div>
       </div>
-      {/*  */}
 
       <div className="home-container-main firestick-container family-home-container">
         <img

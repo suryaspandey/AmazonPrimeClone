@@ -1,7 +1,5 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import WatchCardsVideo from "./WatchCardsVideo";
-import WatchCardsDescription from "./WatchCardsDescription";
 
 const WatchCardsImage = ({ item, projectId }) => {
   const [isMobile, setIsMobile] = useState(false);
@@ -18,7 +16,6 @@ const WatchCardsImage = ({ item, projectId }) => {
 
   return (
     <>
-      {/* <div className="slider-continue-watching-pic"> */}
       <div className="banner-imgs">
         <>
           <Link
@@ -30,7 +27,6 @@ const WatchCardsImage = ({ item, projectId }) => {
             state={{ projectId: projectId }}
           >
             <img
-              // className="banner-img"
               src={item.thumbnail}
               style={{
                 width: "100%",
@@ -43,7 +39,6 @@ const WatchCardsImage = ({ item, projectId }) => {
           </Link>
         </>
       </div>
-      {/* </div> */}
     </>
   );
 };

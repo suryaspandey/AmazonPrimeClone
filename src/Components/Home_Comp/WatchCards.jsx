@@ -85,8 +85,6 @@ const WatchCards = ({
 
   const handleDirection = (direction) => {
     let distance = CARD_WIDTH + 10;
-    // let distance = listRef.current.getBoundingClientRect().x - 70;
-    // let distance = listRef.current.getBoundingClientRect().x - 1;
 
     if (direction === "left" && sliderPosition > 0) {
       if (sliderPosition === 1) {
@@ -112,14 +110,6 @@ const WatchCards = ({
         }px)`;
       }
 
-      // if (sliderPosition === actualData.length - 2) {
-      //   listRef.current.style.transform = `translateX(${-distance}px)`;
-      // } else {
-      //   listRef.current.style.transform = `translateX(${
-      //     (sliderPosition + 2) * -distance
-      //   }px)`;
-      // }
-      // setSliderPosition(sliderPosition + 1);
       setSliderPosition(nextPosition);
     }
   };
@@ -142,21 +132,17 @@ const WatchCards = ({
   if (className === "seeMoreList") {
     return (
       <>
-        {/* <h1 style={{ color: "white" }}>{`${className}  is the classname`}</h1> */}
         <div
           style={{
-            // display: "flex",
             gap: "1rem",
-            position: "relative", //-->
+            position: "relative",
             padding: "1rem 0",
           }}
           showControls={showControls}
           onMouseEnter={() => setShowControls(true)}
           onMouseLeave={() => setShowControls(false)}
-          // className={`cards-container ${className}`}
         >
           <div>
-            {console.log("classname recieved", className)}
             <ul
               className={`${className}`}
               style={{
@@ -209,10 +195,8 @@ const WatchCards = ({
         showControls={showControls}
         onMouseEnter={() => setShowControls(true)}
         onMouseLeave={() => setShowControls(false)}
-        // className={`cards-container ${className}`}
       >
         <div className="wrapper">
-          {/* <div className={`slider-action left ${!showControls ? "none" : ""}`}> */}
           <div
             className={`slider-action left ${
               sliderPosition === 0 ? "none" : ""
@@ -234,26 +218,7 @@ const WatchCards = ({
               marginLeft: "50px",
             }}
           >
-            {console.log("classname recieved", className)}
-            <ul
-              className="complete-cards-ul"
-              // className={`${className}`}
-              // className="complete-cards-ul"
-              // className="continue-watching-ul"
-              style={
-                {
-                  // display: "flex",
-                  // position: "relative",
-                  // height: "150px",
-                  // overflow: "visible",
-                  // zIndex: 1001,
-                  // new
-                  // display: "grid", // Apply grid layout
-                  // gridTemplateColumns: "repeat(auto-fill, minmax(250px, 1fr))",
-                  // gap: "10px",
-                }
-              }
-            >
+            <ul className="complete-cards-ul">
               {actualData.map((item, index) =>
                 loading ? (
                   <CardLoader />
@@ -263,13 +228,8 @@ const WatchCards = ({
                     key={item._id}
                     style={{
                       position: "absolute",
-
                       left: `${index * (CARD_WIDTH + 10)}px`,
-                      // zIndex: 1002,
                       overflow: "visible",
-
-                      // new
-                      // position: "relative",
                     }}
                   >
                     <WatchCardMain
@@ -292,7 +252,6 @@ const WatchCards = ({
             className={`slider-action right ${
               sliderPosition >= actualData.length - 2 ? "none" : ""
             } `}
-            // className={`slider-action right ${!showControls ? "none" : ""} `}
           >
             <AiOutlineRight
               onClick={() => handleDirection("right")}

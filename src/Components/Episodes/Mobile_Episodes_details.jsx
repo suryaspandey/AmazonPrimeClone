@@ -102,12 +102,6 @@ const Mobile_Episodes_details = ({ imgdata, id }) => {
       ],
       style: panelStyle,
     },
-    // {
-    //   key: "3",
-    //   label: "This is panel header 3",
-    //   children: <p>{text}</p>,
-    //   style: panelStyle,
-    // },
   ];
   const navigate = useNavigate();
   const [isHovered, setIsHovered] = useState(false);
@@ -132,9 +126,7 @@ const Mobile_Episodes_details = ({ imgdata, id }) => {
           //     <CaretRightOutlined rotate={isActive ? 90 : 0} />
           //   )}
           style={{
-            // background: "grey",
             background: "#191e25",
-            // color: "white",
           }}
           items={getItems(panelStyle)}
         />

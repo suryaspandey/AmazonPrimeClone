@@ -25,10 +25,8 @@ const Top10Video = ({ showHeader }) => {
   const handleVideoEnded = () => {
     if (currentIndex < videoSources.length - 1) {
       setCurrentIndex(currentIndex + 1);
-      // onVideoChange(currentIndex + 1);
     } else {
       setCurrentIndex(0);
-      // onVideoChange(0);
     }
   };
 
@@ -70,10 +68,6 @@ const Top10Video = ({ showHeader }) => {
               alignItems: "center",
             }}
           >
-            {/* <span className="prime-text-heading" style={{ marginRight: "8px" }}>
-              Prime
-            </span> */}
-
             <span className="card-indv-heading">Top 10 in India</span>
             <span className="seeMore">
               <MdOutlineTrendingUp
@@ -101,8 +95,8 @@ const Top10Video = ({ showHeader }) => {
       <div className="corousel-container">
         <Carousel
           showThumbs={false}
-          // autoplay
-          // infiniteLoop
+          autoplay
+          infiniteLoop
           interval={5000}
           selectedItem={currentIndex}
           ref={carouselRef}
@@ -111,27 +105,10 @@ const Top10Video = ({ showHeader }) => {
         >
           {videoSources.map((source, index) => (
             <>
-              <div
-                className="corousel-container-left-right"
-                key={index}
-                // style={{ height: "550px" }}
-              >
+              <div className="corousel-container-left-right" key={index}>
                 <div className="carousel-height">
                   <span className="home-main-text">New Episode Friday</span>
                   <picture className="home-corousel-pic">
-                    {/* <img
-                      className="amazon-original"
-                      height={20}
-                      width={50}
-                      src="https://m.media-amazon.com/images/S/pv-target-images/7e5ebe135ef7e9f912cf8c29b6c9f4e22cab8ff78c0584a45c129cc1df33336e._AC_SX750_FMwebp_.png"
-                      alt="amazon-otiginal"
-                    /> */}
-                    {/* <img
-                                            className="series-name"
-                                            src="https://m.media-amazon.com/images/S/sonata-images-prod/PV_IN_WheelOfTime_S2/8bc35ebc-7543-4156-b218-f20a535d9f91._AC_SX1500_FMwebp_.png"
-
-                                            alt=""
-                                        /> */}
                     <h2 className="series-name" style={{ color: "white" }}>
                       {titleNames[index]}
                     </h2>
@@ -225,15 +202,12 @@ const Top10Video = ({ showHeader }) => {
 
                                 <InfoCircleOutlined
                                   className="watchlist-icon-img"
-                                  // className="home-plus-watchlist-btn"
-                                  // style={{ gap: "10px" }}
                                   onClick={() => {
                                     navigate(
                                       "/watchDetails/64cffee700bad552e8dcd509"
                                     );
                                   }}
                                 />
-                                {/* <div style={{ marginBottom: "10px" }}></div> */}
                               </Tooltip>
                             </button>
                           </div>
@@ -242,24 +216,8 @@ const Top10Video = ({ showHeader }) => {
                     </div>
                   </picture>
                 </div>
-                <div
-                  className="top-10-video-container"
-                  // className="right-content"
-                  // style={{
-                  //   position: "relative",
-                  //   width: "100%",
-                  //   // height: "38%",
-                  //   // height: "200px",
-                  //   // height: "100%",
-                  //   backgroundColor: "#ffffff",
-                  //   zIndex: "0",
-                  // }}
-                >
-                  <div
-                    className="video-banner-main"
-                    // style={{ height: "100vh" }}
-                    key={index}
-                  >
+                <div className="top-10-video-container">
+                  <div className="video-banner-main" key={index}>
                     <video
                       className="home-banner-video "
                       autoPlay
@@ -281,7 +239,6 @@ const Top10Video = ({ showHeader }) => {
                         className="volume-btn unmute"
                         onClick={() => {
                           setIsMuted(true);
-                          // <BiVolumeMute />;
                         }}
                       />
                     )}
@@ -292,8 +249,6 @@ const Top10Video = ({ showHeader }) => {
           ))}
         </Carousel>
       </div>
-      {/* <Top10Cards currentIndex={currentIndex} /> */}
-      {/* <Top10Cards /> */}
     </>
   );
 };

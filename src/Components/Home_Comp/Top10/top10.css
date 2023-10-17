@@ -20,8 +20,6 @@
   font-weight: 900;
   height: 133px;
   color: rgb(255, 255, 255);
-  /* background: linear-gradient(90deg,#fff 50.52%,hsla(0,0%,100%,0)); */
-  /* background: #fff; */
   transition: opacity 0.3s cubic-bezier(0.2, 0.45, 0, 1) 0.1s,
     left 0.3s cubic-bezier(0.2, 0.45, 0, 1),
     right 0.3s cubic-bezier(0.2, 0.45, 0, 1);
@@ -55,7 +53,6 @@
     transition: transform 0.5s ease;
     z-index: 10px; */
   top: -83px;
-  /* background: linear-gradient(90deg,#fff 50.52%,hsla(0,0%,100%,0)); */
 }
 
 .carousel-height {
@@ -93,8 +90,6 @@
   position: relative;
   width: 100%;
   height: 38%;
-  /* height: 500px;
-  height: 200px; */
   background-color: black;
   z-index: 0;
 }

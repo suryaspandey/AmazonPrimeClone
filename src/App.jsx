@@ -1,20 +1,14 @@
 import { useEffect, useState } from "react";
-
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "./App.css";
-// import Home from "./Pages/Home";
 import WatchDetails from "./Pages/WatchDetails/WatchDetails";
 import Navigator from "./Components/Navigator";
 import Home_Corousel from "./Components/Home_Comp/Home_Corousel";
-import { PlayShow } from "./Components/PlayShow/PlayShow";
 import { VideoPlayer } from "./Components/PlayShow/VideoPlayer";
-
-import { PlayShow1 } from "./Components/PlayShow/PlayShow1";
 import { CompleteShowList } from "./Pages/CompleteShowList";
 import LanguageMoviesAndShows from "./Components/Language/LanguageMoviesAndShows";
 import Footer from "./Components/Footer/Footer";
 import Categories from "./Pages/Categories";
-import ActionAdventureMovies from "./Components/Home_Comp/ActionAdventure/ActionAdventureMovies";
 import ActionAndAdventureMain from "./Components/Home_Comp/ActionAdventure/ActionAndAdventureMain";
 import Home from "./Pages/Home";
 import AllTVShows from "./Components/AllTVShows/AllTVShows";
@@ -41,18 +35,11 @@ import FantasyMain from "./Components/AllCategories/FantasyMain";
 import HorrorMain from "./Components/AllCategories/HorrorMain";
 import RomanceMain from "./Components/AllCategories/RomanceMain";
 import MobileNavbar from "./Components/Navbar/MobileNavbar";
-import MobileMenuDropDown from "./Components/Navbar/MobileMenuDropDown";
 import SciFiMain from "./Components/AllCategories/SciFiMain";
 import WatcDetailsMobile from "./Pages/WatchDetails/WatcDetailsMobile";
 import MobileAddToWatchList from "./Components/Watchlist/MobileAddToWatchList";
-import { videoSources } from "./Components/Home_Comp/carouselData";
-
-import CardLoader from "./Components/Loader/CardLoader";
-// import { EpisodeNoContent } from "./EpisodeNoContent";
 
 function App() {
-  // const isAuthenticated = true;
-
   const isLoginOrRegister =
     window.location.pathname === "/login" ||
     window.location.pathname === "/register";
@@ -87,7 +74,7 @@ function App() {
 
   useEffect(function () {
     const listerFn = function (event) {
-      console.log("I am called");
+      // console.log("I am called");
     };
     window.addEventListener("popstate", listerFn);
     return () => {
@@ -96,7 +83,6 @@ function App() {
   }, []);
 
   return (
-    // <EpisodeNoContent>
     <>
       <BrowserRouter>
         {!isLoginOrRegister &&
@@ -115,9 +101,6 @@ function App() {
             <Route path="/Home/AllTVShows" element={<AllTVShows />} />
             <Route path="/Home/KidsAll" element={<KidsAll />} />
 
-            {/* loader to be removed */}
-            <Route path="/loader" element={<CardLoader />} />
-
             {isMobile ? (
               <Route
                 path="/watchDetailsMob/:id"
@@ -127,9 +110,6 @@ function App() {
               <Route path="/watchDetails/:id" element={<WatchDetails />} />
             )}
 
-            {/* <Route path="/watchDetails/:id" element={<WatchDetails />} /> */}
-
-            {/* <Route path="/TVShow/:id" element={<VideoPlayer />} /> */}
             <Route
               path="/CompleteShowList/:category"
               element={<CompleteShowList />}
@@ -184,8 +164,6 @@ function App() {
 
             <Route path="/Search/:phrase" element={<Search />} />
             <Route path="/Subscription" element={<Subscription />} />
-
-            {/* <Route path="/menu" element={<MobileMenuDropDown />} /> */}
           </Route>
 
           <Route element={<PrivateRoute />}>
@@ -204,14 +182,19 @@ function App() {
           </Route>
         </Routes>
       </BrowserRouter>
-      {!isLoginOrRegister && <Footer />}
-      {/* {!isVideoPlayerPage && <Footer />} */}
+      {/* <Footer /> */}
+
+      {/* {!isVideoPlayerPage && isMobile && <Footer />} */}
+      {/* {isVideoPlayerPage ? null : <Footer />} */}
+
+      {/* {!isVideoPlayerPage && isMobile && <Footer />} */}
+      {/* {!isLoginOrRegister && <Footer />} */}
+      {!isVideoPlayerPage && <Footer />}
 
       {/* {!isLoginOrRegister && !window.location.pathname.includes("/TVShow") && (
         <Footer />
       )} */}
     </>
-    // </EpisodeNoContent>
   );
 }
 

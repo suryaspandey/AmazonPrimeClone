@@ -1,7 +1,7 @@
 import React from "react";
 import "./cardLoader.css";
 import { useState } from "react";
-import { Avatar, Card, Skeleton, Switch } from "antd";
+import { Avatar, Card } from "antd";
 const { Meta } = Card;
 
 const CardLoader = () => {
@@ -15,7 +15,6 @@ const CardLoader = () => {
         className="cardLoader"
         style={{
           width: 250,
-          //   marginTop: 16,
           margin: 16,
         }}
         loading={loading}
@@ -24,8 +23,6 @@ const CardLoader = () => {
           avatar={
             <Avatar src="https://xsgames.co/randomusers/avatar.php?g=pixel&key=1" />
           }
-          // title="Card title"
-          // description="This is the description"
         />
       </Card>
     </div>

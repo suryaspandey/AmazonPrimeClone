@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import WatchCards from "../Home_Comp/WatchCards";
-// import "./recommendedMovies.css";
 import "react-multi-carousel/lib/styles.css";
 import { useApi } from "../../APIContext";
 import { useNavigate } from "react-router";

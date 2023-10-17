@@ -1,12 +1,9 @@
 import React, { useState } from "react";
 import { useEffect } from "react";
-import WatchCards from "../Home_Comp/WatchCards";
 import "./mobileAddToWatchList.css";
-import { DownOutlined } from "@ant-design/icons";
 import { Dropdown, Space } from "antd";
 import { MdKeyboardArrowDown, MdKeyboardArrowUp } from "react-icons/md";
 import { Link } from "react-router-dom";
-import { PiDotsThreeVerticalBold } from "react-icons/pi";
 import WatchListModal from "./WatchListModal";
 
 const MobileAddToWatchList = () => {
@@ -18,13 +15,10 @@ const MobileAddToWatchList = () => {
 
   const [isMOdal, setIsModal] = useState(false);
 
-  const [selectedItem, setSelectedItem] = useState(null);
-
   const handleModal = () => {
     setIsModal(!isMOdal);
   };
 
-  // const [loading, setLoading] = useState(true);
   useEffect(() => {
     const headers = {
       projectId: projectId,
@@ -70,9 +64,6 @@ const MobileAddToWatchList = () => {
       (item) => item._id !== removedItem
     );
     setWatchlistData(updatedWatchList);
-    // setIsInWatchList(false);
-
-    // console.log("handleRemoveFromWatchList", updatedWatchList);
   };
   // if (loading) {
   //   return <div>Loading...</div>;
@@ -87,10 +78,8 @@ const MobileAddToWatchList = () => {
         showTypes.includes(item.type)
       );
     }
-    // setFilteredData(filteredData);
-    setSelectedShowType(showTypes);
 
-    // setWatchlistData(filteredData);
+    setSelectedShowType(showTypes);
   };
 
   const handleDownArrow = () => {
@@ -137,12 +126,9 @@ const MobileAddToWatchList = () => {
     );
   }
 
-  console.log("isInWatchList ", isInWatchList);
-
   return (
     <div style={{ height: "100vh" }}>
       <div className="watchlist-header-container">
-        {/* <h1 className="addTowatchlist-heading">Watchlist im Mob</h1> */}
         <div className="buttons-recent-addition-container">
           <div className="watchlist-btns-container">
             <button
@@ -236,7 +222,6 @@ const MobileAddToWatchList = () => {
                                 to={`/watchDetailsMob/${item._id}`}
                                 state={{ projectId: projectId }}
                               >
-                                {console.log("item.thumbnail", item.thumbnail)}
                                 <img
                                   src={item.thumbnail}
                                   style={{
@@ -310,89 +295,19 @@ const MobileAddToWatchList = () => {
                                 to={`/watchDetailsMob/${item._id}`}
                                 state={{ projectId: projectId }}
                               >
-                                {console.log("item.thumbnail", item.thumbnail)}
                                 <img
                                   src={item.thumbnail}
                                   style={{
                                     height: "100px",
                                     width: "178px",
                                     borderRadius: "8px",
+                                    objectFit: "cover",
                                   }}
                                 />
                               </Link>
                             </div>
 
                             <div className="mob-watchCardsDescriptions">
-                              {/* <div className="play-btn-text">
-                      <p href="#" className="play-btn-link">
-                        <span className="home-play-btn-container-new ">
-                          <Link
-                            to={
-                              // isMobile
-                              // ?
-                              `/watchDetailsMob/${item._id}`
-                              // : `/watchDetails/${item._id}`
-                            }
-                            state={{
-                              projectId: projectId,
-                            }}
-                          >
-                            <img
-                              className="home-play-btn home-play-btn-new"
-                              src="/play-btn.PNG"
-                              alt="play button"
-                              width={265}
-                            />
-                          </Link>
-                        </span>
-                        <span
-                          className="play-text"
-                          style={{
-                            color: "white",
-                          }}
-                        >
-                          Resume
-                        </span>
-                      </p>
-                      <div className="watchlist-details-container">
-                        <button className="watchlist-btn continue-watching-btn">
-                          <Tooltip
-                            title="Watchlist"
-                            placement="bottom"
-                            arrow={false}
-                          >
-                            {isloggedIn &&
-                            (watchlistStatus[item._id] ||
-                              !addtowatchlist ||
-                              !isInWatchList) ? (
-                              <span>
-                                <PlusOutlined
-                                  className="home-plus-watchlist-btn "
-                                  onClick={() => handleWatchList(item._id)}
-                                />
-                              </span>
-                            ) : (
-                              <AiOutlineCheck
-                                className="home-plus-watchlist-btn"
-                                onClick={() => handleWatchList(item._id)}
-                              />
-                            )}
-                          </Tooltip>
-                        </button>
-                        <button className="watchlist-btn continue-watching-btn">
-                          <Tooltip
-                            onClick={() => {
-                              handleTrailer();
-                            }}
-                            title="Trailer"
-                            placement="bottom"
-                            arrow={false}
-                          >
-                            <MoreOutlined className="home-plus-watchlist-btn" />
-                          </Tooltip>
-                        </button>
-                      </div>
-                    </div> */}
                               <h4
                                 className="continue-watching-title"
                                 style={{ padding: "0 10px", fontSize: "13px" }}

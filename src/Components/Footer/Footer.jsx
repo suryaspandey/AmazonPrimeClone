@@ -3,7 +3,7 @@ import "./footer.css";
 
 const Footer = () => {
   const [isMobile, setIsMobile] = useState(false);
-  const noShow = location.pathname.includes("TVShow");
+  const noShow = window.location.pathname.includes("TVShow");
 
   useEffect(() => {
     const handleResize = () => {
@@ -14,13 +14,16 @@ const Footer = () => {
     handleResize();
     window.removeEventListener("resize", handleResize);
   });
+  if (noShow) {
+    return null;
+  }
   return (
     <>
       {!isMobile && (
         <div className="emptypadding" style={{ paddingTop: "180px" }}></div>
       )}
 
-      <div className="footer-container" style={{ padding: "24px" }}>
+      <div className="footer-container noFooter" style={{ padding: "24px" }}>
         <div className="footer-img">
           <img
             src="/Prime-Video-footer.png"

@@ -49,7 +49,6 @@ const WatchCardMain = ({
             isInWatchList={isInWatchList}
             handleRemoveFromWatchList={handleRemoveFromWatchList}
             actualData={actualData}
-            // isHovered={isHovered}
           />
 
           {isHovered && (
@@ -77,7 +76,6 @@ const WatchCardMain = ({
                 }}
               >
                 <img
-                  // className="banner-img"
                   src={item.thumbnail}
                   style={{
                     width: "100%",
@@ -128,36 +126,6 @@ const WatchCardMain = ({
             </div>
           )}
         </div>
-        {/* {isHovered || true ? (
-          <div
-            style={{
-              position: "absolute",
-              height: "250px",
-            }}
-          >
-            <WatchCardImageVideo
-              item={item}
-              projectId={projectId}
-              watchlistStatus={watchlistStatus}
-              isloggedIn={isloggedIn}
-              addtowatchlist={addtowatchlist}
-              isInWatchList={isInWatchList}
-              handleRemoveFromWatchList={handleRemoveFromWatchList}
-              actualData={actualData}
-              isHovered={isHovered}
-            />
-            <WatchCardsDescription
-              item={item}
-              projectId={projectId}
-              watchlistStatus={watchlistStatus}
-              isloggedIn={isloggedIn}
-              addtowatchlist={addtowatchlist}
-              isInWatchList={isInWatchList}
-              handleRemoveFromWatchList={handleRemoveFromWatchList}
-              actualData={actualData}
-            />
-          </div>
-        ) : null} */}
       </li>
     </div>
   );

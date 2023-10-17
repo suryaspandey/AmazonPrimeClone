@@ -21,13 +21,11 @@ const WatcDetailsMobile = () => {
   const [details, setDetails] = useState(null);
   const [loading, setLoading] = useState(true);
   const [isPlayBtnClicked, SetIsPlayBtnClicked] = useState(false);
-  // const TabPane = Tabs.TabPane;
   const [activeTab, setActiveTab] = useState("1");
   const navigate = useNavigate();
   const [TVShowType, setTVShowType] = useState(false);
 
   const [isInWatchList, setIsInWatchList] = useState(false);
-  // const bearerToken = localStorage.getItem("bearer_token");
   const projectId = "zxke0qiu2960";
 
   useEffect(() => {
@@ -43,7 +41,7 @@ const WatcDetailsMobile = () => {
         );
         if (response.ok) {
           const data = await response.json();
-          console.log(data);
+
           setDetails(data);
 
           const showtype = data.data.type;
@@ -108,10 +106,6 @@ const WatcDetailsMobile = () => {
     }
   };
 
-  // if (!details) {
-  //     return <div>Loading...</div>; // Show a loading message while data is being fetched
-  // }
-
   const handlePlayBtnClick = () => {
     SetIsPlayBtnClicked(true);
   };
@@ -122,14 +116,6 @@ const WatcDetailsMobile = () => {
   const isAuthenticated = !!localStorage.getItem("bearer_token");
   const [isloggedIn, setIsLoggedIn] = useState(isAuthenticated);
   const [addtowatchlist, setAddTowatchlist] = useState("false");
-
-  // const [watchlistStatus, setWatchlistStatus] = useState(() => {
-  //   const initialStatus = {};
-  //   actualData.forEach((item) => {
-  //     initialStatus[item._id] = false;
-  //   });
-  //   return initialStatus;
-  // });
 
   const watchlistUpdateAPI =
     "https://academics.newtonschool.co/api/v1/ott/watchlist/like";
@@ -158,10 +144,7 @@ const WatcDetailsMobile = () => {
     })
       .then((response) => response.json())
       .then((watchData) => {
-        // console.log("mob watchdata", watchData);
-
         setIsInWatchList((prevStatus) => !prevStatus);
-
         setAddTowatchlist(true);
         handleRemoveFromWatchList(id);
       })
@@ -183,8 +166,7 @@ const WatcDetailsMobile = () => {
     <div className="banner-watchDetails-container1">
       {loading ? (
         <Loader />
-      ) : // <div style={{ color: "white", fontSize: "100px" }}>Loading...</div>
-      details ? (
+      ) : details ? (
         <>
           <div className="watchDetails-img1">
             <img src={details.data.thumbnail} alt={details.title} />
@@ -215,10 +197,10 @@ const WatcDetailsMobile = () => {
                 More Purchase Options
               </button>
             </div>
-            {/* </span> */}
+
             <div className="watchDetails-btn-options-container1">
               <span className="home-play-btn-container-new trailer-span">
-                <span>
+                <span onClick={handleComingSoon}>
                   <BiMoviePlay className="trailer-img1" />
                   <p className="mob-watchdetails-tooltip-name">Trailer</p>
                 </span>
@@ -240,7 +222,7 @@ const WatcDetailsMobile = () => {
                       onClick={() => handleWatchList()}
                     />
                   )}
-                  {/* <AiOutlinePlus className="trailer-img1" /> */}
+
                   <p className="mob-watchdetails-tooltip-name">Watchlist</p>
                 </span>
               </span>
@@ -248,7 +230,7 @@ const WatcDetailsMobile = () => {
                 className="home-play-btn-container-new trailer-span"
                 onClick={handleComingSoon}
               >
-                <span>
+                <span onClick={handleComingSoon}>
                   <GoDownload className="trailer-img1" />
                   <p className="mob-watchdetails-tooltip-name">Download</p>
                 </span>
@@ -273,7 +255,7 @@ const WatcDetailsMobile = () => {
               </span>
             </div>
           </div>
-          {/* <div className="content-main"></div> */}
+
           <div className="watchdetails-text-btn-content1">
             <div className="details-title-description1">
               <h1 className="show-title1" style={{ fontSize: "50px" }}>
@@ -306,21 +288,6 @@ const WatcDetailsMobile = () => {
                   })}
                 </ul>
               </div>
-              {/* <div className="included-with-prime-img-txt1">
-                <img
-                  className="blue-tick-img"
-                  src="/prime-blue-tick.png"
-                  alt=""
-                />
-                <h5
-                  style={{
-                    color: "white",
-                    margin: "8px",
-                  }}
-                >
-                  Included with prime
-                </h5>
-              </div> */}
             </div>
           </div>
           <div className="episodes-details-container1">

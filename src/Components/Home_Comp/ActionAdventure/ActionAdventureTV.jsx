@@ -11,8 +11,6 @@ const ActionAdventureTV = ({ heading }) => {
   const navigate = useNavigate();
   const { setApi } = useApi();
 
-  console.log("heading: ", heading); // false
-
   const bearerToken = localStorage.getItem("bearer_token");
 
   const projectId = "zxke0qiu2960";
@@ -28,7 +26,6 @@ const ActionAdventureTV = ({ heading }) => {
       .then((response) => response.json())
       .then((exdata) => {
         const allData = exdata;
-        // console.log(allData);
         setMyData(exdata.data);
       });
   }, [projectId, bearerToken]);
@@ -70,15 +67,7 @@ const ActionAdventureTV = ({ heading }) => {
       )}
 
       <div className="carousel-main" style={{ display: "flex" }}>
-        {/* {myData.map((item) => {
-                    return ( */}
-        <WatchCards
-          // key={item._id}
-          actualData={myData}
-          projectId={projectId}
-        />
-        {/* );
-                })} */}
+        <WatchCards actualData={myData} projectId={projectId} />
       </div>
     </>
   );

@@ -2,20 +2,13 @@ import React, { useEffect, useState } from "react";
 import ActionAdventureMovies from "./ActionAdventureMovies";
 import ActionAdventureTV from "./ActionAdventureTV";
 import "./actionAdventureMain.css";
-import { useLocation, useNavigate, useParams } from "react-router";
+import { useNavigate, useParams } from "react-router";
 import { Link } from "react-router-dom";
 
 const ActionAndAdventureMain = () => {
-  const [showCompAll, setShowCompAll] = useState(true);
-  const [showCompMovie, setShowCompMovie] = useState(false);
-  const [showCompTVShow, setShowCompTVShow] = useState(false);
   const [isActive, setIsActive] = useState(1);
 
-  const location = useLocation();
-  console.log("useLocation", location.pathname);
-
   const { subheading } = useParams();
-  console.log("subheading: ", subheading);
   const navigate = useNavigate();
 
   useEffect(() => {

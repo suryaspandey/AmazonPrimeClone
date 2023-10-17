@@ -3,15 +3,11 @@
   padding: 4px 0 !important;
 }
 
-/* .addtoWatchlist-three-dots .ant-btn-primary:enabled {
-  background-color: transparent;
-} */
 .mobile-watchlist-modal .ant-modal-content {
   height: 100px !important;
   width: 100% !important;
   position: absolute !important;
   bottom: 0px;
-  /* background-color: #232424; */
   background-color: #191e25;
 }
 .mobile-watchlist-modal .ant-modal-title {

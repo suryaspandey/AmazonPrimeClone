@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useLocation, useNavigate, useParams } from "react-router";
+import { useNavigate, useParams } from "react-router";
 import { Link } from "react-router-dom";
 
 import DramaTVShow from "../AllTVShows/DramaTVShows";
@@ -8,11 +8,7 @@ import DramaMovies from "../Home_Comp/DramaMovies";
 const DramaMain = () => {
   const [isActive, setIsActive] = useState(1);
 
-  const location = useLocation();
-  console.log("useLocation", location.pathname);
-
   const { subheading } = useParams();
-  console.log("subheading: ", subheading);
   const navigate = useNavigate();
 
   useEffect(() => {

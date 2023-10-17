@@ -14,7 +14,6 @@ const Navigator = () => {
 
   const [isSearchVisible, setIsSearchVisible] = useState(false);
   const [searchText, setSearchText] = useState("");
-  // const [searchParams, setSearchParams] = useSearchParams();
   let profileUserName = "";
   const isAuthenticated = !!localStorage.getItem("bearer_token");
   const [isloggedIn, setIsLoggedIn] = useState(isAuthenticated);
@@ -30,7 +29,6 @@ const Navigator = () => {
       setIsLoggedIn(true);
       const userName = localStorage.getItem("loginUserName");
       // profileUserName = userName[0].toUpperCase() + userName.slice(1);
-      console.log("users name after login", userName);
       setIsProfileUserName(userName);
     }
   }, [isAuthenticated]);
@@ -82,15 +80,6 @@ const Navigator = () => {
     e.preventDefault();
     navigate(`/search/${encodeURIComponent(searchText)}`);
   };
-  console.log("isloggedIn :", isloggedIn);
-
-  // const [noShow, setNoShow] = useState(false);
-  // useEffect(() => {
-  //   const noShowBar =
-  //     location.pathname.includes("/login") ||
-  //     location.pathname.includes("/register");
-  //   setNoShow(noShowBar);
-  // }, location.pathname);
 
   return (
     <>
@@ -115,9 +104,6 @@ const Navigator = () => {
                 </li>
               </div>
 
-              {/* <li>
-                Store <IoIosArrowDown />
-              </li> */}
               <li
                 onMouseEnter={() => handleSetActivePage("Live TV")}
                 onMouseLeave={() => handleSetActivePage(null)}
@@ -184,7 +170,6 @@ const Navigator = () => {
                         autoCapitalize="off"
                         placeholder="Search"
                         onChange={handleSearchValue}
-                        // onKeyDown={handleSearchValue}
                         value={searchText}
                       />
                     </span>
@@ -212,23 +197,18 @@ const Navigator = () => {
                       height={30}
                       width={30}
                       style={{ borderRadius: "50%" }}
-                      // className="avatar-navitagor"
                       onMouseEnter={() => handleSetActivePage("Home")}
                       onMouseLeave={() => handleSetActivePage(null)}
                       className={`home-list nav-avatar ${
                         activePage === "abcd" && isHover ? "active-page" : ""
                       }`}
                     />
-                    {/* <LoginUserDropdown isHover={isHover} /> */}
+
                     <div className="options avatar-options">
                       <div className="options-left">
                         <span className="optoins-login-headings">
                           Your Account
                         </span>
-
-                        {/* <span className="categories-link-text">
-                          <Link className="categories-link-text">Help</Link>
-                        </span> */}
 
                         <span className="categories-link-text">
                           <Link
@@ -285,13 +265,10 @@ const Navigator = () => {
                           </Link>
                         </span>
 
-                        {/* </div> */}
-
                         <span className="categories-link-text">
                           <Link
                             to={"/manageprofiles"}
                             style={{
-                              // paddingLeft: "10px",
                               listStyleType: "none",
                               textDecoration: "none",
                               color: "#aaa",
@@ -305,7 +282,6 @@ const Navigator = () => {
                           <Link
                             to={"/Home/UserMoods"}
                             style={{
-                              // paddingLeft: "10px",
                               listStyleType: "none",
                               textDecoration: "none",
                               color: "#aaa",

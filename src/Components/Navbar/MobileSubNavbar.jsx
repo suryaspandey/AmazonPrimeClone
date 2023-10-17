@@ -4,9 +4,7 @@ import { Link, useLocation } from "react-router-dom";
 
 const MobileSubNavbar = () => {
   const location = useLocation();
-  //   console.log("noShow", noShow);
-  // if(location.pathname.includes("watchDetailsMob"))
-  //   console.log("location is :", location.pathname.includes("watchDetailsMob"));
+
   const noShow = location.pathname.includes("watchDetailsMob");
   return (
     <>

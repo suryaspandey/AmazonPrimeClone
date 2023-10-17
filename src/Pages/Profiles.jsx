@@ -11,8 +11,7 @@ const Profiles = () => {
 
   const loginUserName = localStorage.getItem("loginUserName");
   const capName = loginUserName[0].toUpperCase() + loginUserName.slice(1);
-  // const name2= loginUserName.split(1)
-  console.log("capName", capName);
+
   const [isEditClicked, setIsEditClicked] = useState(false);
   const navigate = useNavigate();
 
@@ -36,7 +35,6 @@ const Profiles = () => {
         <div className="profile-holder">
           <ul className="profile-ul">
             <li className="profile-li">
-              {/* <Link style={{ textDecoration: "none" }}> */}
               <button className="profile-img-btn">
                 <img
                   className="profile-img"
@@ -51,7 +49,6 @@ const Profiles = () => {
                 <MdOutlineEdit
                   className="edit-pencil-icon"
                   onClick={() => {
-                    console.log("edit pencil clicked");
                     navigate("/EditProfile");
                   }}
                 />

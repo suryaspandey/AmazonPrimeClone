@@ -67,7 +67,6 @@ const Top10HomeImages = ({ showHeader }) => {
             <div className="corousel-container-left-right" key={index}>
               <Link
                 to={`/watchDetailsMob/64cffee700bad552e8dcd509`}
-                // to={`/watchDetails/64cffee700bad552e8dcd509`}
                 state={{
                   projectId: projectId,
                 }}
@@ -115,45 +114,6 @@ const Top10HomeImages = ({ showHeader }) => {
                       alt={`Thumbnail ${index}`}
                       style={{ width: "100%" }}
                     />
-
-                    {/* <div className="watchlist-details-container">
-                    <Link
-                      to={`/TVShow/64cffee700bad552e8dcd509`}
-                      state={{
-                        projectId: projectId,
-                      }}
-                    >
-                      <BsPlayFill
-                        className="carousel-play-btn"
-                        style={{ fontSize: "65px" }}
-                        onClick={() =>
-                          handleVideoURL(videoSources[index], titleNames[index])
-                        }
-                      />
-                    </Link>
-                    <span className="play-text">Play</span>
-                    <button className="watchlist-btn" title="Watchlist">
-                      <PlusOutlined
-                        className="watchlist-icon-img"
-                        style={{ fontSize: "30px" }}
-                      />
-                    </button>
-                    <button className="watchlist-btn">
-                      <Tooltip
-                        title="Details"
-                        placement="bottom"
-                        arrow={false}
-                        style={{ paddingTop: "10px" }}
-                      >
-                        <InfoCircleOutlined
-                          className="watchlist-icon-img"
-                          onClick={() => {
-                            navigate(`/watchDetails/${index}`);
-                          }}
-                        />
-                      </Tooltip>
-                    </button>
-                  </div> */}
                   </div>
                 </div>
               </Link>

@@ -4,19 +4,6 @@ import { Button, Form, Input } from "antd";
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 
-const tailFormItemLayout = {
-  wrapperCol: {
-    xs: {
-      span: 24,
-      offset: 0,
-    },
-    sm: {
-      span: 16,
-      offset: 8,
-    },
-  },
-};
-
 const Register = () => {
   const [form] = Form.useForm();
   const [formLayout, setFormLayout] = useState("vertical");
@@ -62,13 +49,11 @@ const Register = () => {
     })
       .then((response) =>
         response.json().then((data) => {
-          console.log("signup: ", data);
           if (data.status === "fail") {
             setErrorMessage(`${data.message}!`);
           } else {
             const bearer_token = data.token;
-            console.log("bearer_token: ", bearer_token);
-            // localStorage.setItem("access_token", access_token);
+
             localStorage.setItem("bearer_token", bearer_token);
             localStorage.setItem("loginUserName", values.nickname);
             navigate("/home");

@@ -1,19 +1,14 @@
 import React, { useEffect, useState } from "react";
 import { useLocation, useNavigate, useParams } from "react-router";
 import { Link } from "react-router-dom";
-import MysteryAndThriller from "../Home_Comp/MysteryAndThriller";
-import MysteryThrillerTVShows from "../AllTVShows/MysteryThrillerTVShows";
 import ComedyMovies from "../Home_Comp/ComedyMovies";
 import ComedyTVShows from "../AllTVShows/ComedyTVShows";
 
 const ComedyMain = () => {
   const [isActive, setIsActive] = useState(1);
 
-  const location = useLocation();
-  console.log("useLocation", location.pathname);
-
   const { subheading } = useParams();
-  console.log("subheading: ", subheading);
+
   const navigate = useNavigate();
 
   useEffect(() => {

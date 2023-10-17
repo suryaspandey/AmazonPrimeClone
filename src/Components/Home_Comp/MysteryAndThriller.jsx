@@ -7,7 +7,7 @@ import { useNavigate } from "react-router";
 import { MdKeyboardArrowRight } from "react-icons/md";
 
 // const MysteryAndThriller = ({ heading }) => {
-const MysteryAndThriller = ({ heading }) => {
+const MysteryAndThriller = () => {
   const [myData, setMyData] = useState([]);
   const navigate = useNavigate();
   const { setApi } = useApi();
@@ -75,14 +75,7 @@ const MysteryAndThriller = ({ heading }) => {
             Prime
           </span>
 
-          {heading ? (
-            <span className="card-indv-heading">Related Movies</span>
-          ) : (
-            <span className="card-indv-heading">
-              Mystery and Thriller Movies
-            </span>
-          )}
-
+          <span className="card-indv-heading">Mystery and Thriller Movies</span>
           <span className="seeMore" onClick={handleSeeMoreClick}>
             See More
             <MdKeyboardArrowRight

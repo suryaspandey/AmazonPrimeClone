@@ -6,10 +6,6 @@
   flex-direction: row;
 }
 
-/* .modal-container .ant-modal-footer {
-  display: none;
-} */
-
 .modal-main-div {
   justify-content: center;
   display: flex;

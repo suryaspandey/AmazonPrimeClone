@@ -31,8 +31,6 @@ const UserMoodsModal = () => {
     num = Math.floor(Math.random() * n) + 1;
   }
 
-  console.log("surpriseMeOptions" + num);
-
   return (
     <>
       <div className="modal-main-div">
@@ -45,14 +43,12 @@ const UserMoodsModal = () => {
           open={isModalOpen}
           onOk={handleOk}
           onCancel={handleCancel}
-          // -- trying new buttons
           footer={[
             <Button
               className="noThanks-mood-btn"
               key="submit"
               type="primary"
               onClick={handleCancel}
-              // style={{ backgroundColor: "rgb(113 113 119)" }}
             >
               Skip
             </Button>,
@@ -106,7 +102,6 @@ const UserMoodsModal = () => {
               </div>
               <div className="mood-happy">
                 <img
-                  // style={{ marginTop: "10px" }}
                   className="moods-imgs"
                   src="/surprise2_mood.png"
                   alt=""

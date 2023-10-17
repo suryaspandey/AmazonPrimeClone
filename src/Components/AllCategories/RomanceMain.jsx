@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useLocation, useNavigate, useParams } from "react-router";
+import { useNavigate, useParams } from "react-router";
 import { Link } from "react-router-dom";
 import RomanceTVShows from "../AllTVShows/RomanceTVShows";
 import RomanceMovies from "../Home_Comp/RomanceMovies";
@@ -7,11 +7,7 @@ import RomanceMovies from "../Home_Comp/RomanceMovies";
 const RomanceMain = () => {
   const [isActive, setIsActive] = useState(1);
 
-  const location = useLocation();
-  console.log("useLocation", location.pathname);
-
   const { subheading } = useParams();
-  console.log("subheading: ", subheading);
   const navigate = useNavigate();
 
   useEffect(() => {

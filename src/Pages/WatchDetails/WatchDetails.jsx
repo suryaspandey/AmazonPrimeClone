@@ -11,8 +11,6 @@ import { Tabs, ConfigProvider } from "antd";
 import { Series_Episodes } from "../../Components/Episodes/Series_Episodes";
 import { ShowDetails } from "../../Components/ShowDetails/ShowDetails";
 import RelatedMovies from "../../Components/Episodes/RelatedMovies";
-import MobileWatchCard from "../../Components/Watchlist/MobileWatchCard";
-import WatcDetailsMobile from "./WatcDetailsMobile";
 import Loader from "../../Components/Loader/Loader";
 
 const WatchDetails = () => {
@@ -20,7 +18,6 @@ const WatchDetails = () => {
   const [details, setDetails] = useState(null);
   const [loading, setLoading] = useState(true);
   const [isPlayBtnClicked, SetIsPlayBtnClicked] = useState(false);
-  // const TabPane = Tabs.TabPane;
   const [activeTab, setActiveTab] = useState("1");
   const navigate = useNavigate();
   const [TVShowType, setTVShowType] = useState(false);
@@ -60,7 +57,6 @@ const WatchDetails = () => {
         );
         if (response.ok) {
           const data = await response.json();
-          console.log(data);
           setDetails(data);
 
           const showtype = data.data.type;
@@ -77,7 +73,7 @@ const WatchDetails = () => {
       } catch (err) {
         console.log("Error fetching data: ", err);
       } finally {
-        setLoading(false); // Set loading to false whether successful or not
+        setLoading(false);
       }
     };
     fetchData();
@@ -125,10 +121,6 @@ const WatchDetails = () => {
     }
   };
 
-  // if (!details) {
-  //     return <div>Loading...</div>; // Show a loading message while data is being fetched
-  // }
-
   const handlePlayBtnClick = () => {
     SetIsPlayBtnClicked(true);
   };
@@ -162,10 +154,7 @@ const WatchDetails = () => {
     })
       .then((response) => response.json())
       .then((watchData) => {
-        // console.log("mob watchdata", watchData);
-
         setIsInWatchList((prevStatus) => !prevStatus);
-
         setAddTowatchlist(true);
         handleRemoveFromWatchList(id);
       })
@@ -173,19 +162,13 @@ const WatchDetails = () => {
         console.error("Error:", error);
       });
   };
+
   const handleRemoveFromWatchList = (removedItem) => {
     const updatedWatchList = watchlistData.filter(
       (item) => item._id !== removedItem
     );
     setWatchlistData(updatedWatchList);
   };
-  // if (isMobile) {
-  //   return (
-  //     <>
-  //       <WatcDetailsMobile />
-  //     </>
-  //   );
-  // }
 
   const handleComingSoon = () => {
     navigate("/comingSoon");
@@ -193,7 +176,6 @@ const WatchDetails = () => {
   return (
     <div className="banner-watchDetails-container">
       {loading ? (
-        // <div style={{ color: "white", fontSize: "100px" }}>Loading...</div>
         <Loader />
       ) : details ? (
         <>
@@ -265,9 +247,7 @@ const WatchDetails = () => {
                   {isPlayBtnClicked && handleShowDetials()}
                 </div>
               </span>
-              {/* <span className="play-text " style={{ color: "white" }}>
-                Play
-              </span> */}
+
               <span>
                 <div className="more-purchase-options">
                   <button
@@ -307,7 +287,6 @@ const WatchDetails = () => {
                           onClick={() => handleWatchList()}
                         />
                       )}
-                      {/* <AiOutlinePlus className="trailer-img1" /> */}
                     </span>
                   </Tooltip>
                 </span>

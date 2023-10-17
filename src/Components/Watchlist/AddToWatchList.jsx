@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useEffect } from "react";
 import WatchCards from "../Home_Comp/WatchCards";
 import "./addToWatchList.css";
-import { DownOutlined } from "@ant-design/icons";
+
 import { Dropdown, Space } from "antd";
 import { MdKeyboardArrowDown, MdKeyboardArrowUp } from "react-icons/md";
 
@@ -11,8 +11,6 @@ const AddToWatchList = () => {
   const [isInWatchList, setIsInWatchList] = useState(false);
   const [selectedShowType, setSelectedShowType] = useState("All");
   const [showDownArrow, setShowDownArrow] = useState(true);
-
-  // const [loading, setLoading] = useState(true);
 
   const isAuthenticated = !!localStorage.getItem("bearer_token");
   const [isloggedIn, setIsLoggedIn] = useState(isAuthenticated);
@@ -52,7 +50,6 @@ const AddToWatchList = () => {
     let filteredData = [];
     if (showTypes.includes("All")) {
       filteredData = [...watchlistData];
-      // console.log("all filtered data for ALL", filteredData);
     } else {
       filteredData = watchlistData.filter((item) =>
         showTypes.includes(item.type)
@@ -183,9 +180,7 @@ const AddToWatchList = () => {
         </div>
       </div>
       {isloggedIn && (
-        <div
-        // className="carousel-main" style={{ display: "flex" }}
-        >
+        <div>
           <>
             <WatchCards
               actualData={

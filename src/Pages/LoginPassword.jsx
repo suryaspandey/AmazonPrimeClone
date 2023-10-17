@@ -17,7 +17,6 @@ const LoginPassword = ({ loginEmail }) => {
     fetch("https://academics.newtonschool.co/api/v1/user/login", {
       method: "POST",
       headers: {
-        // Authorization: `Bearer ${bearerToken}`,
         "Content-Type": "application/json",
         projectId: projectId,
       },
@@ -29,12 +28,10 @@ const LoginPassword = ({ loginEmail }) => {
     })
       .then((response) => response.json())
       .then((data) => {
-        console.log(data);
         if (data.status === "success") {
           localStorage.setItem("bearer_token", data.token);
           localStorage.setItem("loginUserName", data.data.name);
           navigate("/Home/UserMoods");
-          // navigate("/home");
         } else {
           console.error("Login failed:", data.message);
           setErrMsg(data.message);
@@ -46,7 +43,6 @@ const LoginPassword = ({ loginEmail }) => {
   };
 
   const onFinish = (values) => {
-    console.log("Received values of form: ", values.password);
     handleLogin(values);
   };
   return (
@@ -92,7 +88,6 @@ const LoginPassword = ({ loginEmail }) => {
             >
               <Input type="password" className="login-username-input" />
             </Form.Item>
-            {/* <Link to={"/forgotPassword"}>Change Password</Link> */}
 
             <Form.Item>
               <Button

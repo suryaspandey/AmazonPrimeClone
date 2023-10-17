@@ -24,7 +24,6 @@ const CreateNewPassword = () => {
   const [errorMessage, setErrorMessage] = useState("");
   const navigate = useNavigate();
   const loginUserName = localStorage.getItem("loginUserName");
-  console.log("create new pass user name", loginUserName);
   const formItemLayout =
     formLayout === "horizontal"
       ? {
@@ -120,19 +119,7 @@ const CreateNewPassword = () => {
                 {errorMessage}
               </p>
             )}
-            {/* <Form.Item
-              name="name"
-              label="Your Name"
-              rules={[
-                {
-                  required: true,
-                  message: "Enter your name!",
-                  whitespace: true,
-                },
-              ]}
-            >
-              <Input />
-            </Form.Item> */}
+
             <Form.Item
               name="email"
               label="E-mail"

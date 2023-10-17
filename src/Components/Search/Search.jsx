@@ -61,6 +61,7 @@ const Search = () => {
               TV shows and movies.
             </h1>
             <ShortFilms />
+            {/* <HorrorMovies /> */}
           </div>
         </div>
       </>

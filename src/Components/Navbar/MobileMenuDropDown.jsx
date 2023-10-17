@@ -137,9 +137,7 @@ const MobileMenuDropDown = () => {
   return (
     <>
       <Dropdown
-        // overlayStyle={{ position: "absolute", left: "0%" }}
         trigger={["click"]}
-        // placement="bottomLeft"
         menu={{
           items,
         }}

@@ -1,12 +1,9 @@
 import React, { useEffect, useState } from "react";
 import WatchCards from "./WatchCards";
 import "./recommendedMovies.css";
-import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import { MdKeyboardArrowRight } from "react-icons/md";
 import { Link, useNavigate } from "react-router-dom";
-// import { Carousel } from "react-responsive-carousel";
-// import { useApi } from "../APIContext";
 
 import { useApi } from "../../APIContext";
 
@@ -16,11 +13,9 @@ const ComedyMovies = () => {
   const { setApi } = useApi();
   const bearerToken = localStorage.getItem("bearer_token");
 
-  // const bearerToken =
-  //   "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1MDM0NTc0MjhiYWJjMTExMDE5MmNmYiIsImlhdCI6MTY5NDcxMzIwNCwiZXhwIjoxNzI2MjQ5MjA0fQ.DKJz5ZvO667Ht9irDWLfynH2rhqPxGMxSrncaSPeU5w";
   const projectId = "zxke0qiu2960";
   const comedyMoviesURL = `https://academics.newtonschool.co/api/v1/ott/show?filter={"$and": [{"keywords": "comedy"},{"type":"movie"}]}`;
-  // const comedyThrillerMOvieAPI = `https://academics.newtonschool.co/api/v1/ott/show?filter={"$and": [{"keywords": "comedy"},{"type":"movie"},{"keywords":"thriller"}]}`;
+
   useEffect(() => {
     const headers = {
       projectId: projectId,
@@ -31,7 +26,6 @@ const ComedyMovies = () => {
       .then((response) => response.json())
       .then((exdata) => {
         const allData = exdata;
-        // console.log(allData);
         setMyData(exdata.data);
       });
   }, [projectId, bearerToken]);
@@ -39,12 +33,10 @@ const ComedyMovies = () => {
   const handleSeeMoreClick = () => {
     setApi(comedyMoviesURL);
     navigate("/CompleteShowList/Comedy Movies");
-    // console.log("comedyThrillerMOvieAPI", comedyMoviesURL);
   };
 
   const responsive = {
     superLargeDesktop: {
-      // the naming can be any, depends on you.
       breakpoint: { max: 4000, min: 3000 },
       items: 5,
     },

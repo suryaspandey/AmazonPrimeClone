@@ -1,13 +1,7 @@
 import React, { useEffect, useState } from "react";
-import { DownOutlined } from "@ant-design/icons";
-import { Dropdown, Space, Tooltip } from "antd";
-import { Checkbox } from "antd";
-import { Badge, Switch } from "antd";
-import { AiOutlineDown } from "react-icons/ai";
-import { IoIosArrowDown, IoIosArrowUp } from "react-icons/io";
 import "./completeShowList.css";
 import WatchCards from "../Components/Home_Comp/WatchCards";
-import { Link, useLocation, useNavigate, useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { useApi } from "../APIContext";
 
 export const CompleteShowList = () => {
@@ -15,8 +9,6 @@ export const CompleteShowList = () => {
   const [checkCount, setIsCheckCount] = useState(0);
   const { api } = useApi();
   const showType = useParams();
-  console.log("show title location", showType.category);
-  // console.log("api", api);
 
   const [myData, setMyData] = useState([]);
   const isAuthenticated = !!localStorage.getItem("bearer_token");
@@ -28,7 +20,6 @@ export const CompleteShowList = () => {
 
   useEffect(() => {
     const recievedAPI = api;
-    // console.log(recievedAPI);
     const headers = {
       projectId: projectId,
       Authorization: `Bearer ${bearerToken}`,
@@ -38,7 +29,6 @@ export const CompleteShowList = () => {
       .then((response) => response.json())
       .then((exdata) => {
         const allData = exdata;
-        console.log(allData);
         setMyData(exdata.data);
       });
   }, [projectId, bearerToken]);
@@ -79,10 +69,8 @@ export const CompleteShowList = () => {
                   <div className="mob-showlist-img-container">
                     <Link
                       to={`/watchDetailsMob/${item._id}`}
-                      // to={`/watchDetails/${item._id}`}
                       state={{ projectId: projectId }}
                     >
-                      {console.log("item.thumbnail", item.thumbnail)}
                       <img
                         src={item.thumbnail}
                         style={{
@@ -96,76 +84,6 @@ export const CompleteShowList = () => {
                   </div>
 
                   <div className="mob-watchCardsDescriptions">
-                    {/* <div className="play-btn-text">
-                      <p href="#" className="play-btn-link">
-                        <span className="home-play-btn-container-new ">
-                          <Link
-                            to={
-                              // isMobile
-                              // ?
-                              `/watchDetailsMob/${item._id}`
-                              // : `/watchDetails/${item._id}`
-                            }
-                            state={{
-                              projectId: projectId,
-                            }}
-                          >
-                            <img
-                              className="home-play-btn home-play-btn-new"
-                              src="/play-btn.PNG"
-                              alt="play button"
-                              width={265}
-                            />
-                          </Link>
-                        </span>
-                        <span
-                          className="play-text"
-                          style={{
-                            color: "white",
-                          }}
-                        >
-                          Resume
-                        </span>
-                      </p>
-                      <div className="watchlist-details-container">
-                        <button className="watchlist-btn continue-watching-btn">
-                          <Tooltip
-                            title="Watchlist"
-                            placement="bottom"
-                            arrow={false}
-                          >
-                            {isloggedIn &&
-                            (watchlistStatus[item._id] ||
-                              !addtowatchlist ||
-                              !isInWatchList) ? (
-                              <span>
-                                <PlusOutlined
-                                  className="home-plus-watchlist-btn "
-                                  onClick={() => handleWatchList(item._id)}
-                                />
-                              </span>
-                            ) : (
-                              <AiOutlineCheck
-                                className="home-plus-watchlist-btn"
-                                onClick={() => handleWatchList(item._id)}
-                              />
-                            )}
-                          </Tooltip>
-                        </button>
-                        <button className="watchlist-btn continue-watching-btn">
-                          <Tooltip
-                            onClick={() => {
-                              handleTrailer();
-                            }}
-                            title="Trailer"
-                            placement="bottom"
-                            arrow={false}
-                          >
-                            <MoreOutlined className="home-plus-watchlist-btn" />
-                          </Tooltip>
-                        </button>
-                      </div>
-                    </div> */}
                     <h4
                       className="continue-watching-title"
                       style={{ padding: "0 10px", fontSize: "13px" }}
@@ -189,25 +107,6 @@ export const CompleteShowList = () => {
                         <h3 style={{ fontSize: "14px" }}>U/A 16+</h3>
                       </div>
                     </div>
-                    {/* <div
-                      className="continue-watching-description "
-                      style={{
-                        overflow: "hidden",
-                        textOverflow: "ellipsis",
-                      }}
-                    >
-                      <h4
-                        style={{
-                          textAlign: "left",
-                          fontSize: "14px",
-                          paddingLeft: "7px",
-
-                          margin: "3px",
-                        }}
-                      >
-                        {item.description}
-                      </h4>
-                    </div> */}
                   </div>
                 </div>
               );

@@ -33,16 +33,6 @@ function EditProfile() {
     {
       !isCancelled && message.success("Changes Saved");
     }
-
-    // setUserName(userName);
-    // localStorage.setItem("profileUserName", userName);
-
-    // // setprofileImg(profileImage);
-
-    // setprofileImg(profileImg);
-    // console.log("profileImg", profileImg);
-
-    // setIsCancel(false);
   };
 
   const handleProfileImgChange = async (event) => {
@@ -83,7 +73,6 @@ function EditProfile() {
       const data = await response.json();
 
       if (response.ok) {
-        console.log(data.data.user.profileImage);
         setNewProfileImg(data.data.user.profileImage);
         localStorage.setItem("profileImage", data.data.user.profileImage);
         setUserName(data.data.user.name);
@@ -125,10 +114,7 @@ function EditProfile() {
             maxLength={50}
             required
             placeholder="Enter name"
-            // value={data.data.user.name}
             value={userName}
-            // onChange={(e) => setUserName(e.target.value)}
-            // defaultValue={userName}
           />
         </div>
 

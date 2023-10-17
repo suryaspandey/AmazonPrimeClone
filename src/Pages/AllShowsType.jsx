@@ -1,21 +1,14 @@
 import React from "react";
 import "./allShowsType.css";
-import { DownOutlined } from "@ant-design/icons";
-import { Dropdown, Space } from "antd";
 import { Checkbox } from "antd";
-import { Badge, Switch } from "antd";
-import { AiOutlineDown } from "react-icons/ai";
 import { IoIosArrowDown, IoIosArrowUp } from "react-icons/io";
 import "./completeShowList.css";
-import WatchCards from "../Components/Home_Comp/WatchCards";
-import { Link, useNavigate } from "react-router-dom";
 import { useApi } from "../APIContext";
 
 const AllShowsType = () => {
   const [isArrowclicked, setIsArrowClicked] = useState(false);
   const [checkCount, setIsCheckCount] = useState(0);
   const { api } = useApi();
-  // console.log("api", api);
 
   const [myData, setMyData] = useState([]);
 
@@ -25,7 +18,6 @@ const AllShowsType = () => {
 
   useEffect(() => {
     const recievedAPI = api;
-    // console.log(recievedAPI);
     const headers = {
       projectId: projectId,
       Authorization: `Bearer ${bearerToken}`,

@@ -2,14 +2,6 @@ import React, { useEffect, useState } from "react";
 import { Carousel } from "antd";
 import "./subscription.css";
 
-const contentStyle = {
-  height: "560px",
-  color: "#fff",
-  lineHeight: "160px",
-  textAlign: "center",
-  //   background: "#364d79",
-  background: "white",
-};
 const Subscription = () => {
   const [isMobile, setIsMobile] = useState(false);
 
