@@ -46,7 +46,7 @@ function App() {
 
   const isVideoPlayerPage = window.location.pathname.includes("/TVShow");
 
-  // const [isLoginOrRegister, setIsLoginOrRegister] = useState(false);
+  const [isLoginOrRegisterPage, setIsLoginOrRegisterPage] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
 
   // const [isLoginOrRegister, setIsLoginOrRegister] = useState(
@@ -54,10 +54,10 @@ function App() {
   //     window.location.pathname === "/register"
   // );
 
-  // useEffect(() => {
-  //   const pathname = window.location.pathname;
-  //   setIsLoginOrRegister(pathname === "/login" || pathname === "/register");
-  // }, [window.location.pathname]);
+  useEffect(() => {
+    const pathname = window.location.pathname;
+    setIsLoginOrRegisterPage(pathname === "/login" || pathname === "/register");
+  }, [window.location.pathname]);
 
   useEffect(() => {
     const handleResize = () => {
@@ -72,15 +72,15 @@ function App() {
     };
   });
 
-  useEffect(function () {
-    const listerFn = function (event) {
-      // console.log("I am called");
-    };
-    window.addEventListener("popstate", listerFn);
-    return () => {
-      window.removeEventListener("popstate", listerFn);
-    };
-  }, []);
+  // useEffect(function () {
+  //   const listerFn = function (event) {
+  //     // console.log("I am called");
+  //   };
+  //   window.addEventListener("popstate", listerFn);
+  //   return () => {
+  //     window.removeEventListener("popstate", listerFn);
+  //   };
+  // }, []);
 
   return (
     <>

@@ -23,7 +23,7 @@ const WatchCards = ({
       setLoading(false);
     }, 1000);
 
-    return () => clearTimeout(timer); // Clean up the timer when component is unmounted
+    return () => clearTimeout(timer);
   }, []);
 
   const isAuthenticated = !!localStorage.getItem("bearer_token");

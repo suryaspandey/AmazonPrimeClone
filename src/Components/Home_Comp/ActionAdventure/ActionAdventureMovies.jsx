@@ -40,37 +40,33 @@ const ActionAdventureMovies = () => {
 
   return (
     <>
-      <div className="home">
-        <div className="cards-heaading">
-          <h2
-            style={{
-              display: "flex",
-              alignItems: "center",
-            }}
+      <div className="cards-heaading">
+        <h2
+          style={{
+            display: "flex",
+            alignItems: "center",
+          }}
+        >
+          <span
+            className="prime-text-heading prime-show"
+            style={{ marginRight: "8px" }}
           >
-            <span
-              className="prime-text-heading prime-show"
-              style={{ marginRight: "8px" }}
-            >
-              Prime
-            </span>
+            Prime
+          </span>
 
-            <span className="card-indv-heading">
-              Action and adventure movies
-            </span>
-            <span className="seeMore" onClick={handleSeeMoreClick}>
-              See More
-              <MdKeyboardArrowRight
-                className="seeMoreIcon"
-                style={{ fontSize: "40px" }}
-              />
-            </span>
-          </h2>
-        </div>
+          <span className="card-indv-heading">Action and adventure movies</span>
+          <span className="seeMore" onClick={handleSeeMoreClick}>
+            See More
+            <MdKeyboardArrowRight
+              className="seeMoreIcon"
+              style={{ fontSize: "40px" }}
+            />
+          </span>
+        </h2>
+      </div>
 
-        <div className="carousel-main" style={{ display: "flex" }}>
-          <WatchCards actualData={myData} projectId={projectId} />
-        </div>
+      <div className="carousel-main" style={{ display: "flex" }}>
+        <WatchCards actualData={myData} projectId={projectId} />
       </div>
     </>
   );

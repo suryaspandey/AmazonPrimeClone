@@ -11,6 +11,8 @@ import ActionAdventureMovies from "../Home_Comp/ActionAdventure/ActionAdventureM
 import RomanceMovies from "../Home_Comp/RomanceMovies";
 import FantasyMovies from "../Home_Comp/FantasyMovies";
 import HorrorMovies from "../Home_Comp/HorrorMovies";
+import ComedyTVShows from "../AllTVShows/ComedyTVShows";
+import ScienceFictionTVShows from "../AllTVShows/ScienceFictionTVShows";
 
 const LanguageMoviesAndShows = () => {
   const language = useParams();
@@ -25,87 +27,91 @@ const LanguageMoviesAndShows = () => {
 
   return (
     <>
-      <div className="language-container">
-        {loading ? (
-          <Loader />
-        ) : (
-          <>
-            <div className="language-banner">
-              <img
-                className="lang-banner-img"
-                src="/language-banner.PNG"
-                alt="watch in your language"
-              />
-              <div className="language-text">
-                <h1 className="watch-in">WATCH IN</h1>
-                <h1 className="watch-in">{language.language.toUpperCase()}</h1>
+      <div className="home">
+        <div className="language-container">
+          {loading ? (
+            <Loader />
+          ) : (
+            <>
+              <div className="language-banner">
+                <img
+                  className="lang-banner-img"
+                  src="/language-banner.PNG"
+                  alt="watch in your language"
+                />
+                <div className="language-text">
+                  <h1 className="watch-in">WATCH IN</h1>
+                  <h1 className="watch-in">
+                    {language.language.toUpperCase()}
+                  </h1>
 
-                <button className="lang-more-details">More Details</button>
+                  <button className="lang-more-details">More Details</button>
+                </div>
               </div>
-            </div>
 
-            {language.language === "English" && (
-              <>
-                <ComedyMovies />
-                <SciFi />
-              </>
-            )}
-            {language.language === "Hindi" && (
-              <>
-                <SciFi />
-                <HorrorMovies />
-              </>
-            )}
-            {language.language === "Kannada" && (
-              <>
-                <MysteryAndThriller />
-                <ActionAdventureMovies />
-              </>
-            )}
-            {language.language === "Telugu" && (
-              <>
-                <DramaMovies />
-                <ComedyMovies />
-              </>
-            )}
-            {language.language === "Tamil" && (
-              <>
-                <Documentries />
-                <MysteryAndThriller />
-              </>
-            )}
-            {language.language === "Punjabi" && (
-              <>
-                <ActionAdventureMovies />
-                <RomanceMovies />
-              </>
-            )}
-            {language.language === "Bengali" && (
-              <>
-                <RomanceMovies />
-                <FantasyMovies />
-              </>
-            )}
-            {language.language === "Punjabi" && (
-              <>
-                <FantasyMovies />
-                <SciFi />
-              </>
-            )}
-            {language.language === "Marathi" && (
-              <>
-                <HorrorMovies />
-                <Documentries />
-              </>
-            )}
-            {language.language === "Gujarati" && (
-              <>
-                <FantasyMovies />
-                <ComedyMovies />
-              </>
-            )}
-          </>
-        )}
+              {language.language === "English" && (
+                <>
+                  <ComedyTVShows />
+                  <ScienceFictionTVShows />
+                </>
+              )}
+              {language.language === "Hindi" && (
+                <>
+                  <SciFi />
+                  <HorrorMovies />
+                </>
+              )}
+              {language.language === "Kannada" && (
+                <>
+                  <MysteryAndThriller />
+                  <ActionAdventureMovies />
+                </>
+              )}
+              {language.language === "Telugu" && (
+                <>
+                  <DramaMovies />
+                  <ComedyMovies />
+                </>
+              )}
+              {language.language === "Tamil" && (
+                <>
+                  <Documentries />
+                  <MysteryAndThriller />
+                </>
+              )}
+              {language.language === "Punjabi" && (
+                <>
+                  <ActionAdventureMovies />
+                  <RomanceMovies />
+                </>
+              )}
+              {language.language === "Bengali" && (
+                <>
+                  <RomanceMovies />
+                  <FantasyMovies />
+                </>
+              )}
+              {language.language === "Punjabi" && (
+                <>
+                  <FantasyMovies />
+                  <SciFi />
+                </>
+              )}
+              {language.language === "Marathi" && (
+                <>
+                  <HorrorMovies />
+                  <Documentries />
+                </>
+              )}
+              {language.language === "Gujarati" && (
+                <>
+                  <FantasyMovies />
+                  <ComedyMovies />
+                </>
+              )}
+            </>
+          )}
+        </div>
       </div>
     </>
   );

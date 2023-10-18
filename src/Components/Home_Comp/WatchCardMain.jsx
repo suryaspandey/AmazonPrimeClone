@@ -93,7 +93,7 @@ const WatchCardMain = ({
                   isloggedIn={isloggedIn}
                   addtowatchlist={addtowatchlist}
                   isInWatchList={isInWatchList}
-                  // handleRemoveFromWatchList={handleRemoveFromWatchList}
+                  handleRemoveFromWatchList={handleRemoveFromWatchList}
                   actualData={actualData}
                   isHovered={isHovered}
                 />

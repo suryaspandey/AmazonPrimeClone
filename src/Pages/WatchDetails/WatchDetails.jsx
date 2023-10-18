@@ -177,186 +177,192 @@ const WatchDetails = () => {
     navigate("/comingSoon");
   };
   return (
-    <div className="banner-watchDetails-container">
-      {loading ? (
-        <Loader />
-      ) : details ? (
-        <>
-          <div className="watchDetails-img">
-            <img src={details.data.thumbnail} alt={details.title} />
-          </div>
-          <div className="content-main"></div>
-          <div className="watchdetails-text-btn-content">
-            <div className="details-title-description">
-              <h1 className="show-title" style={{ fontSize: "50px" }}>
-                {details.data.title}
-              </h1>
-              <h3 className="show-description">{details.data.description}</h3>
-
-              <div className="imdb-details">
-                <span className="imdb-rating">IMDb 8.5</span>
-                <span className="show-duration">1 hr 30 min</span>
-                <span className="imdb-year">2020</span>
-              </div>
-              <div className="genre">
-                <ul style={{ color: "white" }}>
-                  {details.data.keywords.map((item, index) => {
-                    return (
-                      <li key={index}>
-                        <span>
-                          <a
-                            href=""
-                            style={{
-                              color: "white",
-                            }}
-                          >
-                            {item.charAt(0).toUpperCase() + item.slice(1)}
-                          </a>
-                        </span>
-                      </li>
-                    );
-                  })}
-                </ul>
-              </div>
-              <div className="included-with-prime-img-txt">
-                <img
-                  className="blue-tick-img"
-                  src="/prime-blue-tick.png"
-                  alt=""
-                />
-                <h5
-                  style={{
-                    color: "white",
-                    margin: "8px",
-                  }}
-                >
-                  Included with prime
-                </h5>
-              </div>
+    <div className="home">
+      <div className="banner-watchDetails-container">
+        {loading ? (
+          <Loader />
+        ) : details ? (
+          <>
+            <div className="watchDetails-img">
+              <img src={details.data.thumbnail} alt={details.title} />
             </div>
-            <div className="details-btns-container">
-              <span className="home-play-btn-container-new  ">
-                <div className="watchDetails-play-btn-container">
-                  <img
-                    onClick={() => SetIsPlayBtnClicked(true)}
-                    className="details-play-btn"
-                    src="/play-btn.PNG"
-                    alt="play button"
-                    width={275}
-                  />
-                  <span className="play-text " style={{ color: "white" }}>
-                    Play
-                  </span>
-                  {isPlayBtnClicked && handleShowDetials()}
-                </div>
-              </span>
+            <div className="content-main"></div>
+            <div className="watchdetails-text-btn-content">
+              <div className="details-title-description">
+                <h1 className="show-title" style={{ fontSize: "50px" }}>
+                  {details.data.title}
+                </h1>
+                <h3 className="show-description">{details.data.description}</h3>
 
-              <span>
-                <div className="more-purchase-options">
-                  <button
-                    className="more-purchase-options-btn"
+                <div className="imdb-details">
+                  <span className="imdb-rating">IMDb 8.5</span>
+                  <span className="show-duration">1 hr 30 min</span>
+                  <span className="imdb-year">2020</span>
+                </div>
+                <div className="genre">
+                  <ul style={{ color: "white" }}>
+                    {details.data.keywords.map((item, index) => {
+                      return (
+                        <li key={index}>
+                          <span>
+                            <a
+                              href=""
+                              style={{
+                                color: "white",
+                              }}
+                            >
+                              {item.charAt(0).toUpperCase() + item.slice(1)}
+                            </a>
+                          </span>
+                        </li>
+                      );
+                    })}
+                  </ul>
+                </div>
+                <div className="included-with-prime-img-txt">
+                  <img
+                    className="blue-tick-img"
+                    src="/prime-blue-tick.png"
+                    alt=""
+                  />
+                  <h5
+                    style={{
+                      color: "white",
+                      margin: "8px",
+                    }}
+                  >
+                    Included with prime
+                  </h5>
+                </div>
+              </div>
+              <div className="details-btns-container">
+                <span className="home-play-btn-container-new  ">
+                  <div className="watchDetails-play-btn-container">
+                    <img
+                      onClick={() => SetIsPlayBtnClicked(true)}
+                      className="details-play-btn"
+                      src="/play-btn.PNG"
+                      alt="play button"
+                      width={275}
+                    />
+                    <span className="play-text " style={{ color: "white" }}>
+                      Play
+                    </span>
+                    {isPlayBtnClicked && handleShowDetials()}
+                  </div>
+                </span>
+
+                <span>
+                  <div className="more-purchase-options">
+                    <button
+                      className="more-purchase-options-btn"
+                      onClick={handleComingSoon}
+                    >
+                      More Purchase Options
+                    </button>
+                  </div>
+                </span>
+                <div className="watchDetails-btn-options-container">
+                  <span
+                    className="home-play-btn-container-new trailer-span"
                     onClick={handleComingSoon}
                   >
-                    More Purchase Options
-                  </button>
-                </div>
-              </span>
-              <div className="watchDetails-btn-options-container">
-                <span
-                  className="home-play-btn-container-new trailer-span"
-                  onClick={handleComingSoon}
-                >
-                  <Tooltip title="Trailer" placement="bottom" arrow={false}>
-                    <span>
-                      <BiMoviePlay className="trailer-img" />
-                    </span>
-                  </Tooltip>
-                </span>
-                <span className="home-play-btn-container-new trailer-span">
-                  <Tooltip title="Watchlist" placement="bottom" arrow={false}>
-                    <span>
-                      {(isloggedIn && !isInWatchList) ||
-                      !addtowatchlist ||
-                      !isInWatchList ? (
-                        <span>
-                          <AiOutlinePlus
+                    <Tooltip title="Trailer" placement="bottom" arrow={false}>
+                      <span>
+                        <BiMoviePlay className="trailer-img" />
+                      </span>
+                    </Tooltip>
+                  </span>
+                  <span className="home-play-btn-container-new trailer-span">
+                    <Tooltip title="Watchlist" placement="bottom" arrow={false}>
+                      <span>
+                        {(isloggedIn && !isInWatchList) ||
+                        !addtowatchlist ||
+                        !isInWatchList ? (
+                          <span>
+                            <AiOutlinePlus
+                              className="trailer-img"
+                              onClick={handleWatchList}
+                            />
+                          </span>
+                        ) : (
+                          <AiOutlineCheck
                             className="trailer-img"
-                            onClick={handleWatchList}
+                            onClick={() => handleWatchList()}
                           />
-                        </span>
-                      ) : (
-                        <AiOutlineCheck
-                          className="trailer-img"
-                          onClick={() => handleWatchList()}
-                        />
-                      )}
-                    </span>
-                  </Tooltip>
-                </span>
-                <span
-                  className="home-play-btn-container-new trailer-span"
-                  onClick={handleComingSoon}
-                >
-                  <Tooltip title="Download" placement="bottom" arrow={false}>
-                    <span>
-                      <GoDownload className="trailer-img" />
-                    </span>
-                  </Tooltip>
-                </span>
-                <span
-                  className="home-play-btn-container-new trailer-span"
-                  onClick={handleComingSoon}
-                >
-                  <Tooltip title="Watch Party" placement="bottom" arrow={false}>
-                    <span>
-                      <GiPartyPopper className="trailer-img" />
-                    </span>
-                  </Tooltip>
-                </span>
-                <span
-                  className="home-play-btn-container-new trailer-span"
-                  onClick={handleComingSoon}
-                >
-                  <Tooltip title="Share" placement="bottom" arrow={false}>
-                    <span>
-                      <HiOutlineShare className="trailer-img" />
-                    </span>
-                  </Tooltip>
-                </span>
+                        )}
+                      </span>
+                    </Tooltip>
+                  </span>
+                  <span
+                    className="home-play-btn-container-new trailer-span"
+                    onClick={handleComingSoon}
+                  >
+                    <Tooltip title="Download" placement="bottom" arrow={false}>
+                      <span>
+                        <GoDownload className="trailer-img" />
+                      </span>
+                    </Tooltip>
+                  </span>
+                  <span
+                    className="home-play-btn-container-new trailer-span"
+                    onClick={handleComingSoon}
+                  >
+                    <Tooltip
+                      title="Watch Party"
+                      placement="bottom"
+                      arrow={false}
+                    >
+                      <span>
+                        <GiPartyPopper className="trailer-img" />
+                      </span>
+                    </Tooltip>
+                  </span>
+                  <span
+                    className="home-play-btn-container-new trailer-span"
+                    onClick={handleComingSoon}
+                  >
+                    <Tooltip title="Share" placement="bottom" arrow={false}>
+                      <span>
+                        <HiOutlineShare className="trailer-img" />
+                      </span>
+                    </Tooltip>
+                  </span>
+                </div>
               </div>
             </div>
-          </div>
-          <div className="episodes-details-container">
-            <ConfigProvider
-              theme={{
-                components: {
-                  Tabs: {
-                    colorPrimary: "white",
-                    itemHoverColor: "white",
-                    itemActiveColor: "white",
-                    itemColor: "#aaa",
+            <div className="episodes-details-container">
+              <ConfigProvider
+                theme={{
+                  components: {
+                    Tabs: {
+                      colorPrimary: "white",
+                      itemHoverColor: "white",
+                      itemActiveColor: "white",
+                      itemColor: "#aaa",
+                    },
                   },
-                },
-              }}
-            >
-              <div className="tabs-container">
-                <Tabs
-                  defaultActiveKey="1"
-                  items={items}
-                  style={{ color: "white" }}
-                  onChange={onChange}
-                  activeKey={activeTab}
-                />
-              </div>
-            </ConfigProvider>
-            {renderTabContent()}
+                }}
+              >
+                <div className="tabs-container">
+                  <Tabs
+                    defaultActiveKey="1"
+                    items={items}
+                    style={{ color: "white" }}
+                    onChange={onChange}
+                    activeKey={activeTab}
+                  />
+                </div>
+              </ConfigProvider>
+              {renderTabContent()}
+            </div>
+          </>
+        ) : (
+          <div style={{ color: "white", fontSize: "100px" }}>
+            Details not available at the moment!
           </div>
-        </>
-      ) : (
-        <div style={{ color: "white", fontSize: "100px" }}>
-          Details not available at the moment!
-        </div>
-      )}
+        )}
+      </div>
     </div>
   );
 };

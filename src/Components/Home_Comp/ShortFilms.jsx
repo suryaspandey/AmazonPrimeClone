@@ -36,25 +36,23 @@ const ShortFilms = () => {
 
   return (
     <>
-      <div className="home">
-        <div className="cards-heaading">
-          <h2
-            style={{
-              display: "flex",
-              alignItems: "center",
-            }}
-          >
-            <span className="prime-text-heading" style={{ marginRight: "8px" }}>
-              Prime
-            </span>
+      <div className="cards-heaading">
+        <h2
+          style={{
+            display: "flex",
+            alignItems: "center",
+          }}
+        >
+          <span className="prime-text-heading" style={{ marginRight: "8px" }}>
+            Prime
+          </span>
 
-            <span className="card-indv-heading">Top TV and movies</span>
-          </h2>
-        </div>
+          <span className="card-indv-heading">Top TV and movies</span>
+        </h2>
+      </div>
 
-        <div className="carousel-main" style={{ display: "flex" }}>
-          <WatchCards actualData={myData} projectId={projectId} />
-        </div>
+      <div className="carousel-main" style={{ display: "flex" }}>
+        <WatchCards actualData={myData} projectId={projectId} />
       </div>
     </>
   );

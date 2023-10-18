@@ -46,13 +46,13 @@ const WatchCardsVideo = ({
           style={{
             width: "100%",
             height: "270px",
-            objectFit: "cover",
+            // objectFit: "cover",
             borderRadius: "0.3rem",
-            top: "0px",
+            top: "-60px",
             zIndex: 5,
             position: "absolute",
+            background: "black",
           }}
-          // className="watch-details-video"
           src={item.video_url}
           autoPlay={true}
           loop
@@ -65,7 +65,7 @@ const WatchCardsVideo = ({
           }}
         />
       </Link>
-      {!isHovered && (
+      {isHovered && (
         <>
           {isMuted ? (
             <BiVolumeMute
