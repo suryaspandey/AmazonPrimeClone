@@ -141,7 +141,7 @@ export const VideoPlayer = () => {
 
     timer = setTimeout(() => {
       setShowControls(false);
-    }, 800000);
+    }, 8000);
   };
 
   return (
