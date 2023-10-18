@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, HashRouter, Routes, Route } from "react-router-dom";
 import "./App.css";
 import WatchDetails from "./Pages/WatchDetails/WatchDetails";
 import Navigator from "./Components/Navigator";
@@ -84,7 +84,7 @@ function App() {
 
   return (
     <>
-      <BrowserRouter>
+      <HashRouter>
         {!isLoginOrRegister &&
           !isVideoPlayerPage &&
           (isMobile ? <MobileNavbar /> : <Navigator />)}
@@ -181,7 +181,7 @@ function App() {
             <Route path="/createNewPassword" element={<CreateNewPassword />} />
           </Route>
         </Routes>
-      </BrowserRouter>
+      </HashRouter>
       {/* <Footer /> */}
 
       {/* {!isVideoPlayerPage && isMobile && <Footer />} */}

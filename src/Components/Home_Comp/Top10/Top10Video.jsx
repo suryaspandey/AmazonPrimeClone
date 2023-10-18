@@ -9,7 +9,7 @@ import { MdOutlineTrendingUp } from "react-icons/md";
 import { BsPlayFill } from "react-icons/bs";
 import { Tooltip } from "antd";
 import { videoSources, titleNames } from "../../Home_Comp/carouselData";
-import Top10Cards from "./Top10Cards";
+
 import { Link } from "react-router-dom";
 
 const Top10Video = ({ showHeader }) => {
@@ -28,16 +28,6 @@ const Top10Video = ({ showHeader }) => {
     } else {
       setCurrentIndex(0);
     }
-  };
-
-  let videoURL;
-  const id = "1234";
-
-  const handleVideoURL = (videoURL, title) => {
-    localStorage.setItem("videoURL", videoURL);
-    localStorage.setItem("title", title);
-    localStorage.setItem("id", id);
-    navigate(`/TVShow/1234`);
   };
 
   useEffect(() => {

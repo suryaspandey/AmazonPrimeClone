@@ -1,11 +1,11 @@
 import React from "react";
-import { DownOutlined } from "@ant-design/icons";
 import { Dropdown, Space } from "antd";
 import { LiaHomeSolid } from "react-icons/lia";
 import { PiTelevisionBold } from "react-icons/pi";
 import { TbCategory } from "react-icons/tb";
 import { CgDisplayGrid } from "react-icons/cg";
 import "./mobileMenuDropDown.css";
+import { Link } from "react-router-dom";
 const items = [
   {
     key: "1",
@@ -13,17 +13,17 @@ const items = [
     children: [
       {
         key: "1-1",
-        label: <a href="/home">Home</a>,
+        label: <Link to="/home">Home</Link>,
         icon: <LiaHomeSolid />,
       },
       {
         key: "1-2",
-        label: <a href="/Live TV">Live TV</a>,
+        label: <Link to="/Live TV">Live TV</Link>,
         icon: <PiTelevisionBold />,
       },
       {
         icon: <CgDisplayGrid />,
-        label: <a href="/myStuff/MobWatchlist">My Stuff</a>,
+        label: <Link to="/myStuff/MobWatchlist">My Stuff</Link>,
         key: "1-4",
       },
     ],
@@ -41,39 +41,39 @@ const items = [
         children: [
           {
             key: "English",
-            label: <a href="/WatchInYourLanguage/English">English</a>,
+            label: <Link to="/WatchInYourLanguage/English">English</Link>,
           },
           {
             key: "Hindi",
-            label: <a href="/WatchInYourLanguage/Hindi">Hindi</a>,
+            label: <Link to="/WatchInYourLanguage/Hindi">Hindi</Link>,
           },
           {
             key: "Telugu",
-            label: <a href="/WatchInYourLanguage/Telugu">Telugu</a>,
+            label: <Link to="/WatchInYourLanguage/Telugu">Telugu</Link>,
           },
           {
             key: "Tamil",
-            label: <a href="/WatchInYourLanguage/Tamil">Tamil</a>,
+            label: <Link to="/WatchInYourLanguage/Tamil">Tamil</Link>,
           },
           {
             key: "Kannada",
-            label: <a href="/WatchInYourLanguage/Kannada">Kannada</a>,
+            label: <Link to="/WatchInYourLanguage/Kannada">Kannada</Link>,
           },
           {
             key: "Marathi",
-            label: <a href="/WatchInYourLanguage/Marathi">Marathi</a>,
+            label: <Link to="/WatchInYourLanguage/Marathi">Marathi</Link>,
           },
           {
             key: "Punjabi",
-            label: <a href="/WatchInYourLanguage/Punjabi">Punjabi</a>,
+            label: <Link to="/WatchInYourLanguage/Punjabi">Punjabi</Link>,
           },
           {
             key: "Gujarati",
-            label: <a href="/WatchInYourLanguage/Gujarati">Gujarati</a>,
+            label: <Link to="/WatchInYourLanguage/Gujarati">Gujarati</Link>,
           },
           {
             key: "Bengali",
-            label: <a href="/WatchInYourLanguage/Bengali">Bengali</a>,
+            label: <Link to="/WatchInYourLanguage/Bengali">Bengali</Link>,
           },
         ],
       },
@@ -84,48 +84,50 @@ const items = [
           {
             key: "Action",
             label: (
-              <a href="/Categories/ActionAdventure/all">Action and Adventure</a>
+              <Link to="/Categories/ActionAdventure/all">
+                Action and Adventure
+              </Link>
             ),
           },
           {
             key: "Comedy",
-            label: <a href="/Categories/Comedy/all">Comedy</a>,
+            label: <Link to="/Categories/Comedy/all">Comedy</Link>,
           },
           {
             key: "Documentary",
-            label: <a href="/Categories/Documentary/all">Documentary</a>,
+            label: <Link to="/Categories/Documentary/all">Documentary</Link>,
           },
           {
             key: "Drama",
-            label: <a href="/Categories/Drama/all">Drama</a>,
+            label: <Link to="/Categories/Drama/all">Drama</Link>,
           },
           {
             key: "Fantasy",
-            label: <a href="/Categories/Fantasy/all">Fantasy</a>,
+            label: <Link to="/Categories/Fantasy/all">Fantasy</Link>,
           },
           {
             key: "Horror",
-            label: <a href="/Categories/Horror/all">Horror</a>,
+            label: <Link to="/Categories/Horror/all">Horror</Link>,
           },
           {
             key: "Kids",
-            label: <a href="/WatchInYourLanguage/">Kids</a>,
+            label: <Link to="/WatchInYourLanguage/">Kids</Link>,
           },
           {
             key: "Mystery",
             label: (
-              <a href="/Categories/MysteryAndThriller/all">
+              <Link to="/Categories/MysteryAndThriller/all">
                 Mystery and Thriller
-              </a>
+              </Link>
             ),
           },
           {
             key: "Romance",
-            label: <a href="/Categories/Romance/all">Romance</a>,
+            label: <Link to="/Categories/Romance/all">Romance</Link>,
           },
           {
             key: "SciFi",
-            label: <a href="/Categories/SciFi/all/">Sci-Fi</a>,
+            label: <Link to="/Categories/SciFi/all/">Sci-Fi</Link>,
           },
         ],
       },
@@ -142,9 +144,9 @@ const MobileMenuDropDown = () => {
           items,
         }}
       >
-        <a onClick={(e) => e.preventDefault()}>
+        <Link onClick={(e) => e.preventDefault()}>
           <Space style={{ color: "white" }}>Menu</Space>
-        </a>
+        </Link>
       </Dropdown>
     </>
   );

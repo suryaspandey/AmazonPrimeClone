@@ -120,9 +120,13 @@ export const CompleteShowList = () => {
     <>
       <div className="complete-showList-container">
         <div className="show-name">
-          <h1
-            style={{ color: "white", padding: "36px 24px" }}
-          >{`${showType.category} movies`}</h1>
+          <h1 style={{ color: "white", padding: "36px 24px" }}>
+            {`${
+              showType.category.includes("TV Show")
+                ? showType.category
+                : showType.category + " movies"
+            }`}
+          </h1>
         </div>
       </div>
 

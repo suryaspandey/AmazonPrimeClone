@@ -349,27 +349,6 @@ const MobileAddToWatchList = () => {
                                   }
                                 </div>
                               </div>
-
-                              {/* {isMOdal && <WatchListModal />} */}
-                              {/* <div
-                      className="continue-watching-description "
-                      style={{
-                        overflow: "hidden",
-                        textOverflow: "ellipsis",
-                      }}
-                    >
-                      <h4
-                        style={{
-                          textAlign: "left",
-                          fontSize: "14px",
-                          paddingLeft: "7px",
-
-                          margin: "3px",
-                        }}
-                      >
-                        {item.description}
-                      </h4>
-                    </div> */}
                             </div>
                           </div>
                         );
