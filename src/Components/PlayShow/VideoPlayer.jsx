@@ -8,7 +8,7 @@ import {
   AiOutlineShrink,
 } from "react-icons/ai";
 
-import "./VideoPlayer.css";
+import "./videoPlayer.css";
 import { useNavigate, useParams } from "react-router";
 import Loader from "../Loader/Loader";
 
