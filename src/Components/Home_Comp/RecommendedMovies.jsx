@@ -37,16 +37,21 @@ const RecommendedMovies = () => {
   if (myData && myData.length) {
     return (
       <>
-        <div className="cards-heaading">
-          <h2>
-            <span className="prime-text-heading" style={{ marginRight: "8px" }}>
-              Prime
-            </span>
-            <span className="card-indv-heading">Recommended movies</span>
-          </h2>
-        </div>
-        <div className="carousel-main" style={{ display: "flex" }}>
-          <WatchCards actualData={myData} projectId={projectId} />
+        <div className="home">
+          <div className="cards-heaading">
+            <h2>
+              <span
+                className="prime-text-heading"
+                style={{ marginRight: "8px" }}
+              >
+                Prime
+              </span>
+              <span className="card-indv-heading">Recommended movies</span>
+            </h2>
+          </div>
+          <div className="carousel-main" style={{ display: "flex" }}>
+            <WatchCards actualData={myData} projectId={projectId} />
+          </div>
         </div>
       </>
     );

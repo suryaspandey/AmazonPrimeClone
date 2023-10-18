@@ -1,10 +1,9 @@
-import { PlusOutlined, MoreOutlined } from "@ant-design/icons";
 import { useEffect, useRef, useState } from "react";
 import { AiOutlineCheck, AiOutlineLeft, AiOutlineRight } from "react-icons/ai";
 
 import WatchCardMain from "./WatchCardMain";
 import MobileAddToWatchList from "../Watchlist/MobileAddToWatchList";
-import { Link } from "react-router-dom";
+
 import CardLoader from "../Loader/CardLoader";
 
 const CARD_WIDTH = 250;

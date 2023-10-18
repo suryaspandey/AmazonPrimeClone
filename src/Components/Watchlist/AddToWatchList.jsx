@@ -102,8 +102,6 @@ const AddToWatchList = () => {
     );
   }
 
-  console.log("isInWatchList ", isInWatchList);
-
   return (
     <div style={{ height: "100vh" }}>
       <div className="watchlist-header-container">

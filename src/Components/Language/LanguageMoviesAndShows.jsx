@@ -98,6 +98,12 @@ const LanguageMoviesAndShows = () => {
                 <Documentries />
               </>
             )}
+            {language.language === "Gujarati" && (
+              <>
+                <FantasyMovies />
+                <ComedyMovies />
+              </>
+            )}
           </>
         )}
       </div>

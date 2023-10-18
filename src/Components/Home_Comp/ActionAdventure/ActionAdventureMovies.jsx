@@ -40,44 +40,37 @@ const ActionAdventureMovies = () => {
 
   return (
     <>
-      {/* {!heading && ( //not to render heading in recommended section */}
-
-      <div className="cards-heaading">
-        <h2
-          style={{
-            display: "flex",
-            alignItems: "center",
-          }}
-        >
-          <span
-            className="prime-text-heading prime-show"
-            style={{ marginRight: "8px" }}
+      <div className="home">
+        <div className="cards-heaading">
+          <h2
+            style={{
+              display: "flex",
+              alignItems: "center",
+            }}
           >
-            Prime
-          </span>
+            <span
+              className="prime-text-heading prime-show"
+              style={{ marginRight: "8px" }}
+            >
+              Prime
+            </span>
 
-          <span className="card-indv-heading">Action and adventure movies</span>
-          <span className="seeMore" onClick={handleSeeMoreClick}>
-            See More
-            <MdKeyboardArrowRight
-              className="seeMoreIcon"
-              style={{ fontSize: "40px" }}
-            />
-          </span>
-        </h2>
-      </div>
-      {/* )} */}
+            <span className="card-indv-heading">
+              Action and adventure movies
+            </span>
+            <span className="seeMore" onClick={handleSeeMoreClick}>
+              See More
+              <MdKeyboardArrowRight
+                className="seeMoreIcon"
+                style={{ fontSize: "40px" }}
+              />
+            </span>
+          </h2>
+        </div>
 
-      <div className="carousel-main" style={{ display: "flex" }}>
-        {/* {myData.map((item) => {
-                    return ( */}
-        <WatchCards
-          // key={item._id}
-          actualData={myData}
-          projectId={projectId}
-        />
-        {/* );
-                })} */}
+        <div className="carousel-main" style={{ display: "flex" }}>
+          <WatchCards actualData={myData} projectId={projectId} />
+        </div>
       </div>
     </>
   );

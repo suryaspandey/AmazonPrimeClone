@@ -38,28 +38,30 @@ const DramaMovies = () => {
 
   return (
     <>
-      <div className="cards-heaading">
-        <h2
-          style={{
-            display: "flex",
-            alignItems: "center",
-          }}
-        >
-          <span className="prime-text-heading" style={{ marginRight: "8px" }}>
-            Prime
-          </span>
-          <span className="card-indv-heading">Drama Movies</span>
-          <span className="seeMore" onClick={handleSeeMoreClick}>
-            See More
-            <MdKeyboardArrowRight
-              className="seeMoreIcon"
-              style={{ fontSize: "40px" }}
-            />
-          </span>
-        </h2>
-      </div>
-      <div className="carousel-main" style={{ display: "flex" }}>
-        <WatchCards actualData={myData} projectId={projectId} />
+      <div className="home">
+        <div className="cards-heaading">
+          <h2
+            style={{
+              display: "flex",
+              alignItems: "center",
+            }}
+          >
+            <span className="prime-text-heading" style={{ marginRight: "8px" }}>
+              Prime
+            </span>
+            <span className="card-indv-heading">Drama Movies</span>
+            <span className="seeMore" onClick={handleSeeMoreClick}>
+              See More
+              <MdKeyboardArrowRight
+                className="seeMoreIcon"
+                style={{ fontSize: "40px" }}
+              />
+            </span>
+          </h2>
+        </div>
+        <div className="carousel-main" style={{ display: "flex" }}>
+          <WatchCards actualData={myData} projectId={projectId} />
+        </div>
       </div>
     </>
   );

@@ -6,7 +6,7 @@ import { AiOutlineCheck, AiOutlinePlus } from "react-icons/ai";
 import { GoDownload } from "react-icons/go";
 import { GiPartyPopper } from "react-icons/gi";
 import { HiOutlineShare } from "react-icons/hi";
-import { Tooltip } from "antd";
+import { Tooltip, message } from "antd";
 import { Tabs, ConfigProvider } from "antd";
 import { Series_Episodes } from "../../Components/Episodes/Series_Episodes";
 import { ShowDetails } from "../../Components/ShowDetails/ShowDetails";
@@ -156,7 +156,9 @@ const WatchDetails = () => {
       .then((watchData) => {
         setIsInWatchList((prevStatus) => !prevStatus);
         setAddTowatchlist(true);
-        handleRemoveFromWatchList(id);
+        message.success("Added to Watchlist");
+
+        // handleRemoveFromWatchList(id);
       })
       .catch((error) => {
         console.error("Error:", error);
@@ -168,6 +170,7 @@ const WatchDetails = () => {
       (item) => item._id !== removedItem
     );
     setWatchlistData(updatedWatchList);
+    message.success("Removed from Watchlist");
   };
 
   const handleComingSoon = () => {

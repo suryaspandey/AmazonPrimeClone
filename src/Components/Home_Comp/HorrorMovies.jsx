@@ -56,39 +56,40 @@ const HorrorMovies = () => {
       items: 1,
     },
   };
-  // console.log("mystery", myData);
+
   return (
     <>
-      {/* {!heading && ( //not to render heading in recommended section */}
-      <div className="cards-heaading">
-        <h2
-          style={{
-            display: "flex",
-            alignItems: "center",
-          }}
-        >
-          <span className="prime-text-heading" style={{ marginRight: "8px" }}>
-            Prime
-          </span>
+      <div className="home">
+        <div className="cards-heaading">
+          <h2
+            style={{
+              display: "flex",
+              alignItems: "center",
+            }}
+          >
+            <span className="prime-text-heading" style={{ marginRight: "8px" }}>
+              Prime
+            </span>
 
-          <span className="card-indv-heading">Horror Movies</span>
-          <span className="seeMore" onClick={handleSeeMoreClick}>
-            See More
-            <MdKeyboardArrowRight
-              className="seeMoreIcon"
-              style={{ fontSize: "40px" }}
-            />
-          </span>
-        </h2>
-      </div>
-      {/* )} */}
+            <span className="card-indv-heading">Horror Movies</span>
+            <span className="seeMore" onClick={handleSeeMoreClick}>
+              See More
+              <MdKeyboardArrowRight
+                className="seeMoreIcon"
+                style={{ fontSize: "40px" }}
+              />
+            </span>
+          </h2>
+        </div>
+        {/* )} */}
 
-      <div className="carousel-main" style={{ display: "flex" }}>
-        <WatchCards
-          // key={item._id}
-          actualData={myData}
-          projectId={projectId}
-        />
+        <div className="carousel-main" style={{ display: "flex" }}>
+          <WatchCards
+            // key={item._id}
+            actualData={myData}
+            projectId={projectId}
+          />
+        </div>
       </div>
     </>
   );
