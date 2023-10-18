@@ -128,7 +128,7 @@
 
 @media (max-width: 415px) {
   .home-banner-text-container {
-    width: 100%;
+    width: 97%;
     position: relative;
     text-align: center;
   }
@@ -181,7 +181,7 @@
   }
   .channels-text,
   .channels-list-container {
-    max-width: 100%;
+    max-width: 97%;
     text-align: justify;
   }
   .firestick-text {
@@ -202,7 +202,7 @@
     font-size: 18px !important;
   }
   .family-friendly {
-    width: 100%;
+    width: 97%;
   }
 
   .channels-text h1 {

@@ -35,17 +35,17 @@ const Footer = () => {
 
         <ul className="footer-ul">
           <li className="footer-li footer-links">
-            <a href="">Terms and Privacy Notes</a>
+            <a href="#">Terms and Privacy Notes</a>
           </li>
           <li className="footer-li footer-links">
-            <a href="">Send us Feedback</a>
+            <a href="#">Send us Feedback</a>
           </li>
           <li className="footer-li footer-links">
-            <a href="">Help</a>
+            <a href="#">Help</a>
           </li>
           <li className="footer-li">
-            <a href="">
-              @1996-2023, created by{" "}
+            <a href="#">
+              @1996-2023, created by
               <span style={{ color: "#79bbf3" }}>suryaspandey</span>
             </a>
           </li>

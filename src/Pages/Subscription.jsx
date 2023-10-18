@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Carousel } from "antd";
 import "./subscription.css";
+import { Link } from "react-router-dom";
 
 const Subscription = () => {
   const [isMobile, setIsMobile] = useState(false);
@@ -30,7 +31,7 @@ const Subscription = () => {
         <div className="subscription-carousel">
           <Carousel arrows autoplay>
             <div className="subscription-card">
-              <a href="https://www.amazon.in/b/?_encoding=UTF8&node=90130123031&ref_=atv_me_pri_c_eiVJLU_zMbofx_1_1">
+              <Link to="https://www.amazon.in/b/?_encoding=UTF8&node=90130123031&ref_=atv_me_pri_c_eiVJLU_zMbofx_1_1">
                 <img
                   className="subscription-carousel-img"
                   src={
@@ -40,19 +41,19 @@ const Subscription = () => {
                   }
                   alt=""
                 />
-              </a>
+              </Link>
               {!isMobile && (
                 <div className="subscription-btn">
-                  <a href="https://www.amazon.in/b/?_encoding=UTF8&node=90130123031&ref_=atv_me_pri_c_eiVJLU_zMbofx_1_1">
+                  <Link to="https://www.amazon.in/b/?_encoding=UTF8&node=90130123031&ref_=atv_me_pri_c_eiVJLU_zMbofx_1_1">
                     <button className="subscription-more-details-btn">
                       More Details
                     </button>
-                  </a>
+                  </Link>
                 </div>
               )}
             </div>
             <div className="subscription-card">
-              <a href="https://www.amazon.in/b/?node=12627912031&ref=Shipping_PV_Dashborad&ref_=atv_me_pri_c_eiVJLU_JadKnV_1_2">
+              <Link to="https://www.amazon.in/b/?node=12627912031&ref=Shipping_PV_Dashborad&ref_=atv_me_pri_c_eiVJLU_JadKnV_1_2">
                 <img
                   className="subscription-carousel-img"
                   src={
@@ -62,7 +63,7 @@ const Subscription = () => {
                   }
                   alt=""
                 />
-              </a>
+              </Link>
               {!isMobile && (
                 <>
                   <div
@@ -81,18 +82,18 @@ const Subscription = () => {
                   </div>
 
                   <div className="subscription-btn">
-                    <a href="https://www.amazon.in/b/?node=12627912031&ref=Shipping_PV_Dashborad&ref_=atv_me_pri_c_eiVJLU_JadKnV_1_2">
+                    <Link to="https://www.amazon.in/b/?node=12627912031&ref=Shipping_PV_Dashborad&ref_=atv_me_pri_c_eiVJLU_JadKnV_1_2">
                       <button className="subscription-more-details-btn">
                         More Details
                       </button>
-                    </a>
+                    </Link>
                   </div>
                 </>
               )}
             </div>
 
             <div className="subscription-card">
-              <a href="https://www.amazon.in/music/prime?ref_=atv_me_pri_c_eiVJLU_BwAwhP_1_3">
+              <Link to="https://www.amazon.in/music/prime?ref_=atv_me_pri_c_eiVJLU_BwAwhP_1_3">
                 <img
                   className="subscription-carousel-img"
                   src={
@@ -102,7 +103,7 @@ const Subscription = () => {
                   }
                   alt=""
                 />
-              </a>
+              </Link>
               {!isMobile && (
                 <>
                   <div
@@ -123,18 +124,18 @@ const Subscription = () => {
                   </div>
 
                   <div className="subscription-btn">
-                    <a href="https://www.amazon.in/music/prime?ref_=atv_me_pri_c_eiVJLU_BwAwhP_1_3">
+                    <Link to="https://www.amazon.in/music/prime?ref_=atv_me_pri_c_eiVJLU_BwAwhP_1_3">
                       <button className="subscription-more-details-btn">
                         More Details
                       </button>
-                    </a>
+                    </Link>
                   </div>
                 </>
               )}
             </div>
 
             <div className="subscription-card">
-              <a href="https://www.amazon.in/kindle-dbs/hz/bookshelf/prime?ref_=atv_me_pri_c_eiVJLU_t2438T_1_4">
+              <Link to="https://www.amazon.in/kindle-dbs/hz/bookshelf/prime?ref_=atv_me_pri_c_eiVJLU_t2438T_1_4">
                 <img
                   className="subscription-carousel-img"
                   src={
@@ -144,7 +145,7 @@ const Subscription = () => {
                   }
                   alt=""
                 />
-              </a>
+              </Link>
               {!isMobile && (
                 <>
                   <div
@@ -163,18 +164,18 @@ const Subscription = () => {
                   </div>
 
                   <div className="subscription-btn">
-                    <a href="https://www.amazon.in/kindle-dbs/hz/bookshelf/prime?ref_=atv_me_pri_c_eiVJLU_t2438T_1_4">
+                    <Link to="https://www.amazon.in/kindle-dbs/hz/bookshelf/prime?ref_=atv_me_pri_c_eiVJLU_t2438T_1_4">
                       <button className="subscription-more-details-btn">
                         More Details
                       </button>
-                    </a>
+                    </Link>
                   </div>
                 </>
               )}
             </div>
 
             <div className="subscription-card">
-              <a href="https://www.amazon.in/cbcc/marketpage?ref_=atv_me_pri_c_eiVJLU_76bcn7_1_5&lop=false">
+              <Link to="https://www.amazon.in/cbcc/marketpage?ref_=atv_me_pri_c_eiVJLU_76bcn7_1_5&lop=false">
                 <img
                   className="subscription-carousel-img"
                   src={
@@ -184,7 +185,7 @@ const Subscription = () => {
                   }
                   alt=""
                 />
-              </a>
+              </Link>
               {!isMobile && (
                 <>
                   <div
@@ -202,11 +203,11 @@ const Subscription = () => {
                   </div>
 
                   <div className="subscription-btn">
-                    <a href="https://www.amazon.in/cbcc/marketpage?ref_=atv_me_pri_c_eiVJLU_76bcn7_1_5&lop=false">
+                    <Link to="https://www.amazon.in/cbcc/marketpage?ref_=atv_me_pri_c_eiVJLU_76bcn7_1_5&lop=false">
                       <button className="subscription-more-details-btn">
                         More Details
                       </button>
-                    </a>
+                    </Link>
                   </div>
                 </>
               )}
@@ -221,31 +222,31 @@ const Subscription = () => {
         </h3>
         <div className="carousel-main-subs">
           <div className="subscription-card-img">
-            <a href="https://www.amazon.in/b/?node=12627912031&ref=Shipping_PV_Dashborad&ref_=atv_me_pri_c_GjNWfd_qiGCL6_2_1">
+            <Link to="https://www.amazon.in/b/?node=12627912031&ref=Shipping_PV_Dashborad&ref_=atv_me_pri_c_GjNWfd_qiGCL6_2_1">
               <img
                 className="subscription-prime-benefits-img"
                 src="https://m.media-amazon.com/images/S/sonata-images-prod/twin_carousel_shipping_1/96321b89-0cca-428e-84fe-589ba3c103b7._UR1920,1080_SX360_FMwebp_.jpeg 360w, https://m.media-amazon.com/images/S/sonata-images-prod/twin_carousel_shipping_1/96321b89-0cca-428e-84fe-589ba3c103b7._UR1920,1080_SX480_FMwebp_.jpeg 480w, https://m.media-amazon.com/images/S/sonata-images-prod/twin_carousel_shipping_1/96321b89-0cca-428e-84fe-589ba3c103b7._UR1920,1080_SX720_FMwebp_.jpeg 720w, https://m.media-amazon.com/images/S/sonata-images-prod/twin_carousel_shipping_1/96321b89-0cca-428e-84fe-589ba3c103b7._UR1920,1080_SX1080_FMwebp_.jpeg"
                 alt=""
               />
-            </a>
+            </Link>
           </div>
           <div className="subscription-card-img">
-            <a href="https://www.amazon.in/b/?node=12627912031&ref=Shipping_PV_Dashborad&ref_=atv_me_pri_c_GjNWfd_slAaBj_2_2">
+            <Link to="https://www.amazon.in/b/?node=12627912031&ref=Shipping_PV_Dashborad&ref_=atv_me_pri_c_GjNWfd_slAaBj_2_2">
               <img
                 className="subscription-prime-benefits-img"
                 src="https://m.media-amazon.com/images/S/sonata-images-prod/PVIN_twin_carousel_shipping_2/feb41b16-8cb7-4aa1-9821-d7ae8635917c._UR1920,1080_SX360_FMwebp_.jpeg%20360w,%20https://m.media-amazon.com/images/S/sonata-images-prod/PVIN_twin_carousel_shipping_2/feb41b16-8cb7-4aa1-9821-d7ae8635917c._UR1920,1080_SX480_FMwebp_.jpeg%20480w,%20https://m.media-amazon.com/images/S/sonata-images-prod/PVIN_twin_carousel_shipping_2/feb41b16-8cb7-4aa1-9821-d7ae8635917c._UR1920,1080_SX720_FMwebp_.jpeg%20720w,%20https://m.media-amazon.com/images/S/sonata-images-prod/PVIN_twin_carousel_shipping_2/feb41b16-8cb7-4aa1-9821-d7ae8635917c._UR1920,1080_SX1080_FMwebp_.jpeg"
                 alt=""
               />
-            </a>
+            </Link>
           </div>
           <div className="subscription-card-img">
-            <a href="https://www.amazon.in/b/?node=12627912031&ref=Shipping_PV_Dashborad&ref_=atv_me_pri_c_GjNWfd_slAaBj_2_2">
+            <Link to="https://www.amazon.in/b/?node=12627912031&ref=Shipping_PV_Dashborad&ref_=atv_me_pri_c_GjNWfd_slAaBj_2_2">
               <img
                 className="subscription-prime-benefits-img"
                 src="https://m.media-amazon.com/images/S/sonata-images-prod/PVIN_twin_carousel_shipping_3/029e7d14-e8d0-4128-bbc3-5fea5531d98e._UR1920,1080_SX360_FMwebp_.jpeg 360w, https://m.media-amazon.com/images/S/sonata-images-prod/PVIN_twin_carousel_shipping_3/029e7d14-e8d0-4128-bbc3-5fea5531d98e._UR1920,1080_SX480_FMwebp_.jpeg 480w, https://m.media-amazon.com/images/S/sonata-images-prod/PVIN_twin_carousel_shipping_3/029e7d14-e8d0-4128-bbc3-5fea5531d98e._UR1920,1080_SX720_FMwebp_.jpeg 720w, https://m.media-amazon.com/images/S/sonata-images-prod/PVIN_twin_carousel_shipping_3/029e7d14-e8d0-4128-bbc3-5fea5531d98e._UR1920,1080_SX1080_FMwebp_.jpeg"
                 alt=""
               />
-            </a>
+            </Link>
           </div>
         </div>
       </div>
@@ -256,41 +257,41 @@ const Subscription = () => {
         </h3>
         <div className="carousel-main-subs">
           <div className="subscription-card-img">
-            <a href="https://www.amazon.in/cbcc/marketpage?ref_=atv_me_pri_c_TrGy8k_uQW3qc_3_1&lop=false">
+            <Link to="https://www.amazon.in/cbcc/marketpage?ref_=atv_me_pri_c_TrGy8k_uQW3qc_3_1&lop=false">
               <img
                 className="subscription-prime-benefits-img"
                 src="https://m.media-amazon.com/images/S/sonata-images-prod/null/2bac4c2d-35e5-4338-97c3-af90aa345d33._UR1920,1080_SX360_FMwebp_.jpeg 360w, https://m.media-amazon.com/images/S/sonata-images-prod/null/2bac4c2d-35e5-4338-97c3-af90aa345d33._UR1920,1080_SX480_FMwebp_.jpeg 480w, https://m.media-amazon.com/images/S/sonata-images-prod/null/2bac4c2d-35e5-4338-97c3-af90aa345d33._UR1920,1080_SX720_FMwebp_.jpeg 720w, https://m.media-amazon.com/images/S/sonata-images-prod/null/2bac4c2d-35e5-4338-97c3-af90aa345d33._UR1920,1080_SX1080_FMwebp_.jpeg "
                 alt=""
               />
-            </a>
+            </Link>
           </div>
           <div className="subscription-card-img">
-            <a href="https://www.amazon.in/cbcc/marketpage?ref_=atv_me_pri_c_TrGy8k_uQW3qc_3_1&lop=false">
+            <Link to="https://www.amazon.in/cbcc/marketpage?ref_=atv_me_pri_c_TrGy8k_uQW3qc_3_1&lop=false">
               <img
                 className="subscription-prime-benefits-img"
                 src="https://m.media-amazon.com/images/S/sonata-images-prod/null/bcb92702-13f3-42cb-9908-8fb24daa49bb._UR1920,1080_SX360_FMwebp_.jpeg 360w, https://m.media-amazon.com/images/S/sonata-images-prod/null/bcb92702-13f3-42cb-9908-8fb24daa49bb._UR1920,1080_SX480_FMwebp_.jpeg 480w, https://m.media-amazon.com/images/S/sonata-images-prod/null/bcb92702-13f3-42cb-9908-8fb24daa49bb._UR1920,1080_SX720_FMwebp_.jpeg 720w, https://m.media-amazon.com/images/S/sonata-images-prod/null/bcb92702-13f3-42cb-9908-8fb24daa49bb._UR1920,1080_SX1080_FMwebp_.jpeg"
                 alt=""
               />
-            </a>
+            </Link>
           </div>
           <div className="subscription-card-img">
-            <a href="https://www.amazon.in/cbcc/marketpage?ref_=atv_me_pri_c_TrGy8k_uQW3qc_3_1&lop=false">
+            <Link to="https://www.amazon.in/cbcc/marketpage?ref_=atv_me_pri_c_TrGy8k_uQW3qc_3_1&lop=false">
               <img
                 className="subscription-prime-benefits-img"
                 src="https://m.media-amazon.com/images/S/sonata-images-prod/null/da1629cb-6f8b-41d2-b9a1-6087e8061b08._UR1920,1080_SX360_FMwebp_.jpeg 360w, https://m.media-amazon.com/images/S/sonata-images-prod/null/da1629cb-6f8b-41d2-b9a1-6087e8061b08._UR1920,1080_SX480_FMwebp_.jpeg 480w, https://m.media-amazon.com/images/S/sonata-images-prod/null/da1629cb-6f8b-41d2-b9a1-6087e8061b08._UR1920,1080_SX720_FMwebp_.jpeg 720w, https://m.media-amazon.com/images/S/sonata-images-prod/null/da1629cb-6f8b-41d2-b9a1-6087e8061b08._UR1920,1080_SX1080_FMwebp_.jpeg"
                 alt=""
               />
-            </a>
+            </Link>
           </div>
 
           <div className="subscription-card-img">
-            <a href="https://www.amazon.in/cbcc/marketpage?ref_=atv_me_pri_c_TrGy8k_uQW3qc_3_1&lop=false">
+            <Link to="https://www.amazon.in/cbcc/marketpage?ref_=atv_me_pri_c_TrGy8k_uQW3qc_3_1&lop=false">
               <img
                 className="subscription-prime-benefits-img"
                 src="https://m.media-amazon.com/images/S/sonata-images-prod/null/e5423bdb-e10c-4fc6-82c0-7df0e029f9dd._UR1920,1080_SX360_FMwebp_.jpeg 360w, https://m.media-amazon.com/images/S/sonata-images-prod/null/e5423bdb-e10c-4fc6-82c0-7df0e029f9dd._UR1920,1080_SX480_FMwebp_.jpeg 480w, https://m.media-amazon.com/images/S/sonata-images-prod/null/e5423bdb-e10c-4fc6-82c0-7df0e029f9dd._UR1920,1080_SX720_FMwebp_.jpeg 720w, https://m.media-amazon.com/images/S/sonata-images-prod/null/e5423bdb-e10c-4fc6-82c0-7df0e029f9dd._UR1920,1080_SX1080_FMwebp_.jpeg"
                 alt=""
               />
-            </a>
+            </Link>
           </div>
         </div>
       </div>
@@ -301,40 +302,40 @@ const Subscription = () => {
         </h3>
         <div className="carousel-main-subs">
           <div className="subscription-card-img">
-            <a href="https://www.amazon.in/music/prime?ref_=atv_me_pri_c_w8D4oi_53bw1p_4_1">
+            <Link to="https://www.amazon.in/music/prime?ref_=atv_me_pri_c_w8D4oi_53bw1p_4_1">
               <img
                 className="subscription-prime-benefits-img"
                 src="https://m.media-amazon.com/images/S/sonata-images-prod/null/95c31d09-41f8-49a9-8e9d-c3964ffeab6e._UR1920,1080_SX360_FMwebp_.jpeg 360w, https://m.media-amazon.com/images/S/sonata-images-prod/null/95c31d09-41f8-49a9-8e9d-c3964ffeab6e._UR1920,1080_SX480_FMwebp_.jpeg 480w, https://m.media-amazon.com/images/S/sonata-images-prod/null/95c31d09-41f8-49a9-8e9d-c3964ffeab6e._UR1920,1080_SX720_FMwebp_.jpeg 720w, https://m.media-amazon.com/images/S/sonata-images-prod/null/95c31d09-41f8-49a9-8e9d-c3964ffeab6e._UR1920,1080_SX1080_FMwebp_.jpeg"
                 alt=""
               />
-            </a>
+            </Link>
           </div>
           <div className="subscription-card-img">
-            <a href="https://www.amazon.in/music/prime?ref_=atv_me_pri_c_w8D4oi_53bw1p_4_1">
+            <Link to="https://www.amazon.in/music/prime?ref_=atv_me_pri_c_w8D4oi_53bw1p_4_1">
               <img
                 className="subscription-prime-benefits-img"
                 src="https://m.media-amazon.com/images/S/sonata-images-prod/PV_IN_Signpost_music_twin_2/f097d2db-64c6-446a-a69f-c78ae8a3190a._UR1920,1080_SX360_FMwebp_.jpeg 360w, https://m.media-amazon.com/images/S/sonata-images-prod/PV_IN_Signpost_music_twin_2/f097d2db-64c6-446a-a69f-c78ae8a3190a._UR1920,1080_SX480_FMwebp_.jpeg 480w, https://m.media-amazon.com/images/S/sonata-images-prod/PV_IN_Signpost_music_twin_2/f097d2db-64c6-446a-a69f-c78ae8a3190a._UR1920,1080_SX720_FMwebp_.jpeg 720w, https://m.media-amazon.com/images/S/sonata-images-prod/PV_IN_Signpost_music_twin_2/f097d2db-64c6-446a-a69f-c78ae8a3190a._UR1920,1080_SX1080_FMwebp_.jpeg"
                 alt=""
               />
-            </a>
+            </Link>
           </div>
           <div className="subscription-card-img">
-            <a href="https://www.amazon.in/music/prime?ref_=atv_me_pri_c_w8D4oi_53bw1p_4_1">
+            <Link to="https://www.amazon.in/music/prime?ref_=atv_me_pri_c_w8D4oi_53bw1p_4_1">
               <img
                 className="subscription-prime-benefits-img"
                 src="https://m.media-amazon.com/images/S/sonata-images-prod/PV_IN_Signpost_music_twin_3/456556cf-ff2a-4f80-a4b7-70240d074b9a._UR1920,1080_SX360_FMwebp_.jpeg 360w, https://m.media-amazon.com/images/S/sonata-images-prod/PV_IN_Signpost_music_twin_3/456556cf-ff2a-4f80-a4b7-70240d074b9a._UR1920,1080_SX480_FMwebp_.jpeg 480w, https://m.media-amazon.com/images/S/sonata-images-prod/PV_IN_Signpost_music_twin_3/456556cf-ff2a-4f80-a4b7-70240d074b9a._UR1920,1080_SX720_FMwebp_.jpeg 720w, https://m.media-amazon.com/images/S/sonata-images-prod/PV_IN_Signpost_music_twin_3/456556cf-ff2a-4f80-a4b7-70240d074b9a._UR1920,1080_SX1080_FMwebp_.jpeg"
                 alt=""
               />
-            </a>
+            </Link>
           </div>
           <div className="subscription-card-img">
-            <a href="https://www.amazon.in/music/prime?ref_=atv_me_pri_c_w8D4oi_53bw1p_4_1">
+            <Link to="https://www.amazon.in/music/prime?ref_=atv_me_pri_c_w8D4oi_53bw1p_4_1">
               <img
                 className="subscription-prime-benefits-img"
                 src="https://m.media-amazon.com/images/S/sonata-images-prod/PV_IN_Signpost_music_twin_4/4da2eaa8-dd75-4485-80c7-e508f44d6211._UR1920,1080_SX360_FMwebp_.jpeg 360w, https://m.media-amazon.com/images/S/sonata-images-prod/PV_IN_Signpost_music_twin_4/4da2eaa8-dd75-4485-80c7-e508f44d6211._UR1920,1080_SX480_FMwebp_.jpeg 480w, https://m.media-amazon.com/images/S/sonata-images-prod/PV_IN_Signpost_music_twin_4/4da2eaa8-dd75-4485-80c7-e508f44d6211._UR1920,1080_SX720_FMwebp_.jpeg 720w, https://m.media-amazon.com/images/S/sonata-images-prod/PV_IN_Signpost_music_twin_4/4da2eaa8-dd75-4485-80c7-e508f44d6211._UR1920,1080_SX1080_FMwebp_.jpeg"
                 alt=""
               />
-            </a>
+            </Link>
           </div>
         </div>
       </div>
@@ -345,40 +346,40 @@ const Subscription = () => {
         </h3>
         <div className="carousel-main-subs">
           <div className="subscription-card-img">
-            <a href="https://www.amazon.in/kindle-dbs/hz/bookshelf/prime?ref_=atv_me_pri_c_I4GYjA_ZrGv4T_5_1">
+            <Link to="https://www.amazon.in/kindle-dbs/hz/bookshelf/prime?ref_=atv_me_pri_c_I4GYjA_ZrGv4T_5_1">
               <img
                 className="subscription-prime-benefits-img"
                 src="https://m.media-amazon.com/images/S/sonata-images-prod/PV_IN_Signpost_books_twin_1/12c7b8bb-b446-4160-8020-d5ef40eb3645._UR1920,1080_SX360_FMwebp_.jpeg 360w, https://m.media-amazon.com/images/S/sonata-images-prod/PV_IN_Signpost_books_twin_1/12c7b8bb-b446-4160-8020-d5ef40eb3645._UR1920,1080_SX480_FMwebp_.jpeg 480w, https://m.media-amazon.com/images/S/sonata-images-prod/PV_IN_Signpost_books_twin_1/12c7b8bb-b446-4160-8020-d5ef40eb3645._UR1920,1080_SX720_FMwebp_.jpeg 720w, https://m.media-amazon.com/images/S/sonata-images-prod/PV_IN_Signpost_books_twin_1/12c7b8bb-b446-4160-8020-d5ef40eb3645._UR1920,1080_SX1080_FMwebp_.jpeg"
                 alt=""
               />
-            </a>
+            </Link>
           </div>
           <div className="subscription-card-img">
-            <a href="https://www.amazon.in/kindle-dbs/hz/bookshelf/prime?ref_=atv_me_pri_c_I4GYjA_ZrGv4T_5_1">
+            <Link to="https://www.amazon.in/kindle-dbs/hz/bookshelf/prime?ref_=atv_me_pri_c_I4GYjA_ZrGv4T_5_1">
               <img
                 className="subscription-prime-benefits-img"
                 src="https://m.media-amazon.com/images/S/sonata-images-prod/PV_IN_Signpost_books_twin_2/337d9ff6-6665-4bb5-9733-c80cd972131e._UR1920,1080_SX360_FMwebp_.jpeg 360w, https://m.media-amazon.com/images/S/sonata-images-prod/PV_IN_Signpost_books_twin_2/337d9ff6-6665-4bb5-9733-c80cd972131e._UR1920,1080_SX480_FMwebp_.jpeg 480w, https://m.media-amazon.com/images/S/sonata-images-prod/PV_IN_Signpost_books_twin_2/337d9ff6-6665-4bb5-9733-c80cd972131e._UR1920,1080_SX720_FMwebp_.jpeg 720w, https://m.media-amazon.com/images/S/sonata-images-prod/PV_IN_Signpost_books_twin_2/337d9ff6-6665-4bb5-9733-c80cd972131e._UR1920,1080_SX1080_FMwebp_.jpeg"
                 alt=""
               />
-            </a>
+            </Link>
           </div>
           <div className="subscription-card-img">
-            <a href="https://www.amazon.in/kindle-dbs/hz/bookshelf/prime?ref_=atv_me_pri_c_I4GYjA_ZrGv4T_5_1">
+            <Link to="https://www.amazon.in/kindle-dbs/hz/bookshelf/prime?ref_=atv_me_pri_c_I4GYjA_ZrGv4T_5_1">
               <img
                 className="subscription-prime-benefits-img"
                 src="https://m.media-amazon.com/images/S/sonata-images-prod/PV_IN_Signpost_books_twin_3/2220a41b-44a0-4d9a-8058-6b3f975dd395._UR1920,1080_SX360_FMwebp_.jpeg 360w, https://m.media-amazon.com/images/S/sonata-images-prod/PV_IN_Signpost_books_twin_3/2220a41b-44a0-4d9a-8058-6b3f975dd395._UR1920,1080_SX480_FMwebp_.jpeg 480w, https://m.media-amazon.com/images/S/sonata-images-prod/PV_IN_Signpost_books_twin_3/2220a41b-44a0-4d9a-8058-6b3f975dd395._UR1920,1080_SX720_FMwebp_.jpeg 720w, https://m.media-amazon.com/images/S/sonata-images-prod/PV_IN_Signpost_books_twin_3/2220a41b-44a0-4d9a-8058-6b3f975dd395._UR1920,1080_SX1080_FMwebp_.jpeg"
                 alt=""
               />
-            </a>
+            </Link>
           </div>
           <div className="subscription-card-img">
-            <a href="https://www.amazon.in/kindle-dbs/hz/bookshelf/prime?ref_=atv_me_pri_c_I4GYjA_ZrGv4T_5_1">
+            <Link to="https://www.amazon.in/kindle-dbs/hz/bookshelf/prime?ref_=atv_me_pri_c_I4GYjA_ZrGv4T_5_1">
               <img
                 className="subscription-prime-benefits-img"
                 src="https://m.media-amazon.com/images/S/sonata-images-prod/PV_IN_Signpost_books_twin_4/920fb3b4-a443-4cba-8717-ea986e65a88d._UR1920,1080_SX360_FMwebp_.jpeg 360w, https://m.media-amazon.com/images/S/sonata-images-prod/PV_IN_Signpost_books_twin_4/920fb3b4-a443-4cba-8717-ea986e65a88d._UR1920,1080_SX480_FMwebp_.jpeg 480w, https://m.media-amazon.com/images/S/sonata-images-prod/PV_IN_Signpost_books_twin_4/920fb3b4-a443-4cba-8717-ea986e65a88d._UR1920,1080_SX720_FMwebp_.jpeg 720w, https://m.media-amazon.com/images/S/sonata-images-prod/PV_IN_Signpost_books_twin_4/920fb3b4-a443-4cba-8717-ea986e65a88d._UR1920,1080_SX1080_FMwebp_.jpeg"
                 alt=""
               />
-            </a>
+            </Link>
           </div>
         </div>
       </div>

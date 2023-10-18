@@ -27,8 +27,9 @@ const UserMoodsModal = () => {
   let n = surpriseMeOptions.length;
 
   let num = Math.floor(Math.random() * n);
+
   for (let i = 0; i < n; i++) {
-    num = Math.floor(Math.random() * n) + 1;
+    num = Math.floor(Math.random() * n);
   }
 
   return (
