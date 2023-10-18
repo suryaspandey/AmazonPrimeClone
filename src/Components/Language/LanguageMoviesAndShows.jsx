@@ -112,7 +112,7 @@ const LanguageMoviesAndShows = () => {
             </>
           )}
         </div>
-        <div className="nothing" style={{ marginBottom: "180x" }}></div>
+        <div className="emptypadding" style={{ paddingTop: "180px" }}></div>
       </div>
     </>
   );
