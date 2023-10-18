@@ -58,7 +58,7 @@ const WatcDetailsMobile = () => {
       } catch (err) {
         console.log("Error fetching data: ", err);
       } finally {
-        setLoading(false); // Set loading to false whether successful or not
+        setLoading(false);
       }
     };
     fetchData();

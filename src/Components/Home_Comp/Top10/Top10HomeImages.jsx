@@ -66,7 +66,7 @@ const Top10HomeImages = ({ showHeader }) => {
           {thumbnailImages.map((image, index) => (
             <div className="corousel-container-left-right" key={index}>
               <Link
-                to={`/watchDetailsMob/64cffee700bad552e8dcd509`}
+                to={`/watchDetailsMob/64cffee700bad552e8dcd5fe`}
                 state={{
                   projectId: projectId,
                 }}

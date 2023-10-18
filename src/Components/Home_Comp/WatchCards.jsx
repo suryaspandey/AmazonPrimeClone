@@ -2,7 +2,6 @@ import { useEffect, useRef, useState } from "react";
 import { AiOutlineCheck, AiOutlineLeft, AiOutlineRight } from "react-icons/ai";
 
 import WatchCardMain from "./WatchCardMain";
-import MobileAddToWatchList from "../Watchlist/MobileAddToWatchList";
 
 import CardLoader from "../Loader/CardLoader";
 

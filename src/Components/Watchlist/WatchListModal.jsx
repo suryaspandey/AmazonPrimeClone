@@ -26,7 +26,6 @@ const WatchListModal = ({
     })
       .then((response) => response.json())
       .then((data) => {
-        console.log("Show removed from watchlist successfully.", data);
         setOpen(false);
         handleRemoveFromWatchList(selectedItem._id);
       })
@@ -47,15 +46,6 @@ const WatchListModal = ({
         open={open}
         onOk={() => setOpen(false)}
         onCancel={() => setOpen(false)}
-        // width={1000}
-        // style={{
-        //   height: "100vh",
-        //   bottom: "100px",
-        //   position: "absolute",
-        //   left: "0px",
-        //   right: "0px",
-        //   //   top: "0px",
-        // }}
       >
         <button
           className="watchlist-delete-container"

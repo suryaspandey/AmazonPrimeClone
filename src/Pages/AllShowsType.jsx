@@ -27,7 +27,6 @@ const AllShowsType = () => {
       .then((response) => response.json())
       .then((exdata) => {
         const allData = exdata;
-        console.log(allData);
         setMyData(exdata.data);
       });
   }, [projectId, bearerToken]);

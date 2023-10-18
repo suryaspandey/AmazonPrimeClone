@@ -6,13 +6,10 @@ import { useApi } from "../../APIContext";
 import { useNavigate } from "react-router";
 import { MdKeyboardArrowRight } from "react-icons/md";
 
-// const Documentries = ({ heading }) => {
 const Documentries = () => {
   const [myData, setMyData] = useState([]);
   const navigate = useNavigate();
   const { setApi } = useApi();
-
-  // console.log("heading: ", heading); // false
 
   const bearerToken = localStorage.getItem("bearer_token");
 
@@ -29,7 +26,6 @@ const Documentries = () => {
       .then((response) => response.json())
       .then((exdata) => {
         const allData = exdata;
-        // console.log(allData);
         setMyData(exdata.data);
       });
   }, [projectId, bearerToken]);

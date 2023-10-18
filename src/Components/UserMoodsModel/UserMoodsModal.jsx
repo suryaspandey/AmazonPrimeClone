@@ -15,7 +15,9 @@ const UserMoodsModal = () => {
     navigate("/");
   };
   const navigate = useNavigate();
-  const userName = localStorage.getItem("loginUserName");
+  const userNameSM = localStorage.getItem("loginUserName");
+  const userName = userNameSM[0].toUpperCase() + userNameSM.slice(1);
+
   const surpriseMeOptions = [
     "Fantasy",
     "Documentary",

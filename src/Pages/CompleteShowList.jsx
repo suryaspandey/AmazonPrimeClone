@@ -54,6 +54,19 @@ export const CompleteShowList = () => {
   if (isMobile) {
     return (
       <>
+        <div className="complete-showList-container">
+          <div className="show-name">
+            <h1
+              style={{ color: "white", padding: "3px 24px", fontSize: "20px" }}
+            >
+              {`${
+                showType.category.includes("TV Show")
+                  ? showType.category
+                  : showType.category + " movies"
+              }`}
+            </h1>
+          </div>
+        </div>
         <div className="mob-watchdetails-main">
           <ul>
             {myData.map((item) => {

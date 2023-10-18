@@ -33,7 +33,6 @@ const Register = () => {
   const projectId = "zxke0qiu2960";
   const onFinish = (values) => {
     setErrorMessage("");
-    console.log("Received values of form: ", values);
     fetch("https://academics.newtonschool.co/api/v1/user/signup", {
       method: "POST",
       headers: {

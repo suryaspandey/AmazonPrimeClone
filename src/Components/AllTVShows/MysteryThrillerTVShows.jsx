@@ -43,7 +43,10 @@ const MysteryThrillerTVShows = () => {
             alignItems: "center",
           }}
         >
-          <span className="prime-text-heading" style={{ marginRight: "8px" }}>
+          <span
+            className="prime-text-heading prime-show"
+            style={{ marginRight: "8px" }}
+          >
             Prime
           </span>
 

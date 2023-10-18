@@ -8,7 +8,6 @@ const CategoriesDropDown = ({ activePage }) => {
 
   const handleCategoriesLangClick = (language) => {
     navigate(`/WatchInYourLanguage/${language}`);
-    console.log(`/WatchInYourLanguage/${language}`);
   };
   return (
     <>

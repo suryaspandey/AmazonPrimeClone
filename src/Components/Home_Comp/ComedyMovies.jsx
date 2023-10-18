@@ -32,7 +32,7 @@ const ComedyMovies = () => {
 
   const handleSeeMoreClick = () => {
     setApi(comedyMoviesURL);
-    navigate("/CompleteShowList/Comedy Movies");
+    navigate("/CompleteShowList/Comedy");
   };
 
   const responsive = {

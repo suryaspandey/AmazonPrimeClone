@@ -8,7 +8,6 @@ const LoginUserDropdown = ({ activePage }) => {
 
   const handleCategoriesLangClick = (language) => {
     navigate(`/WatchInYourLanguage/${language}`);
-    console.log(`/WatchInYourLanguage/${language}`);
   };
   return (
     <>

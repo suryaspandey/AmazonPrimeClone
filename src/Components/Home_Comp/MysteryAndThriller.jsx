@@ -6,13 +6,10 @@ import { useApi } from "../../APIContext";
 import { useNavigate } from "react-router";
 import { MdKeyboardArrowRight } from "react-icons/md";
 
-// const MysteryAndThriller = ({ heading }) => {
 const MysteryAndThriller = () => {
   const [myData, setMyData] = useState([]);
   const navigate = useNavigate();
   const { setApi } = useApi();
-
-  // console.log("heading: ", heading); // false
 
   const bearerToken = localStorage.getItem("bearer_token");
 
@@ -36,25 +33,6 @@ const MysteryAndThriller = () => {
   const handleSeeMoreClick = () => {
     setApi(mysteryURL);
     navigate("/CompleteShowList/Mystery And Thriller");
-  };
-
-  const responsive = {
-    superLargeDesktop: {
-      breakpoint: { max: 4000, min: 3000 },
-      items: 5,
-    },
-    desktop: {
-      breakpoint: { max: 3000, min: 1024 },
-      items: 5,
-    },
-    tablet: {
-      breakpoint: { max: 1024, min: 464 },
-      items: 2,
-    },
-    mobile: {
-      breakpoint: { max: 464, min: 0 },
-      items: 1,
-    },
   };
 
   return (

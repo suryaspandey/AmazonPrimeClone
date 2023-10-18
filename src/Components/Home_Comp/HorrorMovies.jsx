@@ -11,8 +11,6 @@ const HorrorMovies = () => {
   const navigate = useNavigate();
   const { setApi } = useApi();
 
-  // console.log("heading: ", heading); // false
-
   const bearerToken = localStorage.getItem("bearer_token");
 
   const projectId = "zxke0qiu2960";
@@ -28,7 +26,6 @@ const HorrorMovies = () => {
       .then((response) => response.json())
       .then((exdata) => {
         const allData = exdata;
-        // console.log(allData);
         setMyData(exdata.data);
       });
   }, [projectId, bearerToken]);
@@ -36,25 +33,6 @@ const HorrorMovies = () => {
   const handleSeeMoreClick = () => {
     setApi(horrorURL);
     navigate("/CompleteShowList/Horror");
-  };
-
-  const responsive = {
-    superLargeDesktop: {
-      breakpoint: { max: 4000, min: 3000 },
-      items: 5,
-    },
-    desktop: {
-      breakpoint: { max: 3000, min: 1024 },
-      items: 5,
-    },
-    tablet: {
-      breakpoint: { max: 1024, min: 464 },
-      items: 2,
-    },
-    mobile: {
-      breakpoint: { max: 464, min: 0 },
-      items: 1,
-    },
   };
 
   return (

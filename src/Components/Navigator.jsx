@@ -51,8 +51,6 @@ const Navigator = () => {
   const handleLogout = () => {
     localStorage.removeItem("bearer_token");
     localStorage.removeItem("loginUserName");
-    console.log("bearer_token after log out", bearer_token);
-    console.log("loginUserName after log out", loginUserName);
   };
 
   // const profileuserName =
@@ -71,7 +69,6 @@ const Navigator = () => {
   };
 
   const handleSearchValue = (e) => {
-    console.log(e.target.value);
     const searchValue = e.target.value;
     setSearchText(searchValue);
   };

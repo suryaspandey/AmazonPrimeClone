@@ -50,7 +50,6 @@ const CreateNewPassword = () => {
   const bearer_token = localStorage.getItem("bearer_token");
   const onFinish = (values) => {
     setErrorMessage("");
-    console.log("Received values of form: ", values);
     fetch("https://academics.newtonschool.co/api/v1/user/updateMyPassword", {
       method: "PATCH",
       headers: {
@@ -69,8 +68,6 @@ const CreateNewPassword = () => {
     })
       .then((response) =>
         response.json().then((data) => {
-          console.log("password change text: ", response);
-
           if (data.status === "fail") {
             setErrorMessage(`${data.message}!`);
             message.info("Changes Cancelled");

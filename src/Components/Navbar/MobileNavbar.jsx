@@ -34,7 +34,6 @@ const MobileNavbar = () => {
   };
 
   const handleSearchValue = (e) => {
-    console.log(e.target.value);
     const searchValue = e.target.value;
     setSearchText(searchValue);
   };

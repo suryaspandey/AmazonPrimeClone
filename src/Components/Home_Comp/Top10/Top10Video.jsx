@@ -194,7 +194,7 @@ const Top10Video = ({ showHeader }) => {
                                   className="watchlist-icon-img"
                                   onClick={() => {
                                     navigate(
-                                      "/watchDetails/64cffee700bad552e8dcd509"
+                                      "/watchDetails/64cffee700bad552e8dcd5fe"
                                     );
                                   }}
                                 />

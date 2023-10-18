@@ -6,13 +6,11 @@ import { useApi } from "../../../APIContext";
 import { useNavigate } from "react-router";
 import { MdKeyboardArrowRight } from "react-icons/md";
 
-// const ActionAdventureMovies = ({ heading }) => {
 const ActionAdventureMovies = () => {
   const [myData, setMyData] = useState([]);
   const navigate = useNavigate();
   const { setApi } = useApi();
 
-  // console.log("heading: ", heading); // false
   const bearerToken = localStorage.getItem("bearer_token");
 
   const projectId = "zxke0qiu2960";

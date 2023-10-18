@@ -6,7 +6,6 @@ import HorrorMovies from "../Home_Comp/HorrorMovies";
 
 const Search = () => {
   const { phrase } = useParams();
-  console.log("search phrase:", phrase);
   const [showData, setShowData] = useState([]);
   const [notFound, setNotFound] = useState(false);
   const projectId = "zxke0qiu2960";
@@ -29,7 +28,6 @@ const Search = () => {
       .then((response) => response.text())
       .then((result) => {
         const data = JSON.parse(result);
-        console.log(data);
         if (data.status === "success") setShowData(data.data);
         if (data.status === "fail") setNotFound(true);
       })
@@ -61,7 +59,6 @@ const Search = () => {
               TV shows and movies.
             </h1>
             <ShortFilms />
-            {/* <HorrorMovies /> */}
           </div>
         </div>
       </>
