@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Button, Modal } from "antd";
 import { RiDeleteBin6Line } from "react-icons/ri";
 import { PiDotsThreeVerticalBold } from "react-icons/pi";
-import "./watchlistMOdal.css";
+import "./watchlistModal.css";
 const WatchListModal = ({
   selectedItem,
   handleRemoveFromWatchList,
