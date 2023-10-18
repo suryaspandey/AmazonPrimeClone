@@ -91,12 +91,12 @@ const LanguageMoviesAndShows = () => {
                   <FantasyMovies />
                 </>
               )}
-              {language.language === "Punjabi" && (
+              {/* {language.language === "Punjabi" && (
                 <>
                   <FantasyMovies />
                   <SciFi />
                 </>
-              )}
+              )} */}
               {language.language === "Marathi" && (
                 <>
                   <HorrorMovies />
@@ -112,6 +112,7 @@ const LanguageMoviesAndShows = () => {
             </>
           )}
         </div>
+        <div className="nothing" style={{ marginBottom: "180x" }}></div>
       </div>
     </>
   );
