@@ -10,7 +10,8 @@ import LanguageMoviesAndShows from "./Components/Language/LanguageMoviesAndShows
 import Footer from "./Components/Footer/Footer";
 import Categories from "./Pages/Categories";
 // import ActionAndAdventureMain from "./Components/Home_Comp/ActionAdventure/ActionAndAdventureMain";
-// import ActionAndAdventureMain from "./Components/Home_Comp/ActionAdventure/ActionAndadventureMain";
+import ActionAndAdventureMain from "./Components/Home_Comp/ActionAdventure/ActionAndadventureMain";
+// Components\Home_Comp\ActionAdventure\ActionAndadventureMain.jsx
 import Home from "./Pages/Home";
 import AllTVShows from "./Components/AllTVShows/AllTVShows";
 import AddToWatchList from "./Components/Watchlist/AddToWatchList";
@@ -121,10 +122,10 @@ function App() {
               element={<LanguageMoviesAndShows />}
             />
 
-            {/* <Route
+            <Route
               path="/Categories/ActionAdventure/:subheading"
               element={<ActionAndAdventureMain />}
-            /> */}
+            />
             <Route
               path="/Categories/MysteryAndThriller/:subheading"
               element={<MysteryThrillerMain />}

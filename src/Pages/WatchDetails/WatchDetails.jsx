@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
-import "./watchdetils.css";
+import "./watchDetils.css";
 import { BiMoviePlay } from "react-icons/bi";
 import { AiOutlineCheck, AiOutlinePlus } from "react-icons/ai";
 import { GoDownload } from "react-icons/go";
