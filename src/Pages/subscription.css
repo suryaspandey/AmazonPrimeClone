@@ -101,4 +101,13 @@
   .subscription-cards-container {
     padding: 10px 20px;
   }
+  .subscription-more-details-btn {
+    display: none;
+  }
+  .slick-track {
+    height: 300px;
+  }
+  .subscription-card {
+    height: 150px;
+  }
 }

@@ -118,7 +118,7 @@ const WatchCards = ({
 
   useEffect(() => {
     const handleResize = () => {
-      setIsMobile(window.innerWidth <= 414);
+      setIsMobile(window.innerWidth <= 415);
     };
     handleResize();
 

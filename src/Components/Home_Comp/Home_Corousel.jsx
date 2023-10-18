@@ -24,7 +24,7 @@ export default function Home_Corousel() {
 
   useEffect(() => {
     const handleResize = () => {
-      setIsMobile(window.innerWidth <= 414);
+      setIsMobile(window.innerWidth <= 415);
     };
     // Initial check on component mount
     handleResize();

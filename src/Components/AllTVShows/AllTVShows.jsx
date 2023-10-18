@@ -14,7 +14,7 @@ const AllTVShows = () => {
   const [isMobile, setIsMobile] = useState(false);
   useEffect(() => {
     const handleResize = () => {
-      setIsMobile(window.innerWidth <= 414);
+      setIsMobile(window.innerWidth <= 415);
     };
     // Initial check on component mount
     handleResize();

@@ -8,7 +8,7 @@ const Subscription = () => {
 
   useEffect(() => {
     const handleResize = () => {
-      setIsMobile(window.innerWidth <= 414);
+      setIsMobile(window.innerWidth <= 415);
     };
     handleResize();
 
@@ -29,7 +29,10 @@ const Subscription = () => {
     <>
       <div className="subscription-cards-container">
         <div className="subscription-carousel">
-          <Carousel arrows autoplay>
+          <Carousel
+            arrows
+            // autoplay
+          >
             <div className="subscription-card">
               <Link to="https://www.amazon.in/b/?_encoding=UTF8&node=90130123031&ref_=atv_me_pri_c_eiVJLU_zMbofx_1_1">
                 <img

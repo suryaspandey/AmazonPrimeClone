@@ -7,7 +7,7 @@ const Footer = () => {
 
   useEffect(() => {
     const handleResize = () => {
-      setIsMobile(window.innerWidth <= 414);
+      setIsMobile(window.innerWidth <= 415);
     };
 
     window.addEventListener("resize", handleResize);
@@ -46,7 +46,7 @@ const Footer = () => {
           <li className="footer-li">
             <a href="#">
               @1996-2023, created by
-              <span style={{ color: "#79bbf3" }}>suryaspandey</span>
+              <span style={{ color: "#79bbf3" }}> suryaspandey</span>
             </a>
           </li>
         </ul>

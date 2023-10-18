@@ -37,7 +37,9 @@ const UserMoodsModal = () => {
       <div className="modal-main-div">
         <img src="/Designer.png" alt="" height="100%" width="100%" />
         <Button type="primary" onClick={showModal}>
-          {`Pick Your Mood ${userName} !!`}
+          <span>
+            Pick Your Mood <i>{userName}</i> !!
+          </span>
         </Button>
         <Modal
           title={`What's your mood ${userName} ?`}

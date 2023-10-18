@@ -159,6 +159,7 @@
   }
   .home-banner-text-container-banner2 h2 {
     font-size: 15px;
+    padding-left: 19px;
   }
   .home-banner-text-container-banner2 h1 {
     font-size: 26px;
@@ -191,15 +192,19 @@
     text-align: center;
   }
   .firestick-text {
-    padding: 15px;
+    padding: 0px;
   }
   .firestick-text h1 {
     padding: 0;
     font-size: 24px;
+    padding: 0 10px;
+    text-align: center;
   }
 
   .firestick-text p {
     font-size: 18px !important;
+    padding: 0 10px;
+    text-align: justify;
   }
   .family-friendly {
     width: 97%;
