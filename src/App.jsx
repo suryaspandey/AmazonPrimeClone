@@ -10,6 +10,7 @@ import LanguageMoviesAndShows from "./Components/Language/LanguageMoviesAndShows
 import Footer from "./Components/Footer/Footer";
 import Categories from "./Pages/Categories";
 // import ActionAndAdventureMain from "./Components/Home_Comp/ActionAdventure/ActionAndAdventureMain";
+// import ActionAndAdventureMain from "./Components/Home_Comp/ActionAdventure/ActionAndadventureMain";
 import Home from "./Pages/Home";
 import AllTVShows from "./Components/AllTVShows/AllTVShows";
 import AddToWatchList from "./Components/Watchlist/AddToWatchList";
@@ -19,7 +20,7 @@ import Login from "./Pages/Login";
 import LoginPassword from "./Pages/LoginPassword";
 import Register from "./Pages/Register";
 import PrivateRoute from "./PrivateRoute";
-import Search from "./Components/Search/search";
+import Search from "./Components/Search/Search";
 import Subscription from "./Pages/Subscription";
 import AllShowsType from "./Pages/AllShowsType";
 import LiveTV from "./Pages/LiveTV";
