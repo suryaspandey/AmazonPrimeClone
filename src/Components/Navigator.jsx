@@ -203,7 +203,10 @@ const Navigator = () => {
 
                     <div className="options avatar-options">
                       <div className="options-left">
-                        <span className="optoins-login-headings">
+                        <span
+                          className="optoins-login-headings"
+                          style={{ color: "white" }}
+                        >
                           Your Account
                         </span>
 
@@ -247,7 +250,12 @@ const Navigator = () => {
                         </span>
                       </div>
                       <div className="options-left">
-                        <span className="optoins-login-headings">Profiles</span>
+                        <span
+                          className="optoins-login-headings"
+                          style={{ color: "white" }}
+                        >
+                          Profiles
+                        </span>
 
                         <span className="categories-link-text">
                           <Link

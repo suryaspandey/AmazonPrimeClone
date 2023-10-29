@@ -9,9 +9,7 @@ import { CompleteShowList } from "./Pages/CompleteShowList";
 import LanguageMoviesAndShows from "./Components/Language/LanguageMoviesAndShows";
 import Footer from "./Components/Footer/Footer";
 import Categories from "./Pages/Categories";
-// import ActionAndAdventureMain from "./Components/Home_Comp/ActionAdventure/ActionAndAdventureMain";
 import ActionAndAdventureMain from "./Components/Home_Comp/ActionAdventure/ActionAndadventureMain";
-// Components\Home_Comp\ActionAdventure\ActionAndadventureMain.jsx
 import Home from "./Pages/Home";
 import AllTVShows from "./Components/AllTVShows/AllTVShows";
 import AddToWatchList from "./Components/Watchlist/AddToWatchList";
@@ -73,16 +71,6 @@ function App() {
       window.removeEventListener("resize", handleResize);
     };
   });
-
-  // useEffect(function () {
-  //   const listerFn = function (event) {
-  //     // console.log("I am called");
-  //   };
-  //   window.addEventListener("popstate", listerFn);
-  //   return () => {
-  //     window.removeEventListener("popstate", listerFn);
-  //   };
-  // }, []);
 
   return (
     <>

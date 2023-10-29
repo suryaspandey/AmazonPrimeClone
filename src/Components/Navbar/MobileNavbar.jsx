@@ -134,7 +134,10 @@ const MobileNavbar = () => {
 
                       <div className="options avatar-options">
                         <div className="options-left">
-                          <span className="optoins-login-headings">
+                          <span
+                            className="optoins-login-headings"
+                            style={{ color: "white" }}
+                          >
                             Your Account
                           </span>
 
@@ -178,7 +181,10 @@ const MobileNavbar = () => {
                           </span>
                         </div>
                         <div className="options-left">
-                          <span className="optoins-login-headings">
+                          <span
+                            className="optoins-login-headings"
+                            style={{ color: "white" }}
+                          >
                             Profiles
                           </span>
 
